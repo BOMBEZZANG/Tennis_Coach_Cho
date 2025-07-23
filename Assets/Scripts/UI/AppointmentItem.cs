@@ -19,7 +19,6 @@ namespace TennisCoachCho.UI
         
         public void Setup(AppointmentData appointment, System.Action<AppointmentData> onAccept)
         {
-            Debug.Log($"AppointmentItem.Setup() called for client: {appointment?.clientName}");
             appointmentData = appointment;
             onAcceptCallback = onAccept;
             
@@ -29,6 +28,10 @@ namespace TennisCoachCho.UI
             {
                 acceptButton.onClick.RemoveAllListeners();
                 acceptButton.onClick.AddListener(AcceptAppointment);
+            }
+            else
+            {
+                Debug.LogError("acceptButton is null!");
             }
         }
         
@@ -40,17 +43,10 @@ namespace TennisCoachCho.UI
                 return;
             }
             
-            Debug.Log($"UpdateUI: Setting up UI for {appointmentData.clientName}");
-            
             if (clientNameText != null)
-            {
                 clientNameText.text = appointmentData.clientName;
-                Debug.Log($"Set clientNameText to: {appointmentData.clientName}");
-            }
             else
-            {
                 Debug.LogError("clientNameText is null!");
-            }
                 
             if (timeText != null)
                 timeText.text = appointmentData.GetTimeString();

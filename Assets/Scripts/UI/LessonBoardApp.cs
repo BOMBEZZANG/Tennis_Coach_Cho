@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TennisCoachCho.Core;
 using TennisCoachCho.Data;
-using TMPro; // Add this line
+using TMPro;
 namespace TennisCoachCho.UI
 {
     public class LessonBoardApp : MonoBehaviour
@@ -56,9 +56,39 @@ namespace TennisCoachCho.UI
             if (noAppointmentsText != null)
                 noAppointmentsText.gameObject.SetActive(false);
                 
+            // Fix ScrollRect sizing before populating
+            FixScrollRectSizing();
+                
             foreach (var appointment in availableAppointments)
             {
                 CreateAppointmentItem(appointment);
+            }
+        }
+        
+        private void FixScrollRectSizing()
+        {
+            var scrollRect = appointmentListParent.GetComponentInParent<UnityEngine.UI.ScrollRect>();
+            if (scrollRect != null)
+            {
+                // Fix Viewport size to properly fill the ScrollRect area
+                if (scrollRect.viewport != null)
+                {
+                    var viewportRect = scrollRect.viewport;
+                    viewportRect.anchorMin = Vector2.zero;
+                    viewportRect.anchorMax = Vector2.one;
+                    viewportRect.sizeDelta = Vector2.zero;
+                    viewportRect.anchoredPosition = Vector2.zero;
+                }
+                
+                // Fix Content size for proper scrolling
+                if (scrollRect.content != null)
+                {
+                    var contentRect = scrollRect.content;
+                    contentRect.anchorMin = new Vector2(0, 1);
+                    contentRect.anchorMax = new Vector2(1, 1);
+                    contentRect.sizeDelta = new Vector2(0, 300);
+                    contentRect.anchoredPosition = new Vector2(0, 0);
+                }
             }
         }
         
