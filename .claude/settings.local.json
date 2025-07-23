@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(git add:*)",
+      "Bash(cd \"/mnt/c/Projects/Tennis_Coach_Cho\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix AppointmentItem visibility issue in ScrollView\n\n- Fixed ScrollRect Viewport and Content sizing issues that prevented AppointmentItems from being visible\n- Added FixScrollRectSizing() method to properly configure ScrollRect containers\n- Updated TextMeshPro font references to use working fallback font\n- Cleaned up debug code and test appointment creation\n- Fixed AppointmentItem prefab positioning and anchoring\n\nThe issue was caused by:\n1. Viewport RectTransform having zero dimensions (width:0, height:0)\n2. Content RectTransform having zero width\n3. Mask component clipping content due to zero-sized viewport\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git config:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix AppointmentItem visibility issue in ScrollView\n\n- Fixed ScrollRect Viewport and Content sizing issues that prevented AppointmentItems from being visible\n- Added FixScrollRectSizing() method to properly configure ScrollRect containers\n- Updated TextMeshPro font references to use working fallback font\n- Cleaned up debug code and test appointment creation\n- Fixed AppointmentItem prefab positioning and anchoring\n\nThe issue was caused by:\n1. Viewport RectTransform having zero dimensions (width:0, height:0)\n2. Content RectTransform having zero width\n3. Mask component clipping content due to zero-sized viewport\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
     ],
     "deny": []
   }

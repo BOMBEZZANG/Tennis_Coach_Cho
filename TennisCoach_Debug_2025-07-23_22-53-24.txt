@@ -1,0 +1,62 @@
+=== TENNIS COACH DEBUG LOG ===
+Started at: 7/23/2025 10:53:24 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Log file location: C:\Projects\Tennis_Coach_Cho\TennisCoach_Debug_2025-07-23_22-53-24.txt
+=====================================
+
+[22:53:24.637] === TEST DEBUG === LessonBoardApp.Initialize() called
+[22:53:24.639] === TEST DEBUG === PopulateAppointmentList called
+[22:53:24.640] === TEST DEBUG === GameManager.Instance exists: True
+[22:53:24.641] === TEST DEBUG === AppointmentManager exists: True
+[22:53:24.641] === TEST DEBUG === Available appointments count: 3
+[22:53:24.642] === TEST DEBUG === Creating test appointment for debugging
+[22:53:24.643] === TEST DEBUG === CreateTestAppointment() called
+[22:53:24.643] === TEST DEBUG === Instantiating prefab into parent
+[22:53:24.647] === TEST DEBUG === Test item created: AppointmentItem(Clone), active: True
+[22:53:24.648] === TEST DEBUG === Parent: Content, parent active: True
+[22:53:24.648] === TEST DEBUG === Item position: (234.00, -179.50, 0.00)
+[22:53:24.649] === TEST DEBUG === Item local position: (0.00, -150.00, 0.00)
+[22:53:24.650] === TEST DEBUG === Item rect: (x:0.00, y:-150.00, width:0.00, height:300.00)
+[22:53:24.651] === TEST DEBUG === Fixed rect: (x:0.00, y:-100.00, width:0.00, height:200.00)
+[22:53:24.651] === TEST DEBUG === Parent Level 0: Content, active: True
+[22:53:24.651] === TEST DEBUG === Parent Level 1: Viewport, active: True
+[22:53:24.652] === TEST DEBUG === Parent Level 2: AppointmentScrollView, active: True
+[22:53:24.652] === TEST DEBUG === Parent Level 3: LessonBoardApp, active: True
+[22:53:24.652] === TEST DEBUG === Parent Level 4: SmartphoneUI, active: True
+[22:53:24.653] === TEST DEBUG === Found 5 TextMeshPro components
+[22:53:24.654] === TEST DEBUG === Set text: TEST CLIENT, active: True
+[22:53:24.654] === TEST DEBUG === Set text: 2:00 PM - 3:00 PM, active: True
+[22:53:24.654] === TEST DEBUG === Set text: Court A, active: True
+[22:53:24.656] === TEST DEBUG === Set text: $50 | 25 EXP, active: True
+[22:53:24.656] === TEST DEBUG === Set text: Button, active: True
+[22:53:24.657] === TEST DEBUG === Set background to YELLOW - should be very visible!
+[22:53:24.657] === TEST DEBUG === Log file location: C:\Projects\Tennis_Coach_Cho\TennisCoach_Debug_2025-07-23_22-53-24.txt
+[22:53:24.657] === REAL DATA === Found 3 real appointments
+[22:53:30.047] === TEST DEBUG === PopulateAppointmentList called
+[22:53:30.048] === TEST DEBUG === GameManager.Instance exists: True
+[22:53:30.048] === TEST DEBUG === AppointmentManager exists: True
+[22:53:30.049] === TEST DEBUG === Available appointments count: 3
+[22:53:30.049] === TEST DEBUG === Creating test appointment for debugging
+[22:53:30.050] === TEST DEBUG === CreateTestAppointment() called
+[22:53:30.050] === TEST DEBUG === Instantiating prefab into parent
+[22:53:30.051] === TEST DEBUG === Test item created: AppointmentItem(Clone), active: True
+[22:53:30.051] === TEST DEBUG === Parent: Content, parent active: True
+[22:53:30.051] === TEST DEBUG === Item position: (505.60, 60.15, 0.00)
+[22:53:30.053] === TEST DEBUG === Item local position: (0.00, -150.00, 0.00)
+[22:53:30.053] === TEST DEBUG === Item rect: (x:0.00, y:-150.00, width:0.00, height:300.00)
+[22:53:30.053] === TEST DEBUG === Fixed rect: (x:0.00, y:-100.00, width:0.00, height:200.00)
+[22:53:30.053] === TEST DEBUG === Parent Level 0: Content, active: True
+[22:53:30.054] === TEST DEBUG === Parent Level 1: Viewport, active: True
+[22:53:30.054] === TEST DEBUG === Parent Level 2: AppointmentScrollView, active: True
+[22:53:30.055] === TEST DEBUG === Parent Level 3: LessonBoardApp, active: True
+[22:53:30.055] === TEST DEBUG === Parent Level 4: SmartphoneUI, active: True
+[22:53:30.056] === TEST DEBUG === Found 5 TextMeshPro components
+[22:53:30.056] === TEST DEBUG === Set text: TEST CLIENT, active: True
+[22:53:30.057] === TEST DEBUG === Set text: 2:00 PM - 3:00 PM, active: True
+[22:53:30.057] === TEST DEBUG === Set text: Court A, active: True
+[22:53:30.058] === TEST DEBUG === Set text: $50 | 25 EXP, active: True
+[22:53:30.058] === TEST DEBUG === Set text: Button, active: True
+[22:53:30.058] === TEST DEBUG === Set background to YELLOW - should be very visible!
+[22:53:30.059] === TEST DEBUG === Log file location: C:\Projects\Tennis_Coach_Cho\TennisCoach_Debug_2025-07-23_22-53-24.txt
+[22:53:30.059] === REAL DATA === Found 3 real appointments

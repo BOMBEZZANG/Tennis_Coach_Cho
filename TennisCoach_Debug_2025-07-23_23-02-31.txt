@@ -1,0 +1,116 @@
+=== TENNIS COACH DEBUG LOG ===
+Started at: 7/23/2025 11:02:31 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Log file location: C:\Projects\Tennis_Coach_Cho\TennisCoach_Debug_2025-07-23_23-02-31.txt
+=====================================
+
+[23:02:31.973] === TEST DEBUG === LessonBoardApp.Initialize() called
+[23:02:31.976] === TEST DEBUG === PopulateAppointmentList called
+[23:02:31.976] === TEST DEBUG === GameManager.Instance exists: True
+[23:02:31.976] === TEST DEBUG === AppointmentManager exists: True
+[23:02:31.976] === TEST DEBUG === Available appointments count: 3
+[23:02:31.976] === TEST DEBUG === Creating test appointment for debugging
+[23:02:31.980] === TEST DEBUG === CreateTestAppointment() called
+[23:02:31.980] === TEST DEBUG === Instantiating prefab into parent
+[23:02:31.984] === TEST DEBUG === Test item created: AppointmentItem(Clone), active: True
+[23:02:31.985] === TEST DEBUG === Parent: Content, parent active: True
+[23:02:31.986] === TEST DEBUG === Item position: (234.00, -179.50, 0.00)
+[23:02:31.986] === TEST DEBUG === Item local position: (0.00, -150.00, 0.00)
+[23:02:31.987] === TEST DEBUG === Item rect: (x:0.00, y:-150.00, width:0.00, height:300.00)
+[23:02:31.988] === TEST DEBUG === Fixed rect: (x:0.00, y:-100.00, width:0.00, height:200.00)
+[23:02:31.988] === TEST DEBUG === Parent Level 0: Content, active: True, rect: (x:0.00, y:-300.00, width:0.00, height:300.00)
+[23:02:31.989] === TEST DEBUG === Parent Level 1: Viewport, active: True, rect: (x:0.00, y:0.00, width:0.00, height:0.00)
+[23:02:31.989] === TEST DEBUG === Parent Level 2: AppointmentScrollView, active: True, rect: (x:-200.00, y:-200.00, width:400.00, height:400.00)
+[23:02:31.989] === TEST DEBUG === Parent Level 3: LessonBoardApp, active: True, rect: (x:-300.00, y:-300.00, width:600.00, height:600.00)
+[23:02:31.990] === TEST DEBUG === Parent Level 4: SmartphoneUI, active: True, rect: (x:-600.00, y:-300.00, width:600.00, height:600.00)
+[23:02:31.992] === RENDER DEBUG === Canvas: Canvas, render mode: ScreenSpaceOverlay
+[23:02:31.992] === RENDER DEBUG === Canvas camera: 
+[23:02:31.993] === RENDER DEBUG === Canvas sorting layer: Default, order: 0
+[23:02:31.994] === RENDER DEBUG === CanvasRenderer cull transparent: False
+[23:02:31.994] === RENDER DEBUG === Found 1 Mask components in parents
+[23:02:31.995] === RENDER DEBUG === Found 0 RectMask2D components in parents
+[23:02:31.996] === FIX === Found ScrollRect, fixing viewport and content sizing
+[23:02:31.996] === FIX === Fixed Viewport rect: (x:0.00, y:-400.00, width:400.00, height:400.00)
+[23:02:31.997] === FIX === Fixed Content rect: (x:0.00, y:-300.00, width:400.00, height:300.00)
+[23:02:31.998] === RENDER DEBUG === Background image material: Default UI Material
+[23:02:31.998] === RENDER DEBUG === Background image sprite: Background
+[23:02:32.000] === RENDER DEBUG === Background image color: RGBA(1.000, 1.000, 1.000, 0.500)
+[23:02:32.000] === TEST DEBUG === Found 5 TextMeshPro components
+[23:02:32.001] === TEST DEBUG === Text 0: 'TEST CLIENT', active: True
+[23:02:32.002] === RENDER DEBUG === Text 0 material: LiberationSans SDF Material (Instance)
+[23:02:32.002] === RENDER DEBUG === Text 0 font asset: LiberationSans SDF - Fallback
+[23:02:32.003] === RENDER DEBUG === Text 0 canvas renderer: True
+[23:02:32.003] === TEST DEBUG === Text 1: '2:00 PM - 3:00 PM', active: True
+[23:02:32.003] === RENDER DEBUG === Text 1 material: LiberationSans SDF Material (Instance)
+[23:02:32.003] === RENDER DEBUG === Text 1 font asset: LiberationSans SDF - Fallback
+[23:02:32.005] === RENDER DEBUG === Text 1 canvas renderer: True
+[23:02:32.005] === TEST DEBUG === Text 2: 'Court A', active: True
+[23:02:32.005] === RENDER DEBUG === Text 2 material: LiberationSans SDF Material (Instance)
+[23:02:32.006] === RENDER DEBUG === Text 2 font asset: LiberationSans SDF - Fallback
+[23:02:32.006] === RENDER DEBUG === Text 2 canvas renderer: True
+[23:02:32.007] === TEST DEBUG === Text 3: '$50 | 25 EXP', active: True
+[23:02:32.007] === RENDER DEBUG === Text 3 material: LiberationSans SDF Material (Instance)
+[23:02:32.008] === RENDER DEBUG === Text 3 font asset: LiberationSans SDF - Fallback
+[23:02:32.009] === RENDER DEBUG === Text 3 canvas renderer: True
+[23:02:32.009] === TEST DEBUG === Text 4: 'Button', active: True
+[23:02:32.010] === RENDER DEBUG === Text 4 material: LiberationSans SDF Material (Instance)
+[23:02:32.010] === RENDER DEBUG === Text 4 font asset: LiberationSans SDF - Fallback
+[23:02:32.010] === RENDER DEBUG === Text 4 canvas renderer: True
+[23:02:32.011] === TEST DEBUG === Set background to YELLOW - should be very visible!
+[23:02:32.011] === TEST DEBUG === Log file location: C:\Projects\Tennis_Coach_Cho\TennisCoach_Debug_2025-07-23_23-02-31.txt
+[23:02:32.012] === REAL DATA === Found 3 real appointments
+[23:02:35.585] === TEST DEBUG === PopulateAppointmentList called
+[23:02:35.586] === TEST DEBUG === GameManager.Instance exists: True
+[23:02:35.586] === TEST DEBUG === AppointmentManager exists: True
+[23:02:35.586] === TEST DEBUG === Available appointments count: 3
+[23:02:35.588] === TEST DEBUG === Creating test appointment for debugging
+[23:02:35.588] === TEST DEBUG === CreateTestAppointment() called
+[23:02:35.589] === TEST DEBUG === Instantiating prefab into parent
+[23:02:35.590] === TEST DEBUG === Test item created: AppointmentItem(Clone), active: True
+[23:02:35.591] === TEST DEBUG === Parent: Content, parent active: True
+[23:02:35.591] === TEST DEBUG === Item position: (572.46, 193.87, 0.00)
+[23:02:35.591] === TEST DEBUG === Item local position: (200.00, -150.00, 0.00)
+[23:02:35.592] === TEST DEBUG === Item rect: (x:-200.00, y:-150.00, width:400.00, height:300.00)
+[23:02:35.592] === TEST DEBUG === Fixed rect: (x:-200.00, y:-100.00, width:400.00, height:200.00)
+[23:02:35.592] === TEST DEBUG === Parent Level 0: Content, active: True, rect: (x:0.00, y:-300.00, width:400.00, height:300.00)
+[23:02:35.592] === TEST DEBUG === Parent Level 1: Viewport, active: True, rect: (x:0.00, y:-400.00, width:400.00, height:400.00)
+[23:02:35.594] === TEST DEBUG === Parent Level 2: AppointmentScrollView, active: True, rect: (x:-200.00, y:-200.00, width:400.00, height:400.00)
+[23:02:35.594] === TEST DEBUG === Parent Level 3: LessonBoardApp, active: True, rect: (x:-300.00, y:-300.00, width:600.00, height:600.00)
+[23:02:35.594] === TEST DEBUG === Parent Level 4: SmartphoneUI, active: True, rect: (x:-600.00, y:-300.00, width:600.00, height:600.00)
+[23:02:35.595] === RENDER DEBUG === Canvas: Canvas, render mode: ScreenSpaceOverlay
+[23:02:35.595] === RENDER DEBUG === Canvas camera: 
+[23:02:35.596] === RENDER DEBUG === Canvas sorting layer: Default, order: 0
+[23:02:35.596] === RENDER DEBUG === CanvasRenderer cull transparent: False
+[23:02:35.596] === RENDER DEBUG === Found 1 Mask components in parents
+[23:02:35.597] === RENDER DEBUG === Found 0 RectMask2D components in parents
+[23:02:35.597] === FIX === Found ScrollRect, fixing viewport and content sizing
+[23:02:35.597] === FIX === Fixed Viewport rect: (x:0.00, y:-400.00, width:400.00, height:400.00)
+[23:02:35.598] === FIX === Fixed Content rect: (x:0.00, y:-300.00, width:400.00, height:300.00)
+[23:02:35.598] === RENDER DEBUG === Background image material: Default UI Material
+[23:02:35.599] === RENDER DEBUG === Background image sprite: Background
+[23:02:35.600] === RENDER DEBUG === Background image color: RGBA(1.000, 1.000, 1.000, 0.500)
+[23:02:35.600] === TEST DEBUG === Found 5 TextMeshPro components
+[23:02:35.600] === TEST DEBUG === Text 0: 'TEST CLIENT', active: True
+[23:02:35.601] === RENDER DEBUG === Text 0 material: LiberationSans SDF Material (Instance)
+[23:02:35.601] === RENDER DEBUG === Text 0 font asset: LiberationSans SDF - Fallback
+[23:02:35.602] === RENDER DEBUG === Text 0 canvas renderer: True
+[23:02:35.602] === TEST DEBUG === Text 1: '2:00 PM - 3:00 PM', active: True
+[23:02:35.602] === RENDER DEBUG === Text 1 material: LiberationSans SDF Material (Instance)
+[23:02:35.603] === RENDER DEBUG === Text 1 font asset: LiberationSans SDF - Fallback
+[23:02:35.603] === RENDER DEBUG === Text 1 canvas renderer: True
+[23:02:35.604] === TEST DEBUG === Text 2: 'Court A', active: True
+[23:02:35.605] === RENDER DEBUG === Text 2 material: LiberationSans SDF Material (Instance)
+[23:02:35.605] === RENDER DEBUG === Text 2 font asset: LiberationSans SDF - Fallback
+[23:02:35.605] === RENDER DEBUG === Text 2 canvas renderer: True
+[23:02:35.606] === TEST DEBUG === Text 3: '$50 | 25 EXP', active: True
+[23:02:35.606] === RENDER DEBUG === Text 3 material: LiberationSans SDF Material (Instance)
+[23:02:35.607] === RENDER DEBUG === Text 3 font asset: LiberationSans SDF - Fallback
+[23:02:35.607] === RENDER DEBUG === Text 3 canvas renderer: True
+[23:02:35.608] === TEST DEBUG === Text 4: 'Button', active: True
+[23:02:35.608] === RENDER DEBUG === Text 4 material: LiberationSans SDF Material (Instance)
+[23:02:35.608] === RENDER DEBUG === Text 4 font asset: LiberationSans SDF - Fallback
+[23:02:35.608] === RENDER DEBUG === Text 4 canvas renderer: True
+[23:02:35.609] === TEST DEBUG === Set background to YELLOW - should be very visible!
+[23:02:35.609] === TEST DEBUG === Log file location: C:\Projects\Tennis_Coach_Cho\TennisCoach_Debug_2025-07-23_23-02-31.txt
+[23:02:35.610] === REAL DATA === Found 3 real appointments
