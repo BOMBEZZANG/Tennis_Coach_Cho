@@ -1,0 +1,82 @@
+Development Request Playable Proto.txt
+
+**1. Document Purpose**
+
+[cite\_start]This document outlines the requirements, scope, and objectives for the initial playable prototype (v1.0) for the game project tentatively titled "Tennis\_Coach\_Cho". [cite: 1]
+
+**2. Project Overview & Core Concept**
+
+[cite\_start]The prototype will allow the player to experience the life of a freelance tennis coach. [cite: 3] The core gameplay loop consists of:
+
+1.  [cite\_start]Accepting lesson appointments. [cite: 4]
+2.  [cite\_start]Traveling to the specified time and location. [cite: 4]
+3.  [cite\_start]Successfully completing a skill-based mini-game to earn rewards (CASH & Coaching EXP). [cite: 5]
+4.  **\<u\>Using those rewards to level up the 'Coaching' skill, which unlocks Skill Points to enhance mini-game performance.\</u\>**
+5.  **\<u\>As individual skills like 'Coaching' improve, the player's overall Level also increases, awarding 'Perk Points' for powerful, broader abilities.\</u\>**
+
+[cite\_start]This prototype focuses exclusively on this core loop to test its viability and fun factor. [cite: 7]
+
+**3. Prototype Objectives & Key Hypotheses**
+
+This prototype is being built to answer the following critical questions:
+
+  * [cite\_start]**Hypothesis 1 (Core Fun):** Is the core "Rhythm Coaching" mini-game engaging and fun enough to be repeated over multiple sessions? [cite: 8]
+  * [cite\_start]**Hypothesis 2 (Growth Feedback):** **\<u\>Is the progression loop (`Improve 'Coaching' Skill -> Invest Skill Point -> Easier Mini-Game`) tangible and satisfying for the player?\</u\>** [cite: 9]
+  * [cite\_start]**Hypothesis 3 (System Usability):** Is the "Appointment-Based Scheduling" system intuitive for the player to understand and use? [cite: 10]
+
+**4. Technical Specifications**
+
+  * [cite\_start]**Engine:** Unity [cite: 11]
+  * [cite\_start]**Platform:** PC (Windows Build) [cite: 11]
+  * [cite\_start]**Art Style:** 2D (Note: **All assets for this prototype are to be placeholders, e.g., simple geometric shapes.**) [cite: 11]
+  * [cite\_start]**View:** Top-down [cite: 11]
+
+**5. Core Systems & Features (Scope of Work)**
+
+**5.1. Player & World Systems**
+
+  * [cite\_start]Player Controller: A character that can be moved in 4 directions (Up, Down, Left, Right) on a 2D map. [cite: 12]
+  * [cite\_start]World: A single, simple map containing two key locations: 1) The Player's Home, 2) The Community Tennis Court. [cite: 13]
+  * Time System: An in-game clock must be implemented. [cite\_start]The in-game day (e.g., 8:00 AM to Midnight) should correspond to **10 minutes of real time**. [cite: 14] [cite\_start]A date system should also be included. [cite: 15]
+
+**5.2. UI Systems (Placeholder UI is sufficient)**
+
+  * **Main HUD:** Must display current CASH, **\<u\>Player Level (and its EXP bar), 'Coaching' Skill Level (and its EXP bar)\</u\>**, and the in-game Time/Date.
+  * [cite\_start]**"Smartphone" UI:** This is the primary interface. [cite: 16]
+      * [cite\_start]"Lesson Board" App: A screen that lists available lesson appointments (Client, Time, Location, Rewards). [cite: 16] [cite\_start]Player can accept an appointment from this list. [cite: 17]
+      * [cite\_start]"Scheduler" App: A screen that displays confirmed appointments and triggers a simple on-screen notification when an appointment is approaching. [cite: 17]
+      * **\<u\>"Skills & Perks" App:** A screen with two tabs:\</u\>\*\*
+          * **\<u\>Skills: Displays individual skill trees. [cite\_start]For v1.0, this will only show the 'Coaching' skill tree where players can spend 'Skill Points'.\</u\>** [cite: 18]
+          * **\<u\>Perks: Displays the overall player Perk tree where players can spend 'Perk Points' earned from player-level-ups.\</u\>**
+
+**5.3. Gameplay Systems (Mini-game)**
+
+  * [cite\_start]Implement one type of mini-game: **"Rhythm Coaching"**. [cite: 19]
+  * [cite\_start]This will be a simple rhythm-based game where the player must press a key at the correct time. [cite: 20]
+  * [cite\_start]The game must provide feedback based on timing: `Perfect`, `Good`, `Bad`. [cite: 21]
+  * [cite\_start]Rewards (CASH and **\<u\>Coaching EXP\</u\>**) must be calculated based on performance in the mini-game. [cite: 22]
+
+**5.4. Progression Systems**
+
+  * **Rewards:** Successfully completing a lesson awards two resources:
+      * [cite\_start]**CASH:** A standard currency that accumulates. [cite: 23]
+      * **\<u\>Coaching EXP:\</u\>** Experience points that fill up the 'Coaching' skill gauge.
+  * **\<u\>Skill Level Up System: When the Coaching EXP bar is full, the 'Coaching' skill Level increases by 1, and the player is awarded 1 Skill Point. The EXP bar then resets.\</u\>**
+  * **\<u\>Player Level Up System: Each time an individual skill (like 'Coaching') levels up, it contributes a fixed amount of EXP to the overall Player Level. When the Player Level EXP bar is full, the Player's Level increases by 1, and they are awarded 1 Perk Point.\</u\>**
+  * **\<u\>'Coaching' Skill Tree (Minimal):\</u\>** The skill tree for 'Coaching' should contain two functional skills for this prototype:
+      * [cite\_start]Technical Skill - 'Forehand': Investing a point tangibly increases the pixel size of the 'Perfect' hit-zone in the mini-game. [cite: 26]
+      * [cite\_start]Reputation Skill - 'Friendliness': Investing a point increases the amount of **\<u\>Coaching EXP\</u\>** earned upon lesson completion. [cite: 27]
+  * **\<u\>Perk Tree (Minimal): For v1.0, include one simple Perk to test the system, e.g., "Well-Rested" - slightly increases daily stamina.\</u\>**
+
+**6. Core Gameplay Flow (Player Journey)**
+
+1.  [cite\_start]The player starts in their home. [cite: 28]
+2.  [cite\_start]They open the 'Smartphone' UI to check for available lessons. [cite: 29]
+3.  [cite\_start]They accept a lesson appointment. [cite: 30]
+4.  [cite\_start]They navigate to the correct location at the scheduled time. [cite: 32]
+5.  [cite\_start]The "Rhythm Coaching" mini-game is initiated. [cite: 33]
+6.  [cite\_start]Upon completion, they receive CASH and **\<u\>Coaching EXP\</u\>** based on their performance. [cite: 34]
+7.  **\<u\>After accumulating enough Coaching EXP, the 'Coaching' skill "Levels Up," and the player receives 1 Skill Point.\</u\>**
+8.  [cite\_start]**\<u\>The player opens the 'Skills' tab and invests their point in the 'Forehand' skill within the 'Coaching' tree.\</u\>** [cite: 36]
+9.  **\<u\>This skill-up also contributes EXP to the main Player Level, which eventually "Levels Up" and grants a Perk Point.\</u\>**
+10. [cite\_start]**\<u\>In the next lesson, the player will feel that the mini-game is easier due to the 'Forehand' skill investment.\</u\>** [cite: 37]

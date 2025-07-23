@@ -1,0 +1,127 @@
+using System;
+using UnityEngine;
+
+namespace TennisCoachCho.Core
+{
+    [System.Serializable]
+    public struct GameDateTime
+    {
+        public int day;
+        public int hour;
+        public int minute;
+        
+        public GameDateTime(int day, int hour, int minute)
+        {
+            this.day = day;
+            this.hour = hour;
+            this.minute = minute;
+        }
+        
+        public string GetTimeString()
+        {
+            string period = hour < 12 ? "AM" : "PM";
+            int displayHour = hour == 0 ? 12 : (hour > 12 ? hour - 12 : hour);
+            return $"{displayHour:D2}:{minute:D2} {period}";
+        }
+        
+        public string GetDateString()
+        {
+            return $"Day {day}";
+        }
+    }
+    
+    public class TimeSystem : MonoBehaviour
+    {
+        [Header("Time Settings")]
+        [SerializeField] private float realTimeToGameTime = 600f; // 10 minutes real = 1 game day
+        [SerializeField] private int startHour = 8;
+        [SerializeField] private int startMinute = 0;
+        [SerializeField] private int endHour = 24; // Midnight
+        
+        private GameDateTime currentTime;
+        private float timeScale;
+        private bool isRunning;
+        
+        public event Action<GameDateTime> OnTimeChanged;
+        public event Action<int> OnNewDay;
+        public event Action<int, int> OnTimeReachedForAppointment;
+        
+        public GameDateTime CurrentTime => currentTime;
+        public bool IsRunning => isRunning;
+        
+        public void Initialize()
+        {
+            currentTime = new GameDateTime(1, startHour, startMinute);
+            CalculateTimeScale();
+        }
+        
+        private void CalculateTimeScale()
+        {
+            // Game day = 16 hours (8 AM to Midnight)
+            // Real time = 10 minutes = 600 seconds
+            // timeScale = game minutes per real second
+            float gameMinutesPerDay = (endHour - startHour) * 60f;
+            timeScale = gameMinutesPerDay / realTimeToGameTime;
+        }
+        
+        public void StartTime()
+        {
+            isRunning = true;
+        }
+        
+        public void StopTime()
+        {
+            isRunning = false;
+        }
+        
+        private void Update()
+        {
+            if (!isRunning) return;
+            
+            UpdateTime();
+        }
+        
+        private void UpdateTime()
+        {
+            float minutesToAdd = timeScale * Time.deltaTime;
+            int wholeMinutes = Mathf.FloorToInt(minutesToAdd);
+            
+            if (wholeMinutes > 0)
+            {
+                AddMinutes(wholeMinutes);
+            }
+        }
+        
+        private void AddMinutes(int minutes)
+        {
+            currentTime.minute += minutes;
+            
+            while (currentTime.minute >= 60)
+            {
+                currentTime.minute -= 60;
+                currentTime.hour++;
+                
+                if (currentTime.hour >= endHour)
+                {
+                    currentTime.hour = startHour;
+                    currentTime.day++;
+                    OnNewDay?.Invoke(currentTime.day);
+                }
+            }
+            
+            OnTimeChanged?.Invoke(currentTime);
+        }
+        
+        public bool IsTimeForAppointment(int appointmentHour, int appointmentMinute)
+        {
+            return currentTime.hour == appointmentHour && currentTime.minute == appointmentMinute;
+        }
+        
+        public void SetTime(int hour, int minute)
+        {
+            currentTime.hour = Mathf.Clamp(hour, startHour, endHour - 1);
+            currentTime.minute = Mathf.Clamp(minute, 0, 59);
+            OnTimeChanged?.Invoke(currentTime);
+        }
+    }
+}

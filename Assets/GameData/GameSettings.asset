@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef433000410b94449ad0a636e8dda19, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  realTimeToGameTimeRatio: 10
+  gameStartHour: 8
+  gameEndHour: 24
+  basePlayerExpToNext: 100
+  playerExpGrowthRate: 1.15
+  baseSkillExpToNext: 50
+  skillExpGrowthRate: 1.2
+  playerExpPerSkillLevel: 20
+  maxDailyAppointments: 3
+  minCashReward: 20
+  maxCashReward: 50
+  minExpReward: 15
+  maxExpReward: 30
+  rhythmGameDuration: 30
+  rhythmGameNotes: 20
+  perfectTimingWindow: 0.1
+  goodTimingWindow: 0.2
+  badTimingWindow: 0.3
+  forehandBonusPerLevel: 0.2
+  friendlinessBonusPerLevel: 0.15
+  masterVolume: 1
+  musicVolume: 0.7
+  sfxVolume: 0.8
+  smartphoneKey: 9
+  interactKey: 101
+  rhythmGameKey: 32

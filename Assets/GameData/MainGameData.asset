@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf394cb2af0f4944b3d06b959c46015, type: 3}
+  m_Name: MainGameData
+  m_EditorClassIdentifier: 
+  playerStats:
+    cash: 100
+    playerLevel: 1
+    playerExp: 0
+    playerExpToNext: 100
+    skillPoints: 0
+    perkPoints: 0
+  coachingSkill:
+    skillName: Coaching
+    level: 1
+    exp: 0
+    expToNext: 50
+  coachingSkillTree:
+  - nodeName: Forehand
+    level: 0
+    maxLevel: 5
+    description: Increases Perfect hit-zone size in mini-game
+  - nodeName: Friendliness
+    level: 0
+    maxLevel: 5
+    description: Increases Coaching EXP earned from lessons
+  - nodeName: Patience
+    level: 0
+    maxLevel: 3
+    description: Reduces mini-game difficulty
+  - nodeName: Communication
+    level: 0
+    maxLevel: 5
+    description: Improves lesson success rate
+  availablePerks:
+  - perkName: Well-Rested
+    isUnlocked: 0
+    description: Slightly increases daily stamina
+  - perkName: Early Bird
+    isUnlocked: 0
+    description: Start each day with bonus energy
+  - perkName: Networking
+    isUnlocked: 0
+    description: Occasionally receive bonus appointments
+  - perkName: Efficient
+    isUnlocked: 0
+    description: Lessons finish 10% faster
+  availableAppointments:
+  - clientName: John Smith
+    scheduledHour: 14
+    scheduledMinute: 0
+    location: Tennis Court A
+    cashReward: 50
+    expReward: 25
+    isCompleted: 0
+    isAccepted: 0
+  - clientName: Mary Johnson
+    scheduledHour: 16
+    scheduledMinute: 0
+    location: Tennis Court B
+    cashReward: 75
+    expReward: 35
+    isCompleted: 0
+    isAccepted: 0
+  - clientName: Bob Wilson
+    scheduledHour: 10
+    scheduledMinute: 30
+    location: Tennis Court A
+    cashReward: 60
+    expReward: 30
+    isCompleted: 0
+    isAccepted: 0
+  - clientName: Sarah Davis
+    scheduledHour: 15
+    scheduledMinute: 30
+    location: Tennis Court C
+    cashReward: 80
+    expReward: 40
+    isCompleted: 0
+    isAccepted: 0
+  acceptedAppointments: []
+  currentGameTime:
+    hour: 8
+    minute: 0
+    day: 1
+    month: 1
+    year: 2024
