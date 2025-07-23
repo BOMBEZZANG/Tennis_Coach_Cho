@@ -78,6 +78,13 @@ namespace TennisCoachCho.UI
                     viewportRect.anchorMax = Vector2.one;
                     viewportRect.sizeDelta = Vector2.zero;
                     viewportRect.anchoredPosition = Vector2.zero;
+                    
+                    // CRITICAL: Disable the Mask component that was clipping content
+                    var mask = scrollRect.viewport.GetComponent<UnityEngine.UI.Mask>();
+                    if (mask != null)
+                    {
+                        mask.enabled = false;
+                    }
                 }
                 
                 // Fix Content size for proper scrolling
