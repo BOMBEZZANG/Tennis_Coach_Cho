@@ -14,16 +14,36 @@ namespace TennisCoachCho.World
         
         public void OnPlayerEnter()
         {
-            if (GameManager.Instance != null && GameManager.Instance.UIManager != null)
+            Debug.Log($"[LocationTrigger] OnPlayerEnter called for location: {locationName}");
+            Debug.Log($"[LocationTrigger] GameManager.Instance is null: {GameManager.Instance == null}");
+            
+            if (GameManager.Instance != null)
             {
-                GameManager.Instance.UIManager.ShowLocationPrompt(locationName, canStartLessons);
+                Debug.Log($"[LocationTrigger] UIManager is null: {GameManager.Instance.UIManager == null}");
+                
+                if (GameManager.Instance.UIManager != null)
+                {
+                    Debug.Log($"[LocationTrigger] Calling ShowLocationPrompt with location: {locationName}, canStart: {canStartLessons}");
+                    GameManager.Instance.UIManager.ShowLocationPrompt(locationName, canStartLessons);
+                }
+                else
+                {
+                    Debug.LogError("[LocationTrigger] UIManager is null!");
+                }
+            }
+            else
+            {
+                Debug.LogError("[LocationTrigger] GameManager.Instance is null!");
             }
         }
         
         public void OnPlayerExit()
         {
+            Debug.Log($"[LocationTrigger] OnPlayerExit called for location: {locationName}");
+            
             if (GameManager.Instance != null && GameManager.Instance.UIManager != null)
             {
+                Debug.Log("[LocationTrigger] Calling HideLocationPrompt");
                 GameManager.Instance.UIManager.HideLocationPrompt();
             }
         }

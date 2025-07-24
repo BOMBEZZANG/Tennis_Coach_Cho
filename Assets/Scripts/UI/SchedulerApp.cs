@@ -104,7 +104,7 @@ namespace TennisCoachCho.UI
             if (scheduleListParent != null)
             {
                 DebugLogger.LogGameObject(scheduleListParent.gameObject, "scheduleListParent");
-                DebugLogger.LogRectTransform(scheduleListParent as RectTransform, "scheduleListParent RectTransform");
+                DebugLogger.LogRectTransform((RectTransform)scheduleListParent, "scheduleListParent RectTransform");
             }
             
             UpdateCurrentTime();
@@ -214,7 +214,7 @@ namespace TennisCoachCho.UI
             scheduleItems.Add(item);
             
             DebugLogger.LogGameObject(item, $"Created schedule item for {appointment.clientName}");
-            DebugLogger.LogRectTransform(item.transform as RectTransform, "Schedule item RectTransform");
+            DebugLogger.LogRectTransform((RectTransform)item.transform, "Schedule item RectTransform");
             
             // Check parent hierarchy
             Transform current = item.transform;

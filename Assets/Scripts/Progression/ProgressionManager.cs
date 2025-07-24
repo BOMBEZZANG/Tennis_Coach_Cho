@@ -20,7 +20,7 @@ namespace TennisCoachCho.Progression
         
         public PlayerStats PlayerStats => gameData.playerStats;
         public SkillData CoachingSkill => gameData.coachingSkill;
-        public GameData GameData => gameData;
+        public GameData GameDataRef => gameData;
         
         public void Initialize()
         {

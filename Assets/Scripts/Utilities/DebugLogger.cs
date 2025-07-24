@@ -4,9 +4,6 @@ using UnityEngine;
 
 namespace TennisCoachCho.Utilities
 {
-    /// <summary>
-    /// Debug logging utility that saves messages to a text file
-    /// </summary>
     public static class DebugLogger
     {
         private static string logFilePath;
@@ -21,18 +18,15 @@ namespace TennisCoachCho.Utilities
         {
             if (isInitialized) return;
             
-            // Create logs directory if it doesn't exist
             string logsDirectory = Path.Combine(Application.dataPath, "..", "DebugLogs");
             if (!Directory.Exists(logsDirectory))
             {
                 Directory.CreateDirectory(logsDirectory);
             }
             
-            // Create log file with timestamp
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             logFilePath = Path.Combine(logsDirectory, $"SchedulerApp_Debug_{timestamp}.txt");
             
-            // Write header
             WriteToFile($"=== SchedulerApp Debug Log Started ===");
             WriteToFile($"Time: {DateTime.Now}");
             WriteToFile($"Unity Version: {Application.unityVersion}");
@@ -49,10 +43,7 @@ namespace TennisCoachCho.Utilities
             string timestamp = DateTime.Now.ToString("HH:mm:ss.fff");
             string formattedMessage = $"[{timestamp}] [{category}] {message}";
             
-            // Write to Unity console
             Debug.Log(formattedMessage);
-            
-            // Write to file
             WriteToFile(formattedMessage);
         }
         
@@ -213,7 +204,6 @@ namespace TennisCoachCho.Utilities
             WriteToFile($"=====================================");
         }
         
-        // Call this when the application quits
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void OnApplicationQuit()
         {

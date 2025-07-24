@@ -94,17 +94,32 @@ namespace TennisCoachCho.UI
         
         public void ShowLocationPrompt(string locationName, bool canStartLesson)
         {
+            Debug.Log($"[UIManager] ShowLocationPrompt called with location: {locationName}, canStart: {canStartLesson}");
+            Debug.Log($"[UIManager] locationPrompt is null: {locationPrompt == null}");
+            
             if (locationPrompt != null)
             {
+                Debug.Log("[UIManager] Calling locationPrompt.Show()");
                 locationPrompt.Show(locationName, canStartLesson);
+            }
+            else
+            {
+                Debug.LogError("[UIManager] LocationPrompt is null! Make sure it's assigned in the inspector.");
             }
         }
         
         public void HideLocationPrompt()
         {
+            Debug.Log("[UIManager] HideLocationPrompt called");
+            
             if (locationPrompt != null)
             {
+                Debug.Log("[UIManager] Calling locationPrompt.Hide()");
                 locationPrompt.Hide();
+            }
+            else
+            {
+                Debug.LogError("[UIManager] LocationPrompt is null!");
             }
         }
         

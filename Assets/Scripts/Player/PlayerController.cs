@@ -111,11 +111,32 @@ namespace TennisCoachCho.Player
         
         private void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log($"[PlayerController] OnTriggerEnter2D - Collided with: {other.name}, Tag: {other.tag}");
+            
             if (other.CompareTag("Location"))
             {
+                Debug.Log($"[PlayerController] Found Location tag on: {other.name}");
                 LocationTrigger location = other.GetComponent<LocationTrigger>();
                 if (location != null)
                 {
+                    Debug.Log($"[PlayerController] LocationTrigger found on: {other.name}, calling OnPlayerEnter()");
+                    location.OnPlayerEnter();
+                }
+                else
+                {
+                    Debug.LogWarning($"[PlayerController] No LocationTrigger script found on: {other.name}");
+                }
+            }
+            else
+            {
+                Debug.Log($"[PlayerController] Object {other.name} does not have 'Location' tag. Current tag: '{other.tag}'");
+                
+                // Try to find LocationTrigger anyway for debugging
+                LocationTrigger location = other.GetComponent<LocationTrigger>();
+                if (location != null)
+                {
+                    Debug.LogWarning($"[PlayerController] Found LocationTrigger on {other.name} but tag is '{other.tag}' instead of 'Location'");
+                    // Call it anyway for testing
                     location.OnPlayerEnter();
                 }
             }
@@ -123,11 +144,24 @@ namespace TennisCoachCho.Player
         
         private void OnTriggerExit2D(Collider2D other)
         {
+            Debug.Log($"[PlayerController] OnTriggerExit2D - Exiting: {other.name}, Tag: {other.tag}");
+            
             if (other.CompareTag("Location"))
             {
                 LocationTrigger location = other.GetComponent<LocationTrigger>();
                 if (location != null)
                 {
+                    Debug.Log($"[PlayerController] Calling OnPlayerExit() for: {other.name}");
+                    location.OnPlayerExit();
+                }
+            }
+            else
+            {
+                // Try to find LocationTrigger anyway for debugging
+                LocationTrigger location = other.GetComponent<LocationTrigger>();
+                if (location != null)
+                {
+                    Debug.LogWarning($"[PlayerController] Calling OnPlayerExit() for {other.name} despite wrong tag");
                     location.OnPlayerExit();
                 }
             }

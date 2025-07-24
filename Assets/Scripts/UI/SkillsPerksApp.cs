@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TennisCoachCho.Core;
 using TennisCoachCho.Data;
+using TennisCoachCho.Progression;
 using TennisCoachCho.Utilities;
 using TMPro;
 
@@ -163,7 +164,7 @@ namespace TennisCoachCho.UI
             }
             
             var progressionManager = GameManager.Instance.ProgressionManager;
-            var gameData = progressionManager.GameData;
+            var gameData = progressionManager.GameDataRef;
             var skillTree = gameData?.coachingSkillTree;
             
             DebugLogger.LogSkillsPerks($"GameData found: {gameData != null}");
@@ -195,7 +196,7 @@ namespace TennisCoachCho.UI
             }
             
             var progressionManager = GameManager.Instance.ProgressionManager;
-            var gameData = progressionManager.GameData;
+            var gameData = progressionManager.GameDataRef;
             DebugLogger.LogSkillsPerks($"GameData found: {gameData != null}");
             DebugLogger.LogSkillsPerks($"AvailablePerks count: {gameData?.availablePerks?.Count ?? 0}");
             
@@ -366,7 +367,7 @@ namespace TennisCoachCho.UI
         private void GoBack()
         {
             // If we're showing a panel, go back to header menu
-            if (!headerPanel.activeInHierarchy)
+            if (headerPanel != null && !headerPanel.activeInHierarchy)
             {
                 ShowMainMenu();
             }
