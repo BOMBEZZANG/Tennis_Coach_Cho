@@ -1,0 +1,32 @@
+=== SchedulerApp Debug Log Started ===
+Time: 7/24/2025 10:21:43 AM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+======================================
+
+
+==================================================
+=== SCHEDULER APP ON ENABLE ===
+==================================================
+[10:21:43.835] [SCHEDULER] SchedulerApp.OnEnable() called!
+[10:21:43.840] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (541.70, 313.39, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: SchedulerApp in OnEnable
+[10:21:43.840] [SCHEDULER] scheduleListParent is null: False
+[10:21:43.841] [SCHEDULER] ScrollView exists but has zero width in OnEnable - needs fixing!
+
+==================================================
+=== CREATE SCROLLVIEW STRUCTURE ===
+==================================================
+[10:21:43.842] [SCHEDULER] Creating ScrollView structure for SchedulerApp...
+[10:21:43.842] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (541.70, 313.39, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: SchedulerApp before ScrollView creation
+[10:21:43.847] [SCHEDULER] Viewport configuration:
+[10:21:43.848] [RECTTRANSFORM] RectTransform: Viewport | AnchorMin: (0.00, 0.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 0.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-400.00, width:400.00, height:400.00) | Context: Viewport after configuration
+[10:21:43.849] [SCHEDULER] BEFORE Content anchoring fix:
+[10:21:43.850] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content before fix
+[10:21:43.850] [SCHEDULER] AFTER Content anchoring fix:
+[10:21:43.850] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content after fix
+[10:21:43.853] [SCHEDULER] ScrollView structure created successfully!
+[10:21:43.854] [GAMEOBJECT] GameObject: ScheduleScrollView | Active: True | ActiveSelf: True | Position: (572.46, 207.08, 0.00) | LocalPosition: (92.00, -318.00, 0.00) | Parent: SchedulerApp | Children: 3 | Context: Created ScrollView
+[10:21:43.854] [GAMEOBJECT] GameObject: Viewport | Active: True | ActiveSelf: True | Position: (372.46, 407.08, 0.00) | LocalPosition: (-200.00, 200.00, 0.00) | Parent: ScheduleScrollView | Children: 1 | Context: Created Viewport
+[10:21:43.854] [GAMEOBJECT] GameObject: Content | Active: True | ActiveSelf: True | Position: (372.46, 407.08, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: Viewport | Children: 0 | Context: Created Content
+[10:21:43.855] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content RectTransform after creation
+[10:21:43.855] [SCHEDULER] scheduleListParent assigned to Content GameObject

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TennisCoachCho.Core;
+using TennisCoachCho.Utilities;
 
 namespace TennisCoachCho.UI
 {
@@ -63,7 +64,8 @@ namespace TennisCoachCho.UI
         
         private void OpenApp(AppState appState)
         {
-            Debug.Log($"OpenApp called with state: {appState}");
+            DebugLogger.LogSeparator($"SMARTPHONE UI - OPEN APP: {appState}");
+            DebugLogger.LogUIEvent($"OpenApp called with state: {appState}");
             currentState = appState;
             
             // Hide menu
@@ -90,10 +92,19 @@ namespace TennisCoachCho.UI
                     }
                     break;
                 case AppState.Scheduler:
+                    DebugLogger.LogUIEvent("Opening Scheduler app");
+                    DebugLogger.LogUIEvent($"schedulerApp is null: {schedulerApp == null}");
                     if (schedulerApp != null)
                     {
+                        DebugLogger.LogGameObject(schedulerApp.gameObject, "SchedulerApp before activation");
                         schedulerApp.gameObject.SetActive(true);
+                        DebugLogger.LogGameObject(schedulerApp.gameObject, "SchedulerApp after activation");
                         schedulerApp.RefreshSchedule();
+                        DebugLogger.LogUIEvent("SchedulerApp.RefreshSchedule() called");
+                    }
+                    else
+                    {
+                        DebugLogger.LogError("SchedulerApp is null in SmartphoneUI!");
                     }
                     break;
                 case AppState.SkillsPerks:
