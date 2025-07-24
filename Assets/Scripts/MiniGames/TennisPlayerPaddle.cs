@@ -69,7 +69,8 @@ namespace TennisCoachCho.MiniGames
             gameManager = manager;
             startPosition = transform.position;
             
-            Debug.Log("[TennisPlayerPaddle] Initialized");
+            Debug.Log($"[TennisPlayerPaddle] Initialized at position: {startPosition}");
+            Debug.Log($"[TennisPlayerPaddle] Movement bounds: ±{settings.movementBounds} (Y range: {startPosition.y - settings.movementBounds} to {startPosition.y + settings.movementBounds})");
         }
         
         private void Update()
@@ -96,9 +97,13 @@ namespace TennisCoachCho.MiniGames
                 verticalInput = -1f;
             
             // E swing input
-            if (Input.GetKeyDown(KeyCode.E) && CanSwing())
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                StartSwing();
+                Debug.Log($"[TennisPlayerPaddle] E key pressed - CanSwing: {CanSwing()}");
+                if (CanSwing())
+                {
+                    StartSwing();
+                }
             }
         }
         
@@ -117,10 +122,7 @@ namespace TennisCoachCho.MiniGames
                 newPosition.y = clampedY;
                 transform.position = newPosition;
                 
-                if (showDebugInfo)
-                {
-                    Debug.Log($"[TennisPlayerPaddle] Moving to Y: {newPosition.y}");
-                }
+                // Moving paddle
             }
         }
         
@@ -147,7 +149,7 @@ namespace TennisCoachCho.MiniGames
         
         private void StartSwing()
         {
-            Debug.Log("[TennisPlayerPaddle] Starting swing");
+            Debug.Log($"[TennisPlayerPaddle] Starting swing - position: {transform.position}");
             
             isSwinging = true;
             swingTimer = settings.swingDuration;
@@ -165,7 +167,7 @@ namespace TennisCoachCho.MiniGames
         
         private void EndSwing()
         {
-            Debug.Log("[TennisPlayerPaddle] Ending swing");
+            // Ending swing
             isSwinging = false;
         }
         
@@ -212,7 +214,7 @@ namespace TennisCoachCho.MiniGames
                 verticalInput = 0f;
             }
             
-            Debug.Log($"[TennisPlayerPaddle] Controls enabled: {enabled}");
+            // Controls state changed
         }
         
         public void ResetPosition()

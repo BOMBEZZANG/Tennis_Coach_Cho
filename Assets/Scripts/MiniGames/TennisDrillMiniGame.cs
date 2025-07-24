@@ -98,7 +98,7 @@ namespace TennisCoachCho.MiniGames
         
         private void InitializeGame()
         {
-            Debug.Log("[TennisDrillMiniGame] Initializing mini-game...");
+            // Initializing mini-game
             
             // Set initial positions
             if (settings.playerStartPosition != null)
@@ -125,7 +125,7 @@ namespace TennisCoachCho.MiniGames
         
         public void StartMiniGame()
         {
-            Debug.Log("[TennisDrillMiniGame] Starting mini-game...");
+            // Starting mini-game
             SetState(DrillGameState.PREPARING);
         }
         
@@ -166,7 +166,7 @@ namespace TennisCoachCho.MiniGames
         
         private void SetState(DrillGameState newState)
         {
-            Debug.Log($"[TennisDrillMiniGame] State changing: {currentState} → {newState}");
+            // State changing
             
             var previousState = currentState;
             currentState = newState;
@@ -207,7 +207,7 @@ namespace TennisCoachCho.MiniGames
         
         private IEnumerator HandlePreparing()
         {
-            Debug.Log("[TennisDrillMiniGame] Preparing game...");
+            // Preparing game
             
             // Disable player free movement (handled by GameManager)
             if (GameManager.Instance?.PlayerController != null)
@@ -228,28 +228,16 @@ namespace TennisCoachCho.MiniGames
         
         private void HandleActive()
         {
-            Debug.Log("[TennisDrillMiniGame] Game active!");
-            Debug.Log($"[TennisDrillMiniGame] Ball reference: {ball != null}");
-            Debug.Log($"[TennisDrillMiniGame] Player paddle reference: {playerPaddle != null}");
-            Debug.Log($"[TennisDrillMiniGame] Student paddle reference: {studentPaddle != null}");
-            
             // Start game timer
             gameTimer = settings.lessonDuration;
-            Debug.Log($"[TennisDrillMiniGame] Game timer set to: {gameTimer} seconds");
             
             // Enable mini-game controls
             playerPaddle.SetControlsEnabled(true);
-            Debug.Log("[TennisDrillMiniGame] Player controls enabled");
             
             // Serve the first ball
             if (ball != null)
             {
-                Debug.Log("[TennisDrillMiniGame] Calling ball.ServeFromStudent()...");
                 ball.ServeFromStudent();
-            }
-            else
-            {
-                Debug.LogError("[TennisDrillMiniGame] Ball is null! Cannot serve.");
             }
             
             // Show game UI
@@ -258,7 +246,7 @@ namespace TennisCoachCho.MiniGames
         
         private void HandleEnded()
         {
-            Debug.Log("[TennisDrillMiniGame] Game ended!");
+            // Game ended
             
             // Freeze all gameplay
             ball.FreezeMovement();
@@ -276,7 +264,7 @@ namespace TennisCoachCho.MiniGames
         
         public void ExitMiniGame()
         {
-            Debug.Log("[TennisDrillMiniGame] Exiting mini-game...");
+            // Exiting mini-game
             
             // Re-enable player movement
             if (GameManager.Instance?.PlayerController != null)
@@ -294,7 +282,7 @@ namespace TennisCoachCho.MiniGames
         
         public void OnBallHit(Vector3 ballPosition)
         {
-            Debug.Log($"[TennisDrillMiniGame] Ball hit at position: {ballPosition}");
+            // Ball hit
             
             // Determine hit judgment based on where ball lands
             HitJudgment judgment = EvaluateHit(ballPosition);
@@ -303,7 +291,7 @@ namespace TennisCoachCho.MiniGames
         
         public void OnBallMissed()
         {
-            Debug.Log("[TennisDrillMiniGame] Ball missed!");
+            // Ball missed
             ProcessHitJudgment(HitJudgment.MISS);
         }
         
@@ -371,7 +359,7 @@ namespace TennisCoachCho.MiniGames
             settings.drillUI?.UpdateCombo(currentCombo);
             settings.drillUI?.UpdateScore(totalScore);
             
-            Debug.Log($"[TennisDrillMiniGame] Hit judged: {judgment}, Combo: {currentCombo}, Score: {totalScore}");
+            // Hit processed
         }
         
         // Coroutine helpers
@@ -404,7 +392,13 @@ namespace TennisCoachCho.MiniGames
             var duration = 0.5f;
             var elapsed = 0f;
             var startSize = settings.gameCamera.orthographicSize;
+            var startPosition = settings.gameCamera.transform.position;
             var targetSize = settings.zoomedInSize;
+            
+            // Position camera to center on actual tennis court area
+            // Player paddle at Y: -12.28, court area roughly X: 4 to -22, Y: -16 to -8
+            Vector3 targetPosition = new Vector3(-9f, -12f, startPosition.z);
+            Debug.Log($"[TennisDrillMiniGame] Camera zooming from {startPosition} to {targetPosition}");
             
             while (elapsed < duration)
             {
@@ -412,6 +406,7 @@ namespace TennisCoachCho.MiniGames
                 var t = elapsed / duration;
                 
                 settings.gameCamera.orthographicSize = Mathf.Lerp(startSize, targetSize, t);
+                settings.gameCamera.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
                 yield return null;
             }
         }
@@ -423,7 +418,19 @@ namespace TennisCoachCho.MiniGames
             var duration = 0.5f;
             var elapsed = 0f;
             var startSize = settings.gameCamera.orthographicSize;
+            var startPosition = settings.gameCamera.transform.position;
             var targetSize = settings.normalSize;
+            
+            // Return camera to player's position (assuming player controller has the main camera position)
+            Vector3 targetPosition = startPosition;
+            if (GameManager.Instance?.PlayerController != null)
+            {
+                targetPosition = new Vector3(
+                    GameManager.Instance.PlayerController.transform.position.x,
+                    GameManager.Instance.PlayerController.transform.position.y,
+                    startPosition.z
+                );
+            }
             
             while (elapsed < duration)
             {
@@ -431,6 +438,7 @@ namespace TennisCoachCho.MiniGames
                 var t = elapsed / duration;
                 
                 settings.gameCamera.orthographicSize = Mathf.Lerp(startSize, targetSize, t);
+                settings.gameCamera.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
                 yield return null;
             }
         }

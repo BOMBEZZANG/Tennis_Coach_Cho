@@ -85,7 +85,7 @@ namespace TennisCoachCho.MiniGames
                 Debug.LogError("[TennisAIPaddle] Could not find TennisBall!");
             }
             
-            Debug.Log("[TennisAIPaddle] Initialized");
+            // AI paddle initialized
         }
         
         private void Update()
@@ -129,7 +129,7 @@ namespace TennisCoachCho.MiniGames
             isTrackingBall = true;
             reactionTimer = settings.reactionDelay;
             
-            Debug.Log("[TennisAIPaddle] Started tracking ball");
+            // Started tracking ball
         }
         
         private void StopTrackingBall()
@@ -139,7 +139,7 @@ namespace TennisCoachCho.MiniGames
             // Return to center position
             targetPosition = startPosition;
             
-            Debug.Log("[TennisAIPaddle] Stopped tracking ball");
+            // Stopped tracking ball
         }
         
         private void UpdateBallTracking()
@@ -180,10 +180,7 @@ namespace TennisCoachCho.MiniGames
                 Vector3 movement = direction * Mathf.Min(maxDistance, distance);
                 transform.position += movement;
                 
-                if (showDebugInfo && distance > 0.5f)
-                {
-                    Debug.Log($"[TennisAIPaddle] Moving toward Y: {targetPosition.y} (current: {transform.position.y:F2})");
-                }
+                // Moving toward target
             }
         }
         
@@ -213,7 +210,7 @@ namespace TennisCoachCho.MiniGames
         
         private void AttemptHit()
         {
-            Debug.Log("[TennisAIPaddle] Attempting to hit ball");
+            // Attempting to hit ball
             
             // Calculate hit direction (toward player area with some variation)
             Vector3 baseDirection = Vector3.left;
@@ -279,7 +276,7 @@ namespace TennisCoachCho.MiniGames
                 targetPosition = startPosition;
             }
             
-            Debug.Log($"[TennisAIPaddle] Controls enabled: {enabled}");
+            // Controls state changed
         }
         
         public void ResetPosition()

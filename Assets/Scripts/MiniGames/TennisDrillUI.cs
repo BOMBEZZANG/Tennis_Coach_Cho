@@ -55,7 +55,7 @@ namespace TennisCoachCho.MiniGames
             InitializeUI();
             
             isInitialized = true;
-            Debug.Log("[TennisDrillUI] Initialized");
+            // UI initialized
         }
         
         private void ValidateUIElements()
@@ -107,7 +107,7 @@ namespace TennisCoachCho.MiniGames
         
         private void OnGameStateChanged(DrillGameState newState)
         {
-            Debug.Log($"[TennisDrillUI] Game state changed to: {newState}");
+            // State changed
             
             switch (newState)
             {
@@ -132,7 +132,7 @@ namespace TennisCoachCho.MiniGames
         
         private void ShowMiniGameUI()
         {
-            Debug.Log("[TennisDrillUI] Showing mini-game UI");
+            // Showing mini-game UI
             
             // Activate the canvas when mini-game starts
             if (ui.gameCanvas != null)
@@ -141,7 +141,7 @@ namespace TennisCoachCho.MiniGames
         
         public void ShowGameHUD()
         {
-            Debug.Log("[TennisDrillUI] Showing game HUD");
+            // Showing game HUD
             
             // Canvas should already be active from ShowMiniGameUI, but ensure HUD elements are visible
             SetTextActive(ui.timerText, true);
@@ -249,7 +249,7 @@ namespace TennisCoachCho.MiniGames
         
         public void ShowJudgment(string judgmentText, Color color)
         {
-            Debug.Log($"[TennisDrillUI] Showing judgment: {judgmentText}");
+            // Showing judgment
             
             if (ui.judgmentText == null) return;
             
@@ -303,7 +303,7 @@ namespace TennisCoachCho.MiniGames
         
         public void ShowResults(int finalScore, int maxCombo)
         {
-            Debug.Log($"[TennisDrillUI] Showing results - Score: {finalScore}, Max Combo: {maxCombo}");
+            // Showing results
             
             SetPanelActive(ui.resultsPanel, true);
             
@@ -337,7 +337,7 @@ namespace TennisCoachCho.MiniGames
         
         public void Hide()
         {
-            Debug.Log("[TennisDrillUI] Hiding all UI");
+            // Hiding all UI
             
             // Hide all panels
             SetPanelActive(ui.countdownPanel, false);
@@ -360,7 +360,7 @@ namespace TennisCoachCho.MiniGames
         
         private void OnContinueButtonClicked()
         {
-            Debug.Log("[TennisDrillUI] Continue button clicked");
+            // Continue button clicked
             gameManager?.ExitMiniGame();
         }
         

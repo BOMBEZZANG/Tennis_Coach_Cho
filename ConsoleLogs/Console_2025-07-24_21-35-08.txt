@@ -1,0 +1,26 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 9:35:08 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[21:35:08.555] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[21:35:08.557] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_21-35-08.txt
+[21:35:08.742] [SYSTEM] Application resumed
+[21:35:08.742] [SYSTEM] Application gained focus
+[21:35:09.036] [LOG] [TennisBall] Initialized - Position: (-16.65, -12.28, -0.21), Active: True
+[21:35:09.039] [LOG] [TennisBall] Settings - ServeSpeed: 10, Gravity: -20
+[21:35:09.039] [LOG] [TennisBall] Visual components - BallSprite: True, BallShadow: True
+[21:35:09.040] [LOG] [TennisBall] BallSprite active: True, position: (-16.65, -12.28, -0.21)
+[21:35:09.040] [LOG] [TennisBall] Main GameObject has NO SpriteRenderer
+[21:35:09.040] [LOG] [TennisBall] Main Camera position: (-2.47, -0.57, -10.00), orthographic size: 10
+[21:35:09.041] [LOG] [TennisBall] Player paddle position: (-21.65, -12.28, -0.21)
+[21:35:09.042] [LOG] [TennisPlayerPaddle] Initialized at position: (-21.65, -12.28, -0.21)
+[21:35:09.042] [LOG] [TennisPlayerPaddle] Movement bounds: ±4 (Y range: -16.28187 to -8.281866)
+[21:35:09.045] [LOG] [CameraController] Auto-found player: Player
+[21:35:17.013] [SYSTEM] Application lost focus
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 9:35:17 PM
+===================================
