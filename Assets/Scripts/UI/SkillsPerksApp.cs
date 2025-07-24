@@ -3,11 +3,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TennisCoachCho.Core;
 using TennisCoachCho.Data;
+using TennisCoachCho.Utilities;
+using TMPro;
 
 namespace TennisCoachCho.UI
 {
     public class SkillsPerksApp : MonoBehaviour
     {
+        [Header("UI Panels")]
+        [SerializeField] private GameObject headerPanel;
+        
         [Header("Tab Buttons")]
         [SerializeField] private Button skillsTabButton;
         [SerializeField] private Button perksTabButton;
@@ -20,12 +25,12 @@ namespace TennisCoachCho.UI
         [Header("Skills UI")]
         [SerializeField] private Transform skillsListParent;
         [SerializeField] private GameObject skillItemPrefab;
-        [SerializeField] private Text skillPointsText;
+        [SerializeField] private TextMeshProUGUI skillPointsText;
         
         [Header("Perks UI")]
         [SerializeField] private Transform perksListParent;
         [SerializeField] private GameObject perkItemPrefab;
-        [SerializeField] private Text perkPointsText;
+        [SerializeField] private TextMeshProUGUI perkPointsText;
         
         private List<GameObject> skillItems = new List<GameObject>();
         private List<GameObject> perkItems = new List<GameObject>();
@@ -33,6 +38,8 @@ namespace TennisCoachCho.UI
         
         public void Initialize()
         {
+            DebugLogger.LogSkillsPerks("SkillsPerksApp Initialize() called");
+            
             if (skillsTabButton != null)
                 skillsTabButton.onClick.AddListener(() => SwitchTab(true));
             if (perksTabButton != null)
@@ -40,8 +47,13 @@ namespace TennisCoachCho.UI
             if (backButton != null)
                 backButton.onClick.AddListener(GoBack);
                 
-            SwitchTab(true); // Start with skills tab
-            RefreshData();
+            // Fix ScrollRect sizing issues based on Problem_History.txt
+            FixScrollRectSizing();
+                
+            // Start with main menu visible
+            ShowMainMenu();
+            
+            DebugLogger.LogSkillsPerks("SkillsPerksApp Initialize() completed");
         }
         
         public void RefreshData()
@@ -56,7 +68,13 @@ namespace TennisCoachCho.UI
         
         private void SwitchTab(bool showSkills)
         {
+            DebugLogger.LogSkillsPerks($"SwitchTab called - showSkills: {showSkills}");
+            
             isSkillsTabActive = showSkills;
+            
+            // Hide header when showing content panels
+            if (headerPanel != null)
+                headerPanel.SetActive(false);
             
             if (skillsPanel != null)
                 skillsPanel.SetActive(showSkills);
@@ -136,67 +154,124 @@ namespace TennisCoachCho.UI
         
         private void PopulateSkillsList()
         {
-            if (GameManager.Instance?.ProgressionManager == null) return;
+            DebugLogger.LogSkillsPerks("PopulateSkillsList called");
             
-            var gameData = GameManager.Instance.ProgressionManager.PlayerStats;
-            // Access skill tree from GameManager
-            var skillTree = FindObjectOfType<GameData>()?.coachingSkillTree;
+            if (GameManager.Instance?.ProgressionManager == null) 
+            {
+                DebugLogger.LogSkillsPerks("ERROR: GameManager.Instance or ProgressionManager is null!");
+                return;
+            }
             
-            if (skillTree != null)
+            var progressionManager = GameManager.Instance.ProgressionManager;
+            var gameData = progressionManager.GameData;
+            var skillTree = gameData?.coachingSkillTree;
+            
+            DebugLogger.LogSkillsPerks($"GameData found: {gameData != null}");
+            DebugLogger.LogSkillsPerks($"SkillTree count: {skillTree?.Count ?? 0}");
+            
+            if (skillTree != null && skillTree.Count > 0)
             {
                 foreach (var skill in skillTree)
                 {
+                    DebugLogger.LogSkillsPerks($"Creating skill item: {skill.nodeName}");
+                    DebugLogger.LogSkillData(skill);
                     CreateSkillItem(skill);
                 }
+            }
+            else
+            {
+                DebugLogger.LogSkillsPerks("WARNING: No skills found in skill tree!");
             }
         }
         
         private void PopulatePerksList()
         {
-            if (GameManager.Instance?.ProgressionManager == null) return;
+            DebugLogger.LogSkillsPerks("PopulatePerksList called");
             
-            var gameData = FindObjectOfType<GameData>();
-            if (gameData?.availablePerks != null)
+            if (GameManager.Instance?.ProgressionManager == null) 
+            {
+                DebugLogger.LogSkillsPerks("ERROR: GameManager.Instance or ProgressionManager is null!");
+                return;
+            }
+            
+            var progressionManager = GameManager.Instance.ProgressionManager;
+            var gameData = progressionManager.GameData;
+            DebugLogger.LogSkillsPerks($"GameData found: {gameData != null}");
+            DebugLogger.LogSkillsPerks($"AvailablePerks count: {gameData?.availablePerks?.Count ?? 0}");
+            
+            if (gameData?.availablePerks != null && gameData.availablePerks.Count > 0)
             {
                 foreach (var perk in gameData.availablePerks)
                 {
+                    DebugLogger.LogSkillsPerks($"Creating perk item: {perk.perkName}");
+                    DebugLogger.LogPerkData(perk);
                     CreatePerkItem(perk);
                 }
+            }
+            else
+            {
+                DebugLogger.LogSkillsPerks("WARNING: No perks found in available perks!");
             }
         }
         
         private void CreateSkillItem(SkillTreeNode skill)
         {
-            if (skillItemPrefab == null || skillsListParent == null) return;
+            DebugLogger.LogSkillsPerks($"CreateSkillItem called for: {skill?.nodeName}");
+            DebugLogger.LogSkillsPerks($"skillItemPrefab is null: {skillItemPrefab == null}");
+            DebugLogger.LogSkillsPerks($"skillsListParent is null: {skillsListParent == null}");
+            
+            if (skillItemPrefab == null || skillsListParent == null) 
+            {
+                DebugLogger.LogSkillsPerks("ERROR: Cannot create skill item - prefab or parent is null!");
+                return;
+            }
             
             GameObject item = Instantiate(skillItemPrefab, skillsListParent);
             skillItems.Add(item);
             
+            DebugLogger.LogSkillsPerks($"Skill item instantiated: {item.name}");
+            DebugLogger.LogGameObject(item, "SkillItem created");
+            
             var itemComponent = item.GetComponent<SkillItem>();
             if (itemComponent != null)
             {
+                DebugLogger.LogSkillsPerks($"Using SkillItem component for {skill.nodeName}");
                 itemComponent.Setup(skill, OnSkillUpgrade);
             }
             else
             {
+                DebugLogger.LogSkillsPerks($"Using basic setup for {skill.nodeName}");
                 SetupBasicSkillItem(item, skill);
             }
         }
         
         private void CreatePerkItem(PerkData perk)
         {
-            if (perkItemPrefab == null || perksListParent == null) return;
+            DebugLogger.LogSkillsPerks($"CreatePerkItem called for: {perk?.perkName}");
+            DebugLogger.LogSkillsPerks($"perkItemPrefab is null: {perkItemPrefab == null}");
+            DebugLogger.LogSkillsPerks($"perksListParent is null: {perksListParent == null}");
+            
+            if (perkItemPrefab == null || perksListParent == null) 
+            {
+                DebugLogger.LogSkillsPerks("ERROR: Cannot create perk item - prefab or parent is null!");
+                return;
+            }
             
             GameObject item = Instantiate(perkItemPrefab, perksListParent);
             perkItems.Add(item);
             
+            DebugLogger.LogSkillsPerks($"Perk item instantiated: {item.name}");
+            DebugLogger.LogGameObject(item, "PerkItem created");
+            
             var itemComponent = item.GetComponent<PerkItem>();
             if (itemComponent != null)
             {
+                DebugLogger.LogSkillsPerks($"Using PerkItem component for {perk.perkName}");
                 itemComponent.Setup(perk, OnPerkUnlock);
             }
             else
             {
+                DebugLogger.LogSkillsPerks($"Using basic setup for {perk.perkName}");
                 SetupBasicPerkItem(item, perk);
             }
         }
@@ -290,11 +365,98 @@ namespace TennisCoachCho.UI
         
         private void GoBack()
         {
-            var smartphoneUI = GetComponentInParent<SmartphoneUI>();
-            if (smartphoneUI != null)
+            // If we're showing a panel, go back to header menu
+            if (!headerPanel.activeInHierarchy)
             {
-                smartphoneUI.ShowAppMenu();
+                ShowMainMenu();
             }
+            else
+            {
+                // If we're on main menu, go back to smartphone menu
+                var smartphoneUI = GetComponentInParent<SmartphoneUI>();
+                if (smartphoneUI != null)
+                {
+                    smartphoneUI.ShowAppMenu();
+                }
+            }
+        }
+        
+        private void ShowMainMenu()
+        {
+            DebugLogger.LogSkillsPerks("ShowMainMenu called - showing header, hiding panels");
+            
+            // Show header
+            if (headerPanel != null)
+                headerPanel.SetActive(true);
+                
+            // Hide both panels
+            if (skillsPanel != null)
+                skillsPanel.SetActive(false);
+            if (perksPanel != null)
+                perksPanel.SetActive(false);
+        }
+        
+        private void FixScrollRectSizing()
+        {
+            // Fix Skills ScrollRect - based on Problem_History.txt solution
+            FixSingleScrollRect(skillsListParent);
+            
+            // Fix Perks ScrollRect
+            FixSingleScrollRect(perksListParent);
+        }
+        
+        private void FixSingleScrollRect(Transform contentParent)
+        {
+            if (contentParent == null) return;
+            
+            // Get the ScrollRect components in hierarchy
+            var scrollRect = contentParent.GetComponentInParent<ScrollRect>();
+            if (scrollRect == null) return;
+            
+            var viewport = scrollRect.viewport;
+            var content = scrollRect.content;
+            
+            if (viewport != null)
+            {
+                // Fix Viewport sizing - should stretch to fill ScrollRect
+                var viewportRect = viewport.GetComponent<RectTransform>();
+                if (viewportRect != null)
+                {
+                    viewportRect.anchorMin = Vector2.zero;
+                    viewportRect.anchorMax = Vector2.one;
+                    viewportRect.sizeDelta = Vector2.zero;
+                    viewportRect.anchoredPosition = Vector2.zero;
+                    
+                    // Temporarily disable mask if viewport has zero size
+                    var mask = viewport.GetComponent<Mask>();
+                    if (mask != null && viewportRect.rect.width <= 0)
+                    {
+                        mask.enabled = false;
+                        // Re-enable after a frame when sizing is fixed
+                        StartCoroutine(ReEnableMask(mask));
+                    }
+                }
+            }
+            
+            if (content != null)
+            {
+                // Fix Content sizing - top-anchored with proper height
+                var contentRect = content.GetComponent<RectTransform>();
+                if (contentRect != null)
+                {
+                    contentRect.anchorMin = new Vector2(0, 1);
+                    contentRect.anchorMax = new Vector2(1, 1);
+                    contentRect.sizeDelta = new Vector2(0, 300); // Initial height
+                    contentRect.anchoredPosition = new Vector2(0, 0);
+                }
+            }
+        }
+        
+        private System.Collections.IEnumerator ReEnableMask(Mask mask)
+        {
+            yield return new WaitForEndOfFrame();
+            if (mask != null)
+                mask.enabled = true;
         }
     }
     

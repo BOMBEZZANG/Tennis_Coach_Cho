@@ -33,18 +33,18 @@ namespace TennisCoachCho.UI
         
         public void Initialize()
         {
-            Debug.Log("SmartphoneUI.Initialize() called!");
+            // Debug.Log("SmartphoneUI.Initialize() called!");
             // Setup button listeners
             if (lessonBoardButton != null)
             {
                 lessonBoardButton.onClick.AddListener(() => {
-                    Debug.Log("LessonBoard button clicked!");
+                    // Debug.Log("LessonBoard button clicked!");
                     OpenApp(AppState.LessonBoard);
                 });
             }
             else
             {
-                Debug.LogError("LessonBoard button is null! Check SmartphoneUI inspector assignments.");
+                // Debug.LogError("LessonBoard button is null! Check SmartphoneUI inspector assignments.");
             }
             if (schedulerButton != null)
                 schedulerButton.onClick.AddListener(() => OpenApp(AppState.Scheduler));
@@ -79,16 +79,16 @@ namespace TennisCoachCho.UI
             switch (appState)
             {
                 case AppState.LessonBoard:
-                    Debug.Log($"Opening LessonBoard app. lessonBoardApp is null: {lessonBoardApp == null}");
+                    // Debug.Log($"Opening LessonBoard app. lessonBoardApp is null: {lessonBoardApp == null}");
                     if (lessonBoardApp != null)
                     {
                         lessonBoardApp.gameObject.SetActive(true);
-                        Debug.Log("LessonBoardApp activated");
+                        // Debug.Log("LessonBoardApp activated");
                         lessonBoardApp.RefreshAppointments();
                     }
                     else
                     {
-                        Debug.LogError("LessonBoardApp is null! Check SmartphoneUI inspector assignments.");
+                        // Debug.LogError("LessonBoardApp is null! Check SmartphoneUI inspector assignments.");
                     }
                     break;
                 case AppState.Scheduler:

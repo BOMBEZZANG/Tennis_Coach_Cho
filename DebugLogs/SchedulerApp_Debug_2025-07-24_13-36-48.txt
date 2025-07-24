@@ -1,0 +1,174 @@
+=== SchedulerApp Debug Log Started ===
+Time: 7/24/2025 1:36:48 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+======================================
+
+
+=== Debug Log Session Ended ===
+Time: 7/24/2025 1:36:48 PM
+=====================================
+
+==================================================
+=== SCHEDULER APP AWAKE ===
+==================================================
+[13:36:48.974] [SCHEDULER] SchedulerApp.Awake() called!
+[13:36:48.977] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 3 | Context: SchedulerApp in Awake
+[13:36:48.977] [SCHEDULER] scheduleListParent is null: True
+
+==================================================
+=== CREATE SCROLLVIEW STRUCTURE ===
+==================================================
+[13:36:48.980] [SCHEDULER] Creating ScrollView structure for SchedulerApp...
+[13:36:48.980] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 3 | Context: SchedulerApp before ScrollView creation
+[13:36:48.982] [SCHEDULER] Viewport configuration:
+[13:36:48.984] [RECTTRANSFORM] RectTransform: Viewport | AnchorMin: (0.00, 0.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 0.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-400.00, width:400.00, height:400.00) | Context: Viewport after configuration
+[13:36:48.986] [SCHEDULER] BEFORE Content anchoring fix:
+[13:36:48.986] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content before fix
+[13:36:48.987] [SCHEDULER] AFTER Content anchoring fix:
+[13:36:48.987] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content after fix
+[13:36:48.988] [SCHEDULER] ScrollView structure created successfully!
+[13:36:48.989] [GAMEOBJECT] GameObject: ScheduleScrollView | Active: True | ActiveSelf: True | Position: (434.00, 260.00, 0.00) | LocalPosition: (92.00, -318.00, 0.00) | Parent: SchedulerApp | Children: 3 | Context: Created ScrollView
+[13:36:48.989] [GAMEOBJECT] GameObject: Viewport | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (-200.00, 200.00, 0.00) | Parent: ScheduleScrollView | Children: 1 | Context: Created Viewport
+[13:36:48.989] [GAMEOBJECT] GameObject: Content | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: Viewport | Children: 0 | Context: Created Content
+[13:36:48.990] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content RectTransform after creation
+[13:36:48.990] [SCHEDULER] scheduleListParent assigned to Content GameObject
+
+==================================================
+=== SCHEDULER APP ON ENABLE ===
+==================================================
+[13:36:48.991] [SCHEDULER] SchedulerApp.OnEnable() called!
+[13:36:48.992] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: SchedulerApp in OnEnable
+[13:36:48.992] [SCHEDULER] scheduleListParent is null: False
+
+==================================================
+=== SCHEDULER APP INITIALIZE ===
+==================================================
+[13:36:49.001] [SCHEDULER] SchedulerApp.Initialize() called!
+[13:36:49.001] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: SchedulerApp in Initialize
+[13:36:49.002] [SCHEDULER] Back button listener added
+
+==================================================
+=== REFRESH SCHEDULE ===
+==================================================
+[13:36:49.003] [SCHEDULER] SchedulerApp.RefreshSchedule() called!
+[13:36:49.003] [SCHEDULER] scheduleListParent is null: False
+[13:36:49.003] [SCHEDULER] scheduleItemPrefab is null: False
+[13:36:49.004] [SCHEDULER] currentTimeText is null: False
+[13:36:49.004] [SCHEDULER] noScheduleText is null: False
+[13:36:49.005] [GAMEOBJECT] GameObject: Content | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: Viewport | Children: 0 | Context: scheduleListParent
+[13:36:49.006] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: scheduleListParent RectTransform
+
+==================================================
+=== POPULATE SCHEDULE LIST ===
+==================================================
+[13:36:49.008] [SCHEDULER] SchedulerApp.PopulateScheduleList() called!
+[13:36:49.009] [SCHEDULER] Found 1 accepted appointments
+[13:36:49.009] [SCHEDULER] Creating 1 schedule items...
+[13:36:49.010] [APPOINTMENT] Appointment: Sarah | Time: 10:00 AM | Location: Tennis Court | Accepted: True | Completed: False | Cash: $44 | EXP: 26
+
+==================================================
+=== CREATE SCHEDULE ITEM: Sarah ===
+==================================================
+[13:36:49.011] [SCHEDULER] CreateScheduleItem called for Sarah
+[13:36:49.011] [SCHEDULER] scheduleItemPrefab is null: False
+[13:36:49.012] [SCHEDULER] scheduleListParent is null: False
+[13:36:49.013] [GAMEOBJECT] GameObject: AppointmentItem(Clone) | Active: True | ActiveSelf: True | Position: (434.00, 310.00, 0.00) | LocalPosition: (200.00, -150.00, 0.00) | Parent: Content | Children: 5 | Context: Created schedule item for Sarah
+[13:36:49.014] [RECTTRANSFORM] RectTransform: AppointmentItem(Clone) | AnchorMin: (0.00, 0.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 0.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.50, 0.50) | Rect: (x:-200.00, y:-150.00, width:400.00, height:300.00) | Context: Schedule item RectTransform
+[13:36:49.014] [GAMEOBJECT] GameObject: AppointmentItem(Clone) | Active: True | ActiveSelf: True | Position: (434.00, 310.00, 0.00) | LocalPosition: (200.00, -150.00, 0.00) | Parent: Content | Children: 5 | Context: Parent level 0
+[13:36:49.015] [GAMEOBJECT] GameObject: Content | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: Viewport | Children: 1 | Context: Parent level 1
+[13:36:49.015] [GAMEOBJECT] GameObject: Viewport | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (-200.00, 200.00, 0.00) | Parent: ScheduleScrollView | Children: 1 | Context: Parent level 2
+[13:36:49.016] [GAMEOBJECT] GameObject: ScheduleScrollView | Active: True | ActiveSelf: True | Position: (434.00, 260.00, 0.00) | LocalPosition: (92.00, -318.00, 0.00) | Parent: SchedulerApp | Children: 3 | Context: Parent level 3
+[13:36:49.016] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: Parent level 4
+
+==================================================
+=== BASIC SCHEDULE ITEM SETUP ===
+==================================================
+[13:36:49.018] [APPOINTMENT] Appointment: Sarah | Time: 10:00 AM | Location: Tennis Court | Accepted: True | Completed: False | Cash: $44 | EXP: 26
+[13:36:49.018] [SCHEDULER] Found 5 TextMeshProUGUI components
+[13:36:49.019] [SCHEDULER] Found 0 Text components
+[13:36:49.019] [SCHEDULER] Using TextMeshProUGUI components
+[13:36:49.020] [SCHEDULER] Set client name: Sarah
+[13:36:49.020] [SCHEDULER] Set time: 10:00 AM
+[13:36:49.020] [SCHEDULER] Set location: Tennis Court
+[13:36:49.020] [SCHEDULER] Set rewards: $44 | 26 EXP
+[13:36:49.022] [SCHEDULER] Used basic setup fallback
+[13:36:49.022] [SKILLS_PERKS] SkillsPerksApp Initialize() called
+[13:36:49.023] [SKILLS_PERKS] ShowMainMenu called - showing header, hiding panels
+[13:36:49.023] [SKILLS_PERKS] SkillsPerksApp Initialize() completed
+
+==================================================
+=== SMARTPHONE UI - OPEN APP: SkillsPerks ===
+==================================================
+[13:36:52.971] [UI_EVENT] OpenApp called with state: SkillsPerks
+[13:36:52.972] [SKILLS_PERKS] PopulateSkillsList called
+[13:36:52.973] [SKILLS_PERKS] GameData found: True
+[13:36:52.973] [SKILLS_PERKS] SkillTree count: 4
+[13:36:52.973] [SKILLS_PERKS] Creating skill item: Forehand
+[13:36:52.974] [SKILL_DATA] Skill: Forehand | Level: 0/5 | CanUpgrade: True | Description: Increases Perfect hit-zone size in mini-game
+[13:36:52.975] [SKILLS_PERKS] CreateSkillItem called for: Forehand
+[13:36:52.975] [SKILLS_PERKS] skillItemPrefab is null: False
+[13:36:52.975] [SKILLS_PERKS] skillsListParent is null: False
+[13:36:52.976] [SKILLS_PERKS] Skill item instantiated: SkillItemPrefab(Clone)
+[13:36:52.976] [GAMEOBJECT] GameObject: SkillItemPrefab(Clone) | Active: False | ActiveSelf: True | Position: (541.04, 133.03, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: SkillsList | Children: 5 | Context: SkillItem created
+[13:36:52.978] [SKILLS_PERKS] Using basic setup for Forehand
+[13:36:52.979] [SKILLS_PERKS] Creating skill item: Friendliness
+[13:36:52.979] [SKILL_DATA] Skill: Friendliness | Level: 0/5 | CanUpgrade: True | Description: Increases Coaching EXP earned from lessons
+[13:36:52.980] [SKILLS_PERKS] CreateSkillItem called for: Friendliness
+[13:36:52.980] [SKILLS_PERKS] skillItemPrefab is null: False
+[13:36:52.980] [SKILLS_PERKS] skillsListParent is null: False
+[13:36:52.981] [SKILLS_PERKS] Skill item instantiated: SkillItemPrefab(Clone)
+[13:36:52.982] [GAMEOBJECT] GameObject: SkillItemPrefab(Clone) | Active: False | ActiveSelf: True | Position: (541.04, 133.03, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: SkillsList | Children: 5 | Context: SkillItem created
+[13:36:52.982] [SKILLS_PERKS] Using basic setup for Friendliness
+[13:36:52.982] [SKILLS_PERKS] Creating skill item: Patience
+[13:36:52.983] [SKILL_DATA] Skill: Patience | Level: 0/3 | CanUpgrade: True | Description: Reduces mini-game difficulty
+[13:36:52.984] [SKILLS_PERKS] CreateSkillItem called for: Patience
+[13:36:52.984] [SKILLS_PERKS] skillItemPrefab is null: False
+[13:36:52.984] [SKILLS_PERKS] skillsListParent is null: False
+[13:36:52.985] [SKILLS_PERKS] Skill item instantiated: SkillItemPrefab(Clone)
+[13:36:52.985] [GAMEOBJECT] GameObject: SkillItemPrefab(Clone) | Active: False | ActiveSelf: True | Position: (541.04, 133.03, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: SkillsList | Children: 5 | Context: SkillItem created
+[13:36:52.986] [SKILLS_PERKS] Using basic setup for Patience
+[13:36:52.986] [SKILLS_PERKS] Creating skill item: Communication
+[13:36:52.986] [SKILL_DATA] Skill: Communication | Level: 0/5 | CanUpgrade: True | Description: Improves lesson success rate
+[13:36:52.988] [SKILLS_PERKS] CreateSkillItem called for: Communication
+[13:36:52.988] [SKILLS_PERKS] skillItemPrefab is null: False
+[13:36:52.988] [SKILLS_PERKS] skillsListParent is null: False
+[13:36:52.989] [SKILLS_PERKS] Skill item instantiated: SkillItemPrefab(Clone)
+[13:36:52.989] [GAMEOBJECT] GameObject: SkillItemPrefab(Clone) | Active: False | ActiveSelf: True | Position: (541.04, 133.03, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: SkillsList | Children: 5 | Context: SkillItem created
+[13:36:52.990] [SKILLS_PERKS] Using basic setup for Communication
+[13:36:54.806] [SKILLS_PERKS] SwitchTab called - showSkills: True
+[13:36:54.809] [SKILLS_PERKS] PopulateSkillsList called
+[13:36:54.809] [SKILLS_PERKS] GameData found: True
+[13:36:54.811] [SKILLS_PERKS] SkillTree count: 4
+[13:36:54.811] [SKILLS_PERKS] Creating skill item: Forehand
+[13:36:54.811] [SKILL_DATA] Skill: Forehand | Level: 0/5 | CanUpgrade: True | Description: Increases Perfect hit-zone size in mini-game
+[13:36:54.812] [SKILLS_PERKS] CreateSkillItem called for: Forehand
+[13:36:54.812] [SKILLS_PERKS] skillItemPrefab is null: False
+[13:36:54.813] [SKILLS_PERKS] skillsListParent is null: False
+[13:36:54.813] [SKILLS_PERKS] Skill item instantiated: SkillItemPrefab(Clone)
+[13:36:54.814] [GAMEOBJECT] GameObject: SkillItemPrefab(Clone) | Active: True | ActiveSelf: True | Position: (541.04, 133.03, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: SkillsList | Children: 5 | Context: SkillItem created
+[13:36:54.814] [SKILLS_PERKS] Using basic setup for Forehand
+[13:36:54.814] [SKILLS_PERKS] Creating skill item: Friendliness
+[13:36:54.815] [SKILL_DATA] Skill: Friendliness | Level: 0/5 | CanUpgrade: True | Description: Increases Coaching EXP earned from lessons
+[13:36:54.815] [SKILLS_PERKS] CreateSkillItem called for: Friendliness
+[13:36:54.816] [SKILLS_PERKS] skillItemPrefab is null: False
+[13:36:54.816] [SKILLS_PERKS] skillsListParent is null: False
+[13:36:54.817] [SKILLS_PERKS] Skill item instantiated: SkillItemPrefab(Clone)
+[13:36:54.817] [GAMEOBJECT] GameObject: SkillItemPrefab(Clone) | Active: True | ActiveSelf: True | Position: (541.04, 133.03, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: SkillsList | Children: 5 | Context: SkillItem created
+[13:36:54.818] [SKILLS_PERKS] Using basic setup for Friendliness
+[13:36:54.818] [SKILLS_PERKS] Creating skill item: Patience
+[13:36:54.818] [SKILL_DATA] Skill: Patience | Level: 0/3 | CanUpgrade: True | Description: Reduces mini-game difficulty
+[13:36:54.819] [SKILLS_PERKS] CreateSkillItem called for: Patience
+[13:36:54.820] [SKILLS_PERKS] skillItemPrefab is null: False
+[13:36:54.820] [SKILLS_PERKS] skillsListParent is null: False
+[13:36:54.820] [SKILLS_PERKS] Skill item instantiated: SkillItemPrefab(Clone)
+[13:36:54.821] [GAMEOBJECT] GameObject: SkillItemPrefab(Clone) | Active: True | ActiveSelf: True | Position: (541.04, 133.03, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: SkillsList | Children: 5 | Context: SkillItem created
+[13:36:54.821] [SKILLS_PERKS] Using basic setup for Patience
+[13:36:54.822] [SKILLS_PERKS] Creating skill item: Communication
+[13:36:54.822] [SKILL_DATA] Skill: Communication | Level: 0/5 | CanUpgrade: True | Description: Improves lesson success rate
+[13:36:54.823] [SKILLS_PERKS] CreateSkillItem called for: Communication
+[13:36:54.823] [SKILLS_PERKS] skillItemPrefab is null: False
+[13:36:54.823] [SKILLS_PERKS] skillsListParent is null: False
+[13:36:54.823] [SKILLS_PERKS] Skill item instantiated: SkillItemPrefab(Clone)
+[13:36:54.825] [GAMEOBJECT] GameObject: SkillItemPrefab(Clone) | Active: True | ActiveSelf: True | Position: (541.04, 133.03, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: SkillsList | Children: 5 | Context: SkillItem created
+[13:36:54.826] [SKILLS_PERKS] Using basic setup for Communication

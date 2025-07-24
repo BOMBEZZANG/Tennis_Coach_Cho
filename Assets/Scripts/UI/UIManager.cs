@@ -22,20 +22,20 @@ namespace TennisCoachCho.UI
         
         public void Initialize()
         {
-            Debug.Log("UIManager.Initialize() called!");
-            Debug.Log($"SmartphoneUI is null: {smartphoneUI == null}");
+            // Debug.Log("UIManager.Initialize() called!");
+            // Debug.Log($"SmartphoneUI is null: {smartphoneUI == null}");
             
             // Initialize all UI components
             mainHUD?.Initialize();
             
             if (smartphoneUI != null)
             {
-                Debug.Log("Calling smartphoneUI.Initialize()");
+                // Debug.Log("Calling smartphoneUI.Initialize()");
                 smartphoneUI.Initialize();
             }
             else
             {
-                Debug.LogError("SmartphoneUI is null! Check UIManager inspector assignments.");
+                // Debug.LogError("SmartphoneUI is null! Check UIManager inspector assignments.");
             }
             
             // Hide panels that should start closed

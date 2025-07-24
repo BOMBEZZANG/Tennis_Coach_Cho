@@ -38,7 +38,7 @@ namespace TennisCoachCho.Core
         
         private void InitializeSystems()
         {
-            Debug.Log("GameManager.InitializeSystems() called!");
+            // Debug.Log("GameManager.InitializeSystems() called!");
             timeSystem?.Initialize();
             progressionManager?.Initialize();
             appointmentManager?.Initialize();

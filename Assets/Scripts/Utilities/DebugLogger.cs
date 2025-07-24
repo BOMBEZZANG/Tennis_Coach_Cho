@@ -76,6 +76,42 @@ namespace TennisCoachCho.Utilities
             Log(message, "UI_EVENT");
         }
         
+        public static void LogSkillsPerks(string message)
+        {
+            Log(message, "SKILLS_PERKS");
+        }
+        
+        public static void LogSkillData(TennisCoachCho.Data.SkillTreeNode skill)
+        {
+            if (skill == null)
+            {
+                Log("SkillTreeNode is NULL!", "SKILL_DATA");
+                return;
+            }
+            
+            string message = $"Skill: {skill.nodeName}";
+            message += $" | Level: {skill.level}/{skill.maxLevel}";
+            message += $" | CanUpgrade: {skill.CanUpgrade()}";
+            message += $" | Description: {skill.description}";
+            
+            Log(message, "SKILL_DATA");
+        }
+        
+        public static void LogPerkData(TennisCoachCho.Data.PerkData perk)
+        {
+            if (perk == null)
+            {
+                Log("PerkData is NULL!", "PERK_DATA");
+                return;
+            }
+            
+            string message = $"Perk: {perk.perkName}";
+            message += $" | Unlocked: {perk.isUnlocked}";
+            message += $" | Description: {perk.description}";
+            
+            Log(message, "PERK_DATA");
+        }
+        
         public static void LogGameObject(GameObject obj, string context = "")
         {
             if (obj == null)
