@@ -1,82 +1,47 @@
-using System;
-using System.IO;
 using UnityEngine;
 
 namespace TennisCoachCho.Utilities
 {
     public static class DebugLogger
     {
-        private static string logFilePath;
-        private static bool isInitialized = false;
-        
-        static DebugLogger()
-        {
-            InitializeLogger();
-        }
-        
-        private static void InitializeLogger()
-        {
-            if (isInitialized) return;
-            
-            string logsDirectory = Path.Combine(Application.dataPath, "..", "DebugLogs");
-            if (!Directory.Exists(logsDirectory))
-            {
-                Directory.CreateDirectory(logsDirectory);
-            }
-            
-            string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-            logFilePath = Path.Combine(logsDirectory, $"SchedulerApp_Debug_{timestamp}.txt");
-            
-            WriteToFile($"=== SchedulerApp Debug Log Started ===");
-            WriteToFile($"Time: {DateTime.Now}");
-            WriteToFile($"Unity Version: {Application.unityVersion}");
-            WriteToFile($"Platform: {Application.platform}");
-            WriteToFile($"======================================\n");
-            
-            isInitialized = true;
-            
-            Debug.Log($"DebugLogger initialized. Log file: {logFilePath}");
-        }
+        // DebugLogger now only outputs to Unity console
+        // UniversalConsoleLogger will capture and save all console messages
         
         public static void Log(string message, string category = "INFO")
         {
-            string timestamp = DateTime.Now.ToString("HH:mm:ss.fff");
-            string formattedMessage = $"[{timestamp}] [{category}] {message}";
-            
-            Debug.Log(formattedMessage);
-            WriteToFile(formattedMessage);
+            Debug.Log($"[{category}] {message}");
         }
         
         public static void LogError(string message)
         {
-            Log(message, "ERROR");
+            Debug.LogError($"[ERROR] {message}");
         }
         
         public static void LogWarning(string message)
         {
-            Log(message, "WARNING");
+            Debug.LogWarning($"[WARNING] {message}");
         }
         
         public static void LogSchedulerApp(string message)
         {
-            Log(message, "SCHEDULER");
+            Debug.Log($"[SCHEDULER] {message}");
         }
         
         public static void LogUIEvent(string message)
         {
-            Log(message, "UI_EVENT");
+            Debug.Log($"[UI_EVENT] {message}");
         }
         
         public static void LogSkillsPerks(string message)
         {
-            Log(message, "SKILLS_PERKS");
+            Debug.Log($"[SKILLS_PERKS] {message}");
         }
         
         public static void LogSkillData(TennisCoachCho.Data.SkillTreeNode skill)
         {
             if (skill == null)
             {
-                Log("SkillTreeNode is NULL!", "SKILL_DATA");
+                Debug.Log("[SKILL_DATA] SkillTreeNode is NULL!");
                 return;
             }
             
@@ -85,14 +50,14 @@ namespace TennisCoachCho.Utilities
             message += $" | CanUpgrade: {skill.CanUpgrade()}";
             message += $" | Description: {skill.description}";
             
-            Log(message, "SKILL_DATA");
+            Debug.Log($"[SKILL_DATA] {message}");
         }
         
         public static void LogPerkData(TennisCoachCho.Data.PerkData perk)
         {
             if (perk == null)
             {
-                Log("PerkData is NULL!", "PERK_DATA");
+                Debug.Log("[PERK_DATA] PerkData is NULL!");
                 return;
             }
             
@@ -100,14 +65,14 @@ namespace TennisCoachCho.Utilities
             message += $" | Unlocked: {perk.isUnlocked}";
             message += $" | Description: {perk.description}";
             
-            Log(message, "PERK_DATA");
+            Debug.Log($"[PERK_DATA] {message}");
         }
         
         public static void LogGameObject(GameObject obj, string context = "")
         {
             if (obj == null)
             {
-                Log($"GameObject is NULL! Context: {context}", "GAMEOBJECT");
+                Debug.Log($"[GAMEOBJECT] GameObject is NULL! Context: {context}");
                 return;
             }
             
@@ -122,14 +87,14 @@ namespace TennisCoachCho.Utilities
             if (!string.IsNullOrEmpty(context))
                 message += $" | Context: {context}";
             
-            Log(message, "GAMEOBJECT");
+            Debug.Log($"[GAMEOBJECT] {message}");
         }
         
         public static void LogRectTransform(RectTransform rectTransform, string context = "")
         {
             if (rectTransform == null)
             {
-                Log($"RectTransform is NULL! Context: {context}", "RECTTRANSFORM");
+                Debug.Log($"[RECTTRANSFORM] RectTransform is NULL! Context: {context}");
                 return;
             }
             
@@ -144,14 +109,14 @@ namespace TennisCoachCho.Utilities
             if (!string.IsNullOrEmpty(context))
                 message += $" | Context: {context}";
             
-            Log(message, "RECTTRANSFORM");
+            Debug.Log($"[RECTTRANSFORM] {message}");
         }
         
         public static void LogAppointmentData(TennisCoachCho.Data.AppointmentData appointment)
         {
             if (appointment == null)
             {
-                Log("AppointmentData is NULL!", "APPOINTMENT");
+                Debug.Log("[APPOINTMENT] AppointmentData is NULL!");
                 return;
             }
             
@@ -163,7 +128,7 @@ namespace TennisCoachCho.Utilities
             message += $" | Cash: ${appointment.cashReward}";
             message += $" | EXP: {appointment.expReward}";
             
-            Log(message, "APPOINTMENT");
+            Debug.Log($"[APPOINTMENT] {message}");
         }
         
         public static void LogSeparator(string title = "")
@@ -171,43 +136,14 @@ namespace TennisCoachCho.Utilities
             string separator = new string('=', 50);
             if (!string.IsNullOrEmpty(title))
             {
-                WriteToFile($"\n{separator}");
-                WriteToFile($"=== {title} ===");
-                WriteToFile($"{separator}");
+                Debug.Log($"\n{separator}");
+                Debug.Log($"=== {title} ===");
+                Debug.Log($"{separator}");
             }
             else
             {
-                WriteToFile($"\n{separator}");
+                Debug.Log($"\n{separator}");
             }
-        }
-        
-        private static void WriteToFile(string message)
-        {
-            try
-            {
-                using (StreamWriter writer = new StreamWriter(logFilePath, true))
-                {
-                    writer.WriteLine(message);
-                    writer.Flush();
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Failed to write to debug log file: {e.Message}");
-            }
-        }
-        
-        public static void FlushAndClose()
-        {
-            WriteToFile($"\n=== Debug Log Session Ended ===");
-            WriteToFile($"Time: {DateTime.Now}");
-            WriteToFile($"=====================================");
-        }
-        
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void OnApplicationQuit()
-        {
-            FlushAndClose();
         }
     }
 }

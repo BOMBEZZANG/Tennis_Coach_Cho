@@ -28,10 +28,12 @@ namespace TennisCoachCho.Core
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+                Debug.Log("[GameManager] GameManager instance created and set to DontDestroyOnLoad");
                 InitializeSystems();
             }
             else
             {
+                Debug.LogWarning($"[GameManager] Duplicate GameManager found! Destroying {gameObject.name}");
                 Destroy(gameObject);
             }
         }

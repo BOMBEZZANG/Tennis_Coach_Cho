@@ -9,8 +9,49 @@ namespace TennisCoachCho.World
         [SerializeField] private string locationName;
         [SerializeField] private bool canStartLessons = false;
         
+        [Header("Debug Info")]
+        [SerializeField] private bool debugMode = true;
+        
         public string LocationName => locationName;
         public bool CanStartLessons => canStartLessons;
+        
+        private BoxCollider2D boxCollider;
+        
+        private void Awake()
+        {
+            boxCollider = GetComponent<BoxCollider2D>();
+            if (boxCollider == null)
+            {
+                Debug.LogError($"[LocationTrigger] No BoxCollider2D found on {gameObject.name}!");
+                return;
+            }
+            
+            EnsureTriggerEnabled();
+        }
+        
+        private void Start()
+        {
+            EnsureTriggerEnabled();
+        }
+        
+        private void Update()
+        {
+            // Continuously ensure trigger stays enabled (for debugging)
+            if (debugMode)
+            {
+                EnsureTriggerEnabled();
+            }
+        }
+        
+        private void EnsureTriggerEnabled()
+        {
+            if (boxCollider != null && !boxCollider.isTrigger)
+            {
+                Debug.LogWarning($"[LocationTrigger] ⚠️ BoxCollider2D on {gameObject.name} was not a trigger! Fixing...");
+                boxCollider.isTrigger = true;
+                Debug.Log($"[LocationTrigger] ✅ BoxCollider2D.isTrigger set to true on {gameObject.name}");
+            }
+        }
         
         public void OnPlayerEnter()
         {

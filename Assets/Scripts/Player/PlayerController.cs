@@ -111,35 +111,61 @@ namespace TennisCoachCho.Player
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log($"[PlayerController] OnTriggerEnter2D - Collided with: {other.name}, Tag: {other.tag}");
+            Debug.Log($"[PlayerController] OnTriggerEnter2D - Collided with: {other.name}, Tag: '{other.tag}'");
+            Debug.Log($"[PlayerController] GameObject path: {GetGameObjectPath(other.gameObject)}");
+            Debug.Log($"[PlayerController] Collider bounds: {other.bounds}");
+            Debug.Log($"[PlayerController] Is Trigger: {other.isTrigger}");
+            
+            // List all components on the collided object for debugging
+            var components = other.GetComponents<Component>();
+            Debug.Log($"[PlayerController] Components on {other.name}: {string.Join(", ", System.Array.ConvertAll(components, c => c.GetType().Name))}");
             
             if (other.CompareTag("Location"))
             {
-                Debug.Log($"[PlayerController] Found Location tag on: {other.name}");
+                Debug.Log($"[PlayerController] ✅ Found Location tag on: {other.name}");
                 LocationTrigger location = other.GetComponent<LocationTrigger>();
                 if (location != null)
                 {
-                    Debug.Log($"[PlayerController] LocationTrigger found on: {other.name}, calling OnPlayerEnter()");
+                    Debug.Log($"[PlayerController] ✅ LocationTrigger found on: {other.name}");
+                    Debug.Log($"[PlayerController] LocationTrigger settings - Name: '{location.LocationName}', CanStart: {location.CanStartLessons}");
+                    Debug.Log($"[PlayerController] Calling OnPlayerEnter()...");
                     location.OnPlayerEnter();
                 }
                 else
                 {
-                    Debug.LogWarning($"[PlayerController] No LocationTrigger script found on: {other.name}");
+                    Debug.LogError($"[PlayerController] ❌ No LocationTrigger script found on: {other.name}");
                 }
             }
             else
             {
-                Debug.Log($"[PlayerController] Object {other.name} does not have 'Location' tag. Current tag: '{other.tag}'");
+                Debug.LogWarning($"[PlayerController] ❌ Object {other.name} does not have 'Location' tag. Current tag: '{other.tag}'");
                 
                 // Try to find LocationTrigger anyway for debugging
                 LocationTrigger location = other.GetComponent<LocationTrigger>();
                 if (location != null)
                 {
-                    Debug.LogWarning($"[PlayerController] Found LocationTrigger on {other.name} but tag is '{other.tag}' instead of 'Location'");
+                    Debug.LogWarning($"[PlayerController] ⚠️ Found LocationTrigger on {other.name} but tag is '{other.tag}' instead of 'Location'");
+                    Debug.LogWarning($"[PlayerController] FIX: Change the tag to 'Location' on {other.name}");
                     // Call it anyway for testing
                     location.OnPlayerEnter();
                 }
+                else
+                {
+                    Debug.Log($"[PlayerController] No LocationTrigger script found on {other.name} (this is normal for non-location objects)");
+                }
             }
+        }
+        
+        private string GetGameObjectPath(GameObject obj)
+        {
+            string path = obj.name;
+            Transform parent = obj.transform.parent;
+            while (parent != null)
+            {
+                path = parent.name + "/" + path;
+                parent = parent.parent;
+            }
+            return path;
         }
         
         private void OnTriggerExit2D(Collider2D other)

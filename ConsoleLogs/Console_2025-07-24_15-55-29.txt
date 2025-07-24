@@ -1,0 +1,13 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 3:55:29 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[15:55:29.152] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[15:55:29.152] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_15-55-29.txt
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 3:55:43 PM
+===================================

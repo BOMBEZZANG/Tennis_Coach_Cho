@@ -1,0 +1,91 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 4:36:16 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[16:36:16.479] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[16:36:16.481] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_16-36-16.txt
+[16:36:16.659] [SYSTEM] Application resumed
+[16:36:16.660] [SYSTEM] Application gained focus
+[16:36:20.369] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[16:36:20.371] [LOG] [PlayerController] GameObject path: TennisCourtA/LocatioNtrigger
+[16:36:20.372] [LOG] [PlayerController] Collider bounds: Center: (-3.00, -4.00, 0.00), Extents: (3.00, 3.00, 0.00)
+[16:36:20.373] [LOG] [PlayerController] Is Trigger: True
+[16:36:20.374] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[16:36:20.375] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[16:36:20.375] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[16:36:20.375] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[16:36:20.376] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[16:36:20.376] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[16:36:20.376] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[16:36:20.377] [LOG] [LocationTrigger] UIManager is null: False
+[16:36:20.377] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[16:36:20.378] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[16:36:20.378] [LOG] [UIManager] locationPrompt is null: False
+[16:36:20.379] [LOG] [UIManager] Calling locationPrompt.Show()
+[16:36:20.380] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[16:36:20.381] [LOG] [LocationPrompt] GameObject active before: False
+[16:36:20.382] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[16:36:20.382] [LOG] [LocationPrompt] Set startLessonButton active: True
+[16:36:20.383] [LOG] [LocationPrompt] Has appointment here: False
+[16:36:20.384] [LOG] [LocationPrompt] About to call SetActive(true)...
+[16:36:20.384] [LOG] [LocationPrompt] Awake() called - setting up buttons
+[16:36:20.387] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[16:36:20.387] [LOG] [LocationPrompt] GameObject active after: True
+[16:36:20.387] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[16:36:20.387] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[16:36:20.389] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[16:36:20.389] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[16:36:20.390] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[16:36:20.390] [LOG] [LocationPrompt] Start() called - hiding LocationPrompt
+[16:36:20.391] [LOG] [LocationPrompt] isActivatedByShow: True
+[16:36:20.391] [LOG] [LocationPrompt] Start() called during gameplay - NOT hiding (activated by Show() method)
+[16:36:20.394] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[16:36:20.395] [LOG] [LocationPrompt] activeSelf: True
+[16:36:20.395] [LOG] [LocationPrompt] activeInHierarchy: True
+[16:36:22.010] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[16:36:22.011] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[16:36:22.011] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[16:36:22.011] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[16:36:22.012] [LOG] [UIManager] HideLocationPrompt called
+[16:36:22.013] [LOG] [UIManager] Calling locationPrompt.Hide()
+[16:36:22.014] [LOG] [LocationPrompt] Hide called
+[16:36:22.014] [LOG] [LocationPrompt] GameObject active before hide: True
+[16:36:22.014] [LOG] [LocationPrompt] LocationPrompt hidden
+[16:36:23.030] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[16:36:23.031] [LOG] [PlayerController] GameObject path: TennisCourtA/LocatioNtrigger
+[16:36:23.031] [LOG] [PlayerController] Collider bounds: Center: (-3.00, -4.00, 0.00), Extents: (3.00, 3.00, 0.00)
+[16:36:23.031] [LOG] [PlayerController] Is Trigger: True
+[16:36:23.032] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[16:36:23.033] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[16:36:23.033] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[16:36:23.033] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[16:36:23.033] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[16:36:23.034] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[16:36:23.034] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[16:36:23.034] [LOG] [LocationTrigger] UIManager is null: False
+[16:36:23.034] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[16:36:23.036] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[16:36:23.036] [LOG] [UIManager] locationPrompt is null: False
+[16:36:23.036] [LOG] [UIManager] Calling locationPrompt.Show()
+[16:36:23.037] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[16:36:23.037] [LOG] [LocationPrompt] GameObject active before: False
+[16:36:23.037] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[16:36:23.038] [LOG] [LocationPrompt] Set startLessonButton active: True
+[16:36:23.038] [LOG] [LocationPrompt] Has appointment here: False
+[16:36:23.038] [LOG] [LocationPrompt] About to call SetActive(true)...
+[16:36:23.038] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[16:36:23.040] [LOG] [LocationPrompt] GameObject active after: True
+[16:36:23.040] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[16:36:23.040] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[16:36:23.041] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[16:36:23.042] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[16:36:23.042] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[16:36:23.044] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[16:36:23.045] [LOG] [LocationPrompt] activeSelf: True
+[16:36:23.046] [LOG] [LocationPrompt] activeInHierarchy: True
+[16:36:29.209] [SYSTEM] Application lost focus
+
+[16:36:29.213] [SYSTEM] Application paused

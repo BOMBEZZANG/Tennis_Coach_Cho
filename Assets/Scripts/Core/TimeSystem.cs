@@ -123,5 +123,31 @@ namespace TennisCoachCho.Core
             currentTime.minute = Mathf.Clamp(minute, 0, 59);
             OnTimeChanged?.Invoke(currentTime);
         }
+        
+        public void SetDay(int day)
+        {
+            currentTime.day = Mathf.Max(1, day);
+            OnTimeChanged?.Invoke(currentTime);
+        }
+        
+        public void AdvanceTime(int hours, int minutes)
+        {
+            AddMinutes(minutes + (hours * 60));
+        }
+        
+        public void NextDay()
+        {
+            currentTime.day++;
+            currentTime.hour = startHour;
+            currentTime.minute = startMinute;
+            OnNewDay?.Invoke(currentTime.day);
+            OnTimeChanged?.Invoke(currentTime);
+        }
+        
+        public void SetTimeScale(float newRealTimeToGameTime)
+        {
+            realTimeToGameTime = newRealTimeToGameTime;
+            CalculateTimeScale();
+        }
     }
 }

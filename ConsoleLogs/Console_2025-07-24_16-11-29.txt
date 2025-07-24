@@ -1,0 +1,46 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 4:11:29 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[16:11:29.647] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[16:11:29.648] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_16-11-29.txt
+[16:11:29.820] [SYSTEM] Application resumed
+[16:11:29.821] [SYSTEM] Application gained focus
+[16:11:32.069] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: TriggerZone, Tag: 'Location'
+[16:11:32.073] [LOG] [PlayerController] GameObject path: TennisCourtA/TriggerZone
+[16:11:32.074] [LOG] [PlayerController] Collider bounds: Center: (-6.00, -2.00, 0.00), Extents: (3.00, 3.00, 0.00)
+[16:11:32.074] [LOG] [PlayerController] Is Trigger: True
+[16:11:32.075] [LOG] [PlayerController] Components on TriggerZone: Transform, LocationTrigger, BoxCollider2D
+[16:11:32.076] [LOG] [PlayerController] ✅ Found Location tag on: TriggerZone
+[16:11:32.076] [LOG] [PlayerController] ✅ LocationTrigger found on: TriggerZone
+[16:11:32.077] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[16:11:32.078] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[16:11:32.078] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[16:11:32.078] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[16:11:32.078] [LOG] [LocationTrigger] UIManager is null: False
+[16:11:32.079] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[16:11:32.079] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[16:11:32.080] [LOG] [UIManager] locationPrompt is null: False
+[16:11:32.080] [LOG] [UIManager] Calling locationPrompt.Show()
+[16:11:32.082] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[16:11:32.082] [LOG] [LocationPrompt] GameObject active before: False
+[16:11:32.082] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[16:11:32.083] [LOG] [LocationPrompt] Set startLessonButton active: True
+[16:11:32.084] [LOG] [LocationPrompt] Has appointment here: False
+[16:11:32.085] [LOG] [LocationPrompt] About to call SetActive(true)...
+[16:11:32.087] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[16:11:32.088] [LOG] [LocationPrompt] GameObject active after: True
+[16:11:32.088] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[16:11:32.088] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[16:11:32.089] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[16:11:32.089] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[16:11:32.089] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[16:11:32.091] [LOG] [LocationPrompt] Start() called - setting up buttons and hiding
+[16:11:42.021] [SYSTEM] Application lost focus
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 4:11:46 PM
+===================================

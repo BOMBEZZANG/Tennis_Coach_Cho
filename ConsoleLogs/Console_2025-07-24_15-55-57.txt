@@ -1,0 +1,156 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 3:55:57 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[15:55:57.789] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[15:55:57.792] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_15-55-57.txt
+[15:55:57.792] [LOG] 
+==================================================
+[15:55:57.793] [LOG] === SCHEDULER APP AWAKE ===
+[15:55:57.794] [LOG] ==================================================
+[15:55:57.796] [LOG] [SCHEDULER] SchedulerApp.Awake() called!
+[15:55:57.797] [LOG] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 3 | Context: SchedulerApp in Awake
+[15:55:57.798] [LOG] [SCHEDULER] scheduleListParent is null: True
+[15:55:57.799] [LOG] 
+==================================================
+[15:55:57.800] [LOG] === CREATE SCROLLVIEW STRUCTURE ===
+[15:55:57.800] [LOG] ==================================================
+[15:55:57.801] [LOG] [SCHEDULER] Creating ScrollView structure for SchedulerApp...
+[15:55:57.802] [LOG] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 3 | Context: SchedulerApp before ScrollView creation
+[15:55:57.804] [LOG] [SCHEDULER] Viewport configuration:
+[15:55:57.807] [LOG] [RECTTRANSFORM] RectTransform: Viewport | AnchorMin: (0.00, 0.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 0.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-400.00, width:400.00, height:400.00) | Context: Viewport after configuration
+[15:55:57.808] [LOG] [SCHEDULER] BEFORE Content anchoring fix:
+[15:55:57.808] [LOG] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content before fix
+[15:55:57.809] [LOG] [SCHEDULER] AFTER Content anchoring fix:
+[15:55:57.809] [LOG] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content after fix
+[15:55:57.812] [LOG] [SCHEDULER] ScrollView structure created successfully!
+[15:55:57.812] [LOG] [GAMEOBJECT] GameObject: ScheduleScrollView | Active: True | ActiveSelf: True | Position: (434.00, 260.00, 0.00) | LocalPosition: (92.00, -318.00, 0.00) | Parent: SchedulerApp | Children: 3 | Context: Created ScrollView
+[15:55:57.813] [LOG] [GAMEOBJECT] GameObject: Viewport | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (-200.00, 200.00, 0.00) | Parent: ScheduleScrollView | Children: 1 | Context: Created Viewport
+[15:55:57.813] [LOG] [GAMEOBJECT] GameObject: Content | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: Viewport | Children: 0 | Context: Created Content
+[15:55:57.813] [LOG] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: Content RectTransform after creation
+[15:55:57.814] [LOG] [SCHEDULER] scheduleListParent assigned to Content GameObject
+[15:55:57.814] [LOG] 
+==================================================
+[15:55:57.815] [LOG] === SCHEDULER APP ON ENABLE ===
+[15:55:57.815] [LOG] ==================================================
+[15:55:57.816] [LOG] [SCHEDULER] SchedulerApp.OnEnable() called!
+[15:55:57.816] [LOG] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: SchedulerApp in OnEnable
+[15:55:57.816] [LOG] [SCHEDULER] scheduleListParent is null: False
+[15:55:57.817] [LOG] [GameManager] GameManager instance created and set to DontDestroyOnLoad
+[15:55:57.825] [LOG] 
+==================================================
+[15:55:57.825] [LOG] === SCHEDULER APP INITIALIZE ===
+[15:55:57.826] [LOG] ==================================================
+[15:55:57.827] [LOG] [SCHEDULER] SchedulerApp.Initialize() called!
+[15:55:57.827] [LOG] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: SchedulerApp in Initialize
+[15:55:57.828] [LOG] [SCHEDULER] Back button listener added
+[15:55:57.828] [LOG] 
+==================================================
+[15:55:57.829] [LOG] === REFRESH SCHEDULE ===
+[15:55:57.829] [LOG] ==================================================
+[15:55:57.829] [LOG] [SCHEDULER] SchedulerApp.RefreshSchedule() called!
+[15:55:57.829] [LOG] [SCHEDULER] scheduleListParent is null: False
+[15:55:57.831] [LOG] [SCHEDULER] scheduleItemPrefab is null: False
+[15:55:57.831] [LOG] [SCHEDULER] currentTimeText is null: False
+[15:55:57.831] [LOG] [SCHEDULER] noScheduleText is null: False
+[15:55:57.832] [LOG] [GAMEOBJECT] GameObject: Content | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: Viewport | Children: 0 | Context: scheduleListParent
+[15:55:57.832] [LOG] [RECTTRANSFORM] RectTransform: Content | AnchorMin: (0.00, 1.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 300.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.00, 1.00) | Rect: (x:0.00, y:-300.00, width:400.00, height:300.00) | Context: scheduleListParent RectTransform
+[15:55:57.833] [LOG] 
+==================================================
+[15:55:57.834] [LOG] === POPULATE SCHEDULE LIST ===
+[15:55:57.834] [LOG] ==================================================
+[15:55:57.835] [LOG] [SCHEDULER] SchedulerApp.PopulateScheduleList() called!
+[15:55:57.835] [LOG] [SCHEDULER] Found 2 accepted appointments
+[15:55:57.836] [LOG] [SCHEDULER] Creating 2 schedule items...
+[15:55:57.837] [LOG] [APPOINTMENT] Appointment: Sarah | Time: 10:00 AM | Location: Tennis Court | Accepted: True | Completed: False | Cash: $44 | EXP: 26
+[15:55:57.837] [LOG] 
+==================================================
+[15:55:57.837] [LOG] === CREATE SCHEDULE ITEM: Sarah ===
+[15:55:57.838] [LOG] ==================================================
+[15:55:57.838] [LOG] [SCHEDULER] CreateScheduleItem called for Sarah
+[15:55:57.839] [LOG] [SCHEDULER] scheduleItemPrefab is null: False
+[15:55:57.839] [LOG] [SCHEDULER] scheduleListParent is null: False
+[15:55:57.840] [LOG] [GAMEOBJECT] GameObject: AppointmentItem(Clone) | Active: True | ActiveSelf: True | Position: (434.00, 310.00, 0.00) | LocalPosition: (200.00, -150.00, 0.00) | Parent: Content | Children: 5 | Context: Created schedule item for Sarah
+[15:55:57.841] [LOG] [RECTTRANSFORM] RectTransform: AppointmentItem(Clone) | AnchorMin: (0.00, 0.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 0.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.50, 0.50) | Rect: (x:-200.00, y:-150.00, width:400.00, height:300.00) | Context: Schedule item RectTransform
+[15:55:57.841] [LOG] [GAMEOBJECT] GameObject: AppointmentItem(Clone) | Active: True | ActiveSelf: True | Position: (434.00, 310.00, 0.00) | LocalPosition: (200.00, -150.00, 0.00) | Parent: Content | Children: 5 | Context: Parent level 0
+[15:55:57.841] [LOG] [GAMEOBJECT] GameObject: Content | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: Viewport | Children: 1 | Context: Parent level 1
+[15:55:57.842] [LOG] [GAMEOBJECT] GameObject: Viewport | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (-200.00, 200.00, 0.00) | Parent: ScheduleScrollView | Children: 1 | Context: Parent level 2
+[15:55:57.842] [LOG] [GAMEOBJECT] GameObject: ScheduleScrollView | Active: True | ActiveSelf: True | Position: (434.00, 260.00, 0.00) | LocalPosition: (92.00, -318.00, 0.00) | Parent: SchedulerApp | Children: 3 | Context: Parent level 3
+[15:55:57.843] [LOG] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: Parent level 4
+[15:55:57.844] [LOG] 
+==================================================
+[15:55:57.844] [LOG] === BASIC SCHEDULE ITEM SETUP ===
+[15:55:57.845] [LOG] ==================================================
+[15:55:57.845] [LOG] [APPOINTMENT] Appointment: Sarah | Time: 10:00 AM | Location: Tennis Court | Accepted: True | Completed: False | Cash: $44 | EXP: 26
+[15:55:57.846] [LOG] [SCHEDULER] Found 5 TextMeshProUGUI components
+[15:55:57.846] [LOG] [SCHEDULER] Found 0 Text components
+[15:55:57.846] [LOG] [SCHEDULER] Using TextMeshProUGUI components
+[15:55:57.847] [LOG] [SCHEDULER] Set client name: Sarah
+[15:55:57.848] [LOG] [SCHEDULER] Set time: 10:00 AM
+[15:55:57.848] [LOG] [SCHEDULER] Set location: Tennis Court
+[15:55:57.848] [LOG] [SCHEDULER] Set rewards: $44 | 26 EXP
+[15:55:57.848] [LOG] [SCHEDULER] Used basic setup fallback
+[15:55:57.850] [LOG] [APPOINTMENT] Appointment: Sarah | Time: 05:00 PM | Location: Tennis Court | Accepted: True | Completed: False | Cash: $29 | EXP: 19
+[15:55:57.850] [LOG] 
+==================================================
+[15:55:57.851] [LOG] === CREATE SCHEDULE ITEM: Sarah ===
+[15:55:57.851] [LOG] ==================================================
+[15:55:57.851] [LOG] [SCHEDULER] CreateScheduleItem called for Sarah
+[15:55:57.852] [LOG] [SCHEDULER] scheduleItemPrefab is null: False
+[15:55:57.852] [LOG] [SCHEDULER] scheduleListParent is null: False
+[15:55:57.853] [LOG] [GAMEOBJECT] GameObject: AppointmentItem(Clone) | Active: True | ActiveSelf: True | Position: (434.00, 310.00, 0.00) | LocalPosition: (200.00, -150.00, 0.00) | Parent: Content | Children: 5 | Context: Created schedule item for Sarah
+[15:55:57.854] [LOG] [RECTTRANSFORM] RectTransform: AppointmentItem(Clone) | AnchorMin: (0.00, 0.00) | AnchorMax: (1.00, 1.00) | SizeDelta: (0.00, 0.00) | AnchoredPosition: (0.00, 0.00) | Pivot: (0.50, 0.50) | Rect: (x:-200.00, y:-150.00, width:400.00, height:300.00) | Context: Schedule item RectTransform
+[15:55:57.854] [LOG] [GAMEOBJECT] GameObject: AppointmentItem(Clone) | Active: True | ActiveSelf: True | Position: (434.00, 310.00, 0.00) | LocalPosition: (200.00, -150.00, 0.00) | Parent: Content | Children: 5 | Context: Parent level 0
+[15:55:57.854] [LOG] [GAMEOBJECT] GameObject: Content | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (0.00, 0.00, 0.00) | Parent: Viewport | Children: 2 | Context: Parent level 1
+[15:55:57.855] [LOG] [GAMEOBJECT] GameObject: Viewport | Active: True | ActiveSelf: True | Position: (234.00, 460.00, 0.00) | LocalPosition: (-200.00, 200.00, 0.00) | Parent: ScheduleScrollView | Children: 1 | Context: Parent level 2
+[15:55:57.855] [LOG] [GAMEOBJECT] GameObject: ScheduleScrollView | Active: True | ActiveSelf: True | Position: (434.00, 260.00, 0.00) | LocalPosition: (92.00, -318.00, 0.00) | Parent: SchedulerApp | Children: 3 | Context: Parent level 3
+[15:55:57.856] [LOG] [GAMEOBJECT] GameObject: SchedulerApp | Active: True | ActiveSelf: True | Position: (342.00, 578.00, 0.00) | LocalPosition: (-300.00, 397.50, 0.00) | Parent: SmartphoneUI | Children: 4 | Context: Parent level 4
+[15:55:57.857] [LOG] 
+==================================================
+[15:55:57.857] [LOG] === BASIC SCHEDULE ITEM SETUP ===
+[15:55:57.858] [LOG] ==================================================
+[15:55:57.858] [LOG] [APPOINTMENT] Appointment: Sarah | Time: 05:00 PM | Location: Tennis Court | Accepted: True | Completed: False | Cash: $29 | EXP: 19
+[15:55:57.859] [LOG] [SCHEDULER] Found 5 TextMeshProUGUI components
+[15:55:57.859] [LOG] [SCHEDULER] Found 0 Text components
+[15:55:57.860] [LOG] [SCHEDULER] Using TextMeshProUGUI components
+[15:55:57.860] [LOG] [SCHEDULER] Set client name: Sarah
+[15:55:57.860] [LOG] [SCHEDULER] Set time: 05:00 PM
+[15:55:57.860] [LOG] [SCHEDULER] Set location: Tennis Court
+[15:55:57.861] [LOG] [SCHEDULER] Set rewards: $29 | 19 EXP
+[15:55:57.862] [LOG] [SCHEDULER] Used basic setup fallback
+[15:55:57.862] [LOG] [SKILLS_PERKS] SkillsPerksApp Initialize() called
+[15:55:57.863] [LOG] [SKILLS_PERKS] ShowMainMenu called - showing header, hiding panels
+[15:55:57.864] [LOG] [SKILLS_PERKS] SkillsPerksApp Initialize() completed
+[15:55:58.054] [SYSTEM] Application resumed
+[15:55:58.054] [SYSTEM] Application gained focus
+[15:56:00.712] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: TriggerZone, Tag: 'Location'
+[15:56:00.713] [LOG] [PlayerController] GameObject path: TennisCourtA/TriggerZone
+[15:56:00.714] [LOG] [PlayerController] Collider bounds: Center: (-6.00, -2.00, 0.00), Extents: (3.00, 3.00, 0.00)
+[15:56:00.715] [LOG] [PlayerController] Is Trigger: True
+[15:56:00.715] [LOG] [PlayerController] Components on TriggerZone: Transform, LocationTrigger, BoxCollider2D
+[15:56:00.717] [LOG] [PlayerController] ✅ Found Location tag on: TriggerZone
+[15:56:00.717] [LOG] [PlayerController] ✅ LocationTrigger found on: TriggerZone
+[15:56:00.717] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[15:56:00.717] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[15:56:00.718] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[15:56:00.718] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[15:56:00.718] [LOG] [LocationTrigger] UIManager is null: False
+[15:56:00.720] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[15:56:00.720] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[15:56:00.721] [LOG] [UIManager] locationPrompt is null: False
+[15:56:00.721] [LOG] [UIManager] Calling locationPrompt.Show()
+[15:56:00.722] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[15:56:00.722] [LOG] [LocationPrompt] GameObject active before: False
+[15:56:00.722] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[15:56:00.723] [LOG] [LocationPrompt] Set startLessonButton active: True
+[15:56:00.724] [LOG] [LocationPrompt] Has appointment here: False
+[15:56:00.725] [LOG] [LocationPrompt] GameObject active after: False
+[15:56:00.725] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[15:56:04.150] [SYSTEM] Application lost focus
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 3:56:04 PM
+===================================

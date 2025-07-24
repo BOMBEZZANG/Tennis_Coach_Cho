@@ -1,0 +1,61 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 4:20:04 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[16:20:04.776] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[16:20:04.777] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_16-20-04.txt
+[16:20:04.962] [SYSTEM] Application resumed
+[16:20:04.963] [SYSTEM] Application gained focus
+[16:20:07.088] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: TriggerZone, Tag: 'Location'
+[16:20:07.091] [LOG] [PlayerController] GameObject path: TennisCourtA/TriggerZone
+[16:20:07.091] [LOG] [PlayerController] Collider bounds: Center: (-6.00, -2.00, 0.00), Extents: (3.00, 3.00, 0.00)
+[16:20:07.092] [LOG] [PlayerController] Is Trigger: True
+[16:20:07.092] [LOG] [PlayerController] Components on TriggerZone: Transform, LocationTrigger, BoxCollider2D
+[16:20:07.093] [LOG] [PlayerController] ✅ Found Location tag on: TriggerZone
+[16:20:07.093] [LOG] [PlayerController] ✅ LocationTrigger found on: TriggerZone
+[16:20:07.093] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[16:20:07.093] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[16:20:07.095] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[16:20:07.095] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[16:20:07.096] [LOG] [LocationTrigger] UIManager is null: False
+[16:20:07.096] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[16:20:07.096] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[16:20:07.098] [LOG] [UIManager] locationPrompt is null: False
+[16:20:07.098] [LOG] [UIManager] Calling locationPrompt.Show()
+[16:20:07.099] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[16:20:07.100] [LOG] [LocationPrompt] GameObject active before: False
+[16:20:07.100] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[16:20:07.101] [LOG] [LocationPrompt] Set startLessonButton active: True
+[16:20:07.101] [LOG] [LocationPrompt] Has appointment here: False
+[16:20:07.102] [LOG] [LocationPrompt] About to call SetActive(true)...
+[16:20:07.103] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[16:20:07.105] [LOG] [LocationPrompt] GameObject active after: True
+[16:20:07.105] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[16:20:07.105] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[16:20:07.106] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[16:20:07.106] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[16:20:07.108] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[16:20:07.108] [LOG] [LocationPrompt] Start() called - setting up buttons and hiding
+[16:20:07.488] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: TennisCourtA, Tag: 'Location'
+[16:20:07.489] [LOG] [PlayerController] GameObject path: TennisCourtA
+[16:20:07.489] [LOG] [PlayerController] Collider bounds: Center: (-6.00, -2.00, 0.00), Extents: (1.00, 1.00, 0.00)
+[16:20:07.490] [LOG] [PlayerController] Is Trigger: True
+[16:20:07.490] [LOG] [PlayerController] Components on TennisCourtA: Transform, BoxCollider2D
+[16:20:07.490] [LOG] [PlayerController] ✅ Found Location tag on: TennisCourtA
+[16:20:07.490] [ERROR] [PlayerController] ❌ No LocationTrigger script found on: TennisCourtA
+Stack Trace:
+UnityEngine.Debug:LogError (object)
+TennisCoachCho.Player.PlayerController:OnTriggerEnter2D (UnityEngine.Collider2D) (at Assets/Scripts/Player/PlayerController.cs:136)
+
+[16:20:26.918] [SYSTEM] Application lost focus
+[16:20:27.078] [LOG] [PlayerController] OnTriggerExit2D - Exiting: TriggerZone, Tag: Location
+[16:20:27.079] [LOG] [PlayerController] Calling OnPlayerExit() for: TriggerZone
+[16:20:27.079] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[16:20:27.080] [LOG] [PlayerController] OnTriggerExit2D - Exiting: TennisCourtA, Tag: Location
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 4:20:27 PM
+===================================
