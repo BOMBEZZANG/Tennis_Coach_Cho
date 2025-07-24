@@ -1,5 +1,6 @@
 using UnityEngine;
 using TennisCoachCho.Core;
+using TennisCoachCho.Utilities;
 
 namespace TennisCoachCho.Core
 {
@@ -7,30 +8,34 @@ namespace TennisCoachCho.Core
     public class TimeControlSettings
     {
         [Header("Current Time (Read Only)")]
-        [SerializeField] private int currentDay = 1;
-        [SerializeField] private int currentHour = 8;
-        [SerializeField] private int currentMinute = 0;
-        [SerializeField] private string currentTimeString = "08:00 AM";
-        [SerializeField] private bool isTimeRunning = true;
+        [ReadOnly] public int currentDay = 1;
+        [ReadOnly] public int currentHour = 8;
+        [ReadOnly] public int currentMinute = 0;
+        [ReadOnly] public string currentTimeString = "08:00 AM";
+        [ReadOnly] public bool isTimeRunning = true;
         
-        [Header("Time Control")]
-        [SerializeField] private bool pauseTime = false;
-        [SerializeField] private bool resumeTime = false;
+        [Header("Time Control - Click buttons to activate")]
+        [Space(5)]
+        [Tooltip("Check this box to pause time")] public bool pauseTime = false;
+        [Tooltip("Check this box to resume time")] public bool resumeTime = false;
         
-        [Header("Quick Time Advance")]
-        [SerializeField] private bool addHour = false;
-        [SerializeField] private bool add15Minutes = false;
-        [SerializeField] private bool nextDay = false;
+        [Header("Quick Time Advance - Check boxes to activate")]
+        [Space(5)]
+        [Tooltip("Check this box to add 1 hour")] public bool addHour = false;
+        [Tooltip("Check this box to add 15 minutes")] public bool add15Minutes = false;
+        [Tooltip("Check this box to advance to next day")] public bool nextDay = false;
         
-        [Header("Set Specific Time")]
-        [SerializeField] private int setDay = 1;
-        [SerializeField] private int setHour = 8;
-        [SerializeField] private int setMinute = 0;
-        [SerializeField] private bool applyTime = false;
+        [Header("Set Specific Time - Edit values then check Apply")]
+        [Space(5)]
+        public int setDay = 1;
+        [Range(8, 23)] public int setHour = 8;
+        [Range(0, 59)] public int setMinute = 0;
+        [Tooltip("Check this box to apply the time settings above")] public bool applyTime = false;
         
-        [Header("Time Speed Control")]
-        [SerializeField] private TimeSpeed timeSpeed = TimeSpeed.Normal;
-        [SerializeField] private bool applySpeed = false;
+        [Header("Time Speed Control - Select speed then check Apply")]
+        [Space(5)]
+        public TimeSpeed timeSpeed = TimeSpeed.Normal;
+        [Tooltip("Check this box to apply the speed setting above")] public bool applySpeed = false;
         
         // Public getters for the inspector display
         public int CurrentDay => currentDay;

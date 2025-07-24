@@ -53,6 +53,8 @@ namespace TennisCoachCho.Core
         {
             currentTime = new GameDateTime(1, startHour, startMinute);
             CalculateTimeScale();
+            StartTime(); // Auto-start time when initialized
+            Debug.Log($"[TimeSystem] Initialized - Starting time at Day {currentTime.day}, {currentTime.GetTimeString()}");
         }
         
         private void CalculateTimeScale()
@@ -81,13 +83,19 @@ namespace TennisCoachCho.Core
             UpdateTime();
         }
         
+        private float accumulatedMinutes = 0f;
+        
         private void UpdateTime()
         {
             float minutesToAdd = timeScale * Time.deltaTime;
-            int wholeMinutes = Mathf.FloorToInt(minutesToAdd);
             
+            // Accumulate fractional minutes for smoother time progression
+            accumulatedMinutes += minutesToAdd;
+            
+            int wholeMinutes = Mathf.FloorToInt(accumulatedMinutes);
             if (wholeMinutes > 0)
             {
+                accumulatedMinutes -= wholeMinutes;
                 AddMinutes(wholeMinutes);
             }
         }
@@ -95,21 +103,30 @@ namespace TennisCoachCho.Core
         private void AddMinutes(int minutes)
         {
             currentTime.minute += minutes;
+            bool timeChanged = false;
             
             while (currentTime.minute >= 60)
             {
                 currentTime.minute -= 60;
                 currentTime.hour++;
+                timeChanged = true;
                 
                 if (currentTime.hour >= endHour)
                 {
                     currentTime.hour = startHour;
                     currentTime.day++;
                     OnNewDay?.Invoke(currentTime.day);
+                    Debug.Log($"[TimeSystem] New day started: Day {currentTime.day}");
                 }
             }
             
             OnTimeChanged?.Invoke(currentTime);
+            
+            // Log time changes every hour for debugging
+            if (timeChanged)
+            {
+                Debug.Log($"[TimeSystem] Time updated: Day {currentTime.day}, {currentTime.GetTimeString()}");
+            }
         }
         
         public bool IsTimeForAppointment(int appointmentHour, int appointmentMinute)

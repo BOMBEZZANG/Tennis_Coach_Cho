@@ -26,12 +26,17 @@ namespace TennisCoachCho.Core
             
             GenerateDailyAppointments();
             
+            // Create test appointments for debugging - clear existing and create new ones
+            CreateTestAppointments();
+            
             // Subscribe to time system events
             if (GameManager.Instance?.TimeSystem != null)
             {
                 GameManager.Instance.TimeSystem.OnNewDay += OnNewDay;
                 GameManager.Instance.TimeSystem.OnTimeChanged += CheckAppointmentTimes;
             }
+            
+            Debug.Log($"[AppointmentManager] Initialized with {gameData.acceptedAppointments.Count} accepted appointments");
         }
         
         private void OnDestroy()
@@ -170,6 +175,78 @@ namespace TennisCoachCho.Core
         private void ClearCompletedAppointments()
         {
             gameData.acceptedAppointments.RemoveAll(appointment => appointment.isCompleted);
+        }
+        
+        private void CreateTestAppointments()
+        {
+            Debug.Log("[AppointmentManager] Creating test appointments for debugging...");
+            
+            // Clear existing appointments for clean testing
+            gameData.acceptedAppointments.Clear();
+            Debug.Log("[AppointmentManager] Cleared existing appointments");
+            
+            // Get current time from time system
+            var currentTime = GameManager.Instance?.TimeSystem?.CurrentTime;
+            if (currentTime == null)
+            {
+                Debug.LogWarning("[AppointmentManager] Cannot create test appointments - no time system");
+                return;
+            }
+            
+            // Create a test appointment at Tennis Court A in 5 minutes from current time
+            int testHour = currentTime.Value.hour;
+            int testMinute = currentTime.Value.minute + 5;
+            
+            // Handle minute overflow
+            if (testMinute >= 60)
+            {
+                testMinute -= 60;
+                testHour++;
+            }
+            
+            var testAppointment = new AppointmentData(
+                "John Smith", 
+                testHour,
+                testMinute,
+                "Tennis Court A",  // This must match the LocationTrigger's LocationName exactly
+                100,
+                50
+            );
+            testAppointment.isAccepted = true; // Mark as accepted
+            
+            gameData.acceptedAppointments.Add(testAppointment);
+            
+            Debug.Log($"[AppointmentManager] ✅ Created test appointment:");
+            Debug.Log($"[AppointmentManager] Client: {testAppointment.clientName}");
+            Debug.Log($"[AppointmentManager] Time: {testAppointment.GetTimeString()}");
+            Debug.Log($"[AppointmentManager] Location: {testAppointment.location}");
+            Debug.Log($"[AppointmentManager] Current time: {currentTime.Value.GetTimeString()}");
+            
+            // Create another appointment 30 minutes later for testing
+            int testHour2 = testHour;
+            int testMinute2 = testMinute + 30;
+            
+            if (testMinute2 >= 60)
+            {
+                testMinute2 -= 60;
+                testHour2++;
+            }
+            
+            var testAppointment2 = new AppointmentData(
+                "Sarah Johnson",
+                testHour2,
+                testMinute2,
+                "Tennis Court A",
+                120,
+                60
+            );
+            testAppointment2.isAccepted = true;
+            
+            gameData.acceptedAppointments.Add(testAppointment2);
+            
+            Debug.Log($"[AppointmentManager] ✅ Created second test appointment:");
+            Debug.Log($"[AppointmentManager] Client: {testAppointment2.clientName}");
+            Debug.Log($"[AppointmentManager] Time: {testAppointment2.GetTimeString()}");
         }
     }
 }

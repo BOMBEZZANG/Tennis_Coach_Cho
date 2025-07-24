@@ -1,0 +1,116 @@
+
+
+## **Feature Specification: "Tennis Lesson Drill" Mini-Game**
+
+
+### **1. Overview & Concept**
+
+This document outlines the design and technical requirements for the "Tennis Lesson Drill," a core mini-game within our 2D top-down tennis coach simulation.
+
+The objective is to create a timing-based rally game where the player (the Coach) trains a student (AI). The mini-game starts in a specific court area without a scene change. Success is measured by the player's ability to time their hits correctly and maintain a rally, which translates to the lesson's effectiveness. The core gameplay loop focuses on rhythmic timing rather than free-form movement.
+
+---
+
+### **2. Game Flow & State Machine**
+
+The mini-game operates on a state machine to manage the flow without scene transitions.
+
+* **State 1: `AWAITING_START`**
+    * **Trigger:** The player character enters a designated "Location Trigger Zone" on the court.
+    * **Action:** A UI prompt (e.g., an 'E' key icon) appears above the player. The player can still move freely within the zone. This is already we have as a 'LocationPrompt Object' with Startlesson button 
+
+
+
+* **State 2: `PREPARING`**
+    * **Trigger:** Exiting `AWAITING_START`.
+    * **Action:**
+        1.  Player's free movement controls (full WASD) are immediately disabled.
+        2.  The player's "paddle" unit and the student's "paddle" unit slide smoothly into their designated start positions on opposite sides of the court.
+        3.  The camera may perform a slight zoom-in to frame the mini-game area.
+        4.  A countdown UI appears on screen: "3... 2... 1... GO!"
+    * **Exit:** The countdown finishes.
+
+* **State 3: `ACTIVE`**
+    * **Trigger:** Exiting `PREPARING`.
+    * **Action:**
+        1.  The mini-game timer starts.
+        2.  The player's mini-game controls (`W/S` and `E`) are enabled.
+        3.  The first ball is served automatically from the student's side towards the player.
+        4.  All core gameplay mechanics (physics, hitting, scoring) are now active.
+    * **Exit:** The mini-game timer reaches zero.
+
+* **State 4: `ENDED`**
+    * **Trigger:** Exiting `ACTIVE`.
+    * **Action:**
+        1.  All gameplay is frozen.
+        2.  A results screen UI appears, displaying the final score, max combo, and a performance grade.
+        3.  After the player acknowledges the results (e.g., presses 'E' again), the UI disappears, the camera zooms back out, and the player's free movement controls are re-enabled.
+    * **Exit:** The player acknowledges the results, returning the game to the standard free-roam state.
+
+---
+
+### **3. Player Controls (State: `ACTIVE`)**
+
+* **`W` Key:** Move player paddle up.
+* **`S` Key:** Move player paddle down.
+* **`E` Key:** Swing. This initiates a hit *only if* the timing and position are correct.
+
+---
+
+### **4. Core Gameplay Mechanics**
+
+#### **4.1. Ball Physics & Bounce**
+
+* The ball's height must be simulated using a virtual Z-axis (`z_pos` and `z_velocity`).
+* A constant `gravity` force should be applied to `z_velocity` each frame to make the ball arc realistically.
+* The ball's visual representation should be separate from its shadow. The distance between the ball and its shadow should be proportional to its `z_pos` to indicate height.
+* The court floor acts as a physical boundary. When the ball's `z_pos` reaches 0, it should bounce, reversing its `z_velocity` (with a slight energy loss, e.g., `z_velocity *= -0.85`).
+* A rally hit is only considered valid if the ball bounces **once** on the player's side of the court before the player hits it.
+
+#### **4.2. Hitting Mechanism**
+
+* A hit is executed when two conditions are met simultaneously:
+    1.  The player presses the `E` key.
+    2.  The ball's 2D collider is currently intersecting the player paddle's 2D collider.
+* If a hit is successful, the ball is propelled back towards the student's side with a new velocity and a positive `z_velocity` to create an arc.
+
+#### **4.3. Judgment & Combo System**
+
+The quality of every player hit is judged based on timing and the ball's landing position.
+
+* **Trigger Zones:** The student's side of the court will have two invisible, nested trigger zones:
+    * `PerfectZone`: A small, specific target area.
+    * `GoodZone`: A larger area that fully contains the `PerfectZone`.
+
+* **Judgment Logic:**
+    * **PERFECT:** Player hits the ball, and it lands inside the `PerfectZone`.
+    * **GOOD:** Player hits the ball, and it lands inside the `GoodZone` but outside the `PerfectZone`.
+    * **BAD:** Player hits the ball, but it fails to land inside the `GoodZone` (i.e., it goes out of bounds or hits the net).
+    * **MISS:** Player fails to hit the ball before it bounces a second time on their side.
+
+* **Combo System:**
+    * A counter tracks consecutive successful hits.
+    * The combo count increases by 1 for every `PERFECT` or `GOOD` hit.
+    * The combo resets to 0 upon a `BAD` hit or a `MISS`.
+
+#### **4.4. Timer**
+
+* The duration of the `ACTIVE` state is determined by the "Lesson Time" value selected by the player in the main game interface before starting the mini-game. The timer should be clearly visible on the HUD.
+
+---
+
+### **5. AI Behavior (Student)**
+
+* The Student AI's paddle should attempt to mirror the ball's Y-position to return the ball.
+* To make the AI beatable, introduce a slight reaction delay or cap its maximum movement speed. The AI's goal is to consistently return the ball to the player, allowing the player's skill to be the determining factor. It should not be overly aggressive.
+
+---
+
+### **6. UI & HUD Requirements**
+
+During the `ACTIVE` state, the following HUD elements must be visible:
+
+* **Timer:** Displays the remaining lesson time.
+* **Combo Counter:** Shows the current rally combo (e.g., "x12").
+* **Judgment Text:** Displays text on-screen after a hit (e.g., "PERFECT!", "GOOD") for immediate feedback.
+* **Score (Optional):** A point-based score can be calculated, or the max combo can serve as the primary score.

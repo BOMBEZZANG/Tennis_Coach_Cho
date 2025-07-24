@@ -1,0 +1,21 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 6:22:39 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[18:22:39.453] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[18:22:39.457] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_18-22-39.txt
+[18:22:39.638] [SYSTEM] Application resumed
+[18:22:39.639] [SYSTEM] Application gained focus
+[18:22:46.171] [SYSTEM] Application lost focus
+
+[18:22:46.175] [SYSTEM] Application paused
+[18:23:15.198] [SYSTEM] Application resumed
+[18:23:15.200] [SYSTEM] Application gained focus
+[18:23:17.343] [SYSTEM] Application lost focus
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 6:23:17 PM
+===================================

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TennisCoachCho.World;
 using TennisCoachCho.Core;
+using TennisCoachCho.Data;
 using TMPro;
 using System.Collections;
 
@@ -18,6 +19,19 @@ namespace TennisCoachCho.UI
         private string currentLocationName;
         private bool canStartLesson;
         private bool isActivatedByShow = false;
+        
+        [System.Serializable]
+        private struct AppointmentStatus
+        {
+            public bool canStart;
+            public string buttonText;
+            
+            public AppointmentStatus(bool canStart, string buttonText)
+            {
+                this.canStart = canStart;
+                this.buttonText = buttonText;
+            }
+        }
 
         private void Awake()
         {
@@ -74,14 +88,14 @@ namespace TennisCoachCho.UI
                 // Check if there's actually a lesson to start
                 if (canStart)
                 {
-                    bool hasAppointmentHere = CheckForAppointmentAtLocation(locationName);
-                    startLessonButton.interactable = hasAppointmentHere;
-                    Debug.Log($"[LocationPrompt] Has appointment here: {hasAppointmentHere}");
+                    var appointmentStatus = GetAppointmentStatus(locationName);
+                    startLessonButton.interactable = appointmentStatus.canStart;
+                    Debug.Log($"[LocationPrompt] Can start lesson: {appointmentStatus.canStart}");
 
                     var buttonText = startLessonButton.GetComponentInChildren<Text>();
                     if (buttonText != null)
                     {
-                        buttonText.text = hasAppointmentHere ? "Start Lesson" : "No Scheduled Lesson";
+                        buttonText.text = appointmentStatus.buttonText;
                         Debug.Log($"[LocationPrompt] Set button text to: {buttonText.text}");
                     }
                 }
@@ -138,17 +152,128 @@ namespace TennisCoachCho.UI
 
         private void StartLesson()
         {
+            Debug.Log($"[LocationPrompt] StartLesson button clicked for location: {currentLocationName}");
+            
+            // Double-check if lesson can actually be started
+            var appointmentStatus = GetAppointmentStatus(currentLocationName);
+            if (!appointmentStatus.canStart)
+            {
+                Debug.LogWarning($"[LocationPrompt] ⚠️ Lesson cannot be started: {appointmentStatus.buttonText}");
+                return;
+            }
+            
+            Debug.Log($"[LocationPrompt] ✅ Lesson validated - proceeding to start lesson");
+            
             // Find the location trigger and start lesson
             var locationTriggers = FindObjectsOfType<LocationTrigger>();
             foreach (var trigger in locationTriggers)
             {
                 if (trigger.LocationName.Equals(currentLocationName, System.StringComparison.OrdinalIgnoreCase))
                 {
+                    Debug.Log($"[LocationPrompt] Found matching LocationTrigger: {trigger.LocationName}");
+                    Debug.Log($"[LocationPrompt] Starting lesson via LocationTrigger...");
+                    
                     trigger.StartLesson();
                     Hide();
                     return;
                 }
             }
+            
+            Debug.LogError($"[LocationPrompt] ❌ No LocationTrigger found for location: {currentLocationName}");
+        }
+
+        private AppointmentStatus GetAppointmentStatus(string locationName)
+        {
+            if (GameManager.Instance?.AppointmentManager == null) 
+                return new AppointmentStatus(false, "No Appointment Manager");
+
+            var acceptedAppointments = GameManager.Instance.AppointmentManager.AcceptedAppointments;
+            var currentTime = GameManager.Instance.TimeSystem?.CurrentTime;
+
+            if (currentTime == null) 
+                return new AppointmentStatus(false, "No Time System");
+
+            Debug.Log($"[LocationPrompt] Checking appointments for location: {locationName}");
+            Debug.Log($"[LocationPrompt] Total accepted appointments: {acceptedAppointments?.Count ?? 0}");
+            
+            if (acceptedAppointments != null && acceptedAppointments.Count > 0)
+            {
+                for (int i = 0; i < acceptedAppointments.Count; i++)
+                {
+                    var apt = acceptedAppointments[i];
+                    Debug.Log($"[LocationPrompt] Appointment {i}: Client={apt.clientName}, Location='{apt.location}', Time={apt.scheduledHour:D2}:{apt.scheduledMinute:D2}, Completed={apt.isCompleted}");
+                }
+            }
+            else
+            {
+                Debug.Log("[LocationPrompt] ⚠️ No accepted appointments found in the system!");
+                Debug.Log("[LocationPrompt] You need to create and accept appointments first.");
+            }
+
+            AppointmentData nextValidAppointment = null;
+            int currentMinutes = currentTime.Value.hour * 60 + currentTime.Value.minute;
+            
+            // Find the next valid appointment (not completed and at this location)
+            foreach (var appointment in acceptedAppointments)
+            {
+                if (!appointment.isCompleted &&
+                    appointment.location.Equals(locationName, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    int appointmentMinutes = appointment.scheduledHour * 60 + appointment.scheduledMinute;
+                    int timeDifference = currentMinutes - appointmentMinutes;
+                    
+                    Debug.Log($"[LocationPrompt] Checking appointment - Client: {appointment.clientName}");
+                    Debug.Log($"[LocationPrompt] Appointment time: {appointment.scheduledHour:D2}:{appointment.scheduledMinute:D2} ({appointmentMinutes} min)");
+                    Debug.Log($"[LocationPrompt] Time difference: {timeDifference} minutes");
+                    
+                    // If this appointment is still valid (not passed by more than 10 minutes)
+                    if (timeDifference <= 0)
+                    {
+                        // If no valid appointment found yet, or this one is earlier than the current candidate
+                        if (nextValidAppointment == null || appointmentMinutes < (nextValidAppointment.scheduledHour * 60 + nextValidAppointment.scheduledMinute))
+                        {
+                            nextValidAppointment = appointment;
+                            Debug.Log($"[LocationPrompt] Setting as next valid appointment: {appointment.clientName}");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log($"[LocationPrompt] Appointment has passed: {appointment.clientName}");
+                    }
+                }
+            }
+            
+            if (nextValidAppointment != null)
+            {
+                int appointmentMinutes = nextValidAppointment.scheduledHour * 60 + nextValidAppointment.scheduledMinute;
+                int timeDifference = currentMinutes - appointmentMinutes;
+                
+                Debug.Log($"[LocationPrompt] Next valid appointment found - Client: {nextValidAppointment.clientName}");
+                Debug.Log($"[LocationPrompt] Current time: {currentTime.Value.GetTimeString()} ({currentMinutes} min)");
+                Debug.Log($"[LocationPrompt] Appointment time: {nextValidAppointment.scheduledHour:D2}:{nextValidAppointment.scheduledMinute:D2} ({appointmentMinutes} min)");
+                Debug.Log($"[LocationPrompt] Time difference: {timeDifference} minutes (negative = early, positive = late)");
+                
+                // Player can start lesson if they arrive 10 minutes early to on-time
+                if (timeDifference >= -10 && timeDifference <= 0)
+                {
+                    Debug.Log($"[LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window");
+                    return new AppointmentStatus(true, "Start Lesson");
+                }
+                else if (timeDifference < -10)
+                {
+                    int minutesUntilStart = -timeDifference - 10;
+                    Debug.Log($"[LocationPrompt] ⏰ Too early - {minutesUntilStart} minutes until lesson can start");
+                    return new AppointmentStatus(false, $"Too Early (Wait {minutesUntilStart}m)");
+                }
+                else // timeDifference > 0
+                {
+                    Debug.Log($"[LocationPrompt] ❌ Too late - lesson time has passed");
+                    return new AppointmentStatus(false, "Lesson Time Passed");
+                }
+            }
+
+            Debug.Log($"[LocationPrompt] No appointment found at {locationName}");
+            return new AppointmentStatus(false, "No Scheduled Lesson");
         }
 
         private bool CheckForAppointmentAtLocation(string locationName)
@@ -165,12 +290,23 @@ namespace TennisCoachCho.UI
                 if (!appointment.isCompleted &&
                     appointment.location.Equals(locationName, System.StringComparison.OrdinalIgnoreCase))
                 {
-                    // Check if appointment time is close (within 30 minutes)
+                    // Check if player is within the lesson start window (10 minutes early to on-time)
                     int currentMinutes = currentTime.Value.hour * 60 + currentTime.Value.minute;
                     int appointmentMinutes = appointment.scheduledHour * 60 + appointment.scheduledMinute;
-                    int timeDifference = Mathf.Abs(currentMinutes - appointmentMinutes);
-
-                    if (timeDifference <= 30)
+                    
+                    // Calculate time difference (positive means current time is after appointment time)
+                    int timeDifference = currentMinutes - appointmentMinutes;
+                    
+                    // Player can start lesson if they arrive 10 minutes early (timeDifference = -10) to on-time (timeDifference = 0)
+                    bool canStartLesson = timeDifference >= -10 && timeDifference <= 0;
+                    
+                    Debug.Log($"[LocationPrompt] Appointment check - Location: {locationName}");
+                    Debug.Log($"[LocationPrompt] Current time: {currentTime.Value.GetTimeString()} ({currentMinutes} min)");
+                    Debug.Log($"[LocationPrompt] Appointment time: {appointment.scheduledHour:D2}:{appointment.scheduledMinute:D2} ({appointmentMinutes} min)");
+                    Debug.Log($"[LocationPrompt] Time difference: {timeDifference} minutes (negative = early, positive = late)");
+                    Debug.Log($"[LocationPrompt] Can start lesson: {canStartLesson} (must be between -10 and 0)");
+                    
+                    if (canStartLesson)
                     {
                         return true;
                     }
