@@ -1,0 +1,35 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 8:01:36 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[20:01:36.778] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[20:01:36.780] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_20-01-36.txt
+[20:01:36.968] [SYSTEM] Application resumed
+[20:01:36.969] [SYSTEM] Application gained focus
+[20:01:37.257] [LOG] [TennisDrillMiniGame] Initializing mini-game...
+[20:01:37.259] [LOG] [TennisBall] Initialized
+[20:01:37.259] [LOG] [TennisPlayerPaddle] Initialized
+[20:01:37.260] [LOG] [TennisAIPaddle] Initialized
+[20:01:37.261] [ERROR] [TennisDrillUI] Game canvas not assigned!
+Stack Trace:
+UnityEngine.Debug:LogError (object)
+TennisCoachCho.MiniGames.TennisDrillUI:ValidateUIElements () (at Assets/Scripts/MiniGames/TennisDrillUI.cs:67)
+TennisCoachCho.MiniGames.TennisDrillUI:Initialize (TennisCoachCho.MiniGames.TennisDrillMiniGame) (at Assets/Scripts/MiniGames/TennisDrillUI.cs:57)
+TennisCoachCho.MiniGames.TennisDrillMiniGame:InitializeGame () (at Assets/Scripts/MiniGames/TennisDrillMiniGame.cs:121)
+TennisCoachCho.MiniGames.TennisDrillMiniGame:Start () (at Assets/Scripts/MiniGames/TennisDrillMiniGame.cs:83)
+
+[20:01:37.263] [LOG] [TennisDrillUI] Initialized
+[20:01:37.263] [LOG] [TennisDrillMiniGame] State changing: AWAITING_START → AWAITING_START
+[20:01:37.263] [LOG] [TennisDrillUI] Game state changed to: AWAITING_START
+[20:01:37.265] [LOG] [TennisDrillUI] Showing awaiting start UI
+[20:01:37.265] [LOG] [TennisPlayerPaddle] Controls enabled: False
+[20:01:37.266] [LOG] [TennisDrillUI] Showing awaiting start UI
+[20:01:37.267] [LOG] [CameraController] Auto-found player: Player
+[20:01:41.955] [SYSTEM] Application lost focus
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 8:01:42 PM
+===================================

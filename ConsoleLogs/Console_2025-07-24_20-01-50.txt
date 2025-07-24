@@ -1,0 +1,185 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 8:01:50 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[20:01:50.227] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[20:01:50.230] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_20-01-50.txt
+[20:01:50.417] [SYSTEM] Application resumed
+[20:01:50.417] [SYSTEM] Application gained focus
+[20:01:50.693] [LOG] [TennisDrillMiniGame] Initializing mini-game...
+[20:01:50.695] [LOG] [TennisBall] Initialized
+[20:01:50.697] [LOG] [TennisPlayerPaddle] Initialized
+[20:01:50.697] [LOG] [TennisAIPaddle] Initialized
+[20:01:50.698] [ERROR] [TennisDrillUI] Game canvas not assigned!
+Stack Trace:
+UnityEngine.Debug:LogError (object)
+TennisCoachCho.MiniGames.TennisDrillUI:ValidateUIElements () (at Assets/Scripts/MiniGames/TennisDrillUI.cs:67)
+TennisCoachCho.MiniGames.TennisDrillUI:Initialize (TennisCoachCho.MiniGames.TennisDrillMiniGame) (at Assets/Scripts/MiniGames/TennisDrillUI.cs:57)
+TennisCoachCho.MiniGames.TennisDrillMiniGame:InitializeGame () (at Assets/Scripts/MiniGames/TennisDrillMiniGame.cs:121)
+TennisCoachCho.MiniGames.TennisDrillMiniGame:Start () (at Assets/Scripts/MiniGames/TennisDrillMiniGame.cs:83)
+
+[20:01:50.699] [LOG] [TennisDrillUI] Initialized
+[20:01:50.700] [LOG] [TennisDrillMiniGame] State changing: AWAITING_START → AWAITING_START
+[20:01:50.700] [LOG] [TennisDrillUI] Game state changed to: AWAITING_START
+[20:01:50.700] [LOG] [TennisDrillUI] Showing awaiting start UI
+[20:01:50.700] [LOG] [TennisPlayerPaddle] Controls enabled: False
+[20:01:50.702] [LOG] [TennisDrillUI] Showing awaiting start UI
+[20:01:50.703] [LOG] [CameraController] Auto-found player: Player
+[20:01:56.292] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:01:56.293] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:01:56.293] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:01:56.295] [LOG] [PlayerController] Is Trigger: True
+[20:01:56.295] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:01:56.296] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:01:56.297] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:01:56.297] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:01:56.297] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:01:56.298] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:01:56.298] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:01:56.299] [LOG] [LocationTrigger] UIManager is null: False
+[20:01:56.299] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:01:56.299] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:01:56.299] [LOG] [UIManager] locationPrompt is null: False
+[20:01:56.300] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:01:56.301] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:01:56.302] [LOG] [LocationPrompt] GameObject active before: False
+[20:01:56.302] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:01:56.303] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:01:56.303] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:01:56.304] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:01:56.305] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:01:56.305] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:01:56.305] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:01:56.305] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:01:56.305] [LOG] [LocationPrompt] Time difference: 2 minutes
+[20:01:56.307] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:01:56.307] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:01:56.307] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:01:56.308] [LOG] [LocationPrompt] Time difference: -28 minutes
+[20:01:56.308] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:01:56.309] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:01:56.309] [LOG] [LocationPrompt] Current time: 08:07 AM (487 min)
+[20:01:56.309] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:01:56.310] [LOG] [LocationPrompt] Time difference: -28 minutes (negative = early, positive = late)
+[20:01:56.310] [LOG] [LocationPrompt] ⏰ Too early - 18 minutes until lesson can start
+[20:01:56.311] [LOG] [LocationPrompt] Can start lesson: False
+[20:01:56.312] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:01:56.312] [LOG] [LocationPrompt] Awake() called - setting up buttons
+[20:01:56.314] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:01:56.314] [LOG] [LocationPrompt] GameObject active after: True
+[20:01:56.315] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:01:56.315] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:01:56.315] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:01:56.315] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:01:56.317] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:01:56.317] [LOG] [LocationPrompt] Start() called - hiding LocationPrompt
+[20:01:56.317] [LOG] [LocationPrompt] isActivatedByShow: True
+[20:01:56.318] [LOG] [LocationPrompt] Start() called during gameplay - NOT hiding (activated by Show() method)
+[20:01:56.321] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:01:56.322] [LOG] [LocationPrompt] activeSelf: True
+[20:01:56.323] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:02:01.164] [SYSTEM] Application lost focus
+[20:02:06.616] [SYSTEM] Application gained focus
+[20:02:07.052] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[20:02:07.053] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[20:02:07.054] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[20:02:07.054] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[20:02:07.055] [LOG] [UIManager] HideLocationPrompt called
+[20:02:07.055] [LOG] [UIManager] Calling locationPrompt.Hide()
+[20:02:07.056] [LOG] [LocationPrompt] Hide called
+[20:02:07.056] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:02:07.056] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:02:08.132] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:02:08.133] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:02:08.134] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:02:08.134] [LOG] [PlayerController] Is Trigger: True
+[20:02:08.135] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:02:08.135] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:02:08.135] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:02:08.136] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:02:08.136] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:02:08.136] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:02:08.137] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:02:08.137] [LOG] [LocationTrigger] UIManager is null: False
+[20:02:08.137] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:02:08.137] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:02:08.137] [LOG] [UIManager] locationPrompt is null: False
+[20:02:08.138] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:02:08.138] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:02:08.139] [LOG] [LocationPrompt] GameObject active before: False
+[20:02:08.139] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:02:08.139] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:02:08.140] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:02:08.140] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:02:08.140] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:02:08.141] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:02:08.141] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:02:08.141] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:02:08.142] [LOG] [LocationPrompt] Time difference: 21 minutes
+[20:02:08.142] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:02:08.142] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:02:08.143] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:02:08.144] [LOG] [LocationPrompt] Time difference: -9 minutes
+[20:02:08.144] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:02:08.144] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:02:08.144] [LOG] [LocationPrompt] Current time: 08:26 AM (506 min)
+[20:02:08.145] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:02:08.145] [LOG] [LocationPrompt] Time difference: -9 minutes (negative = early, positive = late)
+[20:02:08.145] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[20:02:08.145] [LOG] [LocationPrompt] Can start lesson: True
+[20:02:08.145] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:02:08.147] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:02:08.147] [LOG] [LocationPrompt] GameObject active after: True
+[20:02:08.148] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:02:08.148] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:02:08.148] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:02:08.148] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:02:08.149] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:02:08.151] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:02:08.151] [LOG] [LocationPrompt] activeSelf: True
+[20:02:08.153] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:02:09.577] [LOG] [LocationPrompt] StartLesson button clicked for location: Tennis Court A
+[20:02:09.578] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:02:09.579] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:02:09.579] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:02:09.579] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:02:09.579] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:02:09.580] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:02:09.580] [LOG] [LocationPrompt] Time difference: 23 minutes
+[20:02:09.581] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:02:09.581] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:02:09.581] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:02:09.582] [LOG] [LocationPrompt] Time difference: -7 minutes
+[20:02:09.582] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:02:09.583] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:02:09.583] [LOG] [LocationPrompt] Current time: 08:28 AM (508 min)
+[20:02:09.584] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:02:09.584] [LOG] [LocationPrompt] Time difference: -7 minutes (negative = early, positive = late)
+[20:02:09.585] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[20:02:09.585] [LOG] [LocationPrompt] ✅ Lesson validated - proceeding to start lesson
+[20:02:09.586] [LOG] [LocationPrompt] Starting Tennis Drill Mini-Game...
+[20:02:09.586] [LOG] [TennisDrillMiniGame] Starting mini-game...
+[20:02:09.587] [LOG] [TennisDrillMiniGame] State changing: AWAITING_START → PREPARING
+[20:02:09.587] [LOG] [TennisDrillUI] Game state changed to: PREPARING
+[20:02:09.587] [LOG] [TennisDrillMiniGame] Preparing game...
+[20:02:09.589] [LOG] [LocationPrompt] Tennis Drill Mini-Game started successfully
+[20:02:09.589] [LOG] [LocationPrompt] Hide called
+[20:02:09.590] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:02:09.590] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:02:12.792] [SYSTEM] Application lost focus
+[20:02:48.081] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[20:02:48.082] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[20:02:48.082] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[20:02:48.083] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[20:02:48.083] [LOG] [UIManager] HideLocationPrompt called
+[20:02:48.083] [LOG] [UIManager] Calling locationPrompt.Hide()
+[20:02:48.084] [LOG] [LocationPrompt] Hide called
+[20:02:48.084] [LOG] [LocationPrompt] GameObject active before hide: False
+[20:02:48.084] [LOG] [LocationPrompt] LocationPrompt hidden
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 8:02:48 PM
+===================================

@@ -22,8 +22,12 @@ namespace TennisCoachCho.UI
         
         public void Initialize()
         {
-            // Debug.Log("UIManager.Initialize() called!");
-            // Debug.Log($"SmartphoneUI is null: {smartphoneUI == null}");
+            Debug.Log($"[UIManager] Initialize() called on GameObject: {gameObject.name}");
+            Debug.Log($"[UIManager] LocationPrompt assigned: {locationPrompt != null}");
+            if (locationPrompt != null)
+            {
+                Debug.Log($"[UIManager] LocationPrompt GameObject: {locationPrompt.gameObject.name}");
+            }
             
             // Initialize all UI components
             mainHUD?.Initialize();
@@ -95,32 +99,57 @@ namespace TennisCoachCho.UI
         public void ShowLocationPrompt(string locationName, bool canStartLesson)
         {
             Debug.Log($"[UIManager] ShowLocationPrompt called with location: {locationName}, canStart: {canStartLesson}");
+            Debug.Log($"[UIManager] UIManager instance: {gameObject.name}");
             Debug.Log($"[UIManager] locationPrompt is null: {locationPrompt == null}");
             
-            if (locationPrompt != null)
+            if (locationPrompt == null)
             {
-                Debug.Log("[UIManager] Calling locationPrompt.Show()");
-                locationPrompt.Show(locationName, canStartLesson);
+                Debug.LogError($"[UIManager] LocationPrompt is null on {gameObject.name}! Trying to find LocationPrompt in scene...");
+                
+                // Try to find LocationPrompt in the scene as fallback
+                var foundPrompt = FindObjectOfType<LocationPrompt>();
+                if (foundPrompt != null)
+                {
+                    Debug.LogWarning($"[UIManager] Found LocationPrompt in scene: {foundPrompt.gameObject.name}. Using as fallback.");
+                    locationPrompt = foundPrompt;
+                }
+                else
+                {
+                    Debug.LogError("[UIManager] No LocationPrompt found in scene!");
+                    return;
+                }
             }
-            else
-            {
-                Debug.LogError("[UIManager] LocationPrompt is null! Make sure it's assigned in the inspector.");
-            }
+            
+            Debug.Log("[UIManager] Calling locationPrompt.Show()");
+            locationPrompt.Show(locationName, canStartLesson);
         }
         
         public void HideLocationPrompt()
         {
             Debug.Log("[UIManager] HideLocationPrompt called");
+            Debug.Log($"[UIManager] UIManager instance: {gameObject.name}");
+            Debug.Log($"[UIManager] locationPrompt is null: {locationPrompt == null}");
             
-            if (locationPrompt != null)
+            if (locationPrompt == null)
             {
-                Debug.Log("[UIManager] Calling locationPrompt.Hide()");
-                locationPrompt.Hide();
+                Debug.LogError($"[UIManager] LocationPrompt is null on {gameObject.name}! Trying to find LocationPrompt in scene...");
+                
+                // Try to find LocationPrompt in the scene as fallback
+                var foundPrompt = FindObjectOfType<LocationPrompt>();
+                if (foundPrompt != null)
+                {
+                    Debug.LogWarning($"[UIManager] Found LocationPrompt in scene: {foundPrompt.gameObject.name}. Using as fallback.");
+                    locationPrompt = foundPrompt;
+                }
+                else
+                {
+                    Debug.LogError("[UIManager] No LocationPrompt found in scene!");
+                    return;
+                }
             }
-            else
-            {
-                Debug.LogError("[UIManager] LocationPrompt is null!");
-            }
+            
+            Debug.Log("[UIManager] Calling locationPrompt.Hide()");
+            locationPrompt.Hide();
         }
         
         public void ShowAppointmentNotification(AppointmentData appointment)

@@ -1,0 +1,2190 @@
+=== Unity Console Log Started ===
+Time: 7/24/2025 8:42:15 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[20:42:15.810] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[20:42:15.812] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-24_20-42-15.txt
+[20:42:16.005] [SYSTEM] Application resumed
+[20:42:16.006] [SYSTEM] Application gained focus
+[20:42:16.172] [LOG] [TennisDrillMiniGame] Initializing mini-game...
+[20:42:16.175] [LOG] [TennisBall] Initialized
+[20:42:16.176] [LOG] [TennisPlayerPaddle] Initialized
+[20:42:16.176] [LOG] [TennisAIPaddle] Initialized
+[20:42:16.178] [LOG] [TennisDrillUI] Initialized
+[20:42:16.179] [LOG] [TennisDrillMiniGame] State changing: AWAITING_START → AWAITING_START
+[20:42:16.180] [LOG] [TennisDrillUI] Game state changed to: AWAITING_START
+[20:42:16.180] [LOG] [TennisPlayerPaddle] Controls enabled: False
+[20:42:16.181] [LOG] [CameraController] Auto-found player: Player
+[20:42:25.293] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:42:25.295] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:42:25.295] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:42:25.296] [LOG] [PlayerController] Is Trigger: True
+[20:42:25.296] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:42:25.297] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:42:25.297] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:42:25.297] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:42:25.297] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:42:25.299] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:42:25.299] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:42:25.299] [LOG] [LocationTrigger] UIManager is null: False
+[20:42:25.300] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:42:25.300] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:42:25.300] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:25.300] [LOG] [UIManager] locationPrompt is null: False
+[20:42:25.302] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:42:25.303] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:42:25.303] [LOG] [LocationPrompt] GameObject active before: False
+[20:42:25.303] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:42:25.304] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:42:25.305] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:42:25.306] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:42:25.306] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:42:25.306] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:42:25.306] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:42:25.307] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:42:25.307] [LOG] [LocationPrompt] Time difference: 8 minutes
+[20:42:25.307] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:42:25.308] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:42:25.309] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:25.309] [LOG] [LocationPrompt] Time difference: -22 minutes
+[20:42:25.310] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:42:25.310] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:42:25.310] [LOG] [LocationPrompt] Current time: 08:13 AM (493 min)
+[20:42:25.310] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:25.311] [LOG] [LocationPrompt] Time difference: -22 minutes (negative = early, positive = late)
+[20:42:25.311] [LOG] [LocationPrompt] ⏰ Too early - 12 minutes until lesson can start
+[20:42:25.312] [LOG] [LocationPrompt] Can start lesson: False
+[20:42:25.312] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:42:25.314] [LOG] [LocationPrompt] Awake() called - setting up buttons
+[20:42:25.314] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:42:25.314] [LOG] [LocationPrompt] GameObject active after: True
+[20:42:25.315] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:42:25.316] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:42:25.316] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:42:25.317] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:42:25.317] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:42:25.317] [LOG] [LocationPrompt] Start() called - hiding LocationPrompt
+[20:42:25.318] [LOG] [LocationPrompt] isActivatedByShow: True
+[20:42:25.318] [LOG] [LocationPrompt] Start() called during gameplay - NOT hiding (activated by Show() method)
+[20:42:25.321] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:42:25.322] [LOG] [LocationPrompt] activeSelf: True
+[20:42:25.322] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:42:26.334] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[20:42:26.334] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[20:42:26.335] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[20:42:26.335] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[20:42:26.336] [LOG] [UIManager] HideLocationPrompt called
+[20:42:26.336] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:26.337] [LOG] [UIManager] locationPrompt is null: False
+[20:42:26.337] [LOG] [UIManager] Calling locationPrompt.Hide()
+[20:42:26.337] [LOG] [LocationPrompt] Hide called
+[20:42:26.337] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:42:26.338] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:42:27.092] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:42:27.094] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:42:27.094] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:42:27.095] [LOG] [PlayerController] Is Trigger: True
+[20:42:27.095] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:42:27.095] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:42:27.096] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:42:27.096] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:42:27.096] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:42:27.096] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:42:27.097] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:42:27.097] [LOG] [LocationTrigger] UIManager is null: False
+[20:42:27.097] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:42:27.097] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:42:27.097] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:27.099] [LOG] [UIManager] locationPrompt is null: False
+[20:42:27.099] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:42:27.099] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:42:27.100] [LOG] [LocationPrompt] GameObject active before: False
+[20:42:27.100] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:42:27.100] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:42:27.100] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:42:27.101] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:42:27.101] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:42:27.101] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:42:27.102] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:42:27.102] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:42:27.103] [LOG] [LocationPrompt] Time difference: 11 minutes
+[20:42:27.103] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:42:27.104] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:42:27.104] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:27.104] [LOG] [LocationPrompt] Time difference: -19 minutes
+[20:42:27.105] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:42:27.105] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:42:27.105] [LOG] [LocationPrompt] Current time: 08:16 AM (496 min)
+[20:42:27.105] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:27.106] [LOG] [LocationPrompt] Time difference: -19 minutes (negative = early, positive = late)
+[20:42:27.106] [LOG] [LocationPrompt] ⏰ Too early - 9 minutes until lesson can start
+[20:42:27.106] [LOG] [LocationPrompt] Can start lesson: False
+[20:42:27.107] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:42:27.107] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:42:27.108] [LOG] [LocationPrompt] GameObject active after: True
+[20:42:27.108] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:42:27.109] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:42:27.109] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:42:27.109] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:42:27.110] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:42:27.113] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:42:27.113] [LOG] [LocationPrompt] activeSelf: True
+[20:42:27.113] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:42:28.132] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[20:42:28.133] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[20:42:28.133] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[20:42:28.133] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[20:42:28.135] [LOG] [UIManager] HideLocationPrompt called
+[20:42:28.135] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:28.135] [LOG] [UIManager] locationPrompt is null: False
+[20:42:28.136] [LOG] [UIManager] Calling locationPrompt.Hide()
+[20:42:28.136] [LOG] [LocationPrompt] Hide called
+[20:42:28.137] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:42:28.137] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:42:29.213] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:42:29.213] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:42:29.214] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:42:29.214] [LOG] [PlayerController] Is Trigger: True
+[20:42:29.214] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:42:29.215] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:42:29.215] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:42:29.216] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:42:29.216] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:42:29.216] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:42:29.217] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:42:29.217] [LOG] [LocationTrigger] UIManager is null: False
+[20:42:29.218] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:42:29.218] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:42:29.218] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:29.218] [LOG] [UIManager] locationPrompt is null: False
+[20:42:29.219] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:42:29.219] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:42:29.220] [LOG] [LocationPrompt] GameObject active before: False
+[20:42:29.220] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:42:29.220] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:42:29.221] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:42:29.221] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:42:29.221] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:42:29.222] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:42:29.222] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:42:29.222] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:42:29.223] [LOG] [LocationPrompt] Time difference: 14 minutes
+[20:42:29.223] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:42:29.224] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:42:29.224] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:29.224] [LOG] [LocationPrompt] Time difference: -16 minutes
+[20:42:29.225] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:42:29.225] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:42:29.225] [LOG] [LocationPrompt] Current time: 08:19 AM (499 min)
+[20:42:29.225] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:29.225] [LOG] [LocationPrompt] Time difference: -16 minutes (negative = early, positive = late)
+[20:42:29.226] [LOG] [LocationPrompt] ⏰ Too early - 6 minutes until lesson can start
+[20:42:29.226] [LOG] [LocationPrompt] Can start lesson: False
+[20:42:29.227] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:42:29.227] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:42:29.227] [LOG] [LocationPrompt] GameObject active after: True
+[20:42:29.228] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:42:29.229] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:42:29.229] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:42:29.229] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:42:29.229] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:42:29.233] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:42:29.233] [LOG] [LocationPrompt] activeSelf: True
+[20:42:29.234] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:42:29.814] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[20:42:29.814] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[20:42:29.815] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[20:42:29.815] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[20:42:29.815] [LOG] [UIManager] HideLocationPrompt called
+[20:42:29.816] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:29.816] [LOG] [UIManager] locationPrompt is null: False
+[20:42:29.816] [LOG] [UIManager] Calling locationPrompt.Hide()
+[20:42:29.817] [LOG] [LocationPrompt] Hide called
+[20:42:29.817] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:42:29.818] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:42:30.273] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:42:30.274] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:42:30.274] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:42:30.275] [LOG] [PlayerController] Is Trigger: True
+[20:42:30.275] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:42:30.275] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:42:30.275] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:42:30.275] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:42:30.275] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:42:30.277] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:42:30.277] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:42:30.277] [LOG] [LocationTrigger] UIManager is null: False
+[20:42:30.277] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:42:30.278] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:42:30.278] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:30.278] [LOG] [UIManager] locationPrompt is null: False
+[20:42:30.279] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:42:30.279] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:42:30.279] [LOG] [LocationPrompt] GameObject active before: False
+[20:42:30.280] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:42:30.280] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:42:30.281] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:42:30.281] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:42:30.281] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:42:30.281] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:42:30.282] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:42:30.282] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:42:30.282] [LOG] [LocationPrompt] Time difference: 16 minutes
+[20:42:30.283] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:42:30.283] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:42:30.283] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:30.283] [LOG] [LocationPrompt] Time difference: -14 minutes
+[20:42:30.285] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:42:30.285] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:42:30.285] [LOG] [LocationPrompt] Current time: 08:21 AM (501 min)
+[20:42:30.285] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:30.286] [LOG] [LocationPrompt] Time difference: -14 minutes (negative = early, positive = late)
+[20:42:30.286] [LOG] [LocationPrompt] ⏰ Too early - 4 minutes until lesson can start
+[20:42:30.286] [LOG] [LocationPrompt] Can start lesson: False
+[20:42:30.287] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:42:30.287] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:42:30.287] [LOG] [LocationPrompt] GameObject active after: True
+[20:42:30.288] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:42:30.289] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:42:30.289] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:42:30.289] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:42:30.290] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:42:30.293] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:42:30.293] [LOG] [LocationPrompt] activeSelf: True
+[20:42:30.294] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:42:30.873] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[20:42:30.874] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[20:42:30.874] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[20:42:30.874] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[20:42:30.874] [LOG] [UIManager] HideLocationPrompt called
+[20:42:30.875] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:30.875] [LOG] [UIManager] locationPrompt is null: False
+[20:42:30.875] [LOG] [UIManager] Calling locationPrompt.Hide()
+[20:42:30.875] [LOG] [LocationPrompt] Hide called
+[20:42:30.877] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:42:30.877] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:42:31.832] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:42:31.832] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:42:31.834] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:42:31.834] [LOG] [PlayerController] Is Trigger: True
+[20:42:31.834] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:42:31.834] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:42:31.835] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:42:31.835] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:42:31.835] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:42:31.836] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:42:31.836] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:42:31.836] [LOG] [LocationTrigger] UIManager is null: False
+[20:42:31.837] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:42:31.837] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:42:31.837] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:31.838] [LOG] [UIManager] locationPrompt is null: False
+[20:42:31.838] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:42:31.839] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:42:31.839] [LOG] [LocationPrompt] GameObject active before: False
+[20:42:31.839] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:42:31.839] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:42:31.840] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:42:31.840] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:42:31.840] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:42:31.840] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:42:31.842] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:42:31.842] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:42:31.842] [LOG] [LocationPrompt] Time difference: 18 minutes
+[20:42:31.842] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:42:31.843] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:42:31.843] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:31.844] [LOG] [LocationPrompt] Time difference: -12 minutes
+[20:42:31.844] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:42:31.844] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:42:31.844] [LOG] [LocationPrompt] Current time: 08:23 AM (503 min)
+[20:42:31.845] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:31.845] [LOG] [LocationPrompt] Time difference: -12 minutes (negative = early, positive = late)
+[20:42:31.845] [LOG] [LocationPrompt] ⏰ Too early - 2 minutes until lesson can start
+[20:42:31.846] [LOG] [LocationPrompt] Can start lesson: False
+[20:42:31.846] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:42:31.847] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:42:31.847] [LOG] [LocationPrompt] GameObject active after: True
+[20:42:31.847] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:42:31.848] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:42:31.849] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:42:31.849] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:42:31.849] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:42:31.852] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:42:31.852] [LOG] [LocationPrompt] activeSelf: True
+[20:42:31.853] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:42:33.093] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[20:42:33.094] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[20:42:33.094] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[20:42:33.094] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[20:42:33.095] [LOG] [UIManager] HideLocationPrompt called
+[20:42:33.095] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:33.095] [LOG] [UIManager] locationPrompt is null: False
+[20:42:33.096] [LOG] [UIManager] Calling locationPrompt.Hide()
+[20:42:33.096] [LOG] [LocationPrompt] Hide called
+[20:42:33.096] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:42:33.097] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:42:33.752] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:42:33.753] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:42:33.753] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:42:33.754] [LOG] [PlayerController] Is Trigger: True
+[20:42:33.755] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:42:33.755] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:42:33.755] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:42:33.755] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:42:33.756] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:42:33.756] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:42:33.757] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:42:33.757] [LOG] [LocationTrigger] UIManager is null: False
+[20:42:33.757] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:42:33.757] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:42:33.758] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:33.758] [LOG] [UIManager] locationPrompt is null: False
+[20:42:33.759] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:42:33.760] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:42:33.760] [LOG] [LocationPrompt] GameObject active before: False
+[20:42:33.760] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:42:33.760] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:42:33.760] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:42:33.761] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:42:33.761] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:42:33.762] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:42:33.762] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:42:33.762] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:42:33.762] [LOG] [LocationPrompt] Time difference: 21 minutes
+[20:42:33.764] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:42:33.764] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:42:33.764] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:33.764] [LOG] [LocationPrompt] Time difference: -9 minutes
+[20:42:33.764] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:42:33.765] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:42:33.765] [LOG] [LocationPrompt] Current time: 08:26 AM (506 min)
+[20:42:33.765] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:33.766] [LOG] [LocationPrompt] Time difference: -9 minutes (negative = early, positive = late)
+[20:42:33.767] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[20:42:33.767] [LOG] [LocationPrompt] Can start lesson: True
+[20:42:33.767] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:42:33.768] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:42:33.768] [LOG] [LocationPrompt] GameObject active after: True
+[20:42:33.768] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:42:33.769] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:42:33.769] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:42:33.769] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:42:33.769] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:42:33.772] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:42:33.773] [LOG] [LocationPrompt] activeSelf: True
+[20:42:33.773] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:42:34.253] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[20:42:34.254] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[20:42:34.254] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[20:42:34.254] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[20:42:34.255] [LOG] [UIManager] HideLocationPrompt called
+[20:42:34.255] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:34.255] [LOG] [UIManager] locationPrompt is null: False
+[20:42:34.256] [LOG] [UIManager] Calling locationPrompt.Hide()
+[20:42:34.256] [LOG] [LocationPrompt] Hide called
+[20:42:34.257] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:42:34.257] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:42:34.792] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[20:42:34.793] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[20:42:34.793] [LOG] [PlayerController] Collider bounds: Center: (-4.82, -16.60, 0.00), Extents: (1.00, 1.00, 0.00)
+[20:42:34.794] [LOG] [PlayerController] Is Trigger: True
+[20:42:34.794] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[20:42:34.794] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[20:42:34.794] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[20:42:34.795] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[20:42:34.795] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[20:42:34.795] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[20:42:34.796] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[20:42:34.796] [LOG] [LocationTrigger] UIManager is null: False
+[20:42:34.796] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[20:42:34.797] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[20:42:34.797] [LOG] [UIManager] UIManager instance: UIManager
+[20:42:34.798] [LOG] [UIManager] locationPrompt is null: False
+[20:42:34.799] [LOG] [UIManager] Calling locationPrompt.Show()
+[20:42:34.799] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[20:42:34.799] [LOG] [LocationPrompt] GameObject active before: False
+[20:42:34.800] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[20:42:34.800] [LOG] [LocationPrompt] Set startLessonButton active: True
+[20:42:34.801] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:42:34.802] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:42:34.802] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:42:34.802] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:42:34.804] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:42:34.804] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:42:34.804] [LOG] [LocationPrompt] Time difference: 23 minutes
+[20:42:34.805] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:42:34.805] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:42:34.805] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:34.805] [LOG] [LocationPrompt] Time difference: -7 minutes
+[20:42:34.806] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:42:34.806] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:42:34.807] [LOG] [LocationPrompt] Current time: 08:28 AM (508 min)
+[20:42:34.807] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:34.807] [LOG] [LocationPrompt] Time difference: -7 minutes (negative = early, positive = late)
+[20:42:34.808] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[20:42:34.809] [LOG] [LocationPrompt] Can start lesson: True
+[20:42:34.809] [LOG] [LocationPrompt] About to call SetActive(true)...
+[20:42:34.809] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[20:42:34.809] [LOG] [LocationPrompt] GameObject active after: True
+[20:42:34.810] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[20:42:34.810] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[20:42:34.810] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[20:42:34.811] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[20:42:34.811] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[20:42:34.814] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[20:42:34.815] [LOG] [LocationPrompt] activeSelf: True
+[20:42:34.816] [LOG] [LocationPrompt] activeInHierarchy: True
+[20:42:35.810] [LOG] [LocationPrompt] StartLesson button clicked for location: Tennis Court A
+[20:42:35.811] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[20:42:35.812] [LOG] [LocationPrompt] Total accepted appointments: 2
+[20:42:35.812] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[20:42:35.813] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[20:42:35.813] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[20:42:35.813] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[20:42:35.814] [LOG] [LocationPrompt] Time difference: 25 minutes
+[20:42:35.814] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[20:42:35.814] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[20:42:35.814] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:35.815] [LOG] [LocationPrompt] Time difference: -5 minutes
+[20:42:35.815] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[20:42:35.816] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[20:42:35.816] [LOG] [LocationPrompt] Current time: 08:30 AM (510 min)
+[20:42:35.816] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[20:42:35.816] [LOG] [LocationPrompt] Time difference: -5 minutes (negative = early, positive = late)
+[20:42:35.818] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[20:42:35.818] [LOG] [LocationPrompt] ✅ Lesson validated - proceeding to start lesson
+[20:42:35.819] [LOG] [LocationPrompt] Starting Tennis Drill Mini-Game...
+[20:42:35.820] [LOG] [TennisDrillMiniGame] Starting mini-game...
+[20:42:35.820] [LOG] [TennisDrillMiniGame] State changing: AWAITING_START → PREPARING
+[20:42:35.821] [LOG] [TennisDrillUI] Game state changed to: PREPARING
+[20:42:35.821] [LOG] [TennisDrillUI] Showing mini-game UI
+[20:42:35.822] [LOG] [TennisDrillMiniGame] Preparing game...
+[20:42:35.823] [LOG] [LocationPrompt] Tennis Drill Mini-Game started successfully
+[20:42:35.823] [LOG] [LocationPrompt] Hide called
+[20:42:35.824] [LOG] [LocationPrompt] GameObject active before hide: True
+[20:42:35.824] [LOG] [LocationPrompt] LocationPrompt hidden
+[20:42:40.316] [LOG] [TennisDrillMiniGame] State changing: PREPARING → ACTIVE
+[20:42:40.316] [LOG] [TennisDrillUI] Game state changed to: ACTIVE
+[20:42:40.317] [LOG] [TennisDrillUI] Showing game HUD
+[20:42:40.318] [LOG] [TennisDrillMiniGame] Game active!
+[20:42:40.318] [LOG] [TennisPlayerPaddle] Controls enabled: True
+[20:42:40.319] [LOG] [TennisBall] Serving from student
+[20:42:40.319] [LOG] [TennisDrillUI] Showing game HUD
+[20:42:40.324] [LOG] [TennisBall] Ball went out of bounds
+[20:42:40.324] [LOG] [TennisBall] Ball out of bounds
+[20:42:40.325] [LOG] [TennisDrillMiniGame] Ball missed!
+[20:42:40.325] [LOG] [TennisDrillUI] Showing judgment: MISS
+[20:42:40.327] [LOG] [TennisDrillMiniGame] Hit judged: MISS, Combo: 0, Score: 0
+[20:42:40.328] [LOG] [TennisBall] Ball stopped
+[20:42:43.620] [SYSTEM] Application lost focus
+[20:42:47.664] [SYSTEM] Application gained focus
+[20:42:47.667] [SYSTEM] Application lost focus
+[20:43:49.400] [SYSTEM] Application gained focus
+[20:43:51.320] [SYSTEM] Application lost focus
+[20:43:51.438] [SYSTEM] Application gained focus
+[20:43:54.539] [LOG] [TennisPlayerPaddle] Moving to Y: -12.30812
+[20:43:54.543] [LOG] [TennisPlayerPaddle] Moving to Y: -12.3444
+[20:43:54.546] [LOG] [TennisPlayerPaddle] Moving to Y: -12.36844
+[20:43:54.549] [LOG] [TennisPlayerPaddle] Moving to Y: -12.38895
+[20:43:54.552] [LOG] [TennisPlayerPaddle] Moving to Y: -12.41026
+[20:43:54.554] [LOG] [TennisPlayerPaddle] Moving to Y: -12.43234
+[20:43:54.556] [LOG] [TennisPlayerPaddle] Moving to Y: -12.45352
+[20:43:54.559] [LOG] [TennisPlayerPaddle] Moving to Y: -12.47532
+[20:43:54.562] [LOG] [TennisPlayerPaddle] Moving to Y: -12.49736
+[20:43:54.565] [LOG] [TennisPlayerPaddle] Moving to Y: -12.51803
+[20:43:54.568] [LOG] [TennisPlayerPaddle] Moving to Y: -12.54006
+[20:43:54.570] [LOG] [TennisPlayerPaddle] Moving to Y: -12.56093
+[20:43:54.573] [LOG] [TennisPlayerPaddle] Moving to Y: -12.58377
+[20:43:54.576] [LOG] [TennisPlayerPaddle] Moving to Y: -12.60406
+[20:43:54.578] [LOG] [TennisPlayerPaddle] Moving to Y: -12.62537
+[20:43:54.581] [LOG] [TennisPlayerPaddle] Moving to Y: -12.64958
+[20:43:54.583] [LOG] [TennisPlayerPaddle] Moving to Y: -12.67032
+[20:43:54.586] [LOG] [TennisPlayerPaddle] Moving to Y: -12.69263
+[20:43:54.589] [LOG] [TennisPlayerPaddle] Moving to Y: -12.71504
+[20:43:54.592] [LOG] [TennisPlayerPaddle] Moving to Y: -12.73524
+[20:43:54.595] [LOG] [TennisPlayerPaddle] Moving to Y: -12.75783
+[20:43:54.597] [LOG] [TennisPlayerPaddle] Moving to Y: -12.77852
+[20:43:54.599] [LOG] [TennisPlayerPaddle] Moving to Y: -12.80206
+[20:43:54.602] [LOG] [TennisPlayerPaddle] Moving to Y: -12.82344
+[20:43:54.606] [LOG] [TennisPlayerPaddle] Moving to Y: -12.84366
+[20:43:54.607] [LOG] [TennisPlayerPaddle] Moving to Y: -12.86592
+[20:43:54.611] [LOG] [TennisPlayerPaddle] Moving to Y: -12.88837
+[20:43:54.614] [LOG] [TennisPlayerPaddle] Moving to Y: -12.91105
+[20:43:54.616] [LOG] [TennisPlayerPaddle] Moving to Y: -12.93234
+[20:43:54.619] [LOG] [TennisPlayerPaddle] Moving to Y: -12.95255
+[20:43:54.622] [LOG] [TennisPlayerPaddle] Moving to Y: -12.97708
+[20:43:54.624] [LOG] [TennisPlayerPaddle] Moving to Y: -12.99808
+[20:43:54.627] [LOG] [TennisPlayerPaddle] Moving to Y: -13.01967
+[20:43:54.630] [LOG] [TennisPlayerPaddle] Moving to Y: -13.04136
+[20:43:54.632] [LOG] [TennisPlayerPaddle] Moving to Y: -13.06225
+[20:43:54.634] [LOG] [TennisPlayerPaddle] Moving to Y: -13.08302
+[20:43:54.637] [LOG] [TennisPlayerPaddle] Moving to Y: -13.10466
+[20:43:54.641] [LOG] [TennisPlayerPaddle] Moving to Y: -13.12455
+[20:43:54.643] [LOG] [TennisPlayerPaddle] Moving to Y: -13.14671
+[20:43:54.646] [LOG] [TennisPlayerPaddle] Moving to Y: -13.16715
+[20:43:54.649] [LOG] [TennisPlayerPaddle] Moving to Y: -13.18836
+[20:43:54.652] [LOG] [TennisPlayerPaddle] Moving to Y: -13.21099
+[20:43:54.654] [LOG] [TennisPlayerPaddle] Moving to Y: -13.23195
+[20:43:54.657] [LOG] [TennisPlayerPaddle] Moving to Y: -13.25694
+[20:43:54.660] [LOG] [TennisPlayerPaddle] Moving to Y: -13.28137
+[20:43:54.662] [LOG] [TennisPlayerPaddle] Moving to Y: -13.30224
+[20:43:54.665] [LOG] [TennisPlayerPaddle] Moving to Y: -13.32353
+[20:43:54.667] [LOG] [TennisPlayerPaddle] Moving to Y: -13.34358
+[20:43:54.670] [LOG] [TennisPlayerPaddle] Moving to Y: -13.36685
+[20:43:54.673] [LOG] [TennisPlayerPaddle] Moving to Y: -13.38841
+[20:43:54.676] [LOG] [TennisPlayerPaddle] Moving to Y: -13.41192
+[20:43:54.680] [LOG] [TennisPlayerPaddle] Moving to Y: -13.43365
+[20:43:54.682] [LOG] [TennisPlayerPaddle] Moving to Y: -13.45528
+[20:43:54.685] [LOG] [TennisPlayerPaddle] Moving to Y: -13.47812
+[20:43:54.687] [LOG] [TennisPlayerPaddle] Moving to Y: -13.49923
+[20:43:54.690] [LOG] [TennisPlayerPaddle] Moving to Y: -13.51994
+[20:43:54.693] [LOG] [TennisPlayerPaddle] Moving to Y: -13.54173
+[20:43:54.695] [LOG] [TennisPlayerPaddle] Moving to Y: -13.56191
+[20:43:54.698] [LOG] [TennisPlayerPaddle] Moving to Y: -13.58348
+[20:43:54.700] [LOG] [TennisPlayerPaddle] Moving to Y: -13.60438
+[20:43:54.703] [LOG] [TennisPlayerPaddle] Moving to Y: -13.62477
+[20:43:54.705] [LOG] [TennisPlayerPaddle] Moving to Y: -13.6481
+[20:43:54.709] [LOG] [TennisPlayerPaddle] Moving to Y: -13.6697
+[20:43:54.711] [LOG] [TennisPlayerPaddle] Moving to Y: -13.69343
+[20:43:54.715] [LOG] [TennisPlayerPaddle] Moving to Y: -13.71533
+[20:43:54.716] [LOG] [TennisPlayerPaddle] Moving to Y: -13.73663
+[20:43:54.719] [LOG] [TennisPlayerPaddle] Moving to Y: -13.76143
+[20:43:54.723] [LOG] [TennisPlayerPaddle] Moving to Y: -13.78227
+[20:43:54.726] [LOG] [TennisPlayerPaddle] Moving to Y: -13.80319
+[20:43:54.728] [LOG] [TennisPlayerPaddle] Moving to Y: -13.82412
+[20:43:54.730] [LOG] [TennisPlayerPaddle] Moving to Y: -13.84472
+[20:43:54.733] [LOG] [TennisPlayerPaddle] Moving to Y: -13.8677
+[20:43:54.736] [LOG] [TennisPlayerPaddle] Moving to Y: -13.88815
+[20:43:54.739] [LOG] [TennisPlayerPaddle] Moving to Y: -13.91084
+[20:43:54.742] [LOG] [TennisPlayerPaddle] Moving to Y: -13.93483
+[20:43:54.745] [LOG] [TennisPlayerPaddle] Moving to Y: -13.95615
+[20:43:54.747] [LOG] [TennisPlayerPaddle] Moving to Y: -13.98085
+[20:43:54.751] [LOG] [TennisPlayerPaddle] Moving to Y: -14.00327
+[20:43:54.753] [LOG] [TennisPlayerPaddle] Moving to Y: -14.03032
+[20:43:54.757] [LOG] [TennisPlayerPaddle] Moving to Y: -14.05239
+[20:43:54.759] [LOG] [TennisPlayerPaddle] Moving to Y: -14.07246
+[20:43:54.762] [LOG] [TennisPlayerPaddle] Moving to Y: -14.09988
+[20:43:54.765] [LOG] [TennisPlayerPaddle] Moving to Y: -14.1217
+[20:43:54.767] [LOG] [TennisPlayerPaddle] Moving to Y: -14.14346
+[20:43:54.771] [LOG] [TennisPlayerPaddle] Moving to Y: -14.16596
+[20:43:54.773] [LOG] [TennisPlayerPaddle] Moving to Y: -14.18619
+[20:43:54.775] [LOG] [TennisPlayerPaddle] Moving to Y: -14.20782
+[20:43:54.779] [LOG] [TennisPlayerPaddle] Moving to Y: -14.22838
+[20:43:54.781] [LOG] [TennisPlayerPaddle] Moving to Y: -14.2499
+[20:43:54.784] [LOG] [TennisPlayerPaddle] Moving to Y: -14.27051
+[20:43:54.786] [LOG] [TennisPlayerPaddle] Moving to Y: -14.2906
+[20:43:54.789] [LOG] [TennisPlayerPaddle] Moving to Y: -14.31299
+[20:43:54.792] [LOG] [TennisPlayerPaddle] Moving to Y: -14.33324
+[20:43:54.794] [LOG] [TennisPlayerPaddle] Moving to Y: -14.35302
+[20:43:54.796] [LOG] [TennisPlayerPaddle] Moving to Y: -14.37551
+[20:43:54.800] [LOG] [TennisPlayerPaddle] Moving to Y: -14.39552
+[20:43:54.802] [LOG] [TennisPlayerPaddle] Moving to Y: -14.41732
+[20:43:54.804] [LOG] [TennisPlayerPaddle] Moving to Y: -14.43858
+[20:43:54.807] [LOG] [TennisPlayerPaddle] Moving to Y: -14.45866
+[20:43:54.809] [LOG] [TennisPlayerPaddle] Moving to Y: -14.47969
+[20:43:54.813] [LOG] [TennisPlayerPaddle] Moving to Y: -14.50051
+[20:43:54.815] [LOG] [TennisPlayerPaddle] Moving to Y: -14.52083
+[20:43:54.818] [LOG] [TennisPlayerPaddle] Moving to Y: -14.5431
+[20:43:54.821] [LOG] [TennisPlayerPaddle] Moving to Y: -14.56306
+[20:43:54.823] [LOG] [TennisPlayerPaddle] Moving to Y: -14.58335
+[20:43:54.826] [LOG] [TennisPlayerPaddle] Moving to Y: -14.60484
+[20:43:54.827] [LOG] [TennisPlayerPaddle] Moving to Y: -14.62632
+[20:43:54.830] [LOG] [TennisPlayerPaddle] Moving to Y: -14.64925
+[20:43:54.833] [LOG] [TennisPlayerPaddle] Moving to Y: -14.67021
+[20:43:54.836] [LOG] [TennisPlayerPaddle] Moving to Y: -14.69179
+[20:43:54.839] [LOG] [TennisPlayerPaddle] Moving to Y: -14.71339
+[20:43:54.842] [LOG] [TennisPlayerPaddle] Moving to Y: -14.73522
+[20:43:54.845] [LOG] [TennisPlayerPaddle] Moving to Y: -14.75842
+[20:43:54.848] [LOG] [TennisPlayerPaddle] Moving to Y: -14.77988
+[20:43:54.851] [LOG] [TennisPlayerPaddle] Moving to Y: -14.80435
+[20:43:54.853] [LOG] [TennisPlayerPaddle] Moving to Y: -14.82591
+[20:43:54.856] [LOG] [TennisPlayerPaddle] Moving to Y: -14.84762
+[20:43:54.859] [LOG] [TennisPlayerPaddle] Moving to Y: -14.87203
+[20:43:54.862] [LOG] [TennisPlayerPaddle] Moving to Y: -14.89404
+[20:43:54.866] [LOG] [TennisPlayerPaddle] Moving to Y: -14.92155
+[20:43:54.867] [LOG] [TennisPlayerPaddle] Moving to Y: -14.94309
+[20:43:54.871] [LOG] [TennisPlayerPaddle] Moving to Y: -14.96431
+[20:43:54.873] [LOG] [TennisPlayerPaddle] Moving to Y: -14.98745
+[20:43:54.876] [LOG] [TennisPlayerPaddle] Moving to Y: -15.00788
+[20:43:54.879] [LOG] [TennisPlayerPaddle] Moving to Y: -15.02924
+[20:43:54.881] [LOG] [TennisPlayerPaddle] Moving to Y: -15.05
+[20:43:54.883] [LOG] [TennisPlayerPaddle] Moving to Y: -15.07002
+[20:43:54.887] [LOG] [TennisPlayerPaddle] Moving to Y: -15.0915
+[20:43:54.889] [LOG] [TennisPlayerPaddle] Moving to Y: -15.11191
+[20:43:54.892] [LOG] [TennisPlayerPaddle] Moving to Y: -15.13308
+[20:43:54.894] [LOG] [TennisPlayerPaddle] Moving to Y: -15.15554
+[20:43:54.897] [LOG] [TennisPlayerPaddle] Moving to Y: -15.17659
+[20:43:54.900] [LOG] [TennisPlayerPaddle] Moving to Y: -15.19777
+[20:43:54.902] [LOG] [TennisPlayerPaddle] Moving to Y: -15.21889
+[20:43:54.905] [LOG] [TennisPlayerPaddle] Moving to Y: -15.23978
+[20:43:54.908] [LOG] [TennisPlayerPaddle] Moving to Y: -15.26187
+[20:43:54.909] [LOG] [TennisPlayerPaddle] Moving to Y: -15.28261
+[20:43:54.913] [LOG] [TennisPlayerPaddle] Moving to Y: -15.30375
+[20:43:54.915] [LOG] [TennisPlayerPaddle] Moving to Y: -15.32502
+[20:43:54.918] [LOG] [TennisPlayerPaddle] Moving to Y: -15.34478
+[20:43:54.921] [LOG] [TennisPlayerPaddle] Moving to Y: -15.36701
+[20:43:54.923] [LOG] [TennisPlayerPaddle] Moving to Y: -15.38823
+[20:43:54.926] [LOG] [TennisPlayerPaddle] Moving to Y: -15.40873
+[20:43:54.929] [LOG] [TennisPlayerPaddle] Moving to Y: -15.43017
+[20:43:54.931] [LOG] [TennisPlayerPaddle] Moving to Y: -15.45001
+[20:43:54.934] [LOG] [TennisPlayerPaddle] Moving to Y: -15.47091
+[20:43:54.937] [LOG] [TennisPlayerPaddle] Moving to Y: -15.49346
+[20:43:54.939] [LOG] [TennisPlayerPaddle] Moving to Y: -15.51363
+[20:43:54.942] [LOG] [TennisPlayerPaddle] Moving to Y: -15.5351
+[20:43:54.944] [LOG] [TennisPlayerPaddle] Moving to Y: -15.55507
+[20:43:54.947] [LOG] [TennisPlayerPaddle] Moving to Y: -15.57617
+[20:43:54.950] [LOG] [TennisPlayerPaddle] Moving to Y: -15.59781
+[20:43:54.952] [LOG] [TennisPlayerPaddle] Moving to Y: -15.61889
+[20:43:54.955] [LOG] [TennisPlayerPaddle] Moving to Y: -15.64195
+[20:43:54.958] [LOG] [TennisPlayerPaddle] Moving to Y: -15.66631
+[20:43:54.961] [LOG] [TennisPlayerPaddle] Moving to Y: -15.68695
+[20:43:54.964] [LOG] [TennisPlayerPaddle] Moving to Y: -15.70809
+[20:43:54.966] [LOG] [TennisPlayerPaddle] Moving to Y: -15.72781
+[20:43:54.969] [LOG] [TennisPlayerPaddle] Moving to Y: -15.74855
+[20:43:54.971] [LOG] [TennisPlayerPaddle] Moving to Y: -15.77043
+[20:43:54.974] [LOG] [TennisPlayerPaddle] Moving to Y: -15.79122
+[20:43:54.977] [LOG] [TennisPlayerPaddle] Moving to Y: -15.81426
+[20:43:54.980] [LOG] [TennisPlayerPaddle] Moving to Y: -15.83683
+[20:43:54.981] [LOG] [TennisPlayerPaddle] Moving to Y: -15.85937
+[20:43:54.984] [LOG] [TennisPlayerPaddle] Moving to Y: -15.88113
+[20:43:54.988] [LOG] [TennisPlayerPaddle] Moving to Y: -15.90116
+[20:43:54.991] [LOG] [TennisPlayerPaddle] Moving to Y: -15.92539
+[20:43:54.993] [LOG] [TennisPlayerPaddle] Moving to Y: -15.94695
+[20:43:54.996] [LOG] [TennisPlayerPaddle] Moving to Y: -15.96761
+[20:43:54.999] [LOG] [TennisPlayerPaddle] Moving to Y: -15.99017
+[20:43:55.001] [LOG] [TennisPlayerPaddle] Moving to Y: -16.01121
+[20:43:55.004] [LOG] [TennisPlayerPaddle] Moving to Y: -16.03211
+[20:43:55.007] [LOG] [TennisPlayerPaddle] Moving to Y: -16.05569
+[20:43:55.009] [LOG] [TennisPlayerPaddle] Moving to Y: -16.07784
+[20:43:55.013] [LOG] [TennisPlayerPaddle] Moving to Y: -16.10225
+[20:43:55.016] [LOG] [TennisPlayerPaddle] Moving to Y: -16.12488
+[20:43:55.019] [LOG] [TennisPlayerPaddle] Moving to Y: -16.14721
+[20:43:55.021] [LOG] [TennisPlayerPaddle] Moving to Y: -16.16902
+[20:43:55.024] [LOG] [TennisPlayerPaddle] Moving to Y: -16.18949
+[20:43:55.027] [LOG] [TennisPlayerPaddle] Moving to Y: -16.21071
+[20:43:55.029] [LOG] [TennisPlayerPaddle] Moving to Y: -16.23095
+[20:43:55.032] [LOG] [TennisPlayerPaddle] Moving to Y: -16.25151
+[20:43:55.034] [LOG] [TennisPlayerPaddle] Moving to Y: -16.27279
+[20:43:55.036] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.038] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.042] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.044] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.047] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.049] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.051] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.055] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.056] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.059] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.062] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.065] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.067] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.070] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.074] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.077] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.079] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.083] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.085] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.087] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.090] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.092] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.095] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:55.098] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.932] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.936] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.938] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.940] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.942] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.945] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.948] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.950] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.952] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.957] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.960] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.963] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.965] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.969] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.970] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.974] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.977] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.979] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.982] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.985] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.987] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.989] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.992] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.995] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:56.998] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.000] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.002] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.005] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.008] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.011] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.013] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.015] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.019] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.022] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.025] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.027] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.030] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.032] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.035] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.038] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.041] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.043] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.046] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.049] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.052] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.054] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.057] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.059] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.062] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.064] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.067] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.070] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.072] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.075] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.076] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.081] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.083] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.085] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.088] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.091] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.092] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.094] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.098] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.101] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.103] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.105] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.109] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.110] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.114] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.117] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.120] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.123] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.127] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.129] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.132] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.134] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.137] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.140] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.142] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.145] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.148] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.150] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.153] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.157] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.159] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.162] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.165] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.167] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.170] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.172] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.175] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.177] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.181] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.183] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.186] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.188] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.191] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.193] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.195] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.198] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.201] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.204] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.207] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.210] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.212] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.215] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.217] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.220] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.223] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.226] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.227] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.231] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.233] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.235] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.237] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.240] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.243] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.245] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.247] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.250] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.253] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.256] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.258] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.261] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.264] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.267] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.270] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.272] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.275] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.278] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.281] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.284] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.287] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.290] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.292] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.295] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.298] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.300] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.303] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.305] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.309] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.312] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.314] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.317] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.320] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.322] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.325] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.327] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.329] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.331] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.335] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.337] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.340] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.343] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.345] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.347] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.351] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.354] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.357] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.359] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.362] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.365] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.367] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.370] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.372] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.375] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.377] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.380] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.382] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.385] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.388] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.390] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.394] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.397] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.399] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.401] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.404] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.406] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.409] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.411] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.414] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.417] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.419] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.421] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.425] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.427] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.429] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.431] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.434] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.436] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.440] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.443] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.446] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.448] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.451] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.454] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.456] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.458] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:57.460] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.154] [LOG] [TimeSystem] Time updated: Day 1, 09:00 AM
+[20:43:59.856] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.860] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.863] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.865] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.867] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.870] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.872] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.876] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.877] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.881] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.884] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.886] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.889] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.891] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.893] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.896] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.899] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.901] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.903] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.906] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.909] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.911] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.913] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.916] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.919] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.922] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.924] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.927] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.929] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.931] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.934] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.936] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.940] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.941] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.945] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.947] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.950] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.953] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.957] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.960] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.962] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.965] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.969] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.972] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.975] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.979] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.982] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.984] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.988] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.990] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.993] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.996] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:43:59.999] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:44:00.002] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:44:00.006] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:44:00.011] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:44:00.015] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:44:00.019] [LOG] [TennisPlayerPaddle] Moving to Y: -16.28187
+[20:44:00.106] [LOG] [TennisPlayerPaddle] Moving to Y: -16.26042
+[20:44:00.109] [LOG] [TennisPlayerPaddle] Moving to Y: -16.2245
+[20:44:00.113] [LOG] [TennisPlayerPaddle] Moving to Y: -16.20199
+[20:44:00.115] [LOG] [TennisPlayerPaddle] Moving to Y: -16.17845
+[20:44:00.119] [LOG] [TennisPlayerPaddle] Moving to Y: -16.15641
+[20:44:00.121] [LOG] [TennisPlayerPaddle] Moving to Y: -16.13541
+[20:44:00.123] [LOG] [TennisPlayerPaddle] Moving to Y: -16.11371
+[20:44:00.126] [LOG] [TennisPlayerPaddle] Moving to Y: -16.0937
+[20:44:00.129] [LOG] [TennisPlayerPaddle] Moving to Y: -16.07136
+[20:44:00.131] [LOG] [TennisPlayerPaddle] Moving to Y: -16.04933
+[20:44:00.135] [LOG] [TennisPlayerPaddle] Moving to Y: -16.0277
+[20:44:00.137] [LOG] [TennisPlayerPaddle] Moving to Y: -16.00651
+[20:44:00.139] [LOG] [TennisPlayerPaddle] Moving to Y: -15.98665
+[20:44:00.142] [LOG] [TennisPlayerPaddle] Moving to Y: -15.96395
+[20:44:00.145] [LOG] [TennisPlayerPaddle] Moving to Y: -15.94135
+[20:44:00.147] [LOG] [TennisPlayerPaddle] Moving to Y: -15.92158
+[20:44:00.151] [LOG] [TennisPlayerPaddle] Moving to Y: -15.90036
+[20:44:00.153] [LOG] [TennisPlayerPaddle] Moving to Y: -15.87974
+[20:44:00.156] [LOG] [TennisPlayerPaddle] Moving to Y: -15.85809
+[20:44:00.158] [LOG] [TennisPlayerPaddle] Moving to Y: -15.83659
+[20:44:00.161] [LOG] [TennisPlayerPaddle] Moving to Y: -15.81639
+[20:44:00.164] [LOG] [TennisPlayerPaddle] Moving to Y: -15.7956
+[20:44:00.166] [LOG] [TennisPlayerPaddle] Moving to Y: -15.77526
+[20:44:00.169] [LOG] [TennisPlayerPaddle] Moving to Y: -15.75527
+[20:44:00.171] [LOG] [TennisPlayerPaddle] Moving to Y: -15.73317
+[20:44:00.174] [LOG] [TennisPlayerPaddle] Moving to Y: -15.71262
+[20:44:00.177] [LOG] [TennisPlayerPaddle] Moving to Y: -15.69168
+[20:44:00.178] [LOG] [TennisPlayerPaddle] Moving to Y: -15.67142
+[20:44:00.181] [LOG] [TennisPlayerPaddle] Moving to Y: -15.65167
+[20:44:00.184] [LOG] [TennisPlayerPaddle] Moving to Y: -15.63101
+[20:44:00.186] [LOG] [TennisPlayerPaddle] Moving to Y: -15.60953
+[20:44:00.189] [LOG] [TennisPlayerPaddle] Moving to Y: -15.58838
+[20:44:00.191] [LOG] [TennisPlayerPaddle] Moving to Y: -15.56704
+[20:44:00.194] [LOG] [TennisPlayerPaddle] Moving to Y: -15.54703
+[20:44:00.198] [LOG] [TennisPlayerPaddle] Moving to Y: -15.5257
+[20:44:00.200] [LOG] [TennisPlayerPaddle] Moving to Y: -15.50477
+[20:44:00.202] [LOG] [TennisPlayerPaddle] Moving to Y: -15.48473
+[20:44:00.205] [LOG] [TennisPlayerPaddle] Moving to Y: -15.46337
+[20:44:00.208] [LOG] [TennisPlayerPaddle] Moving to Y: -15.44283
+[20:44:00.210] [LOG] [TennisPlayerPaddle] Moving to Y: -15.4232
+[20:44:00.213] [LOG] [TennisPlayerPaddle] Moving to Y: -15.40222
+[20:44:00.215] [LOG] [TennisPlayerPaddle] Moving to Y: -15.3823
+[20:44:00.217] [LOG] [TennisPlayerPaddle] Moving to Y: -15.3614
+[20:44:00.222] [LOG] [TennisPlayerPaddle] Moving to Y: -15.33049
+[20:44:00.226] [LOG] [TennisPlayerPaddle] Moving to Y: -15.29294
+[20:44:00.230] [LOG] [TennisPlayerPaddle] Moving to Y: -15.26513
+[20:44:00.233] [LOG] [TennisPlayerPaddle] Moving to Y: -15.24161
+[20:44:00.235] [LOG] [TennisPlayerPaddle] Moving to Y: -15.22007
+[20:44:00.238] [LOG] [TennisPlayerPaddle] Moving to Y: -15.19731
+[20:44:00.241] [LOG] [TennisPlayerPaddle] Moving to Y: -15.17559
+[20:44:00.243] [LOG] [TennisPlayerPaddle] Moving to Y: -15.15502
+[20:44:00.246] [LOG] [TennisPlayerPaddle] Moving to Y: -15.13466
+[20:44:00.249] [LOG] [TennisPlayerPaddle] Moving to Y: -15.11388
+[20:44:00.252] [LOG] [TennisPlayerPaddle] Moving to Y: -15.09171
+[20:44:00.254] [LOG] [TennisPlayerPaddle] Moving to Y: -15.07073
+[20:44:00.256] [LOG] [TennisPlayerPaddle] Moving to Y: -15.04774
+[20:44:00.259] [LOG] [TennisPlayerPaddle] Moving to Y: -15.02682
+[20:44:00.261] [LOG] [TennisPlayerPaddle] Moving to Y: -15.00536
+[20:44:00.265] [LOG] [TennisPlayerPaddle] Moving to Y: -14.98446
+[20:44:00.267] [LOG] [TennisPlayerPaddle] Moving to Y: -14.96085
+[20:44:00.271] [LOG] [TennisPlayerPaddle] Moving to Y: -14.93917
+[20:44:00.274] [LOG] [TennisPlayerPaddle] Moving to Y: -14.91105
+[20:44:00.277] [LOG] [TennisPlayerPaddle] Moving to Y: -14.88858
+[20:44:00.279] [LOG] [TennisPlayerPaddle] Moving to Y: -14.86858
+[20:44:00.282] [LOG] [TennisPlayerPaddle] Moving to Y: -14.84741
+[20:44:00.284] [LOG] [TennisPlayerPaddle] Moving to Y: -14.82661
+[20:44:00.287] [LOG] [TennisPlayerPaddle] Moving to Y: -14.80513
+[20:44:00.289] [LOG] [TennisPlayerPaddle] Moving to Y: -14.78508
+[20:44:00.293] [LOG] [TennisPlayerPaddle] Moving to Y: -14.76485
+[20:44:00.295] [LOG] [TennisPlayerPaddle] Moving to Y: -14.74343
+[20:44:00.298] [LOG] [TennisPlayerPaddle] Moving to Y: -14.72249
+[20:44:00.300] [LOG] [TennisPlayerPaddle] Moving to Y: -14.70089
+[20:44:00.302] [LOG] [TennisPlayerPaddle] Moving to Y: -14.68008
+[20:44:00.306] [LOG] [TennisPlayerPaddle] Moving to Y: -14.65947
+[20:44:00.307] [LOG] [TennisPlayerPaddle] Moving to Y: -14.63922
+[20:44:00.310] [LOG] [TennisPlayerPaddle] Moving to Y: -14.61927
+[20:44:00.313] [LOG] [TennisPlayerPaddle] Moving to Y: -14.59886
+[20:44:00.316] [LOG] [TennisPlayerPaddle] Moving to Y: -14.57815
+[20:44:00.318] [LOG] [TennisPlayerPaddle] Moving to Y: -14.5569
+[20:44:00.320] [LOG] [TennisPlayerPaddle] Moving to Y: -14.53702
+[20:44:00.323] [LOG] [TennisPlayerPaddle] Moving to Y: -14.51662
+[20:44:00.326] [LOG] [TennisPlayerPaddle] Moving to Y: -14.4948
+[20:44:00.329] [LOG] [TennisPlayerPaddle] Moving to Y: -14.47454
+[20:44:00.331] [LOG] [TennisPlayerPaddle] Moving to Y: -14.45374
+[20:44:00.334] [LOG] [TennisPlayerPaddle] Moving to Y: -14.43333
+[20:44:00.336] [LOG] [TennisPlayerPaddle] Moving to Y: -14.41102
+[20:44:00.339] [LOG] [TennisPlayerPaddle] Moving to Y: -14.39001
+[20:44:00.342] [LOG] [TennisPlayerPaddle] Moving to Y: -14.37031
+[20:44:00.344] [LOG] [TennisPlayerPaddle] Moving to Y: -14.35051
+[20:44:00.346] [LOG] [TennisPlayerPaddle] Moving to Y: -14.33004
+[20:44:00.349] [LOG] [TennisPlayerPaddle] Moving to Y: -14.3098
+[20:44:00.352] [LOG] [TennisPlayerPaddle] Moving to Y: -14.28907
+[20:44:00.354] [LOG] [TennisPlayerPaddle] Moving to Y: -14.26895
+[20:44:00.357] [LOG] [TennisPlayerPaddle] Moving to Y: -14.2483
+[20:44:00.359] [LOG] [TennisPlayerPaddle] Moving to Y: -14.22796
+[20:44:00.362] [LOG] [TennisPlayerPaddle] Moving to Y: -14.20742
+[20:44:00.365] [LOG] [TennisPlayerPaddle] Moving to Y: -14.18605
+[20:44:00.368] [LOG] [TennisPlayerPaddle] Moving to Y: -14.16407
+[20:44:00.371] [LOG] [TennisPlayerPaddle] Moving to Y: -14.13941
+[20:44:00.373] [LOG] [TennisPlayerPaddle] Moving to Y: -14.11759
+[20:44:00.376] [LOG] [TennisPlayerPaddle] Moving to Y: -14.09791
+[20:44:00.379] [LOG] [TennisPlayerPaddle] Moving to Y: -14.07445
+[20:44:00.381] [LOG] [TennisPlayerPaddle] Moving to Y: -14.05346
+[20:44:00.383] [LOG] [TennisPlayerPaddle] Moving to Y: -14.03277
+[20:44:00.387] [LOG] [TennisPlayerPaddle] Moving to Y: -14.01054
+[20:44:00.389] [LOG] [TennisPlayerPaddle] Moving to Y: -13.98997
+[20:44:00.391] [LOG] [TennisPlayerPaddle] Moving to Y: -13.96807
+[20:44:00.394] [LOG] [TennisPlayerPaddle] Moving to Y: -13.94689
+[20:44:00.397] [LOG] [TennisPlayerPaddle] Moving to Y: -13.92566
+[20:44:00.399] [LOG] [TennisPlayerPaddle] Moving to Y: -13.90384
+[20:44:00.402] [LOG] [TennisPlayerPaddle] Moving to Y: -13.88295
+[20:44:00.405] [LOG] [TennisPlayerPaddle] Moving to Y: -13.86207
+[20:44:00.407] [LOG] [TennisPlayerPaddle] Moving to Y: -13.83951
+[20:44:00.411] [LOG] [TennisPlayerPaddle] Moving to Y: -13.81836
+[20:44:00.412] [LOG] [TennisPlayerPaddle] Moving to Y: -13.79687
+[20:44:00.416] [LOG] [TennisPlayerPaddle] Moving to Y: -13.77509
+[20:44:00.419] [LOG] [TennisPlayerPaddle] Moving to Y: -13.75457
+[20:44:00.421] [LOG] [TennisPlayerPaddle] Moving to Y: -13.73222
+[20:44:00.423] [LOG] [TennisPlayerPaddle] Moving to Y: -13.71143
+[20:44:00.426] [LOG] [TennisPlayerPaddle] Moving to Y: -13.69096
+[20:44:00.429] [LOG] [TennisPlayerPaddle] Moving to Y: -13.66996
+[20:44:00.431] [LOG] [TennisPlayerPaddle] Moving to Y: -13.64934
+[20:44:00.434] [LOG] [TennisPlayerPaddle] Moving to Y: -13.62825
+[20:44:00.437] [LOG] [TennisPlayerPaddle] Moving to Y: -13.60463
+[20:44:00.439] [LOG] [TennisPlayerPaddle] Moving to Y: -13.58379
+[20:44:00.442] [LOG] [TennisPlayerPaddle] Moving to Y: -13.56259
+[20:44:00.445] [LOG] [TennisPlayerPaddle] Moving to Y: -13.54272
+[20:44:00.448] [LOG] [TennisPlayerPaddle] Moving to Y: -13.5205
+[20:44:00.449] [LOG] [TennisPlayerPaddle] Moving to Y: -13.49947
+[20:44:00.453] [LOG] [TennisPlayerPaddle] Moving to Y: -13.47897
+[20:44:00.455] [LOG] [TennisPlayerPaddle] Moving to Y: -13.45716
+[20:44:00.457] [LOG] [TennisPlayerPaddle] Moving to Y: -13.43683
+[20:44:00.461] [LOG] [TennisPlayerPaddle] Moving to Y: -13.41598
+[20:44:00.464] [LOG] [TennisPlayerPaddle] Moving to Y: -13.39446
+[20:44:00.466] [LOG] [TennisPlayerPaddle] Moving to Y: -13.37461
+[20:44:00.469] [LOG] [TennisPlayerPaddle] Moving to Y: -13.35406
+[20:44:00.471] [LOG] [TennisPlayerPaddle] Moving to Y: -13.33263
+[20:44:00.474] [LOG] [TennisPlayerPaddle] Moving to Y: -13.31217
+[20:44:00.476] [LOG] [TennisPlayerPaddle] Moving to Y: -13.29008
+[20:44:00.479] [LOG] [TennisPlayerPaddle] Moving to Y: -13.26901
+[20:44:00.481] [LOG] [TennisPlayerPaddle] Moving to Y: -13.2481
+[20:44:00.485] [LOG] [TennisPlayerPaddle] Moving to Y: -13.22686
+[20:44:00.487] [LOG] [TennisPlayerPaddle] Moving to Y: -13.20708
+[20:44:00.490] [LOG] [TennisPlayerPaddle] Moving to Y: -13.18637
+[20:44:00.492] [LOG] [TennisPlayerPaddle] Moving to Y: -13.16532
+[20:44:00.494] [LOG] [TennisPlayerPaddle] Moving to Y: -13.14503
+[20:44:00.497] [LOG] [TennisPlayerPaddle] Moving to Y: -13.1237
+[20:44:00.499] [LOG] [TennisPlayerPaddle] Moving to Y: -13.10247
+[20:44:00.502] [LOG] [TennisPlayerPaddle] Moving to Y: -13.082
+[20:44:00.505] [LOG] [TennisPlayerPaddle] Moving to Y: -13.0604
+[20:44:00.508] [LOG] [TennisPlayerPaddle] Moving to Y: -13.04038
+[20:44:00.510] [LOG] [TennisPlayerPaddle] Moving to Y: -13.0203
+[20:44:00.513] [LOG] [TennisPlayerPaddle] Moving to Y: -13.00008
+[20:44:00.516] [LOG] [TennisPlayerPaddle] Moving to Y: -12.98017
+[20:44:00.518] [LOG] [TennisPlayerPaddle] Moving to Y: -12.95844
+[20:44:00.521] [LOG] [TennisPlayerPaddle] Moving to Y: -12.9381
+[20:44:00.523] [LOG] [TennisPlayerPaddle] Moving to Y: -12.91774
+[20:44:00.526] [LOG] [TennisPlayerPaddle] Moving to Y: -12.89697
+[20:44:00.528] [LOG] [TennisPlayerPaddle] Moving to Y: -12.87729
+[20:44:00.530] [LOG] [TennisPlayerPaddle] Moving to Y: -12.85709
+[20:44:00.533] [LOG] [TennisPlayerPaddle] Moving to Y: -12.83596
+[20:44:00.536] [LOG] [TennisPlayerPaddle] Moving to Y: -12.81552
+[20:44:00.539] [LOG] [TennisPlayerPaddle] Moving to Y: -12.79426
+[20:44:00.542] [LOG] [TennisPlayerPaddle] Moving to Y: -12.77244
+[20:44:00.544] [LOG] [TennisPlayerPaddle] Moving to Y: -12.75205
+[20:44:00.547] [LOG] [TennisPlayerPaddle] Moving to Y: -12.73052
+[20:44:00.549] [LOG] [TennisPlayerPaddle] Moving to Y: -12.71076
+[20:44:00.551] [LOG] [TennisPlayerPaddle] Moving to Y: -12.69084
+[20:44:00.554] [LOG] [TennisPlayerPaddle] Moving to Y: -12.67122
+[20:44:00.556] [LOG] [TennisPlayerPaddle] Moving to Y: -12.64957
+[20:44:00.559] [LOG] [TennisPlayerPaddle] Moving to Y: -12.62905
+[20:44:00.562] [LOG] [TennisPlayerPaddle] Moving to Y: -12.60733
+[20:44:00.565] [LOG] [TennisPlayerPaddle] Moving to Y: -12.58651
+[20:44:00.568] [LOG] [TennisPlayerPaddle] Moving to Y: -12.56395
+[20:44:00.571] [LOG] [TennisPlayerPaddle] Moving to Y: -12.54033
+[20:44:00.573] [LOG] [TennisPlayerPaddle] Moving to Y: -12.51753
+[20:44:00.576] [LOG] [TennisPlayerPaddle] Moving to Y: -12.49642
+[20:44:00.579] [LOG] [TennisPlayerPaddle] Moving to Y: -12.47309
+[20:44:00.582] [LOG] [TennisPlayerPaddle] Moving to Y: -12.45022
+[20:44:00.585] [LOG] [TennisPlayerPaddle] Moving to Y: -12.42822
+[20:44:00.587] [LOG] [TennisPlayerPaddle] Moving to Y: -12.40571
+[20:44:00.590] [LOG] [TennisPlayerPaddle] Moving to Y: -12.38258
+[20:44:00.592] [LOG] [TennisPlayerPaddle] Moving to Y: -12.36083
+[20:44:00.596] [LOG] [TennisPlayerPaddle] Moving to Y: -12.33853
+[20:44:00.598] [LOG] [TennisPlayerPaddle] Moving to Y: -12.31731
+[20:44:00.601] [LOG] [TennisPlayerPaddle] Moving to Y: -12.29509
+[20:44:00.603] [LOG] [TennisPlayerPaddle] Moving to Y: -12.27506
+[20:44:00.606] [LOG] [TennisPlayerPaddle] Moving to Y: -12.25575
+[20:44:00.608] [LOG] [TennisPlayerPaddle] Moving to Y: -12.23373
+[20:44:00.611] [LOG] [TennisPlayerPaddle] Moving to Y: -12.21224
+[20:44:00.614] [LOG] [TennisPlayerPaddle] Moving to Y: -12.19014
+[20:44:00.617] [LOG] [TennisPlayerPaddle] Moving to Y: -12.1691
+[20:44:00.620] [LOG] [TennisPlayerPaddle] Moving to Y: -12.14194
+[20:44:00.624] [LOG] [TennisPlayerPaddle] Moving to Y: -12.11518
+[20:44:00.627] [LOG] [TennisPlayerPaddle] Moving to Y: -12.08973
+[20:44:00.629] [LOG] [TennisPlayerPaddle] Moving to Y: -12.06834
+[20:44:00.631] [LOG] [TennisPlayerPaddle] Moving to Y: -12.04835
+[20:44:00.635] [LOG] [TennisPlayerPaddle] Moving to Y: -12.02756
+[20:44:00.637] [LOG] [TennisPlayerPaddle] Moving to Y: -12.00575
+[20:44:00.640] [LOG] [TennisPlayerPaddle] Moving to Y: -11.9835
+[20:44:00.643] [LOG] [TennisPlayerPaddle] Moving to Y: -11.95897
+[20:44:00.646] [LOG] [TennisPlayerPaddle] Moving to Y: -11.93777
+[20:44:00.650] [LOG] [TennisPlayerPaddle] Moving to Y: -11.90944
+[20:44:00.651] [LOG] [TennisPlayerPaddle] Moving to Y: -11.88474
+[20:44:00.797] [LOG] [TennisPlayerPaddle] Moving to Y: -11.90571
+[20:44:00.800] [LOG] [TennisPlayerPaddle] Moving to Y: -11.93686
+[20:44:00.803] [LOG] [TennisPlayerPaddle] Moving to Y: -11.95881
+[20:44:00.806] [LOG] [TennisPlayerPaddle] Moving to Y: -11.97929
+[20:44:00.807] [LOG] [TennisPlayerPaddle] Moving to Y: -11.99988
+[20:44:00.811] [LOG] [TennisPlayerPaddle] Moving to Y: -12.0197
+[20:44:00.813] [LOG] [TennisPlayerPaddle] Moving to Y: -12.04086
+[20:44:00.816] [LOG] [TennisPlayerPaddle] Moving to Y: -12.06282
+[20:44:00.819] [LOG] [TennisPlayerPaddle] Moving to Y: -12.08299
+[20:44:00.821] [LOG] [TennisPlayerPaddle] Moving to Y: -12.10418
+[20:44:00.824] [LOG] [TennisPlayerPaddle] Moving to Y: -12.12423
+[20:44:00.827] [LOG] [TennisPlayerPaddle] Moving to Y: -12.14483
+[20:44:00.829] [LOG] [TennisPlayerPaddle] Moving to Y: -12.1657
+[20:44:00.832] [LOG] [TennisPlayerPaddle] Moving to Y: -12.18644
+[20:44:00.834] [LOG] [TennisPlayerPaddle] Moving to Y: -12.20726
+[20:44:00.837] [LOG] [TennisPlayerPaddle] Moving to Y: -12.23006
+[20:44:00.840] [LOG] [TennisPlayerPaddle] Moving to Y: -12.25053
+[20:44:00.843] [LOG] [TennisPlayerPaddle] Moving to Y: -12.27183
+[20:44:00.845] [LOG] [TennisPlayerPaddle] Moving to Y: -12.2947
+[20:44:00.847] [LOG] [TennisPlayerPaddle] Moving to Y: -12.31564
+[20:44:00.850] [LOG] [TennisPlayerPaddle] Moving to Y: -12.337
+[20:44:00.853] [LOG] [TennisPlayerPaddle] Moving to Y: -12.35696
+[20:44:00.856] [LOG] [TennisPlayerPaddle] Moving to Y: -12.37743
+[20:44:00.859] [LOG] [TennisPlayerPaddle] Moving to Y: -12.40518
+[20:44:00.861] [LOG] [TennisPlayerPaddle] Moving to Y: -12.4266
+[20:44:00.864] [LOG] [TennisPlayerPaddle] Moving to Y: -12.4484
+[20:44:00.867] [LOG] [TennisPlayerPaddle] Moving to Y: -12.4688
+[20:44:00.870] [LOG] [TennisPlayerPaddle] Moving to Y: -12.49033
+[20:44:00.873] [LOG] [TennisPlayerPaddle] Moving to Y: -12.51352
+[20:44:00.875] [LOG] [TennisPlayerPaddle] Moving to Y: -12.53322
+[20:44:00.878] [LOG] [TennisPlayerPaddle] Moving to Y: -12.55391
+[20:44:00.881] [LOG] [TennisPlayerPaddle] Moving to Y: -12.57541
+[20:44:00.883] [LOG] [TennisPlayerPaddle] Moving to Y: -12.59506
+[20:44:00.885] [LOG] [TennisPlayerPaddle] Moving to Y: -12.61623
+[20:44:00.887] [LOG] [TennisPlayerPaddle] Moving to Y: -12.63616
+[20:44:00.891] [LOG] [TennisPlayerPaddle] Moving to Y: -12.65744
+[20:44:00.893] [LOG] [TennisPlayerPaddle] Moving to Y: -12.67872
+[20:44:00.895] [LOG] [TennisPlayerPaddle] Moving to Y: -12.69844
+[20:44:00.899] [LOG] [TennisPlayerPaddle] Moving to Y: -12.71926
+[20:44:00.901] [LOG] [TennisPlayerPaddle] Moving to Y: -12.74045
+[20:44:00.904] [LOG] [TennisPlayerPaddle] Moving to Y: -12.76037
+[20:44:00.906] [LOG] [TennisPlayerPaddle] Moving to Y: -12.78255
+[20:44:00.909] [LOG] [TennisPlayerPaddle] Moving to Y: -12.80244
+[20:44:00.911] [LOG] [TennisPlayerPaddle] Moving to Y: -12.82258
+[20:44:00.914] [LOG] [TennisPlayerPaddle] Moving to Y: -12.84359
+[20:44:00.916] [LOG] [TennisPlayerPaddle] Moving to Y: -12.86321
+[20:44:00.919] [LOG] [TennisPlayerPaddle] Moving to Y: -12.88448
+[20:44:00.922] [LOG] [TennisPlayerPaddle] Moving to Y: -12.90537
+[20:44:00.925] [LOG] [TennisPlayerPaddle] Moving to Y: -12.92537
+[20:44:00.927] [LOG] [TennisPlayerPaddle] Moving to Y: -12.94573
+[20:44:00.929] [LOG] [TennisPlayerPaddle] Moving to Y: -12.96591
+[20:44:00.932] [LOG] [TennisPlayerPaddle] Moving to Y: -12.9865
+[20:44:00.934] [LOG] [TennisPlayerPaddle] Moving to Y: -13.00776
+[20:44:00.937] [LOG] [TennisPlayerPaddle] Moving to Y: -13.02811
+[20:44:00.940] [LOG] [TennisPlayerPaddle] Moving to Y: -13.0488
+[20:44:00.942] [LOG] [TennisPlayerPaddle] Moving to Y: -13.07007
+[20:44:00.945] [LOG] [TennisPlayerPaddle] Moving to Y: -13.09113
+[20:44:00.947] [LOG] [TennisPlayerPaddle] Moving to Y: -13.11334
+[20:44:00.950] [LOG] [TennisPlayerPaddle] Moving to Y: -13.13417
+[20:44:00.952] [LOG] [TennisPlayerPaddle] Moving to Y: -13.15547
+[20:44:00.956] [LOG] [TennisPlayerPaddle] Moving to Y: -13.17679
+[20:44:00.958] [LOG] [TennisPlayerPaddle] Moving to Y: -13.19705
+[20:44:00.961] [LOG] [TennisPlayerPaddle] Moving to Y: -13.21775
+[20:44:00.963] [LOG] [TennisPlayerPaddle] Moving to Y: -13.23914
+[20:44:00.965] [LOG] [TennisPlayerPaddle] Moving to Y: -13.2587
+[20:44:00.969] [LOG] [TennisPlayerPaddle] Moving to Y: -13.28006
+[20:44:00.971] [LOG] [TennisPlayerPaddle] Moving to Y: -13.30271
+[20:44:00.974] [LOG] [TennisPlayerPaddle] Moving to Y: -13.3239
+[20:44:00.977] [LOG] [TennisPlayerPaddle] Moving to Y: -13.34514
+[20:44:00.979] [LOG] [TennisPlayerPaddle] Moving to Y: -13.36462
+[20:44:00.981] [LOG] [TennisPlayerPaddle] Moving to Y: -13.38623
+[20:44:00.984] [LOG] [TennisPlayerPaddle] Moving to Y: -13.4084
+[20:44:00.986] [LOG] [TennisPlayerPaddle] Moving to Y: -13.42814
+[20:44:00.990] [LOG] [TennisPlayerPaddle] Moving to Y: -13.44928
+[20:44:00.992] [LOG] [TennisPlayerPaddle] Moving to Y: -13.46933
+[20:44:00.995] [LOG] [TennisPlayerPaddle] Moving to Y: -13.49052
+[20:44:00.998] [LOG] [TennisPlayerPaddle] Moving to Y: -13.51215
+[20:44:01.000] [LOG] [TennisPlayerPaddle] Moving to Y: -13.53293
+[20:44:01.002] [LOG] [TennisPlayerPaddle] Moving to Y: -13.5538
+[20:44:01.005] [LOG] [TennisPlayerPaddle] Moving to Y: -13.57575
+[20:44:01.008] [LOG] [TennisPlayerPaddle] Moving to Y: -13.59749
+[20:44:01.010] [LOG] [TennisPlayerPaddle] Moving to Y: -13.61964
+[20:44:01.014] [LOG] [TennisPlayerPaddle] Moving to Y: -13.64139
+[20:44:01.017] [LOG] [TennisPlayerPaddle] Moving to Y: -13.67099
+[20:44:01.022] [LOG] [TennisPlayerPaddle] Moving to Y: -13.703
+[20:44:01.025] [LOG] [TennisPlayerPaddle] Moving to Y: -13.73679
+[20:44:01.029] [LOG] [TennisPlayerPaddle] Moving to Y: -13.76412
+[20:44:01.032] [LOG] [TennisPlayerPaddle] Moving to Y: -13.78911
+[20:44:01.035] [LOG] [TennisPlayerPaddle] Moving to Y: -13.81317
+[20:44:01.038] [LOG] [TennisPlayerPaddle] Moving to Y: -13.83575
+[20:44:01.041] [LOG] [TennisPlayerPaddle] Moving to Y: -13.85809
+[20:44:01.044] [LOG] [TennisPlayerPaddle] Moving to Y: -13.88051
+[20:44:01.046] [LOG] [TennisPlayerPaddle] Moving to Y: -13.90662
+[20:44:01.050] [LOG] [TennisPlayerPaddle] Moving to Y: -13.93028
+[20:44:01.053] [LOG] [TennisPlayerPaddle] Moving to Y: -13.95519
+[20:44:01.056] [LOG] [TennisPlayerPaddle] Moving to Y: -13.97722
+[20:44:01.059] [LOG] [TennisPlayerPaddle] Moving to Y: -14.00129
+[20:44:01.061] [LOG] [TennisPlayerPaddle] Moving to Y: -14.02674
+[20:44:01.066] [LOG] [TennisPlayerPaddle] Moving to Y: -14.05332
+[20:44:01.069] [LOG] [TennisPlayerPaddle] Moving to Y: -14.07662
+[20:44:01.071] [LOG] [TennisPlayerPaddle] Moving to Y: -14.10249
+[20:44:01.075] [LOG] [TennisPlayerPaddle] Moving to Y: -14.12909
+[20:44:01.078] [LOG] [TennisPlayerPaddle] Moving to Y: -14.15351
+[20:44:01.080] [LOG] [TennisPlayerPaddle] Moving to Y: -14.17694
+[20:44:01.084] [LOG] [TennisPlayerPaddle] Moving to Y: -14.19806
+[20:44:01.087] [LOG] [TennisPlayerPaddle] Moving to Y: -14.22133
+[20:44:01.089] [LOG] [TennisPlayerPaddle] Moving to Y: -14.24402
+[20:44:01.092] [LOG] [TennisPlayerPaddle] Moving to Y: -14.26642
+[20:44:01.095] [LOG] [TennisPlayerPaddle] Moving to Y: -14.28923
+[20:44:01.097] [LOG] [TennisPlayerPaddle] Moving to Y: -14.31091
+[20:44:01.100] [LOG] [TennisPlayerPaddle] Moving to Y: -14.33345
+[20:44:01.102] [LOG] [TennisPlayerPaddle] Moving to Y: -14.35399
+[20:44:01.105] [LOG] [TennisPlayerPaddle] Moving to Y: -14.37399
+[20:44:01.107] [LOG] [TennisPlayerPaddle] Moving to Y: -14.39519
+[20:44:01.111] [LOG] [TennisPlayerPaddle] Moving to Y: -14.4154
+[20:44:01.113] [LOG] [TennisPlayerPaddle] Moving to Y: -14.43506
+[20:44:01.116] [LOG] [TennisPlayerPaddle] Moving to Y: -14.45816
+[20:44:01.118] [LOG] [TennisPlayerPaddle] Moving to Y: -14.47843
+[20:44:01.121] [LOG] [TennisPlayerPaddle] Moving to Y: -14.50078
+[20:44:01.123] [LOG] [TennisPlayerPaddle] Moving to Y: -14.52106
+[20:44:01.125] [LOG] [TennisPlayerPaddle] Moving to Y: -14.54113
+[20:44:01.128] [LOG] [TennisPlayerPaddle] Moving to Y: -14.56199
+[20:44:01.130] [LOG] [TennisPlayerPaddle] Moving to Y: -14.58234
+[20:44:01.134] [LOG] [TennisPlayerPaddle] Moving to Y: -14.60227
+[20:44:01.137] [LOG] [TennisPlayerPaddle] Moving to Y: -14.6232
+[20:44:01.139] [LOG] [TennisPlayerPaddle] Moving to Y: -14.64315
+[20:44:01.141] [LOG] [TennisPlayerPaddle] Moving to Y: -14.66458
+[20:44:01.144] [LOG] [TennisPlayerPaddle] Moving to Y: -14.68479
+[20:44:01.146] [LOG] [TennisPlayerPaddle] Moving to Y: -14.70584
+[20:44:01.249] [LOG] [TennisPlayerPaddle] Moving to Y: -14.68312
+[20:44:01.253] [LOG] [TennisPlayerPaddle] Moving to Y: -14.65027
+[20:44:01.255] [LOG] [TennisPlayerPaddle] Moving to Y: -14.62952
+[20:44:01.257] [LOG] [TennisPlayerPaddle] Moving to Y: -14.60933
+[20:44:01.260] [LOG] [TennisPlayerPaddle] Moving to Y: -14.58753
+[20:44:01.263] [LOG] [TennisPlayerPaddle] Moving to Y: -14.56656
+[20:44:01.266] [LOG] [TennisPlayerPaddle] Moving to Y: -14.54543
+[20:44:01.268] [LOG] [TennisPlayerPaddle] Moving to Y: -14.52318
+[20:44:01.271] [LOG] [TennisPlayerPaddle] Moving to Y: -14.50094
+[20:44:01.275] [LOG] [TennisPlayerPaddle] Moving to Y: -14.47421
+[20:44:01.277] [LOG] [TennisPlayerPaddle] Moving to Y: -14.45234
+[20:44:01.280] [LOG] [TennisPlayerPaddle] Moving to Y: -14.42999
+[20:44:01.282] [LOG] [TennisPlayerPaddle] Moving to Y: -14.4086
+[20:44:01.286] [LOG] [TennisPlayerPaddle] Moving to Y: -14.38723
+[20:44:01.288] [LOG] [TennisPlayerPaddle] Moving to Y: -14.36597
+[20:44:01.291] [LOG] [TennisPlayerPaddle] Moving to Y: -14.34613
+[20:44:01.293] [LOG] [TennisPlayerPaddle] Moving to Y: -14.32611
+[20:44:01.296] [LOG] [TennisPlayerPaddle] Moving to Y: -14.30347
+[20:44:01.299] [LOG] [TennisPlayerPaddle] Moving to Y: -14.2803
+[20:44:01.301] [LOG] [TennisPlayerPaddle] Moving to Y: -14.2585
+[20:44:01.304] [LOG] [TennisPlayerPaddle] Moving to Y: -14.23796
+[20:44:01.306] [LOG] [TennisPlayerPaddle] Moving to Y: -14.21771
+[20:44:01.310] [LOG] [TennisPlayerPaddle] Moving to Y: -14.19613
+[20:44:01.311] [LOG] [TennisPlayerPaddle] Moving to Y: -14.17583
+[20:44:01.315] [LOG] [TennisPlayerPaddle] Moving to Y: -14.15247
+[20:44:01.317] [LOG] [TennisPlayerPaddle] Moving to Y: -14.12842
+[20:44:01.321] [LOG] [TennisPlayerPaddle] Moving to Y: -14.10728
+[20:44:01.323] [LOG] [TennisPlayerPaddle] Moving to Y: -14.08604
+[20:44:01.325] [LOG] [TennisPlayerPaddle] Moving to Y: -14.06602
+[20:44:01.329] [LOG] [TennisPlayerPaddle] Moving to Y: -14.04414
+[20:44:01.331] [LOG] [TennisPlayerPaddle] Moving to Y: -14.02248
+[20:44:01.334] [LOG] [TennisPlayerPaddle] Moving to Y: -14.00224
+[20:44:01.336] [LOG] [TennisPlayerPaddle] Moving to Y: -13.98006
+[20:44:01.339] [LOG] [TennisPlayerPaddle] Moving to Y: -13.95916
+[20:44:01.342] [LOG] [TennisPlayerPaddle] Moving to Y: -13.93916
+[20:44:01.344] [LOG] [TennisPlayerPaddle] Moving to Y: -13.91747
+[20:44:01.347] [LOG] [TennisPlayerPaddle] Moving to Y: -13.89778
+[20:44:01.349] [LOG] [TennisPlayerPaddle] Moving to Y: -13.87576
+[20:44:01.352] [LOG] [TennisPlayerPaddle] Moving to Y: -13.85485
+[20:44:01.354] [LOG] [TennisPlayerPaddle] Moving to Y: -13.83555
+[20:44:01.357] [LOG] [TennisPlayerPaddle] Moving to Y: -13.81422
+[20:44:01.360] [LOG] [TennisPlayerPaddle] Moving to Y: -13.79244
+[20:44:01.362] [LOG] [TennisPlayerPaddle] Moving to Y: -13.7725
+[20:44:01.365] [LOG] [TennisPlayerPaddle] Moving to Y: -13.75141
+[20:44:01.367] [LOG] [TennisPlayerPaddle] Moving to Y: -13.7314
+[20:44:01.370] [LOG] [TennisPlayerPaddle] Moving to Y: -13.70896
+[20:44:01.373] [LOG] [TennisPlayerPaddle] Moving to Y: -13.68763
+[20:44:01.375] [LOG] [TennisPlayerPaddle] Moving to Y: -13.66757
+[20:44:01.379] [LOG] [TennisPlayerPaddle] Moving to Y: -13.6432
+[20:44:01.382] [LOG] [TennisPlayerPaddle] Moving to Y: -13.62071
+[20:44:01.384] [LOG] [TennisPlayerPaddle] Moving to Y: -13.59877
+[20:44:01.387] [LOG] [TennisPlayerPaddle] Moving to Y: -13.57775
+[20:44:01.389] [LOG] [TennisPlayerPaddle] Moving to Y: -13.55741
+[20:44:01.392] [LOG] [TennisPlayerPaddle] Moving to Y: -13.53218
+[20:44:01.395] [LOG] [TennisPlayerPaddle] Moving to Y: -13.51093
+[20:44:01.398] [LOG] [TennisPlayerPaddle] Moving to Y: -13.48891
+[20:44:01.400] [LOG] [TennisPlayerPaddle] Moving to Y: -13.46776
+[20:44:01.403] [LOG] [TennisPlayerPaddle] Moving to Y: -13.44655
+[20:44:01.405] [LOG] [TennisPlayerPaddle] Moving to Y: -13.4252
+[20:44:01.408] [LOG] [TennisPlayerPaddle] Moving to Y: -13.40481
+[20:44:01.411] [LOG] [TennisPlayerPaddle] Moving to Y: -13.38483
+[20:44:01.413] [LOG] [TennisPlayerPaddle] Moving to Y: -13.36312
+[20:44:01.416] [LOG] [TennisPlayerPaddle] Moving to Y: -13.34282
+[20:44:01.418] [LOG] [TennisPlayerPaddle] Moving to Y: -13.32054
+[20:44:01.422] [LOG] [TennisPlayerPaddle] Moving to Y: -13.29944
+[20:44:01.424] [LOG] [TennisPlayerPaddle] Moving to Y: -13.27868
+[20:44:01.427] [LOG] [TennisPlayerPaddle] Moving to Y: -13.25755
+[20:44:01.429] [LOG] [TennisPlayerPaddle] Moving to Y: -13.23754
+[20:44:01.432] [LOG] [TennisPlayerPaddle] Moving to Y: -13.21757
+[20:44:01.434] [LOG] [TennisPlayerPaddle] Moving to Y: -13.19489
+[20:44:01.436] [LOG] [TennisPlayerPaddle] Moving to Y: -13.17429
+[20:44:01.440] [LOG] [TennisPlayerPaddle] Moving to Y: -13.15373
+[20:44:01.442] [LOG] [TennisPlayerPaddle] Moving to Y: -13.13351
+[20:44:01.444] [LOG] [TennisPlayerPaddle] Moving to Y: -13.11279
+[20:44:01.447] [LOG] [TennisPlayerPaddle] Moving to Y: -13.09112
+[20:44:01.450] [LOG] [TennisPlayerPaddle] Moving to Y: -13.07003
+[20:44:01.452] [LOG] [TennisPlayerPaddle] Moving to Y: -13.04953
+[20:44:01.455] [LOG] [TennisPlayerPaddle] Moving to Y: -13.02707
+[20:44:01.458] [LOG] [TennisPlayerPaddle] Moving to Y: -13.00706
+[20:44:01.461] [LOG] [TennisPlayerPaddle] Moving to Y: -12.98637
+[20:44:01.463] [LOG] [TennisPlayerPaddle] Moving to Y: -12.96622
+[20:44:01.465] [LOG] [TennisPlayerPaddle] Moving to Y: -12.94544
+[20:44:01.469] [LOG] [TennisPlayerPaddle] Moving to Y: -12.92484
+[20:44:01.471] [LOG] [TennisPlayerPaddle] Moving to Y: -12.90407
+[20:44:01.473] [LOG] [TennisPlayerPaddle] Moving to Y: -12.88472
+[20:44:01.476] [LOG] [TennisPlayerPaddle] Moving to Y: -12.86281
+[20:44:01.477] [LOG] [TennisPlayerPaddle] Moving to Y: -12.84301
+[20:44:01.481] [LOG] [TennisPlayerPaddle] Moving to Y: -12.82248
+[20:44:01.483] [LOG] [TennisPlayerPaddle] Moving to Y: -12.80175
+[20:44:01.486] [LOG] [TennisPlayerPaddle] Moving to Y: -12.78045
+[20:44:01.489] [LOG] [TennisPlayerPaddle] Moving to Y: -12.75899
+[20:44:01.491] [LOG] [TennisPlayerPaddle] Moving to Y: -12.7385
+[20:44:01.494] [LOG] [TennisPlayerPaddle] Moving to Y: -12.71767
+[20:44:01.497] [LOG] [TennisPlayerPaddle] Moving to Y: -12.69408
+[20:44:01.499] [LOG] [TennisPlayerPaddle] Moving to Y: -12.67391
+[20:44:01.502] [LOG] [TennisPlayerPaddle] Moving to Y: -12.65307
+[20:44:01.505] [LOG] [TennisPlayerPaddle] Moving to Y: -12.63288
+[20:44:01.508] [LOG] [TennisPlayerPaddle] Moving to Y: -12.6121
+[20:44:01.510] [LOG] [TennisPlayerPaddle] Moving to Y: -12.59072
+[20:44:01.513] [LOG] [TennisPlayerPaddle] Moving to Y: -12.57109
+[20:44:01.515] [LOG] [TennisPlayerPaddle] Moving to Y: -12.55023
+[20:44:01.518] [LOG] [TennisPlayerPaddle] Moving to Y: -12.52771
+[20:44:01.520] [LOG] [TennisPlayerPaddle] Moving to Y: -12.50723
+[20:44:01.523] [LOG] [TennisPlayerPaddle] Moving to Y: -12.48693
+[20:44:01.524] [LOG] [TennisPlayerPaddle] Moving to Y: -12.46701
+[20:44:01.528] [LOG] [TennisPlayerPaddle] Moving to Y: -12.44618
+[20:44:01.531] [LOG] [TennisPlayerPaddle] Moving to Y: -12.42539
+[20:44:01.533] [LOG] [TennisPlayerPaddle] Moving to Y: -12.40521
+[20:44:01.536] [LOG] [TennisPlayerPaddle] Moving to Y: -12.38577
+[20:44:01.539] [LOG] [TennisPlayerPaddle] Moving to Y: -12.36438
+[20:44:01.540] [LOG] [TennisPlayerPaddle] Moving to Y: -12.34487
+[20:44:01.543] [LOG] [TennisPlayerPaddle] Moving to Y: -12.32451
+[20:44:01.545] [LOG] [TennisPlayerPaddle] Moving to Y: -12.3039
+[20:44:01.549] [LOG] [TennisPlayerPaddle] Moving to Y: -12.28245
+[20:44:01.551] [LOG] [TennisPlayerPaddle] Moving to Y: -12.26042
+[20:44:01.554] [LOG] [TennisPlayerPaddle] Moving to Y: -12.23973
+[20:44:01.556] [LOG] [TennisPlayerPaddle] Moving to Y: -12.21941
+[20:44:01.559] [LOG] [TennisPlayerPaddle] Moving to Y: -12.19869
+[20:44:01.561] [LOG] [TennisPlayerPaddle] Moving to Y: -12.17878
+[20:44:01.563] [LOG] [TennisPlayerPaddle] Moving to Y: -12.15879
+[20:44:01.566] [LOG] [TennisPlayerPaddle] Moving to Y: -12.13711
+[20:44:01.570] [LOG] [TennisPlayerPaddle] Moving to Y: -12.11472
+[20:44:01.573] [LOG] [TennisPlayerPaddle] Moving to Y: -12.0925
+[20:44:01.575] [LOG] [TennisPlayerPaddle] Moving to Y: -12.07119
+[20:44:01.577] [LOG] [TennisPlayerPaddle] Moving to Y: -12.04957
+[20:44:01.581] [LOG] [TennisPlayerPaddle] Moving to Y: -12.02741
+[20:44:01.583] [LOG] [TennisPlayerPaddle] Moving to Y: -12.00756
+[20:44:01.585] [LOG] [TennisPlayerPaddle] Moving to Y: -11.98686
+[20:44:01.588] [LOG] [TennisPlayerPaddle] Moving to Y: -11.96675
+[20:44:01.591] [LOG] [TennisPlayerPaddle] Moving to Y: -11.9456
+[20:44:01.592] [LOG] [TennisPlayerPaddle] Moving to Y: -11.92434
+[20:44:01.596] [LOG] [TennisPlayerPaddle] Moving to Y: -11.9049
+[20:44:01.599] [LOG] [TennisPlayerPaddle] Moving to Y: -11.8844
+[20:44:01.601] [LOG] [TennisPlayerPaddle] Moving to Y: -11.86328
+[20:44:01.604] [LOG] [TennisPlayerPaddle] Moving to Y: -11.84327
+[20:44:01.606] [LOG] [TennisPlayerPaddle] Moving to Y: -11.82305
+[20:44:01.609] [LOG] [TennisPlayerPaddle] Moving to Y: -11.80248
+[20:44:01.611] [LOG] [TennisPlayerPaddle] Moving to Y: -11.78142
+[20:44:01.613] [LOG] [TennisPlayerPaddle] Moving to Y: -11.76018
+[20:44:01.616] [LOG] [TennisPlayerPaddle] Moving to Y: -11.73912
+[20:44:01.619] [LOG] [TennisPlayerPaddle] Moving to Y: -11.71885
+[20:44:01.622] [LOG] [TennisPlayerPaddle] Moving to Y: -11.69755
+[20:44:01.624] [LOG] [TennisPlayerPaddle] Moving to Y: -11.67754
+[20:44:01.626] [LOG] [TennisPlayerPaddle] Moving to Y: -11.65771
+[20:44:01.629] [LOG] [TennisPlayerPaddle] Moving to Y: -11.63697
+[20:44:01.631] [LOG] [TennisPlayerPaddle] Moving to Y: -11.61656
+[20:44:01.634] [LOG] [TennisPlayerPaddle] Moving to Y: -11.59675
+[20:44:01.637] [LOG] [TennisPlayerPaddle] Moving to Y: -11.5768
+[20:44:01.638] [LOG] [TennisPlayerPaddle] Moving to Y: -11.55511
+[20:44:01.643] [LOG] [TennisPlayerPaddle] Moving to Y: -11.53249
+[20:44:01.644] [LOG] [TennisPlayerPaddle] Moving to Y: -11.51086
+[20:44:01.648] [LOG] [TennisPlayerPaddle] Moving to Y: -11.48953
+[20:44:01.650] [LOG] [TennisPlayerPaddle] Moving to Y: -11.46881
+[20:44:01.653] [LOG] [TennisPlayerPaddle] Moving to Y: -11.44723
+[20:44:01.656] [LOG] [TennisPlayerPaddle] Moving to Y: -11.42592
+[20:44:01.659] [LOG] [TennisPlayerPaddle] Moving to Y: -11.40265
+[20:44:01.660] [LOG] [TennisPlayerPaddle] Moving to Y: -11.3821
+[20:44:01.663] [LOG] [TennisPlayerPaddle] Moving to Y: -11.36084
+[20:44:01.666] [LOG] [TennisPlayerPaddle] Moving to Y: -11.34068
+[20:44:01.669] [LOG] [TennisPlayerPaddle] Moving to Y: -11.31835
+[20:44:01.672] [LOG] [TennisPlayerPaddle] Moving to Y: -11.29402
+[20:44:01.675] [LOG] [TennisPlayerPaddle] Moving to Y: -11.27222
+[20:44:01.677] [LOG] [TennisPlayerPaddle] Moving to Y: -11.25127
+[20:44:01.680] [LOG] [TennisPlayerPaddle] Moving to Y: -11.23156
+[20:44:01.683] [LOG] [TennisPlayerPaddle] Moving to Y: -11.21074
+[20:44:01.685] [LOG] [TennisPlayerPaddle] Moving to Y: -11.18984
+[20:44:01.687] [LOG] [TennisPlayerPaddle] Moving to Y: -11.1705
+[20:44:01.689] [LOG] [TennisPlayerPaddle] Moving to Y: -11.15027
+[20:44:01.692] [LOG] [TennisPlayerPaddle] Moving to Y: -11.13032
+[20:44:01.694] [LOG] [TennisPlayerPaddle] Moving to Y: -11.11124
+[20:44:01.697] [LOG] [TennisPlayerPaddle] Moving to Y: -11.08733
+[20:44:01.701] [LOG] [TennisPlayerPaddle] Moving to Y: -11.06712
+[20:44:01.703] [LOG] [TennisPlayerPaddle] Moving to Y: -11.04682
+[20:44:01.706] [LOG] [TennisPlayerPaddle] Moving to Y: -11.02546
+[20:44:01.709] [LOG] [TennisPlayerPaddle] Moving to Y: -11.00405
+[20:44:01.711] [LOG] [TennisPlayerPaddle] Moving to Y: -10.98225
+[20:44:01.713] [LOG] [TennisPlayerPaddle] Moving to Y: -10.96189
+[20:44:01.716] [LOG] [TennisPlayerPaddle] Moving to Y: -10.94216
+[20:44:01.719] [LOG] [TennisPlayerPaddle] Moving to Y: -10.9198
+[20:44:01.721] [LOG] [TennisPlayerPaddle] Moving to Y: -10.89893
+[20:44:01.724] [LOG] [TennisPlayerPaddle] Moving to Y: -10.87885
+[20:44:01.727] [LOG] [TennisPlayerPaddle] Moving to Y: -10.85808
+[20:44:01.730] [LOG] [TennisPlayerPaddle] Moving to Y: -10.83755
+[20:44:01.732] [LOG] [TennisPlayerPaddle] Moving to Y: -10.81622
+[20:44:01.734] [LOG] [TennisPlayerPaddle] Moving to Y: -10.79604
+[20:44:01.737] [LOG] [TennisPlayerPaddle] Moving to Y: -10.77581
+[20:44:01.740] [LOG] [TennisPlayerPaddle] Moving to Y: -10.75416
+[20:44:01.742] [LOG] [TennisPlayerPaddle] Moving to Y: -10.73446
+[20:44:01.743] [LOG] [TennisPlayerPaddle] Moving to Y: -10.71464
+[20:44:01.747] [LOG] [TennisPlayerPaddle] Moving to Y: -10.69228
+[20:44:01.750] [LOG] [TennisPlayerPaddle] Moving to Y: -10.67106
+[20:44:01.753] [LOG] [TennisPlayerPaddle] Moving to Y: -10.6488
+[20:44:01.755] [LOG] [TennisPlayerPaddle] Moving to Y: -10.62684
+[20:44:01.758] [LOG] [TennisPlayerPaddle] Moving to Y: -10.60622
+[20:44:01.760] [LOG] [TennisPlayerPaddle] Moving to Y: -10.58454
+[20:44:01.765] [LOG] [TennisPlayerPaddle] Moving to Y: -10.55599
+[20:44:01.768] [LOG] [TennisPlayerPaddle] Moving to Y: -10.5306
+[20:44:01.770] [LOG] [TennisPlayerPaddle] Moving to Y: -10.50925
+[20:44:01.773] [LOG] [TennisPlayerPaddle] Moving to Y: -10.48802
+[20:44:01.775] [LOG] [TennisPlayerPaddle] Moving to Y: -10.46706
+[20:44:01.778] [LOG] [TennisPlayerPaddle] Moving to Y: -10.44732
+[20:44:01.781] [LOG] [TennisPlayerPaddle] Moving to Y: -10.42613
+[20:44:01.783] [LOG] [TennisPlayerPaddle] Moving to Y: -10.40476
+[20:44:01.785] [LOG] [TennisPlayerPaddle] Moving to Y: -10.38529
+[20:44:01.788] [LOG] [TennisPlayerPaddle] Moving to Y: -10.36436
+[20:44:01.911] [LOG] [TennisPlayerPaddle] Moving to Y: -10.38676
+[20:44:01.915] [LOG] [TennisPlayerPaddle] Moving to Y: -10.41907
+[20:44:01.917] [LOG] [TennisPlayerPaddle] Moving to Y: -10.43956
+[20:44:01.920] [LOG] [TennisPlayerPaddle] Moving to Y: -10.4621
+[20:44:01.922] [LOG] [TennisPlayerPaddle] Moving to Y: -10.48301
+[20:44:01.925] [LOG] [TennisPlayerPaddle] Moving to Y: -10.50438
+[20:44:01.928] [LOG] [TennisPlayerPaddle] Moving to Y: -10.52598
+[20:44:01.930] [LOG] [TennisPlayerPaddle] Moving to Y: -10.5462
+[20:44:01.932] [LOG] [TennisPlayerPaddle] Moving to Y: -10.56665
+[20:44:01.935] [LOG] [TennisPlayerPaddle] Moving to Y: -10.58781
+[20:44:01.938] [LOG] [TennisPlayerPaddle] Moving to Y: -10.60815
+[20:44:01.940] [LOG] [TennisPlayerPaddle] Moving to Y: -10.62923
+[20:44:01.944] [LOG] [TennisPlayerPaddle] Moving to Y: -10.65016
+[20:44:01.946] [LOG] [TennisPlayerPaddle] Moving to Y: -10.67096
+[20:44:01.949] [LOG] [TennisPlayerPaddle] Moving to Y: -10.69273
+[20:44:01.951] [LOG] [TennisPlayerPaddle] Moving to Y: -10.71399
+[20:44:01.955] [LOG] [TennisPlayerPaddle] Moving to Y: -10.73697
+[20:44:01.957] [LOG] [TennisPlayerPaddle] Moving to Y: -10.76083
+[20:44:01.960] [LOG] [TennisPlayerPaddle] Moving to Y: -10.78083
+[20:44:01.963] [LOG] [TennisPlayerPaddle] Moving to Y: -10.8031
+[20:44:01.965] [LOG] [TennisPlayerPaddle] Moving to Y: -10.82507
+[20:44:01.968] [LOG] [TennisPlayerPaddle] Moving to Y: -10.84901
+[20:44:01.970] [LOG] [TennisPlayerPaddle] Moving to Y: -10.87298
+[20:44:01.974] [LOG] [TennisPlayerPaddle] Moving to Y: -10.89447
+[20:44:01.977] [LOG] [TennisPlayerPaddle] Moving to Y: -10.91718
+[20:44:01.978] [LOG] [TennisPlayerPaddle] Moving to Y: -10.93848
+[20:44:01.982] [LOG] [TennisPlayerPaddle] Moving to Y: -10.95947
+[20:44:01.985] [LOG] [TennisPlayerPaddle] Moving to Y: -10.98038
+[20:44:01.987] [LOG] [TennisPlayerPaddle] Moving to Y: -11.00105
+[20:44:01.990] [LOG] [TennisPlayerPaddle] Moving to Y: -11.02277
+[20:44:01.993] [LOG] [TennisPlayerPaddle] Moving to Y: -11.04309
+[20:44:01.996] [LOG] [TennisPlayerPaddle] Moving to Y: -11.07157
+[20:44:01.999] [LOG] [TennisPlayerPaddle] Moving to Y: -11.09466
+[20:44:02.002] [LOG] [TennisPlayerPaddle] Moving to Y: -11.11687
+[20:44:02.004] [LOG] [TennisPlayerPaddle] Moving to Y: -11.14025
+[20:44:02.007] [LOG] [TennisPlayerPaddle] Moving to Y: -11.16354
+[20:44:02.010] [LOG] [TennisPlayerPaddle] Moving to Y: -11.18594
+[20:44:02.013] [LOG] [TennisPlayerPaddle] Moving to Y: -11.20839
+[20:44:02.015] [LOG] [TennisPlayerPaddle] Moving to Y: -11.2282
+[20:44:02.017] [LOG] [TennisPlayerPaddle] Moving to Y: -11.24949
+[20:44:02.021] [LOG] [TennisPlayerPaddle] Moving to Y: -11.2701
+[20:44:02.023] [LOG] [TennisPlayerPaddle] Moving to Y: -11.29095
+[20:44:02.026] [LOG] [TennisPlayerPaddle] Moving to Y: -11.31305
+[20:44:02.029] [LOG] [TennisPlayerPaddle] Moving to Y: -11.33291
+[20:44:02.031] [LOG] [TennisPlayerPaddle] Moving to Y: -11.35383
+[20:44:02.034] [LOG] [TennisPlayerPaddle] Moving to Y: -11.3744
+[20:44:02.036] [LOG] [TennisPlayerPaddle] Moving to Y: -11.39457
+[20:44:02.039] [LOG] [TennisPlayerPaddle] Moving to Y: -11.41516
+[20:44:02.041] [LOG] [TennisPlayerPaddle] Moving to Y: -11.43549
+[20:44:02.044] [LOG] [TennisPlayerPaddle] Moving to Y: -11.45584
+[20:44:02.046] [LOG] [TennisPlayerPaddle] Moving to Y: -11.47626
+[20:44:02.049] [LOG] [TennisPlayerPaddle] Moving to Y: -11.4968
+[20:44:02.052] [LOG] [TennisPlayerPaddle] Moving to Y: -11.51986
+[20:44:02.055] [LOG] [TennisPlayerPaddle] Moving to Y: -11.54397
+[20:44:02.058] [LOG] [TennisPlayerPaddle] Moving to Y: -11.56643
+[20:44:02.061] [LOG] [TennisPlayerPaddle] Moving to Y: -11.58856
+[20:44:02.063] [LOG] [TennisPlayerPaddle] Moving to Y: -11.6093
+[20:44:02.066] [LOG] [TennisPlayerPaddle] Moving to Y: -11.63296
+[20:44:02.069] [LOG] [TennisPlayerPaddle] Moving to Y: -11.65576
+[20:44:02.072] [LOG] [TennisPlayerPaddle] Moving to Y: -11.68033
+[20:44:02.074] [LOG] [TennisPlayerPaddle] Moving to Y: -11.70157
+[20:44:02.077] [LOG] [TennisPlayerPaddle] Moving to Y: -11.72288
+[20:44:02.080] [LOG] [TennisPlayerPaddle] Moving to Y: -11.7438
+[20:44:02.083] [LOG] [TennisPlayerPaddle] Moving to Y: -11.76424
+[20:44:02.085] [LOG] [TennisPlayerPaddle] Moving to Y: -11.78448
+[20:44:02.087] [LOG] [TennisPlayerPaddle] Moving to Y: -11.80706
+[20:44:02.090] [LOG] [TennisPlayerPaddle] Moving to Y: -11.82748
+[20:44:02.093] [LOG] [TennisPlayerPaddle] Moving to Y: -11.8487
+[20:44:02.095] [LOG] [TennisPlayerPaddle] Moving to Y: -11.8691
+[20:44:02.099] [LOG] [TennisPlayerPaddle] Moving to Y: -11.89033
+[20:44:02.101] [LOG] [TennisPlayerPaddle] Moving to Y: -11.91161
+[20:44:02.104] [LOG] [TennisPlayerPaddle] Moving to Y: -11.93126
+[20:44:02.106] [LOG] [TennisPlayerPaddle] Moving to Y: -11.95103
+[20:44:02.109] [LOG] [TennisPlayerPaddle] Moving to Y: -11.97254
+[20:44:02.111] [LOG] [TennisPlayerPaddle] Moving to Y: -11.99226
+[20:44:02.113] [LOG] [TennisPlayerPaddle] Moving to Y: -12.01294
+[20:44:02.116] [LOG] [TennisPlayerPaddle] Moving to Y: -12.03415
+[20:44:02.119] [LOG] [TennisPlayerPaddle] Moving to Y: -12.05535
+[20:44:02.122] [LOG] [TennisPlayerPaddle] Moving to Y: -12.07658
+[20:44:02.124] [LOG] [TennisPlayerPaddle] Moving to Y: -12.09679
+[20:44:02.126] [LOG] [TennisPlayerPaddle] Moving to Y: -12.11703
+[20:44:02.129] [LOG] [TennisPlayerPaddle] Moving to Y: -12.13861
+[20:44:02.131] [LOG] [TennisPlayerPaddle] Moving to Y: -12.15872
+[20:44:02.135] [LOG] [TennisPlayerPaddle] Moving to Y: -12.17925
+[20:44:02.137] [LOG] [TennisPlayerPaddle] Moving to Y: -12.20191
+[20:44:02.140] [LOG] [TennisPlayerPaddle] Moving to Y: -12.22229
+[20:44:02.142] [LOG] [TennisPlayerPaddle] Moving to Y: -12.24385
+[20:44:02.145] [LOG] [TennisPlayerPaddle] Moving to Y: -12.26361
+[20:44:02.148] [LOG] [TennisPlayerPaddle] Moving to Y: -12.28371
+[20:44:02.150] [LOG] [TennisPlayerPaddle] Moving to Y: -12.30535
+[20:44:02.152] [LOG] [TennisPlayerPaddle] Moving to Y: -12.32489
+[20:44:02.156] [LOG] [TennisPlayerPaddle] Moving to Y: -12.34601
+[20:44:02.158] [LOG] [TennisPlayerPaddle] Moving to Y: -12.36749
+[20:44:02.161] [LOG] [TennisPlayerPaddle] Moving to Y: -12.38878
+[20:44:02.164] [LOG] [TennisPlayerPaddle] Moving to Y: -12.41018
+[20:44:02.166] [LOG] [TennisPlayerPaddle] Moving to Y: -12.43048
+[20:44:02.169] [LOG] [TennisPlayerPaddle] Moving to Y: -12.45133
+[20:44:02.171] [LOG] [TennisPlayerPaddle] Moving to Y: -12.47434
+[20:44:02.174] [LOG] [TennisPlayerPaddle] Moving to Y: -12.49484
+[20:44:02.177] [LOG] [TennisPlayerPaddle] Moving to Y: -12.52045
+[20:44:02.181] [LOG] [TennisPlayerPaddle] Moving to Y: -12.54917
+[20:44:02.185] [LOG] [TennisPlayerPaddle] Moving to Y: -12.58119
+[20:44:02.187] [LOG] [TennisPlayerPaddle] Moving to Y: -12.6022
+[20:44:02.190] [LOG] [TennisPlayerPaddle] Moving to Y: -12.62551
+[20:44:02.193] [LOG] [TennisPlayerPaddle] Moving to Y: -12.6481
+[20:44:02.196] [LOG] [TennisPlayerPaddle] Moving to Y: -12.66972
+[20:44:02.198] [LOG] [TennisPlayerPaddle] Moving to Y: -12.69306
+[20:44:02.201] [LOG] [TennisPlayerPaddle] Moving to Y: -12.71455
+[20:44:02.204] [LOG] [TennisPlayerPaddle] Moving to Y: -12.73651
+[20:44:02.207] [LOG] [TennisPlayerPaddle] Moving to Y: -12.75982
+[20:44:02.210] [LOG] [TennisPlayerPaddle] Moving to Y: -12.78133
+[20:44:02.213] [LOG] [TennisPlayerPaddle] Moving to Y: -12.80449
+[20:44:02.215] [LOG] [TennisPlayerPaddle] Moving to Y: -12.82507
+[20:44:02.218] [LOG] [TennisPlayerPaddle] Moving to Y: -12.84781
+[20:44:02.220] [LOG] [TennisPlayerPaddle] Moving to Y: -12.86973
+[20:44:02.223] [LOG] [TennisPlayerPaddle] Moving to Y: -12.88993
+[20:44:02.225] [LOG] [TennisPlayerPaddle] Moving to Y: -12.91128
+[20:44:02.229] [LOG] [TennisPlayerPaddle] Moving to Y: -12.93249
+[20:44:02.232] [LOG] [TennisPlayerPaddle] Moving to Y: -12.95557
+[20:44:02.234] [LOG] [TennisPlayerPaddle] Moving to Y: -12.97647
+[20:44:02.237] [LOG] [TennisPlayerPaddle] Moving to Y: -12.99715
+[20:44:02.240] [LOG] [TennisPlayerPaddle] Moving to Y: -13.01887
+[20:44:02.242] [LOG] [TennisPlayerPaddle] Moving to Y: -13.04109
+[20:44:02.245] [LOG] [TennisPlayerPaddle] Moving to Y: -13.06382
+[20:44:02.247] [LOG] [TennisPlayerPaddle] Moving to Y: -13.08567
+[20:44:02.250] [LOG] [TennisPlayerPaddle] Moving to Y: -13.10619
+[20:44:02.253] [LOG] [TennisPlayerPaddle] Moving to Y: -13.1274
+[20:44:02.256] [LOG] [TennisPlayerPaddle] Moving to Y: -13.1486
+[20:44:02.259] [LOG] [TennisPlayerPaddle] Moving to Y: -13.17003
+[20:44:02.261] [LOG] [TennisPlayerPaddle] Moving to Y: -13.1928
+[20:44:02.263] [LOG] [TennisPlayerPaddle] Moving to Y: -13.21338
+[20:44:02.266] [LOG] [TennisPlayerPaddle] Moving to Y: -13.23393
+[20:44:02.269] [LOG] [TennisPlayerPaddle] Moving to Y: -13.25531
+[20:44:02.272] [LOG] [TennisPlayerPaddle] Moving to Y: -13.27661
+[20:44:02.274] [LOG] [TennisPlayerPaddle] Moving to Y: -13.29879
+[20:44:02.277] [LOG] [TennisPlayerPaddle] Moving to Y: -13.32033
+[20:44:02.280] [LOG] [TennisPlayerPaddle] Moving to Y: -13.34052
+[20:44:02.282] [LOG] [TennisPlayerPaddle] Moving to Y: -13.36371
+[20:44:02.284] [LOG] [TennisPlayerPaddle] Moving to Y: -13.3836
+[20:44:02.288] [LOG] [TennisPlayerPaddle] Moving to Y: -13.40387
+[20:44:02.290] [LOG] [TennisPlayerPaddle] Moving to Y: -13.4245
+[20:44:02.292] [LOG] [TennisPlayerPaddle] Moving to Y: -13.44555
+[20:44:02.295] [LOG] [TennisPlayerPaddle] Moving to Y: -13.46665
+[20:44:02.298] [LOG] [TennisPlayerPaddle] Moving to Y: -13.4875
+[20:44:02.300] [LOG] [TennisPlayerPaddle] Moving to Y: -13.50885
+[20:44:02.303] [LOG] [TennisPlayerPaddle] Moving to Y: -13.53093
+[20:44:02.306] [LOG] [TennisPlayerPaddle] Moving to Y: -13.55232
+[20:44:02.311] [LOG] [TennisPlayerPaddle] Moving to Y: -13.59164
+[20:44:02.315] [LOG] [TennisPlayerPaddle] Moving to Y: -13.61725
+[20:44:02.318] [LOG] [TennisPlayerPaddle] Moving to Y: -13.64211
+[20:44:02.319] [LOG] [TennisPlayerPaddle] Moving to Y: -13.66489
+[20:44:02.323] [LOG] [TennisPlayerPaddle] Moving to Y: -13.68772
+[20:44:02.326] [LOG] [TennisPlayerPaddle] Moving to Y: -13.71002
+[20:44:02.329] [LOG] [TennisPlayerPaddle] Moving to Y: -13.73257
+[20:44:02.331] [LOG] [TennisPlayerPaddle] Moving to Y: -13.75545
+[20:44:02.334] [LOG] [TennisPlayerPaddle] Moving to Y: -13.77576
+[20:44:02.337] [LOG] [TennisPlayerPaddle] Moving to Y: -13.79777
+[20:44:02.339] [LOG] [TennisPlayerPaddle] Moving to Y: -13.81824
+[20:44:02.341] [LOG] [TennisPlayerPaddle] Moving to Y: -13.83904
+[20:44:02.344] [LOG] [TennisPlayerPaddle] Moving to Y: -13.8608
+[20:44:02.348] [LOG] [TennisPlayerPaddle] Moving to Y: -13.88148
+[20:44:02.350] [LOG] [TennisPlayerPaddle] Moving to Y: -13.90302
+[20:44:02.352] [LOG] [TennisPlayerPaddle] Moving to Y: -13.92401
+[20:44:02.355] [LOG] [TennisPlayerPaddle] Moving to Y: -13.94441
+[20:44:02.358] [LOG] [TennisPlayerPaddle] Moving to Y: -13.96936
+[20:44:02.361] [LOG] [TennisPlayerPaddle] Moving to Y: -13.99013
+[20:44:02.363] [LOG] [TennisPlayerPaddle] Moving to Y: -14.01101
+[20:44:02.366] [LOG] [TennisPlayerPaddle] Moving to Y: -14.03236
+[20:44:02.369] [LOG] [TennisPlayerPaddle] Moving to Y: -14.05344
+[20:44:02.577] [LOG] [TennisPlayerPaddle] Moving to Y: -14.03358
+[20:44:02.581] [LOG] [TennisPlayerPaddle] Moving to Y: -14.00178
+[20:44:02.583] [LOG] [TennisPlayerPaddle] Moving to Y: -13.98156
+[20:44:02.586] [LOG] [TennisPlayerPaddle] Moving to Y: -13.96119
+[20:44:02.587] [LOG] [TennisPlayerPaddle] Moving to Y: -13.94026
+[20:44:02.591] [LOG] [TennisPlayerPaddle] Moving to Y: -13.91975
+[20:44:02.594] [LOG] [TennisPlayerPaddle] Moving to Y: -13.89786
+[20:44:02.597] [LOG] [TennisPlayerPaddle] Moving to Y: -13.87729
+[20:44:02.599] [LOG] [TennisPlayerPaddle] Moving to Y: -13.85787
+[20:44:02.601] [LOG] [TennisPlayerPaddle] Moving to Y: -13.83686
+[20:44:02.604] [LOG] [TennisPlayerPaddle] Moving to Y: -13.81369
+[20:44:02.607] [LOG] [TennisPlayerPaddle] Moving to Y: -13.79315
+[20:44:02.609] [LOG] [TennisPlayerPaddle] Moving to Y: -13.7726
+[20:44:02.612] [LOG] [TennisPlayerPaddle] Moving to Y: -13.75183
+[20:44:02.614] [LOG] [TennisPlayerPaddle] Moving to Y: -13.73019
+[20:44:02.617] [LOG] [TennisPlayerPaddle] Moving to Y: -13.70945
+[20:44:02.619] [LOG] [TennisPlayerPaddle] Moving to Y: -13.68889
+[20:44:02.622] [LOG] [TennisPlayerPaddle] Moving to Y: -13.6684
+[20:44:02.624] [LOG] [TennisPlayerPaddle] Moving to Y: -13.64862
+[20:44:02.627] [LOG] [TennisPlayerPaddle] Moving to Y: -13.62922
+[20:44:02.630] [LOG] [TennisPlayerPaddle] Moving to Y: -13.60904
+[20:44:02.631] [LOG] [TennisPlayerPaddle] Moving to Y: -13.58979
+[20:44:02.635] [LOG] [TennisPlayerPaddle] Moving to Y: -13.56821
+[20:44:02.638] [LOG] [TennisPlayerPaddle] Moving to Y: -13.54737
+[20:44:02.640] [LOG] [TennisPlayerPaddle] Moving to Y: -13.52774
+[20:44:02.643] [LOG] [TennisPlayerPaddle] Moving to Y: -13.50671
+[20:44:02.644] [LOG] [TennisPlayerPaddle] Moving to Y: -13.48656
+[20:44:02.648] [LOG] [TennisPlayerPaddle] Moving to Y: -13.46702
+[20:44:02.650] [LOG] [TennisPlayerPaddle] Moving to Y: -13.44577
+[20:44:02.653] [LOG] [TennisPlayerPaddle] Moving to Y: -13.42319
+[20:44:02.656] [LOG] [TennisPlayerPaddle] Moving to Y: -13.39559
+[20:44:02.659] [LOG] [TennisPlayerPaddle] Moving to Y: -13.37391
+[20:44:02.661] [LOG] [TennisPlayerPaddle] Moving to Y: -13.35213
+[20:44:02.664] [LOG] [TennisPlayerPaddle] Moving to Y: -13.33054
+[20:44:02.667] [LOG] [TennisPlayerPaddle] Moving to Y: -13.30991
+[20:44:02.670] [LOG] [TennisPlayerPaddle] Moving to Y: -13.28719
+[20:44:02.672] [LOG] [TennisPlayerPaddle] Moving to Y: -13.26744
+[20:44:02.675] [LOG] [TennisPlayerPaddle] Moving to Y: -13.24789
+[20:44:02.678] [LOG] [TennisPlayerPaddle] Moving to Y: -13.22646
+[20:44:02.680] [LOG] [TennisPlayerPaddle] Moving to Y: -13.20381
+[20:44:02.683] [LOG] [TennisPlayerPaddle] Moving to Y: -13.18215
+[20:44:02.686] [LOG] [TennisPlayerPaddle] Moving to Y: -13.16222
+[20:44:02.689] [LOG] [TennisPlayerPaddle] Moving to Y: -13.14152
+[20:44:02.691] [LOG] [TennisPlayerPaddle] Moving to Y: -13.11865
+[20:44:02.694] [LOG] [TennisPlayerPaddle] Moving to Y: -13.09765
+[20:44:02.697] [LOG] [TennisPlayerPaddle] Moving to Y: -13.07526
+[20:44:02.699] [LOG] [TennisPlayerPaddle] Moving to Y: -13.05369
+[20:44:02.701] [LOG] [TennisPlayerPaddle] Moving to Y: -13.03395
+[20:44:02.704] [LOG] [TennisPlayerPaddle] Moving to Y: -13.01279
+[20:44:02.706] [LOG] [TennisPlayerPaddle] Moving to Y: -12.99264
+[20:44:02.709] [LOG] [TennisPlayerPaddle] Moving to Y: -12.97258
+[20:44:02.712] [LOG] [TennisPlayerPaddle] Moving to Y: -12.95127
+[20:44:02.714] [LOG] [TennisPlayerPaddle] Moving to Y: -12.93139
+[20:44:02.716] [LOG] [TennisPlayerPaddle] Moving to Y: -12.91077
+[20:44:02.719] [LOG] [TennisPlayerPaddle] Moving to Y: -12.88923
+[20:44:02.723] [LOG] [TennisPlayerPaddle] Moving to Y: -12.8694
+[20:44:02.725] [LOG] [TennisPlayerPaddle] Moving to Y: -12.84871
+[20:44:02.727] [LOG] [TennisPlayerPaddle] Moving to Y: -12.82878
+[20:44:02.730] [LOG] [TennisPlayerPaddle] Moving to Y: -12.80808
+[20:44:02.733] [LOG] [TennisPlayerPaddle] Moving to Y: -12.787
+[20:44:02.735] [LOG] [TennisPlayerPaddle] Moving to Y: -12.76697
+[20:44:02.738] [LOG] [TennisPlayerPaddle] Moving to Y: -12.74711
+[20:44:02.740] [LOG] [TennisPlayerPaddle] Moving to Y: -12.72536
+[20:44:02.743] [LOG] [TennisPlayerPaddle] Moving to Y: -12.7057
+[20:44:02.745] [LOG] [TennisPlayerPaddle] Moving to Y: -12.68459
+[20:44:02.748] [LOG] [TennisPlayerPaddle] Moving to Y: -12.66365
+[20:44:02.751] [LOG] [TennisPlayerPaddle] Moving to Y: -12.64294
+[20:44:02.753] [LOG] [TennisPlayerPaddle] Moving to Y: -12.62098
+[20:44:02.755] [LOG] [TennisPlayerPaddle] Moving to Y: -12.60107
+[20:44:02.758] [LOG] [TennisPlayerPaddle] Moving to Y: -12.5806
+[20:44:02.761] [LOG] [TennisPlayerPaddle] Moving to Y: -12.5584
+[20:44:02.763] [LOG] [TennisPlayerPaddle] Moving to Y: -12.53803
+[20:44:02.766] [LOG] [TennisPlayerPaddle] Moving to Y: -12.51713
+[20:44:02.769] [LOG] [TennisPlayerPaddle] Moving to Y: -12.49654
+[20:44:02.772] [LOG] [TennisPlayerPaddle] Moving to Y: -12.47075
+[20:44:02.775] [LOG] [TennisPlayerPaddle] Moving to Y: -12.44688
+[20:44:02.778] [LOG] [TennisPlayerPaddle] Moving to Y: -12.42519
+[20:44:02.781] [LOG] [TennisPlayerPaddle] Moving to Y: -12.40251
+[20:44:02.784] [LOG] [TennisPlayerPaddle] Moving to Y: -12.37972
+[20:44:02.786] [LOG] [TennisPlayerPaddle] Moving to Y: -12.35903
+[20:44:02.789] [LOG] [TennisPlayerPaddle] Moving to Y: -12.33767
+[20:44:02.791] [LOG] [TennisPlayerPaddle] Moving to Y: -12.31712
+[20:44:02.794] [LOG] [TennisPlayerPaddle] Moving to Y: -12.29574
+[20:44:02.797] [LOG] [TennisPlayerPaddle] Moving to Y: -12.27472
+[20:44:02.799] [LOG] [TennisPlayerPaddle] Moving to Y: -12.25535
+[20:44:02.802] [LOG] [TennisPlayerPaddle] Moving to Y: -12.2345
+[20:44:02.804] [LOG] [TennisPlayerPaddle] Moving to Y: -12.2128
+[20:44:02.806] [LOG] [TennisPlayerPaddle] Moving to Y: -12.19248
+[20:44:02.809] [LOG] [TennisPlayerPaddle] Moving to Y: -12.17163
+[20:44:02.812] [LOG] [TennisPlayerPaddle] Moving to Y: -12.15154
+[20:44:02.815] [LOG] [TennisPlayerPaddle] Moving to Y: -12.12983
+[20:44:02.817] [LOG] [TennisPlayerPaddle] Moving to Y: -12.10771
+[20:44:02.820] [LOG] [TennisPlayerPaddle] Moving to Y: -12.08749
+[20:44:02.823] [LOG] [TennisPlayerPaddle] Moving to Y: -12.06613
+[20:44:02.825] [LOG] [TennisPlayerPaddle] Moving to Y: -12.04481
+[20:44:02.828] [LOG] [TennisPlayerPaddle] Moving to Y: -12.02497
+[20:44:02.830] [LOG] [TennisPlayerPaddle] Moving to Y: -12.0026
+[20:44:02.833] [LOG] [TennisPlayerPaddle] Moving to Y: -11.98282
+[20:44:02.835] [LOG] [TennisPlayerPaddle] Moving to Y: -11.96191
+[20:44:02.839] [LOG] [TennisPlayerPaddle] Moving to Y: -11.93868
+[20:44:03.356] [LOG] [TennisPlayerPaddle] Moving to Y: -11.95978
+[20:44:03.359] [LOG] [TennisPlayerPaddle] Moving to Y: -11.99017
+[20:44:03.362] [LOG] [TennisPlayerPaddle] Moving to Y: -12.0102
+[20:44:03.365] [LOG] [TennisPlayerPaddle] Moving to Y: -12.03238
+[20:44:03.367] [LOG] [TennisPlayerPaddle] Moving to Y: -12.05284
+[20:44:03.370] [LOG] [TennisPlayerPaddle] Moving to Y: -12.07482
+[20:44:03.373] [LOG] [TennisPlayerPaddle] Moving to Y: -12.0954
+[20:44:03.374] [LOG] [TennisPlayerPaddle] Moving to Y: -12.11627
+[20:44:03.378] [LOG] [TennisPlayerPaddle] Moving to Y: -12.137
+[20:44:03.381] [LOG] [TennisPlayerPaddle] Moving to Y: -12.1575
+[20:44:03.383] [LOG] [TennisPlayerPaddle] Moving to Y: -12.1784
+[20:44:03.386] [LOG] [TennisPlayerPaddle] Moving to Y: -12.20136
+[20:44:03.389] [LOG] [TennisPlayerPaddle] Moving to Y: -12.22234
+[20:44:03.391] [LOG] [TennisPlayerPaddle] Moving to Y: -12.24293
+[20:44:03.394] [LOG] [TennisPlayerPaddle] Moving to Y: -12.26314
+[20:44:03.396] [LOG] [TennisPlayerPaddle] Moving to Y: -12.28461
+[20:44:03.400] [LOG] [TennisPlayerPaddle] Moving to Y: -12.30515
+[20:44:03.402] [LOG] [TennisPlayerPaddle] Moving to Y: -12.32576
+[20:44:03.405] [LOG] [TennisPlayerPaddle] Moving to Y: -12.3456
+[20:44:03.407] [LOG] [TennisPlayerPaddle] Moving to Y: -12.36678
+[20:44:03.410] [LOG] [TennisPlayerPaddle] Moving to Y: -12.38736
+[20:44:03.412] [LOG] [TennisPlayerPaddle] Moving to Y: -12.40778
+[20:44:03.415] [LOG] [TennisPlayerPaddle] Moving to Y: -12.42886
+[20:44:03.417] [LOG] [TennisPlayerPaddle] Moving to Y: -12.45167
+[20:44:03.420] [LOG] [TennisPlayerPaddle] Moving to Y: -12.47235
+[20:44:03.423] [LOG] [TennisPlayerPaddle] Moving to Y: -12.49192
+[20:44:03.425] [LOG] [TennisPlayerPaddle] Moving to Y: -12.51202
+[20:44:03.428] [LOG] [TennisPlayerPaddle] Moving to Y: -12.53316
+[20:44:03.430] [LOG] [TennisPlayerPaddle] Moving to Y: -12.5537
+[20:44:03.433] [LOG] [TennisPlayerPaddle] Moving to Y: -12.57393
+[20:44:03.435] [LOG] [TennisPlayerPaddle] Moving to Y: -12.59435
+[20:44:03.438] [LOG] [TennisPlayerPaddle] Moving to Y: -12.61661
+[20:44:03.440] [LOG] [TennisPlayerPaddle] Moving to Y: -12.63764
+[20:44:03.443] [LOG] [TennisPlayerPaddle] Moving to Y: -12.6578
+[20:44:03.446] [LOG] [TennisPlayerPaddle] Moving to Y: -12.67873
+[20:44:03.449] [LOG] [TennisPlayerPaddle] Moving to Y: -12.70165
+[20:44:03.452] [LOG] [TennisPlayerPaddle] Moving to Y: -12.7234
+[20:44:03.455] [LOG] [TennisPlayerPaddle] Moving to Y: -12.74501
+[20:44:03.456] [LOG] [TennisPlayerPaddle] Moving to Y: -12.76684
+[20:44:03.460] [LOG] [TennisPlayerPaddle] Moving to Y: -12.79031
+[20:44:03.462] [LOG] [TennisPlayerPaddle] Moving to Y: -12.81066
+[20:44:03.464] [LOG] [TennisPlayerPaddle] Moving to Y: -12.83092
+[20:44:03.467] [LOG] [TennisPlayerPaddle] Moving to Y: -12.85096
+[20:44:03.470] [LOG] [TennisPlayerPaddle] Moving to Y: -12.87337
+[20:44:03.473] [LOG] [TennisPlayerPaddle] Moving to Y: -12.89472
+[20:44:03.475] [LOG] [TennisPlayerPaddle] Moving to Y: -12.91556
+[20:44:03.478] [LOG] [TennisPlayerPaddle] Moving to Y: -12.9364
+[20:44:03.481] [LOG] [TennisPlayerPaddle] Moving to Y: -12.95714
+[20:44:03.483] [LOG] [TennisPlayerPaddle] Moving to Y: -12.97751
+[20:44:03.486] [LOG] [TennisPlayerPaddle] Moving to Y: -12.9982
+[20:44:03.488] [LOG] [TennisPlayerPaddle] Moving to Y: -13.02004
+[20:44:03.490] [LOG] [TennisPlayerPaddle] Moving to Y: -13.04142
+[20:44:03.494] [LOG] [TennisPlayerPaddle] Moving to Y: -13.06155
+[20:44:03.496] [LOG] [TennisPlayerPaddle] Moving to Y: -13.08256
+[20:44:03.499] [LOG] [TennisPlayerPaddle] Moving to Y: -13.102
+[20:44:03.501] [LOG] [TennisPlayerPaddle] Moving to Y: -13.12311
+[20:44:03.504] [LOG] [TennisPlayerPaddle] Moving to Y: -13.14375
+[20:44:03.506] [LOG] [TennisPlayerPaddle] Moving to Y: -13.16318
+[20:44:03.509] [LOG] [TennisPlayerPaddle] Moving to Y: -13.18339
+[20:44:03.512] [LOG] [TennisPlayerPaddle] Moving to Y: -13.20512
+[20:44:03.515] [LOG] [TennisPlayerPaddle] Moving to Y: -13.22603
+[20:44:03.517] [LOG] [TennisPlayerPaddle] Moving to Y: -13.24886
+[20:44:03.520] [LOG] [TennisPlayerPaddle] Moving to Y: -13.2711
+[20:44:03.522] [LOG] [TennisPlayerPaddle] Moving to Y: -13.29415
+[20:44:03.525] [LOG] [TennisPlayerPaddle] Moving to Y: -13.31448
+[20:44:03.527] [LOG] [TennisPlayerPaddle] Moving to Y: -13.33443
+[20:44:03.530] [LOG] [TennisPlayerPaddle] Moving to Y: -13.35813
+[20:44:03.533] [LOG] [TennisPlayerPaddle] Moving to Y: -13.38143
+[20:44:03.537] [LOG] [TennisPlayerPaddle] Moving to Y: -13.40424
+[20:44:03.539] [LOG] [TennisPlayerPaddle] Moving to Y: -13.42593
+[20:44:03.541] [LOG] [TennisPlayerPaddle] Moving to Y: -13.44679
+[20:44:03.545] [LOG] [TennisPlayerPaddle] Moving to Y: -13.47101
+[20:44:03.548] [LOG] [TennisPlayerPaddle] Moving to Y: -13.49125
+[20:44:03.550] [LOG] [TennisPlayerPaddle] Moving to Y: -13.51418
+[20:44:03.552] [LOG] [TennisPlayerPaddle] Moving to Y: -13.53536
+[20:44:03.556] [LOG] [TennisPlayerPaddle] Moving to Y: -13.55657
+[20:44:03.557] [LOG] [TennisPlayerPaddle] Moving to Y: -13.5777
+[20:44:03.560] [LOG] [TennisPlayerPaddle] Moving to Y: -13.59751
+[20:44:03.563] [LOG] [TennisPlayerPaddle] Moving to Y: -13.61695
+[20:44:03.565] [LOG] [TennisPlayerPaddle] Moving to Y: -13.63911
+[20:44:03.568] [LOG] [TennisPlayerPaddle] Moving to Y: -13.65869
+[20:44:03.572] [LOG] [TennisPlayerPaddle] Moving to Y: -13.6802
+[20:44:03.574] [LOG] [TennisPlayerPaddle] Moving to Y: -13.70107
+[20:44:03.576] [LOG] [TennisPlayerPaddle] Moving to Y: -13.72188
+[20:44:03.579] [LOG] [TennisPlayerPaddle] Moving to Y: -13.74267
+[20:44:03.582] [LOG] [TennisPlayerPaddle] Moving to Y: -13.76276
+[20:44:03.584] [LOG] [TennisPlayerPaddle] Moving to Y: -13.78204
+[20:44:03.587] [LOG] [TennisPlayerPaddle] Moving to Y: -13.80637
+[20:44:03.589] [LOG] [TennisPlayerPaddle] Moving to Y: -13.82816
+[20:44:03.593] [LOG] [TennisPlayerPaddle] Moving to Y: -13.85131
+[20:44:03.595] [LOG] [TennisPlayerPaddle] Moving to Y: -13.87322
+[20:44:03.598] [LOG] [TennisPlayerPaddle] Moving to Y: -13.8941
+[20:44:03.601] [LOG] [TennisPlayerPaddle] Moving to Y: -13.91492
+[20:44:03.603] [LOG] [TennisPlayerPaddle] Moving to Y: -13.93513
+[20:44:03.606] [LOG] [TennisPlayerPaddle] Moving to Y: -13.9554
+[20:44:03.608] [LOG] [TennisPlayerPaddle] Moving to Y: -13.97707
+[20:44:03.611] [LOG] [TennisPlayerPaddle] Moving to Y: -13.99664
+[20:44:03.612] [LOG] [TennisPlayerPaddle] Moving to Y: -14.01753
+[20:44:03.616] [LOG] [TennisPlayerPaddle] Moving to Y: -14.03787
+[20:44:03.619] [LOG] [TennisPlayerPaddle] Moving to Y: -14.06003
+[20:44:03.740] [LOG] [TennisPlayerPaddle] Moving to Y: -14.03952
+[20:44:03.744] [LOG] [TennisPlayerPaddle] Moving to Y: -14.00958
+[20:44:03.747] [LOG] [TennisPlayerPaddle] Moving to Y: -13.9855
+[20:44:03.749] [LOG] [TennisPlayerPaddle] Moving to Y: -13.96478
+[20:44:03.752] [LOG] [TennisPlayerPaddle] Moving to Y: -13.9441
+[20:44:03.754] [LOG] [TennisPlayerPaddle] Moving to Y: -13.92395
+[20:44:03.757] [LOG] [TennisPlayerPaddle] Moving to Y: -13.90288
+[20:44:03.759] [LOG] [TennisPlayerPaddle] Moving to Y: -13.88168
+[20:44:03.762] [LOG] [TennisPlayerPaddle] Moving to Y: -13.86159
+[20:44:03.765] [LOG] [TennisPlayerPaddle] Moving to Y: -13.84054
+[20:44:03.767] [LOG] [TennisPlayerPaddle] Moving to Y: -13.81882
+[20:44:03.770] [LOG] [TennisPlayerPaddle] Moving to Y: -13.79778
+[20:44:03.772] [LOG] [TennisPlayerPaddle] Moving to Y: -13.77684
+[20:44:03.776] [LOG] [TennisPlayerPaddle] Moving to Y: -13.75602
+[20:44:03.778] [LOG] [TennisPlayerPaddle] Moving to Y: -13.73357
+[20:44:03.780] [LOG] [TennisPlayerPaddle] Moving to Y: -13.71114
+[20:44:03.783] [LOG] [TennisPlayerPaddle] Moving to Y: -13.69072
+[20:44:03.786] [LOG] [TennisPlayerPaddle] Moving to Y: -13.67081
+[20:44:03.788] [LOG] [TennisPlayerPaddle] Moving to Y: -13.64986
+[20:44:03.790] [LOG] [TennisPlayerPaddle] Moving to Y: -13.63014
+[20:44:03.794] [LOG] [TennisPlayerPaddle] Moving to Y: -13.60883
+[20:44:03.796] [LOG] [TennisPlayerPaddle] Moving to Y: -13.58824
+[20:44:03.799] [LOG] [TennisPlayerPaddle] Moving to Y: -13.56822
+[20:44:03.802] [LOG] [TennisPlayerPaddle] Moving to Y: -13.54744
+[20:44:03.804] [LOG] [TennisPlayerPaddle] Moving to Y: -13.5275
+[20:44:03.806] [LOG] [TennisPlayerPaddle] Moving to Y: -13.50743
+[20:44:03.809] [LOG] [TennisPlayerPaddle] Moving to Y: -13.48592
+[20:44:03.812] [LOG] [TennisPlayerPaddle] Moving to Y: -13.4626
+[20:44:03.815] [LOG] [TennisPlayerPaddle] Moving to Y: -13.44138
+[20:44:03.817] [LOG] [TennisPlayerPaddle] Moving to Y: -13.42112
+[20:44:03.820] [LOG] [TennisPlayerPaddle] Moving to Y: -13.40095
+[20:44:03.823] [LOG] [TennisPlayerPaddle] Moving to Y: -13.3772
+[20:44:03.826] [LOG] [TennisPlayerPaddle] Moving to Y: -13.35656
+[20:44:03.828] [LOG] [TennisPlayerPaddle] Moving to Y: -13.33608
+[20:44:03.830] [LOG] [TennisPlayerPaddle] Moving to Y: -13.31465
+[20:44:03.833] [LOG] [TennisPlayerPaddle] Moving to Y: -13.29546
+[20:44:03.835] [LOG] [TennisPlayerPaddle] Moving to Y: -13.27389
+[20:44:03.838] [LOG] [TennisPlayerPaddle] Moving to Y: -13.25376
+[20:44:03.841] [LOG] [TennisPlayerPaddle] Moving to Y: -13.23354
+[20:44:03.843] [LOG] [TennisPlayerPaddle] Moving to Y: -13.21269
+[20:44:03.845] [LOG] [TennisPlayerPaddle] Moving to Y: -13.19331
+[20:44:03.848] [LOG] [TennisPlayerPaddle] Moving to Y: -13.17408
+[20:44:03.851] [LOG] [TennisPlayerPaddle] Moving to Y: -13.15128
+[20:44:03.854] [LOG] [TennisPlayerPaddle] Moving to Y: -13.13116
+[20:44:03.856] [LOG] [TennisPlayerPaddle] Moving to Y: -13.11059
+[20:44:03.859] [LOG] [TennisPlayerPaddle] Moving to Y: -13.08868
+[20:44:03.860] [LOG] [TennisPlayerPaddle] Moving to Y: -13.06797
+[20:44:03.864] [LOG] [TennisPlayerPaddle] Moving to Y: -13.04463
+[20:44:03.867] [LOG] [TennisPlayerPaddle] Moving to Y: -13.02427
+[20:44:03.870] [LOG] [TennisPlayerPaddle] Moving to Y: -13.00068
+[20:44:03.873] [LOG] [TennisPlayerPaddle] Moving to Y: -12.97799
+[20:44:03.876] [LOG] [TennisPlayerPaddle] Moving to Y: -12.95747
+[20:44:03.877] [LOG] [TennisPlayerPaddle] Moving to Y: -12.93488
+[20:44:03.881] [LOG] [TennisPlayerPaddle] Moving to Y: -12.91331
+[20:44:03.884] [LOG] [TennisPlayerPaddle] Moving to Y: -12.89141
+[20:44:03.886] [LOG] [TennisPlayerPaddle] Moving to Y: -12.87001
+[20:44:03.889] [LOG] [TennisPlayerPaddle] Moving to Y: -12.8503
+[20:44:03.892] [LOG] [TennisPlayerPaddle] Moving to Y: -12.82467
+[20:44:03.894] [LOG] [TennisPlayerPaddle] Moving to Y: -12.80353
+[20:44:03.897] [LOG] [TennisPlayerPaddle] Moving to Y: -12.7833
+[20:44:03.899] [LOG] [TennisPlayerPaddle] Moving to Y: -12.76122
+[20:44:03.902] [LOG] [TennisPlayerPaddle] Moving to Y: -12.74082
+[20:44:03.904] [LOG] [TennisPlayerPaddle] Moving to Y: -12.71847
+[20:44:03.908] [LOG] [TennisPlayerPaddle] Moving to Y: -12.69746
+[20:44:03.910] [LOG] [TennisPlayerPaddle] Moving to Y: -12.67681
+[20:44:03.912] [LOG] [TennisPlayerPaddle] Moving to Y: -12.65523
+[20:44:03.915] [LOG] [TennisPlayerPaddle] Moving to Y: -12.63247
+[20:44:03.918] [LOG] [TennisPlayerPaddle] Moving to Y: -12.61175
+[20:44:03.921] [LOG] [TennisPlayerPaddle] Moving to Y: -12.5883
+[20:44:03.924] [LOG] [TennisPlayerPaddle] Moving to Y: -12.56725
+[20:44:03.927] [LOG] [TennisPlayerPaddle] Moving to Y: -12.54469
+[20:44:03.929] [LOG] [TennisPlayerPaddle] Moving to Y: -12.52425
+[20:44:03.932] [LOG] [TennisPlayerPaddle] Moving to Y: -12.50414
+[20:44:03.934] [LOG] [TennisPlayerPaddle] Moving to Y: -12.48368
+[20:44:03.937] [LOG] [TennisPlayerPaddle] Moving to Y: -12.46156
+[20:44:03.939] [LOG] [TennisPlayerPaddle] Moving to Y: -12.44125
+[20:44:03.943] [LOG] [TennisPlayerPaddle] Moving to Y: -12.42093
+[20:44:03.945] [LOG] [TennisPlayerPaddle] Moving to Y: -12.40048
+[20:44:03.948] [LOG] [TennisPlayerPaddle] Moving to Y: -12.37848
+[20:44:03.950] [LOG] [TennisPlayerPaddle] Moving to Y: -12.35744
+[20:44:03.952] [LOG] [TennisPlayerPaddle] Moving to Y: -12.33705
+[20:44:03.955] [LOG] [TennisPlayerPaddle] Moving to Y: -12.31709
+[20:44:03.957] [LOG] [TennisPlayerPaddle] Moving to Y: -12.29558
+[20:44:03.961] [LOG] [TennisPlayerPaddle] Moving to Y: -12.27441
+[20:44:03.963] [LOG] [TennisPlayerPaddle] Moving to Y: -12.25391
+[20:44:03.965] [LOG] [TennisPlayerPaddle] Moving to Y: -12.23325
+[20:44:03.969] [LOG] [TennisPlayerPaddle] Moving to Y: -12.21147
+[20:44:03.971] [LOG] [TennisPlayerPaddle] Moving to Y: -12.18915
+[20:44:03.974] [LOG] [TennisPlayerPaddle] Moving to Y: -12.16863
+[20:44:03.977] [LOG] [TennisPlayerPaddle] Moving to Y: -12.14823
+[20:44:03.979] [LOG] [TennisPlayerPaddle] Moving to Y: -12.12777
+[20:44:03.981] [LOG] [TennisPlayerPaddle] Moving to Y: -12.10588
+[20:44:03.984] [LOG] [TennisPlayerPaddle] Moving to Y: -12.08536
+[20:44:03.987] [LOG] [TennisPlayerPaddle] Moving to Y: -12.06494
+[20:44:03.990] [LOG] [TennisPlayerPaddle] Moving to Y: -12.04283
+[20:44:03.992] [LOG] [TennisPlayerPaddle] Moving to Y: -12.02167
+[20:44:03.994] [LOG] [TennisPlayerPaddle] Moving to Y: -12.001
+[20:44:03.997] [LOG] [TennisPlayerPaddle] Moving to Y: -11.98045
+[20:44:04.000] [LOG] [TennisPlayerPaddle] Moving to Y: -11.95991
+[20:44:04.003] [LOG] [TennisPlayerPaddle] Moving to Y: -11.93899
+[20:44:04.004] [LOG] [TennisPlayerPaddle] Moving to Y: -11.91911
+[20:44:04.008] [LOG] [TennisPlayerPaddle] Moving to Y: -11.89766
+[20:44:04.010] [LOG] [TennisPlayerPaddle] Moving to Y: -11.87542
+[20:44:04.013] [LOG] [TennisPlayerPaddle] Moving to Y: -11.8556
+[20:44:04.015] [LOG] [TennisPlayerPaddle] Moving to Y: -11.83531
+[20:44:04.018] [LOG] [TennisPlayerPaddle] Moving to Y: -11.81387
+[20:44:04.020] [LOG] [TennisPlayerPaddle] Moving to Y: -11.79368
+[20:44:04.023] [LOG] [TennisPlayerPaddle] Moving to Y: -11.77078
+[20:44:04.026] [LOG] [TennisPlayerPaddle] Moving to Y: -11.74912
+[20:44:04.029] [LOG] [TennisPlayerPaddle] Moving to Y: -11.72822
+[20:44:04.032] [LOG] [TennisPlayerPaddle] Moving to Y: -11.70568
+[20:44:04.034] [LOG] [TennisPlayerPaddle] Moving to Y: -11.68537
+[20:44:04.037] [LOG] [TennisPlayerPaddle] Moving to Y: -11.66331
+[20:44:04.039] [LOG] [TennisPlayerPaddle] Moving to Y: -11.64311
+[20:44:04.041] [LOG] [TennisPlayerPaddle] Moving to Y: -11.62296
+[20:44:04.044] [LOG] [TennisPlayerPaddle] Moving to Y: -11.60181
+[20:44:04.047] [LOG] [TennisPlayerPaddle] Moving to Y: -11.58008
+[20:44:04.050] [LOG] [TennisPlayerPaddle] Moving to Y: -11.55997
+[20:44:04.053] [LOG] [TennisPlayerPaddle] Moving to Y: -11.53789
+[20:44:04.055] [LOG] [TennisPlayerPaddle] Moving to Y: -11.51832
+[20:44:04.058] [LOG] [TennisPlayerPaddle] Moving to Y: -11.49463
+[20:44:04.061] [LOG] [TennisPlayerPaddle] Moving to Y: -11.47254
+[20:44:04.064] [LOG] [TennisPlayerPaddle] Moving to Y: -11.45115
+[20:44:04.066] [LOG] [TennisPlayerPaddle] Moving to Y: -11.42971
+[20:44:04.069] [LOG] [TennisPlayerPaddle] Moving to Y: -11.40862
+[20:44:04.233] [LOG] [TennisPlayerPaddle] Moving to Y: -11.42911
+[20:44:04.236] [LOG] [TennisPlayerPaddle] Moving to Y: -11.45883
+[20:44:04.239] [LOG] [TennisPlayerPaddle] Moving to Y: -11.48044
+[20:44:04.241] [LOG] [TennisPlayerPaddle] Moving to Y: -11.50091
+[20:44:04.244] [LOG] [TennisPlayerPaddle] Moving to Y: -11.52068
+[20:44:04.246] [LOG] [TennisPlayerPaddle] Moving to Y: -11.54205
+[20:44:04.249] [LOG] [TennisPlayerPaddle] Moving to Y: -11.56261
+[20:44:04.251] [LOG] [TennisPlayerPaddle] Moving to Y: -11.58398
+[20:44:04.253] [LOG] [TennisPlayerPaddle] Moving to Y: -11.60512
+[20:44:04.257] [LOG] [TennisPlayerPaddle] Moving to Y: -11.62575
+[20:44:04.259] [LOG] [TennisPlayerPaddle] Moving to Y: -11.64639
+[20:44:04.262] [LOG] [TennisPlayerPaddle] Moving to Y: -11.66658
+[20:44:04.264] [LOG] [TennisPlayerPaddle] Moving to Y: -11.68631
+[20:44:04.266] [LOG] [TennisPlayerPaddle] Moving to Y: -11.70656
+[20:44:04.269] [LOG] [TennisPlayerPaddle] Moving to Y: -11.72777
+[20:44:04.271] [LOG] [TennisPlayerPaddle] Moving to Y: -11.74805
+[20:44:04.274] [LOG] [TennisPlayerPaddle] Moving to Y: -11.76838
+[20:44:04.277] [LOG] [TennisPlayerPaddle] Moving to Y: -11.78894
+[20:44:04.279] [LOG] [TennisPlayerPaddle] Moving to Y: -11.81017
+[20:44:04.281] [LOG] [TennisPlayerPaddle] Moving to Y: -11.83044
+[20:44:04.284] [LOG] [TennisPlayerPaddle] Moving to Y: -11.84993
+[20:44:04.287] [LOG] [TennisPlayerPaddle] Moving to Y: -11.87196
+[20:44:04.290] [LOG] [TennisPlayerPaddle] Moving to Y: -11.89277
+[20:44:04.292] [LOG] [TennisPlayerPaddle] Moving to Y: -11.91324
+[20:44:04.295] [LOG] [TennisPlayerPaddle] Moving to Y: -11.93604
+[20:44:04.298] [LOG] [TennisPlayerPaddle] Moving to Y: -11.95713
+[20:44:04.301] [LOG] [TennisPlayerPaddle] Moving to Y: -11.98228
+[20:44:04.304] [LOG] [TennisPlayerPaddle] Moving to Y: -12.00268
+[20:44:04.306] [LOG] [TennisPlayerPaddle] Moving to Y: -12.02246
+[20:44:04.309] [LOG] [TennisPlayerPaddle] Moving to Y: -12.04334
+[20:44:04.311] [LOG] [TennisPlayerPaddle] Moving to Y: -12.06411
+[20:44:04.314] [LOG] [TennisPlayerPaddle] Moving to Y: -12.08506
+[20:44:04.316] [LOG] [TennisPlayerPaddle] Moving to Y: -12.10638
+[20:44:04.319] [LOG] [TennisPlayerPaddle] Moving to Y: -12.12686
+[20:44:04.322] [LOG] [TennisPlayerPaddle] Moving to Y: -12.1506
+[20:44:04.324] [LOG] [TennisPlayerPaddle] Moving to Y: -12.17457
+[20:44:04.327] [LOG] [TennisPlayerPaddle] Moving to Y: -12.19671
+[20:44:04.331] [LOG] [TennisPlayerPaddle] Moving to Y: -12.21802
+[20:44:04.333] [LOG] [TennisPlayerPaddle] Moving to Y: -12.23829
+[20:44:04.336] [LOG] [TennisPlayerPaddle] Moving to Y: -12.25898
+[20:44:04.338] [LOG] [TennisPlayerPaddle] Moving to Y: -12.27972
+[20:44:04.340] [LOG] [TennisPlayerPaddle] Moving to Y: -12.29928
+[20:44:04.343] [LOG] [TennisPlayerPaddle] Moving to Y: -12.3215
+[20:44:04.346] [LOG] [TennisPlayerPaddle] Moving to Y: -12.34122
+[20:44:04.349] [LOG] [TennisPlayerPaddle] Moving to Y: -12.36055
+[20:44:04.350] [LOG] [TennisPlayerPaddle] Moving to Y: -12.38091
+[20:44:04.353] [LOG] [TennisPlayerPaddle] Moving to Y: -12.40045
+[20:44:04.355] [LOG] [TennisPlayerPaddle] Moving to Y: -12.42112
+[20:44:04.359] [LOG] [TennisPlayerPaddle] Moving to Y: -12.44283
+[20:44:04.360] [LOG] [TennisPlayerPaddle] Moving to Y: -12.46242
+[20:44:04.364] [LOG] [TennisPlayerPaddle] Moving to Y: -12.48273
+[20:44:04.366] [LOG] [TennisPlayerPaddle] Moving to Y: -12.50412
+[20:44:04.369] [LOG] [TennisPlayerPaddle] Moving to Y: -12.52434
+[20:44:04.372] [LOG] [TennisPlayerPaddle] Moving to Y: -12.54922
+[20:44:04.375] [LOG] [TennisPlayerPaddle] Moving to Y: -12.57139
+[20:44:04.378] [LOG] [TennisPlayerPaddle] Moving to Y: -12.59412
+[20:44:04.379] [LOG] [TennisPlayerPaddle] Moving to Y: -12.61596
+[20:44:04.383] [LOG] [TennisPlayerPaddle] Moving to Y: -12.63573
+[20:44:04.386] [LOG] [TennisPlayerPaddle] Moving to Y: -12.65663
+[20:44:04.387] [LOG] [TennisPlayerPaddle] Moving to Y: -12.678
+[20:44:04.391] [LOG] [TennisPlayerPaddle] Moving to Y: -12.70148
+[20:44:04.393] [LOG] [TennisPlayerPaddle] Moving to Y: -12.72294
+[20:44:04.396] [LOG] [TennisPlayerPaddle] Moving to Y: -12.74292
+[20:44:04.399] [LOG] [TennisPlayerPaddle] Moving to Y: -12.76581
+[20:44:04.402] [LOG] [TennisPlayerPaddle] Moving to Y: -12.78952
+[20:44:04.404] [LOG] [TennisPlayerPaddle] Moving to Y: -12.81112
+[20:44:04.408] [LOG] [TennisPlayerPaddle] Moving to Y: -12.83433
+[20:44:04.411] [LOG] [TennisPlayerPaddle] Moving to Y: -12.85691
+[20:44:04.413] [LOG] [TennisPlayerPaddle] Moving to Y: -12.881
+[20:44:04.416] [LOG] [TennisPlayerPaddle] Moving to Y: -12.90255
+[20:44:04.419] [LOG] [TennisPlayerPaddle] Moving to Y: -12.9249
+[20:44:04.422] [LOG] [TennisPlayerPaddle] Moving to Y: -12.94758
+[20:44:04.424] [LOG] [TennisPlayerPaddle] Moving to Y: -12.96986
+[20:44:04.428] [LOG] [TennisPlayerPaddle] Moving to Y: -12.99305
+[20:44:04.430] [LOG] [TennisPlayerPaddle] Moving to Y: -13.01578
+[20:44:04.434] [LOG] [TennisPlayerPaddle] Moving to Y: -13.04017
+[20:44:04.436] [LOG] [TennisPlayerPaddle] Moving to Y: -13.06122
+[20:44:04.439] [LOG] [TennisPlayerPaddle] Moving to Y: -13.08294
+[20:44:04.441] [LOG] [TennisPlayerPaddle] Moving to Y: -13.1055
+[20:44:04.444] [LOG] [TennisPlayerPaddle] Moving to Y: -13.12773
+[20:44:04.446] [LOG] [TennisPlayerPaddle] Moving to Y: -13.15038
+[20:44:04.450] [LOG] [TennisPlayerPaddle] Moving to Y: -13.1724
+[20:44:04.453] [LOG] [TennisPlayerPaddle] Moving to Y: -13.19417
+[20:44:04.455] [LOG] [TennisPlayerPaddle] Moving to Y: -13.21696
+[20:44:04.458] [LOG] [TennisPlayerPaddle] Moving to Y: -13.23732
+[20:44:04.460] [LOG] [TennisPlayerPaddle] Moving to Y: -13.25772
+[20:44:04.463] [LOG] [TennisPlayerPaddle] Moving to Y: -13.27891
+[20:44:04.466] [LOG] [TennisPlayerPaddle] Moving to Y: -13.29947
+[20:44:04.469] [LOG] [TennisPlayerPaddle] Moving to Y: -13.32123
+[20:44:04.472] [LOG] [TennisPlayerPaddle] Moving to Y: -13.34579
+[20:44:04.475] [LOG] [TennisPlayerPaddle] Moving to Y: -13.36821
+[20:44:04.477] [LOG] [TennisPlayerPaddle] Moving to Y: -13.39124
+[20:44:04.479] [LOG] [TennisPlayerPaddle] Moving to Y: -13.41195
+[20:44:04.483] [LOG] [TennisPlayerPaddle] Moving to Y: -13.43587
+[20:44:04.486] [LOG] [TennisPlayerPaddle] Moving to Y: -13.45786
+[20:44:04.489] [LOG] [TennisPlayerPaddle] Moving to Y: -13.48065
+[20:44:04.491] [LOG] [TennisPlayerPaddle] Moving to Y: -13.50288
+[20:44:04.494] [LOG] [TennisPlayerPaddle] Moving to Y: -13.524
+[20:44:04.496] [LOG] [TennisPlayerPaddle] Moving to Y: -13.54676
+[20:44:04.499] [LOG] [TennisPlayerPaddle] Moving to Y: -13.5683
+[20:44:04.502] [LOG] [TennisPlayerPaddle] Moving to Y: -13.59108
+[20:44:04.505] [LOG] [TennisPlayerPaddle] Moving to Y: -13.61227
+[20:44:04.508] [LOG] [TennisPlayerPaddle] Moving to Y: -13.63439
+[20:44:04.510] [LOG] [TennisPlayerPaddle] Moving to Y: -13.65697
+[20:44:04.513] [LOG] [TennisPlayerPaddle] Moving to Y: -13.6773
+[20:44:04.791] [LOG] [TennisPlayerPaddle] Moving to Y: -13.63333
+[20:44:04.794] [LOG] [TennisPlayerPaddle] Moving to Y: -13.59632
+[20:44:04.797] [LOG] [TennisPlayerPaddle] Moving to Y: -13.57546
+[20:44:04.801] [LOG] [TennisPlayerPaddle] Moving to Y: -13.55428
+[20:44:04.804] [LOG] [TennisPlayerPaddle] Moving to Y: -13.52975
+[20:44:04.805] [LOG] [TennisPlayerPaddle] Moving to Y: -13.50871
+[20:44:04.809] [LOG] [TennisPlayerPaddle] Moving to Y: -13.48809
+[20:44:04.811] [LOG] [TennisPlayerPaddle] Moving to Y: -13.46717
+[20:44:04.814] [LOG] [TennisPlayerPaddle] Moving to Y: -13.44567
+[20:44:04.817] [LOG] [TennisPlayerPaddle] Moving to Y: -13.42403
+[20:44:04.819] [LOG] [TennisPlayerPaddle] Moving to Y: -13.40405
+[20:44:04.821] [LOG] [TennisPlayerPaddle] Moving to Y: -13.38377
+[20:44:04.825] [LOG] [TennisPlayerPaddle] Moving to Y: -13.36351
+[20:44:04.827] [LOG] [TennisPlayerPaddle] Moving to Y: -13.34348
+[20:44:04.829] [LOG] [TennisPlayerPaddle] Moving to Y: -13.32328
+[20:44:04.832] [LOG] [TennisPlayerPaddle] Moving to Y: -13.30252
+[20:44:04.835] [LOG] [TennisPlayerPaddle] Moving to Y: -13.28064
+[20:44:04.838] [LOG] [TennisPlayerPaddle] Moving to Y: -13.25585
+[20:44:04.841] [LOG] [TennisPlayerPaddle] Moving to Y: -13.23324
+[20:44:04.844] [LOG] [TennisPlayerPaddle] Moving to Y: -13.21093
+[20:44:04.846] [LOG] [TennisPlayerPaddle] Moving to Y: -13.18835
+[20:44:04.849] [LOG] [TennisPlayerPaddle] Moving to Y: -13.16725
+[20:44:04.851] [LOG] [TennisPlayerPaddle] Moving to Y: -13.14662
+[20:44:04.854] [LOG] [TennisPlayerPaddle] Moving to Y: -13.12655
+[20:44:04.857] [LOG] [TennisPlayerPaddle] Moving to Y: -13.10408
+[20:44:04.859] [LOG] [TennisPlayerPaddle] Moving to Y: -13.08432
+[20:44:04.861] [LOG] [TennisPlayerPaddle] Moving to Y: -13.06464
+[20:44:04.864] [LOG] [TennisPlayerPaddle] Moving to Y: -13.04215
+[20:44:04.867] [LOG] [TennisPlayerPaddle] Moving to Y: -13.0203
+[20:44:04.870] [LOG] [TennisPlayerPaddle] Moving to Y: -12.99788
+[20:44:04.872] [LOG] [TennisPlayerPaddle] Moving to Y: -12.97614
+[20:44:04.875] [LOG] [TennisPlayerPaddle] Moving to Y: -12.95595
+[20:44:04.878] [LOG] [TennisPlayerPaddle] Moving to Y: -12.93341
+[20:44:04.881] [LOG] [TennisPlayerPaddle] Moving to Y: -12.91262
+[20:44:04.883] [LOG] [TennisPlayerPaddle] Moving to Y: -12.89139
+[20:44:04.886] [LOG] [TennisPlayerPaddle] Moving to Y: -12.86906
+[20:44:04.889] [LOG] [TennisPlayerPaddle] Moving to Y: -12.84875
+[20:44:04.892] [LOG] [TennisPlayerPaddle] Moving to Y: -12.82754
+[20:44:04.894] [LOG] [TennisPlayerPaddle] Moving to Y: -12.80735
+[20:44:04.897] [LOG] [TennisPlayerPaddle] Moving to Y: -12.78666
+[20:44:04.899] [LOG] [TennisPlayerPaddle] Moving to Y: -12.76485
+[20:44:04.902] [LOG] [TennisPlayerPaddle] Moving to Y: -12.7442
+[20:44:04.904] [LOG] [TennisPlayerPaddle] Moving to Y: -12.72459
+[20:44:04.906] [LOG] [TennisPlayerPaddle] Moving to Y: -12.70351
+[20:44:04.909] [LOG] [TennisPlayerPaddle] Moving to Y: -12.68272
+[20:44:04.912] [LOG] [TennisPlayerPaddle] Moving to Y: -12.66167
+[20:44:04.915] [LOG] [TennisPlayerPaddle] Moving to Y: -12.64087
+[20:44:04.917] [LOG] [TennisPlayerPaddle] Moving to Y: -12.62071
+[20:44:04.920] [LOG] [TennisPlayerPaddle] Moving to Y: -12.59576
+[20:44:05.284] [LOG] [TennisPlayerPaddle] Moving to Y: -12.57367
+[20:44:05.287] [LOG] [TennisPlayerPaddle] Moving to Y: -12.54078
+[20:44:05.291] [LOG] [TennisPlayerPaddle] Moving to Y: -12.51933
+[20:44:05.294] [LOG] [TennisPlayerPaddle] Moving to Y: -12.49823
+[20:44:05.296] [LOG] [TennisPlayerPaddle] Moving to Y: -12.47679
+[20:44:05.299] [LOG] [TennisPlayerPaddle] Moving to Y: -12.45622
+[20:44:05.301] [LOG] [TennisPlayerPaddle] Moving to Y: -12.4349
+[20:44:05.304] [LOG] [TennisPlayerPaddle] Moving to Y: -12.41432
+[20:44:05.307] [LOG] [TennisPlayerPaddle] Moving to Y: -12.39319
+[20:44:05.309] [LOG] [TennisPlayerPaddle] Moving to Y: -12.37121
+[20:44:05.312] [LOG] [TennisPlayerPaddle] Moving to Y: -12.35149
+[20:44:05.315] [LOG] [TennisPlayerPaddle] Moving to Y: -12.33148
+[20:44:05.317] [LOG] [TennisPlayerPaddle] Moving to Y: -12.30959
+[20:44:05.319] [LOG] [TennisPlayerPaddle] Moving to Y: -12.28924
+[20:44:05.323] [LOG] [TennisPlayerPaddle] Moving to Y: -12.26807
+[20:44:05.325] [LOG] [TennisPlayerPaddle] Moving to Y: -12.24751
+[20:44:05.328] [LOG] [TennisPlayerPaddle] Moving to Y: -12.22803
+[20:44:05.330] [LOG] [TennisPlayerPaddle] Moving to Y: -12.20601
+[20:44:05.333] [LOG] [TennisPlayerPaddle] Moving to Y: -12.18055
+[20:44:05.337] [LOG] [TennisPlayerPaddle] Moving to Y: -12.15543
+[20:44:05.339] [LOG] [TennisPlayerPaddle] Moving to Y: -12.13218
+[20:44:05.342] [LOG] [TennisPlayerPaddle] Moving to Y: -12.10979
+[20:44:05.345] [LOG] [TennisPlayerPaddle] Moving to Y: -12.08721
+[20:44:05.347] [LOG] [TennisPlayerPaddle] Moving to Y: -12.06664
+[20:44:05.349] [LOG] [TennisPlayerPaddle] Moving to Y: -12.04497
+[20:44:05.353] [LOG] [TennisPlayerPaddle] Moving to Y: -12.02321
+[20:44:05.355] [LOG] [TennisPlayerPaddle] Moving to Y: -12.00301
+[20:44:05.358] [LOG] [TennisPlayerPaddle] Moving to Y: -11.9826
+[20:44:05.361] [LOG] [TennisPlayerPaddle] Moving to Y: -11.96252
+[20:44:05.363] [LOG] [TennisPlayerPaddle] Moving to Y: -11.94214
+[20:44:05.365] [LOG] [TennisPlayerPaddle] Moving to Y: -11.92146
+[20:44:05.368] [LOG] [TennisPlayerPaddle] Moving to Y: -11.89962
+[20:44:06.610] [LOG] [TennisPlayerPaddle] Starting swing
+[20:44:06.907] [LOG] [TennisPlayerPaddle] Ending swing
+[20:44:07.214] [LOG] [TennisPlayerPaddle] Starting swing
+[20:44:07.511] [LOG] [TennisPlayerPaddle] Ending swing
+[20:44:07.877] [LOG] [TennisPlayerPaddle] Starting swing
+[20:44:08.175] [LOG] [TennisPlayerPaddle] Ending swing
+[20:44:08.637] [LOG] [TennisPlayerPaddle] Starting swing
+[20:44:08.935] [LOG] [TennisPlayerPaddle] Ending swing
+[20:44:09.658] [LOG] [TennisPlayerPaddle] Starting swing
+[20:44:09.956] [LOG] [TennisPlayerPaddle] Ending swing
+[20:44:10.224] [LOG] [TennisPlayerPaddle] Starting swing
+[20:44:10.522] [LOG] [TennisPlayerPaddle] Ending swing
+[20:44:11.824] [LOG] [TennisPlayerPaddle] Starting swing
+[20:44:12.120] [LOG] [TennisPlayerPaddle] Ending swing
+[20:44:13.521] [SYSTEM] Application lost focus
+
+=== Unity Console Log Ended ===
+Time: 7/24/2025 8:44:13 PM
+===================================
