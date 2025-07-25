@@ -267,6 +267,25 @@ namespace TennisCoachCho.MiniGames
                 Debug.Log("[TennisDrillMiniGame] LocationPrompt UI hidden during mini-game");
             }
             
+            // Show tennis game objects for mini-game
+            if (playerPaddle != null)
+            {
+                playerPaddle.gameObject.SetActive(true);
+                Debug.Log("[TennisDrillMiniGame] Player paddle shown for mini-game");
+            }
+            
+            if (studentPaddle != null)
+            {
+                studentPaddle.gameObject.SetActive(true);
+                Debug.Log("[TennisDrillMiniGame] Student paddle shown for mini-game");
+            }
+            
+            if (ball != null)
+            {
+                ball.gameObject.SetActive(true);
+                Debug.Log("[TennisDrillMiniGame] Tennis ball shown for mini-game");
+            }
+            
             // Move paddles to starting positions smoothly
             yield return StartCoroutine(MovePaddlesToStartPositions());
             
@@ -362,6 +381,26 @@ namespace TennisCoachCho.MiniGames
             
             // Hide UI
             settings.drillUI?.Hide();
+            
+            // Hide tennis paddles when returning to normal game
+            if (playerPaddle != null)
+            {
+                playerPaddle.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Player paddle hidden");
+            }
+            
+            if (studentPaddle != null)
+            {
+                studentPaddle.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Student paddle hidden");
+            }
+            
+            // Hide tennis ball as well
+            if (ball != null)
+            {
+                ball.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Tennis ball hidden");
+            }
             
             // Reset game state
             Debug.Log("[TennisDrillMiniGame] Resetting game state to AWAITING_START");
