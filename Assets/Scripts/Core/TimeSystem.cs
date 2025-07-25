@@ -21,12 +21,12 @@ namespace TennisCoachCho.Core
         {
             string period = hour < 12 ? "AM" : "PM";
             int displayHour = hour == 0 ? 12 : (hour > 12 ? hour - 12 : hour);
-            return $"{displayHour:D2}:{minute:D2} {period}";
+            return displayHour.ToString("D2") + ":" + minute.ToString("D2") + " " + period;
         }
         
         public string GetDateString()
         {
-            return $"Day {day}";
+            return "Day " + day;
         }
     }
     
@@ -54,7 +54,7 @@ namespace TennisCoachCho.Core
             currentTime = new GameDateTime(1, startHour, startMinute);
             CalculateTimeScale();
             StartTime(); // Auto-start time when initialized
-            Debug.Log($"[TimeSystem] Initialized - Starting time at Day {currentTime.day}, {currentTime.GetTimeString()}");
+            Debug.Log("[TimeSystem] Initialized - Starting time at Day " + currentTime.day + ", " + currentTime.GetTimeString());
         }
         
         private void CalculateTimeScale()
@@ -116,7 +116,7 @@ namespace TennisCoachCho.Core
                     currentTime.hour = startHour;
                     currentTime.day++;
                     OnNewDay?.Invoke(currentTime.day);
-                    Debug.Log($"[TimeSystem] New day started: Day {currentTime.day}");
+                    Debug.Log("[TimeSystem] New day started: Day " + currentTime.day);
                 }
             }
             
@@ -125,7 +125,7 @@ namespace TennisCoachCho.Core
             // Log time changes every hour for debugging
             if (timeChanged)
             {
-                Debug.Log($"[TimeSystem] Time updated: Day {currentTime.day}, {currentTime.GetTimeString()}");
+                Debug.Log("[TimeSystem] Time updated: Day " + currentTime.day + ", " + currentTime.GetTimeString());
             }
         }
         

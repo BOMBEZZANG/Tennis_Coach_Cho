@@ -1,0 +1,19 @@
+[22:13:28.359] [SYSTEM] Application resumed
+[22:13:28.361] [SYSTEM] Application gained focus
+[22:13:34.903] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(244,93): error CS1003: Syntax error, '}' expected
+[22:13:34.904] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(244,67): error CS1073: Unexpected token '\'
+[22:13:34.904] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(244,83): error CS1525: Invalid expression term ''
+[22:13:34.904] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(244,83): error CS1056: Unexpected character '\'
+[22:13:34.906] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(245,10): error CS1026: ) expected
+[22:13:34.906] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(245,10): error CS1002: ; expected
+[22:13:34.906] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(247,9): error CS0106: The modifier 'public' is not valid for this item
+[22:13:34.907] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(256,9): error CS0106: The modifier 'public' is not valid for this item
+[22:13:34.908] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(262,9): error CS0106: The modifier 'public' is not valid for this item
+[22:13:34.908] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(268,9): error CS0106: The modifier 'public' is not valid for this item
+[22:13:34.908] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(274,9): error CS0106: The modifier 'private' is not valid for this item
+[22:13:34.909] [ERROR] Assets\Scripts\NPCs\DogNPC.cs(291,2): error CS1513: } expected
+[22:13:37.800] [SYSTEM] Application lost focus
+
+=== Unity Console Log Ended ===
+Time: 7/25/2025 10:13:44 PM
+===================================

@@ -88,6 +88,11 @@ namespace TennisCoachCho.Player
             }
         }
         
+        public void SetInputEnabled(bool enabled)
+        {
+            SetMovementEnabled(enabled);
+        }
+        
         public bool IsAtLocation(string locationName)
         {
             Vector3 targetPosition = Vector3.zero;

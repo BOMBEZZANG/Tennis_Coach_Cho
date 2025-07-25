@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TennisCoachCho.Core; // For GameDateTime
 
 namespace TennisCoachCho.Data
 {
@@ -142,31 +143,13 @@ namespace TennisCoachCho.Data
         {
             string period = scheduledHour < 12 ? "AM" : "PM";
             int displayHour = scheduledHour == 0 ? 12 : (scheduledHour > 12 ? scheduledHour - 12 : scheduledHour);
-            return $"{displayHour:D2}:{scheduledMinute:D2} {period}";
+            return displayHour.ToString("D2") + ":" + scheduledMinute.ToString("D2") + " " + period;
         }
     }
     
-    [System.Serializable]
-    public class GameDateTime
-    {
-        public int hour = 8;
-        public int minute = 0;
-        public int day = 1;
-        public int month = 1;
-        public int year = 2024;
-        
-        public string GetTimeString()
-        {
-            string period = hour < 12 ? "AM" : "PM";
-            int displayHour = hour == 0 ? 12 : (hour > 12 ? hour - 12 : hour);
-            return $"{displayHour:D2}:{minute:D2} {period}";
-        }
-        
-        public string GetDateString()
-        {
-            return $"{month:D2}/{day:D2}/{year}";
-        }
-    }
+    // NOTE: GameDateTime is now defined in TennisCoachCho.Core.TimeSystem
+    // This duplicate class has been removed to avoid ambiguity
+    // Use TennisCoachCho.Core.GameDateTime instead
     
     [CreateAssetMenu(fileName = "GameData", menuName = "DogCoach/GameData")]
     public class GameData : ScriptableObject
@@ -185,7 +168,7 @@ namespace TennisCoachCho.Data
         public List<AppointmentData> acceptedAppointments = new List<AppointmentData>();
         
         [Header("Game Time")]
-        public GameDateTime currentGameTime = new GameDateTime();
+        public GameDateTime currentGameTime = new GameDateTime(1, 8, 0); // Day 1, 8:00 AM
         
         private void OnEnable()
         {
@@ -207,9 +190,9 @@ namespace TennisCoachCho.Data
             // Initialize sample appointments for Dog Coach
             InitializeDogCoachAppointments();
             
-            // Initialize game time if null
-            if (currentGameTime == null)
-                currentGameTime = new GameDateTime();
+            // Initialize game time (structs can't be null, checking for default values)
+            if (currentGameTime.day == 0)
+                currentGameTime = new GameDateTime(1, 8, 0);
         }
         
         private void InitializeSpecialistSkills()
@@ -296,7 +279,7 @@ namespace TennisCoachCho.Data
             allPerkTrees.Clear();
             availableAppointments.Clear();
             acceptedAppointments.Clear();
-            currentGameTime = new GameDateTime();
+            currentGameTime = new GameDateTime(1, 8, 0);
             InitializeDefaults();
         }
     }

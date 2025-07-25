@@ -1,0 +1,103 @@
+Development Request: "Dog Handover" Interaction Sequence (Grey-box Version)
+
+Feature Implementation: "Dog Handover" Interaction Sequence (Grey-box Version) for Project "Dog Life Sim"
+
+1. Overview & Goal
+
+This document outlines the functional requirements for implementing the "Dog Handover" sequence, which is the player's first core interaction in a quest.
+
+The game is a top-down, 2D pixel-art life simulation where the player becomes a professional dog trainer. This "handover" mechanic is a critical part of the core gameplay loop, where the player accepts a freelance job to walk a client's dog.
+
+The goal of this task is to build the functional skeleton (grey-box version) of this interaction. The implementation should be architected to easily accommodate final art assets (animations, sprites, SFX) in a future development phase. All assets in this implementation should be placeholders.
+
+2. User Story
+
+As a player, I want to be able to visit a client's house for a scheduled appointment, interact with them, and have their dog start following me, so that I can proceed to the main activity area of the quest (e.g., the park).
+
+3. Key Actors & Objects
+
+Player: The user-controlled character.
+
+Client NPC: A non-player character who gives the quest and owns the dog.
+
+Dog NPC: An AI-controlled character with multiple states (e.g., Idle, Follow).
+
+Leash (Placeholder): A visual connector between the Player and the Dog NPC after the handover.
+
+4. Detailed Functional Specification
+
+The interaction sequence should be implemented as follows:
+
+4.1. Pre-conditions:
+
+The Player has already accepted a "Dog Walking" quest for this specific Client NPC via the in-game 'Smartphone' UI.
+
+The Player is within the designated interaction area in front of the Client NPC's house.
+
+The game's internal clock is within the scheduled appointment time window.
+
+The Client NPC and Dog NPC are present outside the house. The Client NPC should have a quest marker (e.g., an exclamation mark) above them.
+
+4.2. Interaction Flow:
+
+Trigger: The Player presses the 'Interact' button on the Client NPC.
+
+Dialogue: A simple dialogue UI box appears, displaying text provided by the Client NPC. The dialogue should clearly state the quest objective and a hint for the upcoming mini-game.
+
+Example Text: "Thanks for coming, [Player Name]! Please take Sparky for a 'calm walk' in the park. Be careful, he gets excited when he sees birds!"
+
+Confirmation: The dialogue box must contain a confirmation button (e.g., "Take the leash").
+
+Handover Sequence (Core Logic): Upon clicking the confirmation button, a Coroutine named HandoverSequence() should be triggered. This sequence will simulate the time required for a future animation.
+
+a. Freeze Input: Player and Client NPC movement and interaction should be temporarily disabled.
+
+b. Wait/Delay: The Coroutine must wait for 1.5 seconds (yield return new WaitForSeconds(1.5f)). This delay is a placeholder for the final handover animation timing.
+
+c. Execute State Change: During or immediately after the delay, the following logical changes must occur:
+
+The Dog NPC's AI state changes from IdleWith(Owner) to Follow(Player).
+
+The Dog NPC is now logically attached to the Player and should maintain a set distance.
+
+(Optional but recommended) A placeholder Leash object (e.g., a Line Renderer) is activated, visually connecting the Player and Dog NPC.
+
+d. Unfreeze Input: Player movement and interaction are re-enabled. The Client NPC can return to an idle state.
+
+Quest Update: The Quest Log / UI must update to display the new objective.
+
+Example Text: "[Quest Updated] Go to the Park Walking Trail with Sparky."
+
+5. Grey-box Implementation Requirements
+
+This implementation must strictly adhere to placeholder-only assets.
+
+Art: All characters (Player, NPCs, Dog) and objects should be represented by simple, colored geometric shapes (e.g., Player = Blue Square, Dog = Yellow Circle).
+
+Animation: No character animations are required. The handover process must be implemented using the 1.5-second timed delay specified above.
+
+Sound: No sound effects (SFX) are required. A debug log message (e.g., Debug.Log("SFX_Leash_Click_Plays_Here");) should be used as a placeholder for key audio cues.
+
+UI: All UI elements (dialogue boxes, quest updates) should use default engine assets (basic panels, text, buttons). No custom styling is needed.
+
+6. Acceptance Criteria
+
+This task is considered complete when the following conditions are met:
+
+[ ] Player can trigger the handover sequence by interacting with the Client NPC at the correct time and location.
+
+[ ] The placeholder dialogue box appears with the correct quest information.
+
+[ ] After confirming the dialogue, the game correctly executes a timed delay.
+
+[ ] After the delay, the Dog NPC's state has changed, and it correctly follows the Player character.
+
+[ ] The Quest Log UI updates with the next objective.
+
+[ ] The entire sequence is functional without any final art, animation, or sound assets.
+
+7. Notes for Future Expansion
+
+The HandoverSequence() Coroutine is the designated place where the final character animations (Owner_GiveLeash, Player_TakeLeash) and sound effects will be triggered in a future development phase. Please ensure the code is structured to easily accommodate these additions.
+
+Please proceed with this implementation. Let me know if you have any questions.

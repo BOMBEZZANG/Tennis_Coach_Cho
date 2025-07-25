@@ -14,6 +14,7 @@ namespace TennisCoachCho.UI
         [SerializeField] private NotificationPanel notificationPanel;
         [SerializeField] private LocationPrompt locationPrompt;
         [SerializeField] private LessonCompletePanel lessonCompletePanel;
+        [SerializeField] private DialogueUI dialogueUI;
         
         [Header("UI Toggle")]
         [SerializeField] private KeyCode smartphoneKey = KeyCode.Tab;
@@ -189,6 +190,43 @@ namespace TennisCoachCho.UI
                 mainHUD.gameObject.SetActive(true);
         }
         
+        public void ShowQuestUpdate(string questText)
+        {
+            Debug.Log($"[UIManager] Quest Update: {questText}");
+            
+            // Show quest update as a temporary message
+            if (notificationPanel != null)
+            {
+                notificationPanel.ShowQuestUpdate(questText);
+            }
+            else if (dialogueUI != null)
+            {
+                dialogueUI.ShowMessage(questText, 3f);
+            }
+            else
+            {
+                Debug.LogWarning("[UIManager] No UI component available for quest update!");
+            }
+        }
+        
+        public void ShowTemporaryMessage(string message, float duration = 3f)
+        {
+            Debug.Log($"[UIManager] Temporary Message: {message}");
+            
+            if (dialogueUI != null)
+            {
+                dialogueUI.ShowMessage(message, duration);
+            }
+            else if (notificationPanel != null)
+            {
+                notificationPanel.ShowTemporaryMessage(message, duration);
+            }
+            else
+            {
+                Debug.LogWarning("[UIManager] No UI component available for temporary message!");
+            }
+        }
+        
         private void CloseAllPanels()
         {
             if (isSmartphoneOpen)
@@ -209,6 +247,11 @@ namespace TennisCoachCho.UI
             if (lessonCompletePanel != null && lessonCompletePanel.gameObject.activeSelf)
             {
                 lessonCompletePanel.gameObject.SetActive(false);
+            }
+            
+            if (dialogueUI != null && dialogueUI.IsDialogueActive())
+            {
+                dialogueUI.CloseDialogue();
             }
         }
     }

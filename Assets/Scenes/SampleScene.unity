@@ -549,7 +549,7 @@ MonoBehaviour:
     finalScoreText: {fileID: 1752680157}
     maxComboText: {fileID: 974081491}
     gradeText: {fileID: 1339261204}
-    continueButton: {fileID: 0}
+    continueButton: {fileID: 372568832}
   fadeSpeed: 2
   judgmentFadeSpeed: 3
 --- !u!114 &49895584
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    lessonDuration: 30
+    lessonDuration: 10
     playerStartPosition: {fileID: 2050577705}
     studentStartPosition: {fileID: 1261500561}
     ballStartPosition: {fileID: 285927634}
@@ -778,8 +778,8 @@ MonoBehaviour:
     goodZone: {fileID: 1959194027}
     judgmentZoneOffsetX: -1
     judgmentZoneOffsetY: 0
-    perfectZoneVisual: {fileID: 0}
-    goodZoneVisual: {fileID: 0}
+    perfectZoneVisual: {fileID: 947814365}
+    goodZoneVisual: {fileID: 1959194030}
     showZonesDuringGame: 1
     zoneVisualAlpha: 0.3
     gameCamera: {fileID: 0}
@@ -4688,11 +4688,10 @@ MonoBehaviour:
   cashText: {fileID: 1776924798}
   playerLevelText: {fileID: 546713360}
   playerExpSlider: {fileID: 402637331}
-  coachingLevelText: {fileID: 2120605317}
-  coachingExpSlider: {fileID: 219019443}
+  staminaText: {fileID: 0}
+  staminaSlider: {fileID: 0}
   timeText: {fileID: 353043744}
   dateText: {fileID: 367971886}
-  skillPointsText: {fileID: 1517516156}
   perkPointsText: {fileID: 1319532672}
 --- !u!114 &576477244
 MonoBehaviour:
@@ -6334,7 +6333,8 @@ MonoBehaviour:
   perksPanel: {fileID: 1506391350}
   skillsListParent: {fileID: 985901785}
   skillItemPrefab: {fileID: 1495218394740841938, guid: 2d30c605f8df21a43a1c544e25ebfdb8, type: 3}
-  skillPointsText: {fileID: 2030127268}
+  playerLevelText: {fileID: 0}
+  staminaText: {fileID: 0}
   perksListParent: {fileID: 1506391351}
   perkItemPrefab: {fileID: 5820169578635474324, guid: adb9c861f6b635847a088d7d54a9482d, type: 3}
   perkPointsText: {fileID: 2036216168}
@@ -6689,7 +6689,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947814362}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -12486,7 +12486,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959194026}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
