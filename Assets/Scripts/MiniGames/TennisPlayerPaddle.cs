@@ -10,8 +10,8 @@ namespace TennisCoachCho.MiniGames
         public float movementBounds = 4f; // How far up/down player can move
         
         [Header("Hitting")]
-        public float swingDuration = 0.3f;
-        public float swingCooldown = 0.5f;
+        public float swingDuration = 0.5f; // Longer swing duration for easier hitting
+        public float swingCooldown = 0.3f; // Shorter cooldown for more responsive play
         
         [Header("Visual")]
         public Transform paddleSprite;
@@ -42,6 +42,12 @@ namespace TennisCoachCho.MiniGames
         
         public bool IsSwinging => isSwinging;
         public bool ControlsEnabled => controlsEnabled;
+        
+        // Public method to get sprite position for collision detection
+        public Vector3 GetSpritePosition()
+        {
+            return settings.paddleSprite != null ? settings.paddleSprite.position : transform.position;
+        }
         
         private void Awake()
         {

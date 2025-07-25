@@ -49,6 +49,12 @@ namespace TennisCoachCho.MiniGames
         
         public bool IsEnabled => isEnabled;
         
+        // Public method to get sprite position for collision detection
+        public Vector3 GetSpritePosition()
+        {
+            return settings.paddleSprite != null ? settings.paddleSprite.position : transform.position;
+        }
+        
         private void Awake()
         {
             paddleCollider = GetComponent<Collider2D>();
@@ -106,7 +112,7 @@ namespace TennisCoachCho.MiniGames
         {
             if (targetBall == null || !targetBall.IsMoving) return;
             
-            // Check if ball is moving toward AI (positive X velocity)
+            // Check if ball is moving toward AI (positive X velocity from player side)
             bool ballComingToward = targetBall.Velocity2D.x > 0f;
             
             if (ballComingToward && !isTrackingBall)

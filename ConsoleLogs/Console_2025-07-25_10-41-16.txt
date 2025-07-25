@@ -1,0 +1,828 @@
+=== Unity Console Log Started ===
+Time: 7/25/2025 10:41:16 AM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[10:41:16.395] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[10:41:16.398] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-25_10-41-16.txt
+[10:41:16.595] [SYSTEM] Application resumed
+[10:41:16.597] [SYSTEM] Application gained focus
+[10:41:16.827] [LOG] [TennisBall] Initialized - Position: (-16.65, -12.28, -0.21), Active: True
+[10:41:16.829] [LOG] [TennisBall] Settings - ServeSpeed: 10, Gravity: -20
+[10:41:16.829] [LOG] [TennisBall] Visual components - BallSprite: True, BallShadow: True
+[10:41:16.829] [LOG] [TennisBall] BallSprite active: True, position: (-16.65, -12.28, -0.21)
+[10:41:16.829] [LOG] [TennisBall] Main GameObject has NO SpriteRenderer
+[10:41:16.830] [LOG] [TennisBall] Main Camera position: (-2.47, -0.57, -10.00), orthographic size: 10
+[10:41:16.831] [LOG] [TennisBall] Player paddle position: (-21.65, -12.28, -0.21)
+[10:41:16.832] [LOG] [TennisBall] Student paddle position: (-11.65, -12.28, -0.21)
+[10:41:16.832] [LOG] [TennisPlayerPaddle] Initialized at position: (-21.65, -12.28, -0.21)
+[10:41:16.833] [LOG] [TennisPlayerPaddle] Movement bounds: ±4 (Y range: -16.28187 to -8.281866)
+[10:41:16.835] [LOG] [CameraController] Auto-found player: Player
+[10:41:20.066] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: GoodZone, Tag: 'Untagged'
+[10:41:20.067] [LOG] [PlayerController] GameObject path: TennisDrillMiniGame/Court/JudgmentZones/GoodZone
+[10:41:20.067] [LOG] [PlayerController] Collider bounds: Center: (-11.65, -12.28, -0.21), Extents: (2.00, 1.50, 0.00)
+[10:41:20.068] [LOG] [PlayerController] Is Trigger: True
+[10:41:20.068] [LOG] [PlayerController] Components on GoodZone: Transform, BoxCollider2D, BoxCollider2D
+[10:41:20.069] [LOG] [PlayerController] No LocationTrigger script found on GoodZone (this is normal for non-location objects)
+[10:41:20.125] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[10:41:20.126] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[10:41:20.126] [LOG] [PlayerController] Collider bounds: Center: (-10.40, -12.10, 0.00), Extents: (1.00, 1.00, 0.00)
+[10:41:20.126] [LOG] [PlayerController] Is Trigger: True
+[10:41:20.127] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[10:41:20.127] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[10:41:20.127] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[10:41:20.127] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[10:41:20.129] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[10:41:20.129] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[10:41:20.129] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[10:41:20.130] [LOG] [LocationTrigger] UIManager is null: False
+[10:41:20.130] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[10:41:20.131] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[10:41:20.131] [LOG] [UIManager] UIManager instance: UIManager
+[10:41:20.132] [LOG] [UIManager] locationPrompt is null: False
+[10:41:20.132] [LOG] [UIManager] Calling locationPrompt.Show()
+[10:41:20.133] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[10:41:20.134] [LOG] [LocationPrompt] GameObject active before: False
+[10:41:20.134] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[10:41:20.135] [LOG] [LocationPrompt] Set startLessonButton active: True
+[10:41:20.136] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[10:41:20.136] [LOG] [LocationPrompt] Total accepted appointments: 2
+[10:41:20.137] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[10:41:20.137] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[10:41:20.137] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[10:41:20.137] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[10:41:20.138] [LOG] [LocationPrompt] Time difference: -2 minutes
+[10:41:20.139] [LOG] [LocationPrompt] Setting as next valid appointment: John Smith
+[10:41:20.139] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[10:41:20.139] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[10:41:20.139] [LOG] [LocationPrompt] Time difference: -32 minutes
+[10:41:20.140] [LOG] [LocationPrompt] Next valid appointment found - Client: John Smith
+[10:41:20.140] [LOG] [LocationPrompt] Current time: 08:03 AM (483 min)
+[10:41:20.140] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[10:41:20.141] [LOG] [LocationPrompt] Time difference: -2 minutes (negative = early, positive = late)
+[10:41:20.141] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[10:41:20.142] [LOG] [LocationPrompt] Can start lesson: True
+[10:41:20.143] [LOG] [LocationPrompt] About to call SetActive(true)...
+[10:41:20.144] [LOG] [LocationPrompt] Awake() called - setting up buttons
+[10:41:20.144] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[10:41:20.145] [LOG] [LocationPrompt] GameObject active after: True
+[10:41:20.145] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[10:41:20.145] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[10:41:20.146] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[10:41:20.146] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[10:41:20.146] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[10:41:20.148] [LOG] [LocationPrompt] Start() called - hiding LocationPrompt
+[10:41:20.148] [LOG] [LocationPrompt] isActivatedByShow: True
+[10:41:20.149] [LOG] [LocationPrompt] Start() called during gameplay - NOT hiding (activated by Show() method)
+[10:41:20.151] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[10:41:20.152] [LOG] [LocationPrompt] activeSelf: True
+[10:41:20.153] [LOG] [LocationPrompt] activeInHierarchy: True
+[10:41:20.813] [LOG] [LocationPrompt] StartLesson button clicked for location: Tennis Court A
+[10:41:20.814] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[10:41:20.814] [LOG] [LocationPrompt] Total accepted appointments: 2
+[10:41:20.814] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[10:41:20.815] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[10:41:20.815] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[10:41:20.816] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[10:41:20.817] [LOG] [LocationPrompt] Time difference: -1 minutes
+[10:41:20.817] [LOG] [LocationPrompt] Setting as next valid appointment: John Smith
+[10:41:20.817] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[10:41:20.818] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[10:41:20.818] [LOG] [LocationPrompt] Time difference: -31 minutes
+[10:41:20.819] [LOG] [LocationPrompt] Next valid appointment found - Client: John Smith
+[10:41:20.819] [LOG] [LocationPrompt] Current time: 08:04 AM (484 min)
+[10:41:20.819] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[10:41:20.819] [LOG] [LocationPrompt] Time difference: -1 minutes (negative = early, positive = late)
+[10:41:20.820] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[10:41:20.821] [LOG] [LocationPrompt] ✅ Lesson validated - proceeding to start lesson
+[10:41:20.821] [LOG] [LocationPrompt] Starting Tennis Drill Mini-Game...
+[10:41:20.823] [LOG] [LocationPrompt] Tennis Drill Mini-Game started successfully
+[10:41:20.824] [LOG] [LocationPrompt] Hide called
+[10:41:20.824] [LOG] [LocationPrompt] GameObject active before hide: True
+[10:41:20.825] [LOG] [LocationPrompt] LocationPrompt hidden
+[10:41:25.316] [LOG] [TennisBall] ServeFromStudent called
+[10:41:25.316] [LOG] [TennisBall] Game manager assigned: True
+[10:41:25.316] [LOG] [TennisBall] Ball position before serve: (-16.65, -12.28, -0.21)
+[10:41:25.317] [LOG] [TennisBall] Player paddle found at: (-21.65, -12.28, -0.21), targeting: (-19.65, -12.28, 0.00)
+[10:41:25.318] [LOG] [TennisBall] Serve started from position: (4.00, -10.97, 0.00)
+[10:41:25.318] [LOG] [TennisBall] Serving toward target area: (-19.65, -12.28, 0.00)
+[10:41:25.319] [LOG] [TennisBall] Serve velocity - 2D: (-18.25, -1.16, 0.00), Z: 8.883497, Speed: 18.28827
+[10:41:25.342] [LOG] [TennisBall] Physics update - Pos: (3.51, -11.00, 0.00), velocity2D: (-18.25, -1.16, 0.00), zPos: 1.259938, zVel: 8.341725
+[10:41:25.342] [LOG] [TennisBall] Visual update - SpritePos: (3.51, -10.87, 0.00), BallSprite active: True
+[10:41:25.472] [LOG] [TennisBall] Physics update - Pos: (1.12, -11.15, 0.00), velocity2D: (-18.25, -1.16, 0.00), zPos: 2.176873, zVel: 5.72458
+[10:41:25.473] [LOG] [TennisBall] Visual update - SpritePos: (1.12, -10.93, 0.00), BallSprite active: True
+[10:41:25.598] [LOG] [TennisBall] Physics update - Pos: (-1.18, -11.29, 0.00), velocity2D: (-18.25, -1.16, 0.00), zPos: 2.73564, zVel: 3.209397
+[10:41:25.598] [LOG] [TennisBall] Visual update - SpritePos: (-1.18, -11.02, 0.00), BallSprite active: True
+[10:41:25.724] [LOG] [TennisBall] Physics update - Pos: (-3.48, -11.44, 0.00), velocity2D: (-18.25, -1.16, 0.00), zPos: 2.978599, zVel: 0.6879923
+[10:41:25.724] [LOG] [TennisBall] Visual update - SpritePos: (-3.48, -11.14, 0.00), BallSprite active: True
+[10:41:25.855] [LOG] [TennisBall] Physics update - Pos: (-5.86, -11.59, 0.00), velocity2D: (-18.25, -1.16, 0.00), zPos: 2.895181, zVel: -1.918463
+[10:41:25.855] [LOG] [TennisBall] Visual update - SpritePos: (-5.86, -11.30, 0.00), BallSprite active: True
+[10:41:25.981] [LOG] [TennisBall] Physics update - Pos: (-8.18, -11.74, 0.00), velocity2D: (-18.25, -1.16, 0.00), zPos: 2.485659, zVel: -4.465474
+[10:41:25.982] [LOG] [TennisBall] Visual update - SpritePos: (-8.18, -11.49, 0.00), BallSprite active: True
+[10:41:26.026] [LOG] [TennisBall] Collision detected with: Player
+[10:41:26.027] [LOG] [TennisBall] Ball position: (-8.94, -11.79, 0.00), zPosition: 2.282147
+[10:41:26.027] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: TennisBall, Tag: 'Untagged'
+[10:41:26.027] [LOG] [PlayerController] GameObject path: TennisDrillMiniGame/Court/TennisBall
+[10:41:26.028] [LOG] [PlayerController] Collider bounds: Center: (-8.94, -11.79, 0.00), Extents: (0.30, 0.30, 0.00)
+[10:41:26.028] [LOG] [PlayerController] Is Trigger: True
+[10:41:26.028] [LOG] [PlayerController] Components on TennisBall: Transform, TennisBall, CircleCollider2D
+[10:41:26.028] [LOG] [PlayerController] No LocationTrigger script found on TennisBall (this is normal for non-location objects)
+[10:41:26.058] [LOG] [TennisBall] Near student paddle - Distance: 2.08, Ball zPos: 2.08, Ball moving left: True
+[10:41:26.106] [LOG] [PlayerController] OnTriggerExit2D - Exiting: TennisBall, Tag: Untagged
+[10:41:26.109] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 1.17, zPos: 1.75
+[10:41:26.110] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -11.14, 0.00)
+[10:41:26.110] [LOG] [TennisBall] Hit by student toward: (-18.00, -11.14, 0.00)
+[10:41:26.111] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-11.94, 1.19, 0.00), zVel: 12
+[10:41:26.122] [LOG] [TennisBall] Physics update - Pos: (-10.66, -11.87, 0.00), velocity2D: (-11.94, 1.19, 0.00), zPos: 1.9142, zVel: 11.72929
+[10:41:26.123] [LOG] [TennisBall] Visual update - SpritePos: (-10.66, -11.68, 0.00), BallSprite active: True
+[10:41:26.124] [LOG] [TennisBall] Near student paddle - Distance: 1.01, Ball zPos: 1.91, Ball moving left: True
+[10:41:26.182] [LOG] [TennisBall] Near student paddle - Distance: 0.35, Ball zPos: 2.58, Ball moving left: True
+[10:41:26.248] [LOG] [TennisBall] Physics update - Pos: (-12.17, -11.72, 0.00), velocity2D: (-11.94, 1.19, 0.00), zPos: 3.230475, zVel: 9.208686
+[10:41:26.248] [LOG] [TennisBall] Visual update - SpritePos: (-12.17, -11.40, 0.00), BallSprite active: True
+[10:41:26.249] [LOG] [TennisBall] Near student paddle - Distance: 0.56, Ball zPos: 3.23, Ball moving left: True
+[10:41:26.306] [LOG] [TennisBall] Near student paddle - Distance: 1.24, Ball zPos: 3.73, Ball moving left: True
+[10:41:26.371] [LOG] [TennisBall] Physics update - Pos: (-13.62, -11.58, 0.00), velocity2D: (-11.94, 1.19, 0.00), zPos: 4.202509, zVel: 6.767954
+[10:41:26.371] [LOG] [TennisBall] Visual update - SpritePos: (-13.62, -11.16, 0.00), BallSprite active: True
+[10:41:26.372] [LOG] [TennisBall] Near student paddle - Distance: 1.99, Ball zPos: 4.20, Ball moving left: True
+[10:41:26.431] [LOG] [TennisBall] Near student paddle - Distance: 2.71, Ball zPos: 4.57, Ball moving left: True
+[10:41:26.488] [LOG] [TennisBall] Physics update - Pos: (-15.02, -11.44, 0.00), velocity2D: (-11.94, 1.19, 0.00), zPos: 4.855345, zVel: 4.426996
+[10:41:26.489] [LOG] [TennisBall] Visual update - SpritePos: (-15.02, -10.95, 0.00), BallSprite active: True
+[10:41:26.611] [LOG] [TennisBall] Physics update - Pos: (-16.49, -11.29, 0.00), velocity2D: (-11.94, 1.19, 0.00), zPos: 5.245995, zVel: 1.96345
+[10:41:26.611] [LOG] [TennisBall] Visual update - SpritePos: (-16.49, -10.77, 0.00), BallSprite active: True
+[10:41:26.734] [LOG] [TennisBall] Physics update - Pos: (-17.97, -11.14, 0.00), velocity2D: (-11.94, 1.19, 0.00), zPos: 5.333108, zVel: -0.505114
+[10:41:26.735] [LOG] [TennisBall] Visual update - SpritePos: (-17.97, -10.61, 0.00), BallSprite active: True
+[10:41:26.859] [LOG] [TennisBall] Physics update - Pos: (-19.46, -11.00, 0.00), velocity2D: (-11.94, 1.19, 0.00), zPos: 5.111166, zVel: -3.002501
+[10:41:26.860] [LOG] [TennisBall] Visual update - SpritePos: (-19.46, -10.49, 0.00), BallSprite active: True
+[10:41:26.861] [LOG] [TennisBall] Near player paddle - Distance: 2.31, Ball zPos: 5.11, Player swinging: False
+[10:41:26.921] [LOG] [TennisBall] Near player paddle - Distance: 1.60, Ball zPos: 4.88, Player swinging: False
+[10:41:26.939] [LOG] [TennisPlayerPaddle] E key pressed - CanSwing: True
+[10:41:26.940] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -10.28, -0.21)
+[10:41:26.941] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by player paddle! Distance: 1.41, zPos: 4.81
+[10:41:26.942] [LOG] [TennisBall] Player hitting toward student area: (-12.65, -11.53, 0.00)
+[10:41:26.942] [LOG] [TennisBall] Hit by player with direction: (1.00, -0.08, 0.00)
+[10:41:26.943] [LOG] [TennisBall] Ball hit successfully - new velocity: (32.29, -2.62, 0.00), zVel: 6
+[10:41:27.001] [LOG] [TennisBall] Physics update - Pos: (-18.34, -11.07, 0.00), velocity2D: (32.29, -2.62, 0.00), zPos: 5.149976, zVel: 4.729311
+[10:41:27.002] [LOG] [TennisBall] Visual update - SpritePos: (-18.34, -10.55, 0.00), BallSprite active: True
+[10:41:27.128] [LOG] [TennisBall] Physics update - Pos: (-14.24, -11.40, 0.00), velocity2D: (32.29, -2.62, 0.00), zPos: 5.58642, zVel: 2.187822
+[10:41:27.128] [LOG] [TennisBall] Visual update - SpritePos: (-14.24, -10.84, 0.00), BallSprite active: True
+[10:41:27.130] [LOG] [TennisBall] Near student paddle - Distance: 2.71, Ball zPos: 5.59, Ball moving left: False
+[10:41:27.189] [LOG] [TennisBall] Near student paddle - Distance: 0.90, Ball zPos: 5.68, Ball moving left: False
+[10:41:27.271] [LOG] [TennisBall] Collision detected with: Player
+[10:41:27.271] [LOG] [TennisBall] Ball position: (-10.05, -11.74, 0.00), zPosition: 5.698051
+[10:41:27.272] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: TennisBall, Tag: 'Untagged'
+[10:41:27.272] [LOG] [PlayerController] GameObject path: TennisDrillMiniGame/Court/TennisBall
+[10:41:27.272] [LOG] [PlayerController] Collider bounds: Center: (-10.05, -11.74, 0.00), Extents: (0.30, 0.30, 0.00)
+[10:41:27.274] [LOG] [PlayerController] Is Trigger: True
+[10:41:27.274] [LOG] [PlayerController] Components on TennisBall: Transform, TennisBall, CircleCollider2D
+[10:41:27.274] [LOG] [PlayerController] No LocationTrigger script found on TennisBall (this is normal for non-location objects)
+[10:41:27.316] [LOG] [TennisBall] Physics update - Pos: (-8.16, -11.89, 0.00), velocity2D: (32.29, -2.62, 0.00), zPos: 5.633374, zVel: -1.575382
+[10:41:27.317] [LOG] [TennisBall] Visual update - SpritePos: (-8.16, -11.33, 0.00), BallSprite active: True
+[10:41:27.326] [LOG] [PlayerController] OnTriggerExit2D - Exiting: TennisBall, Tag: Untagged
+[10:41:27.449] [LOG] [TennisBall] Physics update - Pos: (-3.89, -12.24, 0.00), velocity2D: (32.29, -2.62, 0.00), zPos: 5.247256, zVel: -4.218418
+[10:41:27.449] [LOG] [TennisBall] Visual update - SpritePos: (-3.89, -11.72, 0.00), BallSprite active: True
+[10:41:27.572] [LOG] [TennisBall] Physics update - Pos: (0.09, -12.56, 0.00), velocity2D: (32.29, -2.62, 0.00), zPos: 4.572447, zVel: -6.683701
+[10:41:27.572] [LOG] [TennisBall] Visual update - SpritePos: (0.09, -12.11, 0.00), BallSprite active: True
+[10:41:27.688] [LOG] [TennisBall] Physics update - Pos: (3.86, -12.87, 0.00), velocity2D: (32.29, -2.62, 0.00), zPos: 3.652704, zVel: -9.020471
+[10:41:27.689] [LOG] [TennisBall] Visual update - SpritePos: (3.86, -12.50, 0.00), BallSprite active: True
+[10:41:27.816] [LOG] [TennisBall] Physics update - Pos: (7.96, -13.20, 0.00), velocity2D: (32.29, -2.62, 0.00), zPos: 2.344434, zVel: -11.55762
+[10:41:27.816] [LOG] [TennisBall] Visual update - SpritePos: (7.96, -12.97, 0.00), BallSprite active: True
+[10:41:27.881] [LOG] [TennisBall] Ball went out of bounds at position: (10.06, -13.37, 0.00)
+[10:41:27.882] [LOG] [TennisBall] Ball out of bounds - Serving new ball...
+[10:41:27.882] [LOG] [TennisBall] Ball stopped
+[10:41:27.883] [LOG] [TennisBall] Waiting 1 seconds before serving new ball
+[10:41:28.881] [LOG] [TennisBall] Serving new ball automatically
+[10:41:28.882] [LOG] [TennisBall] ServeFromStudent called
+[10:41:28.882] [LOG] [TennisBall] Game manager assigned: True
+[10:41:28.882] [LOG] [TennisBall] Ball position before serve: (10.06, -13.37, 0.00)
+[10:41:28.883] [LOG] [TennisBall] Player paddle found at: (-21.65, -10.28, -0.21), targeting: (-19.65, -10.28, 0.00)
+[10:41:28.883] [LOG] [TennisBall] Serve started from position: (4.00, -9.81, 0.00)
+[10:41:28.883] [LOG] [TennisBall] Serving toward target area: (-19.65, -10.28, 0.00)
+[10:41:28.885] [LOG] [TennisBall] Serve velocity - 2D: (-21.48, -0.28, 0.00), Z: 8.978786, Speed: 21.48672
+[10:41:28.978] [LOG] [TennisBall] Physics update - Pos: (1.92, -9.83, 0.00), velocity2D: (-21.48, -0.28, 0.00), zPos: 2.316896, zVel: 7.041294
+[10:41:28.979] [LOG] [TennisBall] Visual update - SpritePos: (1.92, -9.60, 0.00), BallSprite active: True
+[10:41:29.108] [LOG] [TennisBall] Physics update - Pos: (-0.87, -9.87, 0.00), velocity2D: (-21.48, -0.28, 0.00), zPos: 3.05832, zVel: 4.449223
+[10:41:29.109] [LOG] [TennisBall] Visual update - SpritePos: (-0.87, -9.56, 0.00), BallSprite active: True
+[10:41:29.115] [SYSTEM] Application lost focus
+[10:41:36.351] [SYSTEM] Application gained focus
+[10:41:36.414] [LOG] [TennisBall] Physics update - Pos: (-4.32, -9.92, 0.00), velocity2D: (-21.48, -0.28, 0.00), zPos: 3.508491, zVel: 1.237971
+[10:41:36.414] [LOG] [TennisBall] Visual update - SpritePos: (-4.32, -9.56, 0.00), BallSprite active: True
+[10:41:36.583] [LOG] [TennisBall] Physics update - Pos: (-7.95, -9.96, 0.00), velocity2D: (-21.48, -0.28, 0.00), zPos: 3.425968, zVel: -2.147976
+[10:41:36.584] [LOG] [TennisBall] Visual update - SpritePos: (-7.95, -9.62, 0.00), BallSprite active: True
+[10:41:36.661] [LOG] [TennisBall] Near student paddle - Distance: 2.04, Ball zPos: 3.20, Ball moving left: True
+[10:41:36.703] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 1.16, zPos: 3.03
+[10:41:36.703] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -11.04, 0.00)
+[10:41:36.704] [LOG] [TennisBall] Hit by student toward: (-18.00, -11.04, 0.00)
+[10:41:36.704] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-11.89, -1.65, 0.00), zVel: 12
+[10:41:36.729] [LOG] [TennisBall] Physics update - Pos: (-10.82, -10.04, 0.00), velocity2D: (-11.89, -1.65, 0.00), zPos: 3.342625, zVel: 11.46012
+[10:41:36.730] [LOG] [TennisBall] Visual update - SpritePos: (-10.82, -9.71, 0.00), BallSprite active: True
+[10:41:36.730] [LOG] [TennisBall] Near student paddle - Distance: 0.85, Ball zPos: 3.34, Ball moving left: True
+[10:41:36.789] [LOG] [TennisBall] Near student paddle - Distance: 0.26, Ball zPos: 3.99, Ball moving left: True
+[10:41:36.852] [LOG] [TennisBall] Physics update - Pos: (-12.27, -10.24, 0.00), velocity2D: (-11.89, -1.65, 0.00), zPos: 4.58681, zVel: 9.025308
+[10:41:36.852] [LOG] [TennisBall] Visual update - SpritePos: (-12.27, -9.78, 0.00), BallSprite active: True
+[10:41:36.853] [LOG] [TennisBall] Near student paddle - Distance: 0.66, Ball zPos: 4.59, Ball moving left: True
+[10:41:36.915] [LOG] [TennisBall] Near student paddle - Distance: 1.40, Ball zPos: 5.12, Ball moving left: True
+[10:41:36.977] [LOG] [TennisBall] Physics update - Pos: (-13.77, -10.45, 0.00), velocity2D: (-11.89, -1.65, 0.00), zPos: 5.563156, zVel: 6.502558
+[10:41:36.977] [LOG] [TennisBall] Visual update - SpritePos: (-13.77, -9.89, 0.00), BallSprite active: True
+[10:41:36.978] [LOG] [TennisBall] Near student paddle - Distance: 2.14, Ball zPos: 5.56, Ball moving left: True
+[10:41:37.041] [LOG] [TennisBall] Near student paddle - Distance: 2.88, Ball zPos: 5.93, Ball moving left: True
+[10:41:37.098] [LOG] [TennisBall] Physics update - Pos: (-15.20, -10.65, 0.00), velocity2D: (-11.89, -1.65, 0.00), zPos: 6.199397, zVel: 4.090641
+[10:41:37.099] [LOG] [TennisBall] Visual update - SpritePos: (-15.20, -10.03, 0.00), BallSprite active: True
+[10:41:37.221] [LOG] [TennisBall] Physics update - Pos: (-16.67, -10.85, 0.00), velocity2D: (-11.89, -1.65, 0.00), zPos: 6.548792, zVel: 1.625865
+[10:41:37.222] [LOG] [TennisBall] Visual update - SpritePos: (-16.67, -10.20, 0.00), BallSprite active: True
+[10:41:37.340] [LOG] [TennisBall] Physics update - Pos: (-18.10, -11.05, 0.00), velocity2D: (-11.89, -1.65, 0.00), zPos: 6.597153, zVel: -0.7750043
+[10:41:37.342] [LOG] [TennisBall] Visual update - SpritePos: (-18.10, -10.39, 0.00), BallSprite active: True
+[10:41:37.459] [LOG] [TennisBall] Physics update - Pos: (-19.50, -11.25, 0.00), velocity2D: (-11.89, -1.65, 0.00), zPos: 6.362953, zVel: -3.140669
+[10:41:37.460] [LOG] [TennisBall] Visual update - SpritePos: (-19.50, -10.61, 0.00), BallSprite active: True
+[10:41:37.460] [LOG] [TennisBall] Near player paddle - Distance: 2.36, Ball zPos: 6.36, Player swinging: False
+[10:41:37.483] [LOG] [TennisPlayerPaddle] E key pressed - CanSwing: True
+[10:41:37.484] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -10.28, -0.21)
+[10:41:37.526] [LOG] [TennisBall] Near player paddle - Distance: 1.74, Ball zPos: 6.11, Player swinging: True
+[10:41:37.560] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by player paddle! Distance: 1.50, zPos: 5.95
+[10:41:37.560] [LOG] [TennisBall] Player hitting toward student area: (-12.65, -11.82, 0.00)
+[10:41:37.560] [LOG] [TennisBall] Hit by player with direction: (1.00, -0.05, 0.00)
+[10:41:37.561] [LOG] [TennisBall] Ball hit successfully - new velocity: (1.80, -0.09, 0.00), zVel: 6
+[10:41:37.596] [LOG] [TennisBall] Physics update - Pos: (-20.62, -11.42, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 6.15571, zVel: 5.251635
+[10:41:37.597] [LOG] [TennisBall] Visual update - SpritePos: (-20.62, -10.80, 0.00), BallSprite active: True
+[10:41:37.597] [LOG] [TennisBall] Near player paddle - Distance: 1.54, Ball zPos: 6.16, Player swinging: True
+[10:41:37.655] [LOG] [TennisBall] Near player paddle - Distance: 1.62, Ball zPos: 6.43, Player swinging: True
+[10:41:37.712] [LOG] [TennisBall] Physics update - Pos: (-20.41, -11.43, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 6.628227, zVel: 2.930316
+[10:41:37.713] [LOG] [TennisBall] Visual update - SpritePos: (-20.41, -10.76, 0.00), BallSprite active: True
+[10:41:37.714] [LOG] [TennisBall] Near player paddle - Distance: 1.69, Ball zPos: 6.63, Player swinging: True
+[10:41:37.777] [LOG] [TennisBall] Near player paddle - Distance: 1.79, Ball zPos: 6.77, Player swinging: True
+[10:41:37.833] [LOG] [TennisBall] Physics update - Pos: (-20.20, -11.44, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 6.833394, zVel: 0.518658
+[10:41:37.834] [LOG] [TennisBall] Visual update - SpritePos: (-20.20, -10.75, 0.00), BallSprite active: True
+[10:41:37.834] [LOG] [TennisBall] Near player paddle - Distance: 1.87, Ball zPos: 6.83, Player swinging: False
+[10:41:37.899] [LOG] [TennisBall] Near player paddle - Distance: 1.96, Ball zPos: 6.82, Player swinging: False
+[10:41:37.957] [LOG] [TennisBall] Physics update - Pos: (-19.98, -11.45, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 6.740972, zVel: -1.962124
+[10:41:37.957] [LOG] [TennisBall] Visual update - SpritePos: (-19.98, -10.77, 0.00), BallSprite active: True
+[10:41:37.959] [LOG] [TennisBall] Near player paddle - Distance: 2.05, Ball zPos: 6.74, Player swinging: False
+[10:41:38.015] [LOG] [TennisBall] Near player paddle - Distance: 2.14, Ball zPos: 6.59, Player swinging: False
+[10:41:38.077] [LOG] [TennisBall] Physics update - Pos: (-19.76, -11.46, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 6.36042, zVel: -4.354846
+[10:41:38.078] [LOG] [TennisBall] Visual update - SpritePos: (-19.76, -10.82, 0.00), BallSprite active: True
+[10:41:38.078] [LOG] [TennisBall] Near player paddle - Distance: 2.23, Ball zPos: 6.36, Player swinging: False
+[10:41:38.135] [LOG] [TennisBall] Near player paddle - Distance: 2.33, Ball zPos: 6.08, Player swinging: False
+[10:41:38.195] [LOG] [TennisBall] Physics update - Pos: (-19.55, -11.47, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 5.702529, zVel: -6.721273
+[10:41:38.196] [LOG] [TennisBall] Visual update - SpritePos: (-19.55, -10.90, 0.00), BallSprite active: True
+[10:41:38.196] [LOG] [TennisBall] Near player paddle - Distance: 2.42, Ball zPos: 5.70, Player swinging: False
+[10:41:38.253] [LOG] [TennisBall] Near player paddle - Distance: 2.51, Ball zPos: 5.29, Player swinging: False
+[10:41:38.311] [LOG] [TennisBall] Physics update - Pos: (-19.34, -11.48, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 4.789212, zVel: -9.034194
+[10:41:38.311] [LOG] [TennisBall] Visual update - SpritePos: (-19.34, -11.00, 0.00), BallSprite active: True
+[10:41:38.311] [LOG] [TennisBall] Near player paddle - Distance: 2.61, Ball zPos: 4.79, Player swinging: False
+[10:41:38.374] [LOG] [TennisBall] Near player paddle - Distance: 2.71, Ball zPos: 4.18, Player swinging: False
+[10:41:38.430] [LOG] [TennisBall] Physics update - Pos: (-19.13, -11.49, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 3.573464, zVel: -11.4079
+[10:41:38.431] [LOG] [TennisBall] Visual update - SpritePos: (-19.13, -11.13, 0.00), BallSprite active: True
+[10:41:38.431] [LOG] [TennisBall] Near player paddle - Distance: 2.80, Ball zPos: 3.57, Player swinging: False
+[10:41:38.494] [LOG] [TennisBall] Near player paddle - Distance: 2.91, Ball zPos: 2.79, Player swinging: False
+[10:41:38.551] [LOG] [TennisBall] Physics update - Pos: (-18.91, -11.50, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 2.040764, zVel: -13.83251
+[10:41:38.552] [LOG] [TennisBall] Visual update - SpritePos: (-18.91, -11.30, 0.00), BallSprite active: True
+[10:41:38.670] [LOG] [TennisBall] Physics update - Pos: (-18.69, -11.51, 0.00), velocity2D: (1.80, -0.09, 0.00), zPos: 0.2503822, zVel: -16.21261
+[10:41:38.670] [LOG] [TennisBall] Visual update - SpritePos: (-18.69, -11.49, 0.00), BallSprite active: True
+[10:41:38.686] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-18.67, -11.52, 0.00)
+[10:41:38.790] [LOG] [TennisBall] Physics update - Pos: (-18.48, -11.52, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 1.534297, zVel: 13.60384
+[10:41:38.791] [LOG] [TennisBall] Visual update - SpritePos: (-18.48, -11.37, 0.00), BallSprite active: True
+[10:41:38.903] [LOG] [TennisBall] Physics update - Pos: (-18.28, -11.53, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 2.934704, zVel: 11.35617
+[10:41:38.904] [LOG] [TennisBall] Visual update - SpritePos: (-18.28, -11.24, 0.00), BallSprite active: True
+[10:41:39.019] [LOG] [TennisBall] Physics update - Pos: (-18.08, -11.55, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 4.118101, zVel: 9.029125
+[10:41:39.020] [LOG] [TennisBall] Visual update - SpritePos: (-18.08, -11.13, 0.00), BallSprite active: True
+[10:41:39.142] [LOG] [TennisBall] Physics update - Pos: (-17.86, -11.56, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 5.06823, zVel: 6.58853
+[10:41:39.142] [LOG] [TennisBall] Visual update - SpritePos: (-17.86, -11.05, 0.00), BallSprite active: True
+[10:41:39.259] [LOG] [TennisBall] Physics update - Pos: (-17.66, -11.57, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 5.699161, zVel: 4.250768
+[10:41:39.259] [LOG] [TennisBall] Visual update - SpritePos: (-17.66, -11.00, 0.00), BallSprite active: True
+[10:41:39.343] [SYSTEM] Application lost focus
+[10:41:39.375] [LOG] [TennisBall] Physics update - Pos: (-17.45, -11.58, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 6.056806, zVel: 1.915244
+[10:41:39.376] [LOG] [TennisBall] Visual update - SpritePos: (-17.45, -10.97, 0.00), BallSprite active: True
+[10:41:45.430] [SYSTEM] Application gained focus
+[10:41:45.491] [LOG] [TennisBall] Physics update - Pos: (-17.19, -11.59, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 6.11783, zVel: -1.011404
+[10:41:45.491] [LOG] [TennisBall] Visual update - SpritePos: (-17.19, -10.98, 0.00), BallSprite active: True
+[10:41:45.613] [LOG] [TennisBall] Physics update - Pos: (-16.98, -11.60, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 5.843631, zVel: -3.446774
+[10:41:45.613] [LOG] [TennisBall] Visual update - SpritePos: (-16.98, -11.02, 0.00), BallSprite active: True
+[10:41:45.738] [LOG] [TennisBall] Physics update - Pos: (-16.76, -11.61, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 5.255295, zVel: -5.941862
+[10:41:45.738] [LOG] [TennisBall] Visual update - SpritePos: (-16.76, -11.09, 0.00), BallSprite active: True
+[10:41:45.857] [LOG] [TennisBall] Physics update - Pos: (-16.55, -11.62, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 4.402647, zVel: -8.324725
+[10:41:45.858] [LOG] [TennisBall] Visual update - SpritePos: (-16.55, -11.18, 0.00), BallSprite active: True
+[10:41:45.975] [LOG] [TennisBall] Physics update - Pos: (-16.34, -11.63, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 3.283185, zVel: -10.67595
+[10:41:45.975] [LOG] [TennisBall] Visual update - SpritePos: (-16.34, -11.31, 0.00), BallSprite active: True
+[10:41:46.096] [LOG] [TennisBall] Physics update - Pos: (-16.13, -11.64, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 1.828267, zVel: -13.11725
+[10:41:46.097] [LOG] [TennisBall] Visual update - SpritePos: (-16.13, -11.46, 0.00), BallSprite active: True
+[10:41:46.209] [LOG] [TennisBall] Physics update - Pos: (-15.93, -11.65, 0.00), velocity2D: (1.76, -0.09, 0.00), zPos: 0.2187483, zVel: -15.37389
+[10:41:46.209] [LOG] [TennisBall] Visual update - SpritePos: (-15.93, -11.63, 0.00), BallSprite active: True
+[10:41:46.225] [LOG] [TennisBall] Ball bounced (count: 2) at position: (-15.90, -11.66, 0.00)
+[10:41:46.225] [LOG] [TennisBall] Second bounce on player side - MISS! Serving new ball...
+[10:41:46.226] [LOG] [TennisBall] Ball stopped
+[10:41:46.226] [LOG] [TennisBall] Waiting 1 seconds before serving new ball
+[10:41:46.226] [LOG] [TennisBall] Ball stopped
+[10:41:46.227] [LOG] [TennisBall] Waiting 1 seconds before serving new ball
+[10:41:47.226] [LOG] [TennisBall] Serving new ball automatically
+[10:41:47.226] [LOG] [TennisBall] ServeFromStudent called
+[10:41:47.226] [LOG] [TennisBall] Game manager assigned: True
+[10:41:47.227] [LOG] [TennisBall] Ball position before serve: (-15.90, -11.66, 0.00)
+[10:41:47.228] [LOG] [TennisBall] Player paddle found at: (-21.65, -10.28, -0.21), targeting: (-19.65, -10.28, 0.00)
+[10:41:47.228] [LOG] [TennisBall] Serve started from position: (4.00, -9.24, 0.00)
+[10:41:47.228] [LOG] [TennisBall] Serving toward target area: (-19.65, -10.28, 0.00)
+[10:41:47.228] [LOG] [TennisBall] Serve velocity - 2D: (-19.54, -0.47, 0.00), Z: 9.300089, Speed: 19.55031
+[10:41:47.229] [LOG] [TennisBall] Ball already moving, skipping automatic serve
+[10:41:47.232] [LOG] [TennisBall] Physics update - Pos: (3.87, -9.24, 0.00), velocity2D: (-19.54, -0.47, 0.00), zPos: 1.647793, zVel: 9.165521
+[10:41:47.232] [LOG] [TennisBall] Visual update - SpritePos: (3.87, -9.08, 0.00), BallSprite active: True
+[10:41:47.376] [LOG] [TennisBall] Physics update - Pos: (1.06, -9.31, 0.00), velocity2D: (-19.54, -0.47, 0.00), zPos: 2.753786, zVel: 6.293749
+[10:41:47.377] [LOG] [TennisBall] Visual update - SpritePos: (1.06, -9.03, 0.00), BallSprite active: True
+[10:41:47.515] [LOG] [TennisBall] Physics update - Pos: (-1.65, -9.37, 0.00), velocity2D: (-19.54, -0.47, 0.00), zPos: 3.430434, zVel: 3.521807
+[10:41:47.515] [LOG] [TennisBall] Visual update - SpritePos: (-1.65, -9.03, 0.00), BallSprite active: True
+[10:41:47.639] [LOG] [TennisBall] Physics update - Pos: (-4.08, -9.43, 0.00), velocity2D: (-19.54, -0.47, 0.00), zPos: 3.710946, zVel: 1.033349
+[10:41:47.640] [LOG] [TennisBall] Visual update - SpritePos: (-4.08, -9.06, 0.00), BallSprite active: True
+[10:41:47.767] [LOG] [TennisBall] Physics update - Pos: (-6.59, -9.49, 0.00), velocity2D: (-19.54, -0.47, 0.00), zPos: 3.675721, zVel: -1.534303
+[10:41:47.767] [LOG] [TennisBall] Visual update - SpritePos: (-6.59, -9.13, 0.00), BallSprite active: True
+[10:41:47.892] [LOG] [TennisBall] Physics update - Pos: (-9.02, -9.55, 0.00), velocity2D: (-19.54, -0.47, 0.00), zPos: 3.327243, zVel: -4.021954
+[10:41:47.892] [LOG] [TennisBall] Visual update - SpritePos: (-9.02, -9.22, 0.00), BallSprite active: True
+[10:41:47.893] [LOG] [TennisBall] Near student paddle - Distance: 2.64, Ball zPos: 3.33, Ball moving left: True
+[10:41:47.955] [LOG] [TennisBall] Near student paddle - Distance: 1.41, Ball zPos: 3.03, Ball moving left: True
+[10:41:47.966] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 1.19, zPos: 2.97
+[10:41:47.967] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -10.64, 0.00)
+[10:41:47.967] [LOG] [TennisBall] Hit by student toward: (-18.00, -10.64, 0.00)
+[10:41:47.967] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-11.88, -1.67, 0.00), zVel: 12
+[10:41:48.018] [LOG] [TennisBall] Physics update - Pos: (-11.10, -9.68, 0.00), velocity2D: (-11.88, -1.67, 0.00), zPos: 3.575006, zVel: 10.94457
+[10:41:48.020] [LOG] [TennisBall] Visual update - SpritePos: (-11.10, -9.32, 0.00), BallSprite active: True
+[10:41:48.020] [LOG] [TennisBall] Near student paddle - Distance: 0.59, Ball zPos: 3.58, Ball moving left: True
+[10:41:48.085] [LOG] [TennisBall] Near student paddle - Distance: 0.33, Ball zPos: 4.25, Ball moving left: True
+[10:41:48.145] [LOG] [TennisBall] Physics update - Pos: (-12.60, -9.89, 0.00), velocity2D: (-11.88, -1.67, 0.00), zPos: 4.793471, zVel: 8.421358
+[10:41:48.146] [LOG] [TennisBall] Visual update - SpritePos: (-12.60, -9.41, 0.00), BallSprite active: True
+[10:41:48.146] [LOG] [TennisBall] Near student paddle - Distance: 0.98, Ball zPos: 4.79, Ball moving left: True
+[10:41:48.216] [LOG] [TennisBall] Near student paddle - Distance: 1.81, Ball zPos: 5.34, Ball moving left: True
+[10:41:48.275] [LOG] [TennisBall] Physics update - Pos: (-14.14, -10.10, 0.00), velocity2D: (-11.88, -1.67, 0.00), zPos: 5.715374, zVel: 5.823866
+[10:41:48.275] [LOG] [TennisBall] Visual update - SpritePos: (-14.14, -9.53, 0.00), BallSprite active: True
+[10:41:48.276] [LOG] [TennisBall] Near student paddle - Distance: 2.51, Ball zPos: 5.72, Ball moving left: True
+[10:41:48.460] [LOG] [TennisBall] Physics update - Pos: (-16.35, -10.41, 0.00), velocity2D: (-11.88, -1.67, 0.00), zPos: 6.441865, zVel: 2.113958
+[10:41:48.461] [LOG] [TennisBall] Visual update - SpritePos: (-16.35, -9.77, 0.00), BallSprite active: True
+[10:41:48.591] [LOG] [TennisBall] Physics update - Pos: (-17.91, -10.63, 0.00), velocity2D: (-11.88, -1.67, 0.00), zPos: 6.543643, zVel: -0.5155604
+[10:41:48.593] [LOG] [TennisBall] Visual update - SpritePos: (-17.91, -9.98, 0.00), BallSprite active: True
+[10:41:48.661] [LOG] [TennisBall] Near player paddle - Distance: 2.96, Ball zPos: 6.46, Player swinging: False
+[10:41:48.720] [LOG] [TennisBall] Physics update - Pos: (-19.44, -10.84, 0.00), velocity2D: (-11.88, -1.67, 0.00), zPos: 6.309501, zVel: -3.083375
+[10:41:48.721] [LOG] [TennisBall] Visual update - SpritePos: (-19.44, -10.21, 0.00), BallSprite active: True
+[10:41:48.721] [LOG] [TennisBall] Near player paddle - Distance: 2.29, Ball zPos: 6.31, Player swinging: False
+[10:41:48.790] [LOG] [TennisPlayerPaddle] E key pressed - CanSwing: True
+[10:41:48.791] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -10.28, -0.21)
+[10:41:48.791] [LOG] [TennisBall] Near player paddle - Distance: 1.55, Ball zPos: 6.04, Player swinging: True
+[10:41:48.798] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by player paddle! Distance: 1.48, zPos: 6.01
+[10:41:48.799] [LOG] [TennisBall] Player hitting toward student area: (-12.65, -11.44, 0.00)
+[10:41:48.799] [LOG] [TennisBall] Hit by player with direction: (1.00, -0.06, 0.00)
+[10:41:48.799] [LOG] [TennisBall] Ball hit successfully - new velocity: (14.37, -0.87, 0.00), zVel: 6
+[10:41:48.856] [LOG] [TennisBall] Physics update - Pos: (-19.53, -11.03, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 6.319042, zVel: 4.841259
+[10:41:48.857] [LOG] [TennisBall] Visual update - SpritePos: (-19.53, -10.39, 0.00), BallSprite active: True
+[10:41:48.857] [LOG] [TennisBall] Near player paddle - Distance: 2.25, Ball zPos: 6.32, Player swinging: True
+[10:41:48.979] [LOG] [TennisBall] Physics update - Pos: (-17.76, -11.13, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 6.760377, zVel: 2.381088
+[10:41:48.979] [LOG] [TennisBall] Visual update - SpritePos: (-17.76, -10.46, 0.00), BallSprite active: True
+[10:41:49.098] [LOG] [TennisBall] Physics update - Pos: (-16.04, -11.24, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 6.899426, zVel: -0.009611896
+[10:41:49.099] [LOG] [TennisBall] Visual update - SpritePos: (-16.04, -10.55, 0.00), BallSprite active: True
+[10:41:49.214] [LOG] [TennisBall] Physics update - Pos: (-14.37, -11.34, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 6.761013, zVel: -2.333462
+[10:41:49.215] [LOG] [TennisBall] Visual update - SpritePos: (-14.37, -10.66, 0.00), BallSprite active: True
+[10:41:49.215] [LOG] [TennisBall] Near student paddle - Distance: 2.86, Ball zPos: 6.76, Ball moving left: False
+[10:41:49.280] [LOG] [TennisBall] Near student paddle - Distance: 1.97, Ball zPos: 6.57, Ball moving left: False
+[10:41:49.338] [LOG] [TennisBall] Physics update - Pos: (-12.59, -11.45, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 6.315698, zVel: -4.810748
+[10:41:49.339] [LOG] [TennisBall] Visual update - SpritePos: (-12.59, -10.81, 0.00), BallSprite active: True
+[10:41:49.339] [LOG] [TennisBall] Near student paddle - Distance: 1.22, Ball zPos: 6.32, Ball moving left: False
+[10:41:49.403] [LOG] [TennisBall] Near student paddle - Distance: 0.72, Ball zPos: 5.96, Ball moving left: False
+[10:41:49.461] [LOG] [TennisBall] Physics update - Pos: (-10.84, -11.55, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 5.576198, zVel: -7.253441
+[10:41:49.461] [LOG] [TennisBall] Visual update - SpritePos: (-10.84, -10.99, 0.00), BallSprite active: True
+[10:41:49.462] [LOG] [TennisBall] Near student paddle - Distance: 1.05, Ball zPos: 5.58, Ball moving left: False
+[10:41:49.501] [LOG] [TennisBall] Collision detected with: Player
+[10:41:49.501] [LOG] [TennisBall] Ball position: (-10.28, -11.59, 0.00), zPosition: 5.279003
+[10:41:49.503] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: TennisBall, Tag: 'Untagged'
+[10:41:49.503] [LOG] [PlayerController] GameObject path: TennisDrillMiniGame/Court/TennisBall
+[10:41:49.503] [LOG] [PlayerController] Collider bounds: Center: (-10.28, -11.59, 0.00), Extents: (0.30, 0.30, 0.00)
+[10:41:49.503] [LOG] [PlayerController] Is Trigger: True
+[10:41:49.504] [LOG] [PlayerController] Components on TennisBall: Transform, TennisBall, CircleCollider2D
+[10:41:49.504] [LOG] [PlayerController] No LocationTrigger script found on TennisBall (this is normal for non-location objects)
+[10:41:49.525] [LOG] [TennisBall] Near student paddle - Distance: 1.84, Ball zPos: 5.07, Ball moving left: False
+[10:41:49.588] [LOG] [TennisBall] Physics update - Pos: (-9.00, -11.66, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 4.482622, zVel: -9.809559
+[10:41:49.590] [LOG] [TennisBall] Visual update - SpritePos: (-9.00, -11.21, 0.00), BallSprite active: True
+[10:41:49.590] [LOG] [TennisBall] Near student paddle - Distance: 2.71, Ball zPos: 4.48, Ball moving left: False
+[10:41:49.620] [LOG] [PlayerController] OnTriggerExit2D - Exiting: TennisBall, Tag: Untagged
+[10:41:49.709] [LOG] [TennisBall] Physics update - Pos: (-7.27, -11.77, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 3.157462, zVel: -12.21169
+[10:41:49.709] [LOG] [TennisBall] Visual update - SpritePos: (-7.27, -11.45, 0.00), BallSprite active: True
+[10:41:49.823] [LOG] [TennisBall] Physics update - Pos: (-5.64, -11.87, 0.00), velocity2D: (14.37, -0.87, 0.00), zPos: 1.634118, zVel: -14.49039
+[10:41:49.823] [LOG] [TennisBall] Visual update - SpritePos: (-5.64, -11.70, 0.00), BallSprite active: True
+[10:41:49.929] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-4.11, -11.96, 0.00)
+[10:41:49.945] [LOG] [TennisBall] Physics update - Pos: (-3.89, -11.97, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 0.2507711, zVel: 15.45798
+[10:41:49.945] [LOG] [TennisBall] Visual update - SpritePos: (-3.89, -11.95, 0.00), BallSprite active: True
+[10:41:50.066] [LOG] [TennisBall] Physics update - Pos: (-2.19, -12.07, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 1.968209, zVel: 13.04373
+[10:41:50.066] [LOG] [TennisBall] Visual update - SpritePos: (-2.19, -11.88, 0.00), BallSprite active: True
+[10:41:50.184] [LOG] [TennisBall] Physics update - Pos: (-0.51, -12.18, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 3.372161, zVel: 10.67122
+[10:41:50.184] [LOG] [TennisBall] Visual update - SpritePos: (-0.51, -11.84, 0.00), BallSprite active: True
+[10:41:50.310] [LOG] [TennisBall] Physics update - Pos: (1.26, -12.28, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 4.554764, zVel: 8.151653
+[10:41:50.311] [LOG] [TennisBall] Visual update - SpritePos: (1.26, -11.83, 0.00), BallSprite active: True
+[10:41:50.426] [LOG] [TennisBall] Physics update - Pos: (2.90, -12.38, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 5.365198, zVel: 5.825785
+[10:41:50.426] [LOG] [TennisBall] Visual update - SpritePos: (2.90, -11.85, 0.00), BallSprite active: True
+[10:41:50.547] [LOG] [TennisBall] Physics update - Pos: (4.59, -12.48, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 5.917743, zVel: 3.424772
+[10:41:50.547] [LOG] [TennisBall] Visual update - SpritePos: (4.59, -11.89, 0.00), BallSprite active: True
+[10:41:50.665] [LOG] [TennisBall] Physics update - Pos: (6.25, -12.59, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 6.179872, zVel: 1.067647
+[10:41:50.665] [LOG] [TennisBall] Visual update - SpritePos: (6.25, -11.97, 0.00), BallSprite active: True
+[10:41:50.786] [LOG] [TennisBall] Physics update - Pos: (7.97, -12.69, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 6.158445, zVel: -1.373011
+[10:41:50.787] [LOG] [TennisBall] Visual update - SpritePos: (7.97, -12.07, 0.00), BallSprite active: True
+[10:41:50.903] [LOG] [TennisBall] Physics update - Pos: (9.61, -12.79, 0.00), velocity2D: (14.09, -0.85, 0.00), zPos: 5.861259, zVel: -3.697531
+[10:41:50.903] [LOG] [TennisBall] Visual update - SpritePos: (9.61, -12.20, 0.00), BallSprite active: True
+[10:41:50.931] [LOG] [TennisBall] Ball went out of bounds at position: (10.02, -12.81, 0.00)
+[10:41:50.931] [LOG] [TennisBall] Ball out of bounds - Serving new ball...
+[10:41:50.933] [LOG] [TennisBall] Ball stopped
+[10:41:50.934] [LOG] [TennisBall] Waiting 1.5 seconds before serving new ball
+[10:41:52.431] [LOG] [TennisBall] Serving new ball automatically
+[10:41:52.433] [LOG] [TennisBall] ServeFromStudent called
+[10:41:52.433] [LOG] [TennisBall] Game manager assigned: True
+[10:41:52.433] [LOG] [TennisBall] Ball position before serve: (10.02, -12.81, 0.00)
+[10:41:52.434] [LOG] [TennisBall] Player paddle found at: (-21.65, -10.28, -0.21), targeting: (-19.65, -10.28, 0.00)
+[10:41:52.434] [LOG] [TennisBall] Serve started from position: (4.00, -9.81, 0.00)
+[10:41:52.434] [LOG] [TennisBall] Serving toward target area: (-19.65, -10.28, 0.00)
+[10:41:52.435] [LOG] [TennisBall] Serve velocity - 2D: (-18.94, -0.52, 0.00), Z: 8.187662, Speed: 18.95039
+[10:41:52.480] [LOG] [TennisBall] Physics update - Pos: (3.10, -9.84, 0.00), velocity2D: (-18.94, -0.52, 0.00), zPos: 1.990643, zVel: 7.234786
+[10:41:52.480] [LOG] [TennisBall] Visual update - SpritePos: (3.10, -9.64, 0.00), BallSprite active: True
+[10:41:52.600] [LOG] [TennisBall] Physics update - Pos: (0.82, -9.90, 0.00), velocity2D: (-18.94, -0.52, 0.00), zPos: 2.712491, zVel: 4.833273
+[10:41:52.600] [LOG] [TennisBall] Visual update - SpritePos: (0.82, -9.63, 0.00), BallSprite active: True
+[10:41:52.717] [LOG] [TennisBall] Physics update - Pos: (-1.40, -9.96, 0.00), velocity2D: (-18.94, -0.52, 0.00), zPos: 3.139442, zVel: 2.485864
+[10:41:52.717] [LOG] [TennisBall] Visual update - SpritePos: (-1.40, -9.65, 0.00), BallSprite active: True
+[10:41:52.832] [LOG] [TennisBall] Physics update - Pos: (-3.58, -10.02, 0.00), velocity2D: (-18.94, -0.52, 0.00), zPos: 3.290838, zVel: 0.1836582
+[10:41:52.833] [LOG] [TennisBall] Visual update - SpritePos: (-3.58, -9.69, 0.00), BallSprite active: True
+[10:41:52.953] [LOG] [TennisBall] Physics update - Pos: (-5.87, -10.08, 0.00), velocity2D: (-18.94, -0.52, 0.00), zPos: 3.16463, zVel: -2.229876
+[10:41:52.954] [LOG] [TennisBall] Visual update - SpritePos: (-5.87, -9.77, 0.00), BallSprite active: True
+[10:41:53.076] [LOG] [TennisBall] Physics update - Pos: (-8.20, -10.15, 0.00), velocity2D: (-18.94, -0.52, 0.00), zPos: 2.735096, zVel: -4.694646
+[10:41:53.077] [LOG] [TennisBall] Visual update - SpritePos: (-8.20, -9.87, 0.00), BallSprite active: True
+[10:41:53.134] [LOG] [TennisBall] Near student paddle - Distance: 2.37, Ball zPos: 2.43, Ball moving left: True
+[10:41:53.195] [LOG] [TennisBall] Physics update - Pos: (-10.48, -10.21, 0.00), velocity2D: (-18.94, -0.52, 0.00), zPos: 2.023836, zVel: -7.097981
+[10:41:53.197] [LOG] [TennisBall] Visual update - SpritePos: (-10.48, -10.01, 0.00), BallSprite active: True
+[10:41:53.197] [LOG] [TennisBall] Near student paddle - Distance: 1.19, Ball zPos: 2.02, Ball moving left: True
+[10:41:53.198] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 1.19, zPos: 2.02
+[10:41:53.198] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -10.02, 0.00)
+[10:41:53.198] [LOG] [TennisBall] Hit by student toward: (-18.00, -10.02, 0.00)
+[10:41:53.199] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-12.00, 0.30, 0.00), zVel: 12
+[10:41:53.254] [LOG] [TennisBall] Near student paddle - Distance: 0.52, Ball zPos: 2.69, Ball moving left: True
+[10:41:53.320] [LOG] [TennisBall] Physics update - Pos: (-11.97, -10.17, 0.00), velocity2D: (-12.00, 0.30, 0.00), zPos: 3.360843, zVel: 9.507673
+[10:41:53.321] [LOG] [TennisBall] Visual update - SpritePos: (-11.97, -9.84, 0.00), BallSprite active: True
+[10:41:53.323] [LOG] [TennisBall] Near student paddle - Distance: 0.39, Ball zPos: 3.36, Ball moving left: True
+[10:41:53.380] [LOG] [TennisBall] Near student paddle - Distance: 1.06, Ball zPos: 3.89, Ball moving left: True
+[10:41:53.438] [LOG] [TennisBall] Physics update - Pos: (-13.37, -10.14, 0.00), velocity2D: (-12.00, 0.30, 0.00), zPos: 4.331549, zVel: 7.17455
+[10:41:53.438] [LOG] [TennisBall] Visual update - SpritePos: (-13.37, -9.71, 0.00), BallSprite active: True
+[10:41:53.439] [LOG] [TennisBall] Near student paddle - Distance: 1.74, Ball zPos: 4.33, Ball moving left: True
+[10:41:53.503] [LOG] [TennisBall] Near student paddle - Distance: 2.52, Ball zPos: 4.76, Ball moving left: True
+[10:41:53.558] [LOG] [TennisBall] Physics update - Pos: (-14.83, -10.10, 0.00), velocity2D: (-12.00, 0.30, 0.00), zPos: 5.053746, zVel: 4.740696
+[10:41:53.561] [LOG] [TennisBall] Visual update - SpritePos: (-14.83, -9.60, 0.00), BallSprite active: True
+[10:41:53.681] [LOG] [TennisBall] Physics update - Pos: (-16.28, -10.07, 0.00), velocity2D: (-12.00, 0.30, 0.00), zPos: 5.477786, zVel: 2.324574
+[10:41:53.681] [LOG] [TennisBall] Visual update - SpritePos: (-16.28, -9.52, 0.00), BallSprite active: True
+[10:41:53.803] [LOG] [TennisBall] Physics update - Pos: (-17.76, -10.03, 0.00), velocity2D: (-12.00, 0.30, 0.00), zPos: 5.609649, zVel: -0.1328683
+[10:41:53.803] [LOG] [TennisBall] Visual update - SpritePos: (-17.76, -9.47, 0.00), BallSprite active: True
+[10:41:53.925] [LOG] [TennisBall] Physics update - Pos: (-19.22, -9.99, 0.00), velocity2D: (-12.00, 0.30, 0.00), zPos: 5.441905, zVel: -2.57196
+[10:41:53.925] [LOG] [TennisBall] Visual update - SpritePos: (-19.22, -9.45, 0.00), BallSprite active: True
+[10:41:53.926] [LOG] [TennisBall] Near player paddle - Distance: 2.45, Ball zPos: 5.44, Player swinging: False
+[10:41:53.985] [LOG] [TennisBall] Near player paddle - Distance: 1.73, Ball zPos: 5.25, Player swinging: False
+[10:41:54.042] [LOG] [TennisBall] Physics update - Pos: (-20.62, -9.96, 0.00), velocity2D: (-12.00, 0.30, 0.00), zPos: 5.00238, zVel: -4.909452
+[10:41:54.043] [LOG] [TennisBall] Visual update - SpritePos: (-20.62, -9.46, 0.00), BallSprite active: True
+[10:41:54.043] [LOG] [TennisBall] Near player paddle - Distance: 1.05, Ball zPos: 5.00, Player swinging: False
+[10:41:54.084] [LOG] [TennisPlayerPaddle] E key pressed - CanSwing: True
+[10:41:54.085] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -9.98, -0.21)
+[10:41:54.085] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by player paddle! Distance: 0.57, zPos: 4.78
+[10:41:54.086] [LOG] [TennisBall] Player hitting toward student area: (-12.65, -10.51, 0.00)
+[10:41:54.086] [LOG] [TennisBall] Hit by player with direction: (1.00, -0.07, 0.00)
+[10:41:54.087] [LOG] [TennisBall] Ball hit successfully - new velocity: (14.37, -0.96, 0.00), zVel: 6
+[10:41:54.110] [LOG] [TennisBall] Near player paddle - Distance: 0.94, Ball zPos: 4.93, Player swinging: True
+[10:41:54.169] [LOG] [TennisBall] Physics update - Pos: (-19.90, -10.03, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: 5.214242, zVel: 4.292892
+[10:41:54.170] [LOG] [TennisBall] Visual update - SpritePos: (-19.90, -9.51, 0.00), BallSprite active: True
+[10:41:54.170] [LOG] [TennisBall] Near player paddle - Distance: 1.76, Ball zPos: 5.21, Player swinging: True
+[10:41:54.235] [LOG] [TennisBall] Near player paddle - Distance: 2.70, Ball zPos: 5.45, Player swinging: True
+[10:41:54.294] [LOG] [TennisBall] Physics update - Pos: (-18.11, -10.15, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: 5.591349, zVel: 1.796782
+[10:41:54.294] [LOG] [TennisBall] Visual update - SpritePos: (-18.11, -9.59, 0.00), BallSprite active: True
+[10:41:54.416] [LOG] [TennisBall] Physics update - Pos: (-16.35, -10.26, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: 5.658961, zVel: -0.6423701
+[10:41:54.416] [LOG] [TennisBall] Visual update - SpritePos: (-16.35, -9.70, 0.00), BallSprite active: True
+[10:41:54.537] [LOG] [TennisBall] Physics update - Pos: (-14.61, -10.38, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: 5.430116, zVel: -3.075234
+[10:41:54.538] [LOG] [TennisBall] Visual update - SpritePos: (-14.61, -9.84, 0.00), BallSprite active: True
+[10:41:54.597] [LOG] [TennisBall] Near student paddle - Distance: 2.75, Ball zPos: 5.21, Ball moving left: False
+[10:41:54.653] [LOG] [TennisBall] Physics update - Pos: (-12.94, -10.49, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: 4.938147, zVel: -5.389319
+[10:41:54.654] [LOG] [TennisBall] Visual update - SpritePos: (-12.94, -10.00, 0.00), BallSprite active: True
+[10:41:54.654] [LOG] [TennisBall] Near student paddle - Distance: 2.15, Ball zPos: 4.94, Ball moving left: False
+[10:41:54.716] [LOG] [TennisBall] Near student paddle - Distance: 1.70, Ball zPos: 4.55, Ball moving left: False
+[10:41:54.771] [LOG] [TennisBall] Physics update - Pos: (-11.25, -10.60, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: 4.16017, zVel: -7.749682
+[10:41:54.772] [LOG] [TennisBall] Visual update - SpritePos: (-11.25, -10.19, 0.00), BallSprite active: True
+[10:41:54.772] [LOG] [TennisBall] Near student paddle - Distance: 1.65, Ball zPos: 4.16, Ball moving left: False
+[10:41:54.837] [LOG] [TennisBall] Near student paddle - Distance: 2.05, Ball zPos: 3.60, Ball moving left: False
+[10:41:54.894] [LOG] [TennisBall] Physics update - Pos: (-9.49, -10.72, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: 3.056445, zVel: -10.20259
+[10:41:54.895] [LOG] [TennisBall] Visual update - SpritePos: (-9.49, -10.41, 0.00), BallSprite active: True
+[10:41:54.896] [LOG] [TennisBall] Near student paddle - Distance: 2.62, Ball zPos: 3.06, Ball moving left: False
+[10:41:55.016] [LOG] [TennisBall] Physics update - Pos: (-7.73, -10.84, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: 1.660965, zVel: -12.64117
+[10:41:55.016] [LOG] [TennisBall] Visual update - SpritePos: (-7.73, -10.67, 0.00), BallSprite active: True
+[10:41:55.137] [LOG] [TennisBall] Physics update - Pos: (-6.00, -10.95, 0.00), velocity2D: (14.37, -0.96, 0.00), zPos: -0.01532897, zVel: -15.05787
+[10:41:55.137] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-6.00, -10.95, 0.00)
+[10:41:55.138] [LOG] [TennisBall] Visual update - SpritePos: (-6.00, -10.95, 0.00), BallSprite active: True
+[10:41:55.255] [LOG] [TennisBall] Physics update - Pos: (-4.34, -11.06, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 1.54429, zVel: 11.9485
+[10:41:55.255] [LOG] [TennisBall] Visual update - SpritePos: (-4.34, -10.91, 0.00), BallSprite active: True
+[10:41:55.375] [LOG] [TennisBall] Physics update - Pos: (-2.64, -11.18, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 2.834572, zVel: 9.541788
+[10:41:55.376] [LOG] [TennisBall] Visual update - SpritePos: (-2.64, -10.89, 0.00), BallSprite active: True
+[10:41:55.493] [LOG] [TennisBall] Physics update - Pos: (-0.99, -11.29, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 3.815659, zVel: 7.190069
+[10:41:55.493] [LOG] [TennisBall] Visual update - SpritePos: (-0.99, -10.91, 0.00), BallSprite active: True
+[10:41:55.614] [LOG] [TennisBall] Physics update - Pos: (0.71, -11.40, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 4.534598, zVel: 4.778136
+[10:41:55.614] [LOG] [TennisBall] Visual update - SpritePos: (0.71, -10.95, 0.00), BallSprite active: True
+[10:41:55.732] [LOG] [TennisBall] Physics update - Pos: (2.39, -11.51, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 4.960064, zVel: 2.388471
+[10:41:55.732] [LOG] [TennisBall] Visual update - SpritePos: (2.39, -11.02, 0.00), BallSprite active: True
+[10:41:55.848] [LOG] [TennisBall] Physics update - Pos: (4.01, -11.62, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 5.100248, zVel: 0.0885852
+[10:41:55.848] [LOG] [TennisBall] Visual update - SpritePos: (4.01, -11.11, 0.00), BallSprite active: True
+[10:41:55.964] [LOG] [TennisBall] Physics update - Pos: (5.66, -11.73, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 4.97179, zVel: -2.246073
+[10:41:55.965] [LOG] [TennisBall] Visual update - SpritePos: (5.66, -11.23, 0.00), BallSprite active: True
+[10:41:56.084] [LOG] [TennisBall] Physics update - Pos: (7.34, -11.84, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 4.557362, zVel: -4.638514
+[10:41:56.084] [LOG] [TennisBall] Visual update - SpritePos: (7.34, -11.39, 0.00), BallSprite active: True
+[10:41:56.203] [LOG] [TennisBall] Physics update - Pos: (9.03, -11.95, 0.00), velocity2D: (14.08, -0.94, 0.00), zPos: 3.855068, zVel: -7.035428
+[10:41:56.204] [LOG] [TennisBall] Visual update - SpritePos: (9.03, -11.57, 0.00), BallSprite active: True
+[10:41:56.274] [LOG] [TennisBall] Ball went out of bounds at position: (10.01, -12.02, 0.00)
+[10:41:56.274] [LOG] [TennisBall] Ball out of bounds - Serving new ball...
+[10:41:56.274] [LOG] [TennisBall] Ball stopped
+[10:41:56.275] [LOG] [TennisBall] Waiting 1.5 seconds before serving new ball
+[10:41:56.774] [SYSTEM] Application lost focus
+[10:42:10.339] [SYSTEM] Application resumed
+[10:42:39.439] [SYSTEM] Application gained focus
+[10:42:40.332] [LOG] [TennisBall] Serving new ball automatically
+[10:42:40.332] [LOG] [TennisBall] ServeFromStudent called
+[10:42:40.332] [LOG] [TennisBall] Game manager assigned: True
+[10:42:40.334] [LOG] [TennisBall] Ball position before serve: (10.01, -12.02, 0.00)
+[10:42:40.335] [LOG] [TennisBall] Player paddle found at: (-21.65, -9.98, -0.21), targeting: (-19.65, -9.98, 0.00)
+[10:42:40.335] [LOG] [TennisBall] Serve started from position: (4.00, -10.60, 0.00)
+[10:42:40.335] [LOG] [TennisBall] Serving toward target area: (-19.65, -9.98, 0.00)
+[10:42:40.335] [LOG] [TennisBall] Serve velocity - 2D: (-19.15, 0.60, 0.00), Z: 9.588408, Speed: 19.16013
+[10:42:40.338] [LOG] [TennisBall] Physics update - Pos: (3.88, -10.60, 0.00), velocity2D: (-19.15, 0.60, 0.00), zPos: 1.27684, zVel: 9.463331
+[10:42:40.339] [LOG] [TennisBall] Visual update - SpritePos: (3.88, -10.47, 0.00), BallSprite active: True
+[10:42:40.476] [LOG] [TennisBall] Physics update - Pos: (1.26, -10.51, 0.00), velocity2D: (-19.15, 0.60, 0.00), zPos: 2.380924, zVel: 6.726322
+[10:42:40.476] [LOG] [TennisBall] Visual update - SpritePos: (1.26, -10.28, 0.00), BallSprite active: True
+[10:42:40.613] [LOG] [TennisBall] Physics update - Pos: (-1.39, -10.43, 0.00), velocity2D: (-19.15, 0.60, 0.00), zPos: 3.117528, zVel: 3.954178
+[10:42:40.614] [LOG] [TennisBall] Visual update - SpritePos: (-1.39, -10.12, 0.00), BallSprite active: True
+[10:42:40.743] [LOG] [TennisBall] Physics update - Pos: (-3.87, -10.35, 0.00), velocity2D: (-19.15, 0.60, 0.00), zPos: 3.458137, zVel: 1.374245
+[10:42:40.743] [LOG] [TennisBall] Visual update - SpritePos: (-3.87, -10.01, 0.00), BallSprite active: True
+[10:42:40.867] [LOG] [TennisBall] Physics update - Pos: (-6.25, -10.28, 0.00), velocity2D: (-19.15, 0.60, 0.00), zPos: 3.471171, zVel: -1.119111
+[10:42:40.868] [LOG] [TennisBall] Visual update - SpritePos: (-6.25, -9.93, 0.00), BallSprite active: True
+[10:42:40.988] [LOG] [TennisBall] Physics update - Pos: (-8.56, -10.21, 0.00), velocity2D: (-19.15, 0.60, 0.00), zPos: 3.189533, zVel: -3.524199
+[10:42:40.989] [LOG] [TennisBall] Visual update - SpritePos: (-8.56, -9.89, 0.00), BallSprite active: True
+[10:42:40.994] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 2.98, zPos: 3.17
+[10:42:40.994] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -8.48, 0.00)
+[10:42:40.995] [LOG] [TennisBall] Hit by student toward: (-18.00, -8.48, 0.00)
+[10:42:40.995] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-11.80, 2.19, 0.00), zVel: 12
+[10:42:41.059] [LOG] [TennisBall] Near student paddle - Distance: 2.22, Ball zPos: 3.90, Ball moving left: True
+[10:42:41.120] [LOG] [TennisBall] Physics update - Pos: (-10.16, -9.93, 0.00), velocity2D: (-11.80, 2.19, 0.00), zPos: 4.516723, zVel: 9.480378
+[10:42:41.120] [LOG] [TennisBall] Visual update - SpritePos: (-10.16, -9.48, 0.00), BallSprite active: True
+[10:42:41.121] [LOG] [TennisBall] Near student paddle - Distance: 1.50, Ball zPos: 4.52, Ball moving left: True
+[10:42:41.187] [LOG] [TennisBall] Near student paddle - Distance: 0.73, Ball zPos: 5.10, Ball moving left: True
+[10:42:41.246] [LOG] [TennisBall] Physics update - Pos: (-11.66, -9.65, 0.00), velocity2D: (-11.80, 2.19, 0.00), zPos: 5.554619, zVel: 6.945741
+[10:42:41.247] [LOG] [TennisBall] Visual update - SpritePos: (-11.66, -9.09, 0.00), BallSprite active: True
+[10:42:41.247] [LOG] [TennisBall] Near student paddle - Distance: 0.25, Ball zPos: 5.55, Ball moving left: True
+[10:42:41.310] [LOG] [TennisBall] Near student paddle - Distance: 0.79, Ball zPos: 5.95, Ball moving left: True
+[10:42:41.375] [LOG] [TennisBall] Physics update - Pos: (-13.17, -9.37, 0.00), velocity2D: (-11.80, 2.19, 0.00), zPos: 6.275621, zVel: 4.391081
+[10:42:41.375] [LOG] [TennisBall] Visual update - SpritePos: (-13.17, -8.74, 0.00), BallSprite active: True
+[10:42:41.376] [LOG] [TennisBall] Near student paddle - Distance: 1.54, Ball zPos: 6.28, Ball moving left: True
+[10:42:41.436] [LOG] [TennisBall] Near student paddle - Distance: 2.26, Ball zPos: 6.51, Ball moving left: True
+[10:42:41.495] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 2.96, zPos: 6.66
+[10:42:41.496] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -7.82, 0.00)
+[10:42:41.496] [LOG] [TennisBall] Hit by student toward: (-18.00, -7.82, 0.00)
+[10:42:41.496] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-11.23, 4.23, 0.00), zVel: 12
+[10:42:41.503] [LOG] [TennisBall] Physics update - Pos: (-14.68, -9.07, 0.00), velocity2D: (-11.23, 4.23, 0.00), zPos: 6.75487, zVel: 11.83409
+[10:42:41.503] [LOG] [TennisBall] Visual update - SpritePos: (-14.68, -8.40, 0.00), BallSprite active: True
+[10:42:41.628] [LOG] [TennisBall] Physics update - Pos: (-16.08, -8.54, 0.00), velocity2D: (-11.23, 4.23, 0.00), zPos: 8.076928, zVel: 9.329884
+[10:42:41.629] [LOG] [TennisBall] Visual update - SpritePos: (-16.08, -7.74, 0.00), BallSprite active: True
+[10:42:41.750] [LOG] [TennisBall] Physics update - Pos: (-17.46, -8.03, 0.00), velocity2D: (-11.23, 4.23, 0.00), zPos: 9.065829, zVel: 6.883787
+[10:42:41.752] [LOG] [TennisBall] Visual update - SpritePos: (-17.46, -7.12, 0.00), BallSprite active: True
+[10:42:41.875] [LOG] [TennisBall] Physics update - Pos: (-18.85, -7.50, 0.00), velocity2D: (-11.23, 4.23, 0.00), zPos: 9.762367, zVel: 4.405724
+[10:42:41.875] [LOG] [TennisBall] Visual update - SpritePos: (-18.85, -6.52, 0.00), BallSprite active: True
+[10:42:41.875] [LOG] [TennisBall] Near player paddle - Distance: 2.91, Ball zPos: 9.76, Player swinging: False
+[10:42:41.945] [LOG] [TennisBall] Near player paddle - Distance: 2.29, Ball zPos: 10.02, Player swinging: False
+[10:42:42.001] [LOG] [TennisBall] Physics update - Pos: (-20.27, -6.96, 0.00), velocity2D: (-11.23, 4.23, 0.00), zPos: 10.15708, zVel: 1.871027
+[10:42:42.001] [LOG] [TennisBall] Visual update - SpritePos: (-20.27, -5.95, 0.00), BallSprite active: True
+[10:42:42.002] [LOG] [TennisBall] Near player paddle - Distance: 1.92, Ball zPos: 10.16, Player swinging: False
+[10:42:42.014] [LOG] [TennisPlayerPaddle] E key pressed - CanSwing: True
+[10:42:42.014] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -8.28, -0.21)
+[10:42:42.077] [LOG] [TennisBall] Near player paddle - Distance: 1.73, Ball zPos: 10.24, Player swinging: True
+[10:42:42.139] [LOG] [TennisBall] Physics update - Pos: (-21.82, -6.38, 0.00), velocity2D: (-11.23, 4.23, 0.00), zPos: 10.22152, zVel: -0.8838934
+[10:42:42.139] [LOG] [TennisBall] Visual update - SpritePos: (-21.82, -5.36, 0.00), BallSprite active: True
+[10:42:42.140] [LOG] [TennisBall] Near player paddle - Distance: 1.92, Ball zPos: 10.22, Player swinging: True
+[10:42:42.202] [LOG] [TennisBall] Near player paddle - Distance: 2.35, Ball zPos: 10.12, Player swinging: True
+[10:42:42.229] [LOG] [TennisBall] Ball went out of bounds at position: (-22.84, -6.00, 0.00)
+[10:42:42.231] [LOG] [TennisBall] Ball out of bounds - Serving new ball...
+[10:42:42.231] [LOG] [TennisBall] Ball stopped
+[10:42:42.231] [LOG] [TennisBall] Waiting 1 seconds before serving new ball
+[10:42:43.231] [LOG] [TennisBall] Serving new ball automatically
+[10:42:43.231] [LOG] [TennisBall] ServeFromStudent called
+[10:42:43.232] [LOG] [TennisBall] Game manager assigned: True
+[10:42:43.232] [LOG] [TennisBall] Ball position before serve: (-22.84, -6.00, 0.00)
+[10:42:43.232] [LOG] [TennisBall] Player paddle found at: (-21.65, -8.28, -0.21), targeting: (-19.65, -8.28, 0.00)
+[10:42:43.233] [LOG] [TennisBall] Serve started from position: (4.00, -9.22, 0.00)
+[10:42:43.233] [LOG] [TennisBall] Serving toward target area: (-19.65, -8.28, 0.00)
+[10:42:43.233] [LOG] [TennisBall] Serve velocity - 2D: (-18.89, 0.78, 0.00), Z: 8.752586, Speed: 18.90436
+[10:42:43.301] [LOG] [TennisBall] Physics update - Pos: (2.68, -9.16, 0.00), velocity2D: (-18.89, 0.78, 0.00), zPos: 2.360423, zVel: 7.357032
+[10:42:43.301] [LOG] [TennisBall] Visual update - SpritePos: (2.68, -8.93, 0.00), BallSprite active: True
+[10:42:43.422] [LOG] [TennisBall] Physics update - Pos: (0.39, -9.07, 0.00), velocity2D: (-18.89, 0.78, 0.00), zPos: 3.102194, zVel: 4.935124
+[10:42:43.422] [LOG] [TennisBall] Visual update - SpritePos: (0.39, -8.76, 0.00), BallSprite active: True
+[10:42:43.549] [LOG] [TennisBall] Physics update - Pos: (-2.02, -8.97, 0.00), velocity2D: (-18.89, 0.78, 0.00), zPos: 3.566229, zVel: 2.381404
+[10:42:43.549] [LOG] [TennisBall] Visual update - SpritePos: (-2.02, -8.62, 0.00), BallSprite active: True
+[10:42:43.677] [LOG] [TennisBall] Physics update - Pos: (-4.44, -8.87, 0.00), velocity2D: (-18.89, 0.78, 0.00), zPos: 3.70413, zVel: -0.1843875
+[10:42:43.678] [LOG] [TennisBall] Visual update - SpritePos: (-4.44, -8.50, 0.00), BallSprite active: True
+[10:42:43.799] [LOG] [TennisBall] Physics update - Pos: (-6.75, -8.78, 0.00), velocity2D: (-18.89, 0.78, 0.00), zPos: 3.529696, zVel: -2.626931
+[10:42:43.800] [LOG] [TennisBall] Visual update - SpritePos: (-6.75, -8.42, 0.00), BallSprite active: True
+[10:42:43.905] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 2.99, zPos: 3.14
+[10:42:43.906] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -8.52, 0.00)
+[10:42:43.906] [LOG] [TennisBall] Hit by student toward: (-18.00, -8.52, 0.00)
+[10:42:43.907] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-12.00, 0.23, 0.00), zVel: 12
+[10:42:43.923] [LOG] [TennisBall] Physics update - Pos: (-8.96, -8.69, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 3.348919, zVel: 11.64091
+[10:42:43.923] [LOG] [TennisBall] Visual update - SpritePos: (-8.96, -8.36, 0.00), BallSprite active: True
+[10:42:43.924] [LOG] [TennisBall] Near student paddle - Distance: 2.78, Ball zPos: 3.35, Ball moving left: True
+[10:42:43.983] [LOG] [TennisBall] Near student paddle - Distance: 2.09, Ball zPos: 4.01, Ball moving left: True
+[10:42:44.057] [LOG] [TennisBall] Physics update - Pos: (-10.57, -8.66, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 4.722473, zVel: 8.968455
+[10:42:44.058] [LOG] [TennisBall] Visual update - SpritePos: (-10.57, -8.19, 0.00), BallSprite active: True
+[10:42:44.058] [LOG] [TennisBall] Near student paddle - Distance: 1.31, Ball zPos: 4.72, Ball moving left: True
+[10:42:44.121] [LOG] [TennisBall] Near student paddle - Distance: 0.82, Ball zPos: 5.26, Ball moving left: True
+[10:42:44.190] [LOG] [TennisBall] Physics update - Pos: (-12.16, -8.63, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 5.737168, zVel: 6.301872
+[10:42:44.191] [LOG] [TennisBall] Visual update - SpritePos: (-12.16, -8.06, 0.00), BallSprite active: True
+[10:42:44.191] [LOG] [TennisBall] Near student paddle - Distance: 0.93, Ball zPos: 5.74, Ball moving left: True
+[10:42:44.251] [LOG] [TennisBall] Near student paddle - Distance: 1.47, Ball zPos: 6.08, Ball moving left: True
+[10:42:44.307] [LOG] [TennisBall] Physics update - Pos: (-13.57, -8.60, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 6.336321, zVel: 3.956431
+[10:42:44.308] [LOG] [TennisBall] Visual update - SpritePos: (-13.57, -7.97, 0.00), BallSprite active: True
+[10:42:44.308] [LOG] [TennisBall] Near student paddle - Distance: 2.08, Ball zPos: 6.34, Ball moving left: True
+[10:42:44.372] [LOG] [TennisBall] Near student paddle - Distance: 2.82, Ball zPos: 6.55, Ball moving left: True
+[10:42:44.433] [LOG] [TennisBall] Physics update - Pos: (-15.08, -8.57, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 6.672412, zVel: 1.446791
+[10:42:44.434] [LOG] [TennisBall] Visual update - SpritePos: (-15.08, -7.91, 0.00), BallSprite active: True
+[10:42:44.552] [LOG] [TennisBall] Physics update - Pos: (-16.51, -8.55, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 6.699955, zVel: -0.9407887
+[10:42:44.553] [LOG] [TennisBall] Visual update - SpritePos: (-16.51, -7.88, 0.00), BallSprite active: True
+[10:42:44.674] [LOG] [TennisBall] Physics update - Pos: (-17.97, -8.52, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 6.433918, zVel: -3.378771
+[10:42:44.675] [LOG] [TennisBall] Visual update - SpritePos: (-17.97, -7.87, 0.00), BallSprite active: True
+[10:42:44.792] [LOG] [TennisBall] Physics update - Pos: (-19.39, -8.49, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 5.892978, zVel: -5.74017
+[10:42:44.792] [LOG] [TennisBall] Visual update - SpritePos: (-19.39, -7.90, 0.00), BallSprite active: True
+[10:42:44.793] [LOG] [TennisBall] Near player paddle - Distance: 2.28, Ball zPos: 5.89, Player swinging: False
+[10:42:44.851] [LOG] [TennisBall] Near player paddle - Distance: 1.57, Ball zPos: 5.51, Player swinging: False
+[10:42:44.909] [LOG] [TennisBall] Physics update - Pos: (-20.79, -8.46, 0.00), velocity2D: (-12.00, 0.23, 0.00), zPos: 5.087158, zVel: -8.067839
+[10:42:44.910] [LOG] [TennisBall] Visual update - SpritePos: (-20.79, -7.95, 0.00), BallSprite active: True
+[10:42:44.910] [LOG] [TennisBall] Near player paddle - Distance: 0.91, Ball zPos: 5.09, Player swinging: False
+[10:42:44.914] [LOG] [TennisPlayerPaddle] E key pressed - CanSwing: True
+[10:42:44.914] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -8.28, -0.21)
+[10:42:44.915] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by player paddle! Distance: 0.86, zPos: 5.05
+[10:42:44.915] [LOG] [TennisBall] Player hitting toward student area: (-12.65, -9.87, 0.00)
+[10:42:44.915] [LOG] [TennisBall] Hit by player with direction: (0.99, -0.17, 0.00)
+[10:42:44.916] [LOG] [TennisBall] Ball hit successfully - new velocity: (14.19, -2.44, 0.00), zVel: 6
+[10:42:44.980] [LOG] [TennisBall] Near player paddle - Distance: 1.80, Ball zPos: 5.40, Player swinging: True
+[10:42:45.039] [LOG] [TennisBall] Physics update - Pos: (-19.06, -8.77, 0.00), velocity2D: (14.19, -2.44, 0.00), zPos: 5.642446, zVel: 3.489771
+[10:42:45.039] [LOG] [TennisBall] Visual update - SpritePos: (-19.06, -8.20, 0.00), BallSprite active: True
+[10:42:45.039] [LOG] [TennisBall] Near player paddle - Distance: 2.64, Ball zPos: 5.64, Player swinging: True
+[10:42:45.158] [LOG] [TennisBall] Physics update - Pos: (-17.37, -9.06, 0.00), velocity2D: (14.19, -2.44, 0.00), zPos: 5.913082, zVel: 1.116712
+[10:42:45.158] [LOG] [TennisBall] Visual update - SpritePos: (-17.37, -8.47, 0.00), BallSprite active: True
+[10:42:45.280] [LOG] [TennisBall] Physics update - Pos: (-15.63, -9.36, 0.00), velocity2D: (14.19, -2.44, 0.00), zPos: 5.895985, zVel: -1.348502
+[10:42:45.281] [LOG] [TennisBall] Visual update - SpritePos: (-15.63, -8.77, 0.00), BallSprite active: True
+[10:42:45.403] [LOG] [TennisBall] Physics update - Pos: (-13.89, -9.66, 0.00), velocity2D: (14.19, -2.44, 0.00), zPos: 5.578744, zVel: -3.794397
+[10:42:45.403] [LOG] [TennisBall] Visual update - SpritePos: (-13.89, -9.10, 0.00), BallSprite active: True
+[10:42:45.464] [LOG] [TennisBall] Near student paddle - Distance: 2.75, Ball zPos: 5.31, Ball moving left: False
+[10:42:45.520] [LOG] [TennisBall] Physics update - Pos: (-12.23, -9.94, 0.00), velocity2D: (14.19, -2.44, 0.00), zPos: 4.995588, zVel: -6.134326
+[10:42:45.521] [LOG] [TennisBall] Visual update - SpritePos: (-12.23, -9.44, 0.00), BallSprite active: True
+[10:42:45.521] [LOG] [TennisBall] Near student paddle - Distance: 2.33, Ball zPos: 5.00, Ball moving left: False
+[10:42:45.583] [LOG] [TennisBall] Near student paddle - Distance: 2.12, Ball zPos: 4.57, Ball moving left: False
+[10:42:45.640] [LOG] [TennisBall] Physics update - Pos: (-10.52, -10.24, 0.00), velocity2D: (14.19, -2.44, 0.00), zPos: 4.108327, zVel: -8.544633
+[10:42:45.641] [LOG] [TennisBall] Visual update - SpritePos: (-10.52, -9.83, 0.00), BallSprite active: True
+[10:42:45.642] [LOG] [TennisBall] Near student paddle - Distance: 2.26, Ball zPos: 4.11, Ball moving left: False
+[10:42:45.705] [LOG] [TennisBall] Near student paddle - Distance: 2.73, Ball zPos: 3.52, Ball moving left: False
+[10:42:45.761] [LOG] [TennisBall] Physics update - Pos: (-8.79, -10.53, 0.00), velocity2D: (14.19, -2.44, 0.00), zPos: 2.917704, zVel: -10.97841
+[10:42:45.763] [LOG] [TennisBall] Visual update - SpritePos: (-8.79, -10.24, 0.00), BallSprite active: True
+[10:42:45.880] [LOG] [TennisBall] Physics update - Pos: (-7.10, -10.83, 0.00), velocity2D: (14.19, -2.44, 0.00), zPos: 1.465562, zVel: -13.3606
+[10:42:45.882] [LOG] [TennisBall] Visual update - SpritePos: (-7.10, -10.68, 0.00), BallSprite active: True
+[10:42:45.983] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-5.65, -11.07, 0.00)
+[10:42:46.004] [LOG] [TennisBall] Physics update - Pos: (-5.37, -11.12, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 0.2893485, zVel: 14.23252
+[10:42:46.004] [LOG] [TennisBall] Visual update - SpritePos: (-5.37, -11.09, 0.00), BallSprite active: True
+[10:42:46.119] [LOG] [TennisBall] Physics update - Pos: (-3.77, -11.40, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 1.795657, zVel: 11.92569
+[10:42:46.119] [LOG] [TennisBall] Visual update - SpritePos: (-3.77, -11.22, 0.00), BallSprite active: True
+[10:42:46.241] [LOG] [TennisBall] Physics update - Pos: (-2.07, -11.69, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 3.098623, zVel: 9.486423
+[10:42:46.241] [LOG] [TennisBall] Visual update - SpritePos: (-2.07, -11.38, 0.00), BallSprite active: True
+[10:42:46.359] [LOG] [TennisBall] Physics update - Pos: (-0.42, -11.97, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 4.081179, zVel: 7.112349
+[10:42:46.360] [LOG] [TennisBall] Visual update - SpritePos: (-0.42, -11.57, 0.00), BallSprite active: True
+[10:42:46.479] [LOG] [TennisBall] Physics update - Pos: (1.25, -12.26, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 4.786806, zVel: 4.717413
+[10:42:46.480] [LOG] [TennisBall] Visual update - SpritePos: (1.25, -11.78, 0.00), BallSprite active: True
+[10:42:46.597] [LOG] [TennisBall] Physics update - Pos: (2.89, -12.54, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 5.201934, zVel: 2.354884
+[10:42:46.598] [LOG] [TennisBall] Visual update - SpritePos: (2.89, -12.02, 0.00), BallSprite active: True
+[10:42:46.715] [LOG] [TennisBall] Physics update - Pos: (4.53, -12.83, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 5.338216, zVel: -0.00399041
+[10:42:46.716] [LOG] [TennisBall] Visual update - SpritePos: (4.53, -12.29, 0.00), BallSprite active: True
+[10:42:46.837] [LOG] [TennisBall] Physics update - Pos: (6.22, -13.12, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 5.18742, zVel: -2.433599
+[10:42:46.837] [LOG] [TennisBall] Visual update - SpritePos: (6.22, -12.60, 0.00), BallSprite active: True
+[10:42:46.955] [LOG] [TennisBall] Physics update - Pos: (7.87, -13.40, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 4.75528, zVel: -4.806626
+[10:42:46.955] [LOG] [TennisBall] Visual update - SpritePos: (7.87, -12.92, 0.00), BallSprite active: True
+[10:42:47.076] [LOG] [TennisBall] Physics update - Pos: (9.56, -13.69, 0.00), velocity2D: (13.91, -2.39, 0.00), zPos: 4.021528, zVel: -7.234881
+[10:42:47.077] [LOG] [TennisBall] Visual update - SpritePos: (9.56, -13.29, 0.00), BallSprite active: True
+[10:42:47.110] [LOG] [TennisBall] Ball went out of bounds at position: (10.03, -13.77, 0.00)
+[10:42:47.110] [LOG] [TennisBall] Ball out of bounds - Serving new ball...
+[10:42:47.112] [LOG] [TennisBall] Ball stopped
+[10:42:47.112] [LOG] [TennisBall] Waiting 1.5 seconds before serving new ball
+[10:42:48.612] [LOG] [TennisBall] Serving new ball automatically
+[10:42:48.612] [LOG] [TennisBall] ServeFromStudent called
+[10:42:48.613] [LOG] [TennisBall] Game manager assigned: True
+[10:42:48.613] [LOG] [TennisBall] Ball position before serve: (10.03, -13.77, 0.00)
+[10:42:48.613] [LOG] [TennisBall] Player paddle found at: (-21.65, -8.28, -0.21), targeting: (-19.65, -8.28, 0.00)
+[10:42:48.614] [LOG] [TennisBall] Serve started from position: (4.00, -7.35, 0.00)
+[10:42:48.614] [LOG] [TennisBall] Serving toward target area: (-19.65, -8.28, 0.00)
+[10:42:48.614] [LOG] [TennisBall] Serve velocity - 2D: (-20.63, -0.39, 0.00), Z: 9.101353, Speed: 20.63769
+[10:42:48.730] [LOG] [TennisBall] Physics update - Pos: (1.53, -7.40, 0.00), velocity2D: (-20.63, -0.39, 0.00), zPos: 2.824265, zVel: 6.708054
+[10:42:48.732] [LOG] [TennisBall] Visual update - SpritePos: (1.53, -7.12, 0.00), BallSprite active: True
+[10:42:48.847] [LOG] [TennisBall] Physics update - Pos: (-0.88, -7.45, 0.00), velocity2D: (-20.63, -0.39, 0.00), zPos: 3.468257, zVel: 4.375659
+[10:42:48.848] [LOG] [TennisBall] Visual update - SpritePos: (-0.88, -7.10, 0.00), BallSprite active: True
+[10:42:48.966] [LOG] [TennisBall] Physics update - Pos: (-3.34, -7.49, 0.00), velocity2D: (-20.63, -0.39, 0.00), zPos: 3.845251, zVel: 1.989736
+[10:42:48.967] [LOG] [TennisBall] Visual update - SpritePos: (-3.34, -7.11, 0.00), BallSprite active: True
+[10:42:49.089] [LOG] [TennisBall] Physics update - Pos: (-5.86, -7.54, 0.00), velocity2D: (-20.63, -0.39, 0.00), zPos: 3.93625, zVel: -0.4571245
+[10:42:49.090] [LOG] [TennisBall] Visual update - SpritePos: (-5.86, -7.15, 0.00), BallSprite active: True
+[10:42:49.209] [LOG] [TennisBall] Physics update - Pos: (-8.34, -7.59, 0.00), velocity2D: (-20.63, -0.39, 0.00), zPos: 3.733762, zVel: -2.86358
+[10:42:49.210] [LOG] [TennisBall] Visual update - SpritePos: (-8.34, -7.22, 0.00), BallSprite active: True
+[10:42:49.260] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 2.97, zPos: 3.57
+[10:42:49.260] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -8.08, 0.00)
+[10:42:49.260] [LOG] [TennisBall] Hit by student toward: (-18.00, -8.08, 0.00)
+[10:42:49.261] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-11.98, -0.65, 0.00), zVel: 12
+[10:42:49.274] [LOG] [TennisBall] Near student paddle - Distance: 2.77, Ball zPos: 3.74, Ball moving left: True
+[10:42:49.340] [LOG] [TennisBall] Physics update - Pos: (-10.34, -7.66, 0.00), velocity2D: (-11.98, -0.65, 0.00), zPos: 4.467299, zVel: 10.38528
+[10:42:49.341] [LOG] [TennisBall] Visual update - SpritePos: (-10.34, -7.21, 0.00), BallSprite active: True
+[10:42:49.341] [LOG] [TennisBall] Near student paddle - Distance: 2.17, Ball zPos: 4.47, Ball moving left: True
+[10:42:49.399] [LOG] [TennisBall] Near student paddle - Distance: 1.79, Ball zPos: 5.05, Ball moving left: True
+[10:42:49.459] [LOG] [TennisBall] Physics update - Pos: (-11.76, -7.74, 0.00), velocity2D: (-11.98, -0.65, 0.00), zPos: 5.560413, zVel: 8.002009
+[10:42:49.459] [LOG] [TennisBall] Visual update - SpritePos: (-11.76, -7.18, 0.00), BallSprite active: True
+[10:42:49.460] [LOG] [TennisBall] Near student paddle - Distance: 1.65, Ball zPos: 5.56, Ball moving left: True
+[10:42:49.523] [LOG] [TennisBall] Near student paddle - Distance: 1.84, Ball zPos: 6.03, Ball moving left: True
+[10:42:49.580] [LOG] [TennisBall] Physics update - Pos: (-13.21, -7.82, 0.00), velocity2D: (-11.98, -0.65, 0.00), zPos: 6.376976, zVel: 5.590376
+[10:42:49.580] [LOG] [TennisBall] Visual update - SpritePos: (-13.21, -7.18, 0.00), BallSprite active: True
+[10:42:49.581] [LOG] [TennisBall] Near student paddle - Distance: 2.22, Ball zPos: 6.38, Ball moving left: True
+[10:42:49.644] [LOG] [TennisBall] Near student paddle - Distance: 2.79, Ball zPos: 6.69, Ball moving left: True
+[10:42:49.700] [LOG] [TennisBall] Physics update - Pos: (-14.65, -7.89, 0.00), velocity2D: (-11.98, -0.65, 0.00), zPos: 6.902643, zVel: 3.180784
+[10:42:49.701] [LOG] [TennisBall] Visual update - SpritePos: (-14.65, -7.20, 0.00), BallSprite active: True
+[10:42:49.817] [LOG] [TennisBall] Physics update - Pos: (-16.05, -7.97, 0.00), velocity2D: (-11.98, -0.65, 0.00), zPos: 7.134701, zVel: 0.8572917
+[10:42:49.817] [LOG] [TennisBall] Visual update - SpritePos: (-16.05, -7.26, 0.00), BallSprite active: True
+[10:42:49.936] [LOG] [TennisBall] Physics update - Pos: (-17.48, -8.05, 0.00), velocity2D: (-11.98, -0.65, 0.00), zPos: 7.091197, zVel: -1.538754
+[10:42:49.936] [LOG] [TennisBall] Visual update - SpritePos: (-17.48, -7.34, 0.00), BallSprite active: True
+[10:42:50.055] [LOG] [TennisBall] Physics update - Pos: (-18.90, -8.12, 0.00), velocity2D: (-11.98, -0.65, 0.00), zPos: 6.764654, zVel: -3.915874
+[10:42:50.056] [LOG] [TennisBall] Visual update - SpritePos: (-18.90, -7.45, 0.00), BallSprite active: True
+[10:42:50.056] [LOG] [TennisBall] Near player paddle - Distance: 2.76, Ball zPos: 6.76, Player swinging: False
+[10:42:50.119] [LOG] [TennisBall] Near player paddle - Distance: 1.99, Ball zPos: 6.47, Player swinging: False
+[10:42:50.163] [LOG] [TennisPlayerPaddle] E key pressed - CanSwing: True
+[10:42:50.164] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -8.28, -0.21)
+[10:42:50.164] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by player paddle! Distance: 1.47, zPos: 6.22
+[10:42:50.165] [LOG] [TennisBall] Player hitting toward student area: (-12.65, -9.87, 0.00)
+[10:42:50.165] [LOG] [TennisBall] Hit by player with direction: (0.98, -0.22, 0.00)
+[10:42:50.166] [LOG] [TennisBall] Ball hit successfully - new velocity: (14.06, -3.13, 0.00), zVel: 6
+[10:42:50.182] [LOG] [TennisBall] Physics update - Pos: (-19.92, -8.26, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 6.336789, zVel: 5.609434
+[10:42:50.183] [LOG] [TennisBall] Visual update - SpritePos: (-19.92, -7.62, 0.00), BallSprite active: True
+[10:42:50.184] [LOG] [TennisBall] Near player paddle - Distance: 1.74, Ball zPos: 6.34, Player swinging: True
+[10:42:50.250] [LOG] [TennisBall] Near player paddle - Distance: 2.70, Ball zPos: 6.67, Player swinging: True
+[10:42:50.310] [LOG] [TennisBall] Physics update - Pos: (-18.13, -8.65, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 6.886662, zVel: 3.057429
+[10:42:50.310] [LOG] [TennisBall] Visual update - SpritePos: (-18.13, -7.97, 0.00), BallSprite active: True
+[10:42:50.433] [LOG] [TennisBall] Physics update - Pos: (-16.39, -9.04, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 7.108855, zVel: 0.5893803
+[10:42:50.434] [LOG] [TennisBall] Visual update - SpritePos: (-16.39, -8.33, 0.00), BallSprite active: True
+[10:42:50.556] [LOG] [TennisBall] Physics update - Pos: (-14.66, -9.42, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 7.027241, zVel: -1.870748
+[10:42:50.557] [LOG] [TennisBall] Visual update - SpritePos: (-14.66, -8.72, 0.00), BallSprite active: True
+[10:42:50.675] [LOG] [TennisBall] Physics update - Pos: (-12.99, -9.80, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 6.660282, zVel: -4.251289
+[10:42:50.676] [LOG] [TennisBall] Visual update - SpritePos: (-12.99, -9.13, 0.00), BallSprite active: True
+[10:42:50.676] [LOG] [TennisBall] Near student paddle - Distance: 2.75, Ball zPos: 6.66, Ball moving left: False
+[10:42:50.733] [LOG] [TennisBall] Near student paddle - Distance: 2.28, Ball zPos: 6.38, Ball moving left: False
+[10:42:50.791] [LOG] [TennisBall] Physics update - Pos: (-11.37, -10.16, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 6.035565, zVel: -6.555276
+[10:42:50.792] [LOG] [TennisBall] Visual update - SpritePos: (-11.37, -9.55, 0.00), BallSprite active: True
+[10:42:50.792] [LOG] [TennisBall] Near student paddle - Distance: 2.06, Ball zPos: 6.04, Ball moving left: False
+[10:42:50.857] [LOG] [TennisBall] Near student paddle - Distance: 2.20, Ball zPos: 5.55, Ball moving left: False
+[10:42:50.914] [LOG] [TennisBall] Physics update - Pos: (-9.63, -10.54, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 5.066475, zVel: -9.034469
+[10:42:50.915] [LOG] [TennisBall] Visual update - SpritePos: (-9.63, -10.04, 0.00), BallSprite active: True
+[10:42:50.916] [LOG] [TennisBall] Near student paddle - Distance: 2.61, Ball zPos: 5.07, Ball moving left: False
+[10:42:51.032] [LOG] [TennisBall] Physics update - Pos: (-7.98, -10.91, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 3.867439, zVel: -11.37895
+[10:42:51.033] [LOG] [TennisBall] Visual update - SpritePos: (-7.98, -10.52, 0.00), BallSprite active: True
+[10:42:51.150] [LOG] [TennisBall] Physics update - Pos: (-6.30, -11.29, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 2.360488, zVel: -13.77144
+[10:42:51.152] [LOG] [TennisBall] Visual update - SpritePos: (-6.30, -11.05, 0.00), BallSprite active: True
+[10:42:51.271] [LOG] [TennisBall] Physics update - Pos: (-4.63, -11.66, 0.00), velocity2D: (14.06, -3.13, 0.00), zPos: 0.5801311, zVel: -16.14841
+[10:42:51.271] [LOG] [TennisBall] Visual update - SpritePos: (-4.63, -11.60, 0.00), BallSprite active: True
+[10:42:51.298] [LOG] [TimeSystem] Time updated: Day 1, 09:00 AM
+[10:42:51.306] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-4.12, -11.77, 0.00)
+[10:42:51.401] [LOG] [TennisBall] Physics update - Pos: (-2.81, -12.06, 0.00), velocity2D: (13.78, -3.06, 0.00), zPos: 1.429603, zVel: 14.13196
+[10:42:51.402] [LOG] [TennisBall] Visual update - SpritePos: (-2.81, -11.92, 0.00), BallSprite active: True
+[10:42:51.523] [LOG] [TennisBall] Physics update - Pos: (-1.14, -12.43, 0.00), velocity2D: (13.78, -3.06, 0.00), zPos: 2.994594, zVel: 11.70482
+[10:42:51.524] [LOG] [TennisBall] Visual update - SpritePos: (-1.14, -12.13, 0.00), BallSprite active: True
+[10:42:51.642] [LOG] [TennisBall] Physics update - Pos: (0.50, -12.80, 0.00), velocity2D: (13.78, -3.06, 0.00), zPos: 4.24218, zVel: 9.32701
+[10:42:51.642] [LOG] [TennisBall] Visual update - SpritePos: (0.50, -12.37, 0.00), BallSprite active: True
+[10:42:51.760] [LOG] [TennisBall] Physics update - Pos: (2.13, -13.16, 0.00), velocity2D: (13.78, -3.06, 0.00), zPos: 5.204581, zVel: 6.956491
+[10:42:51.760] [LOG] [TennisBall] Visual update - SpritePos: (2.13, -12.64, 0.00), BallSprite active: True
+[10:42:51.875] [LOG] [TennisBall] Physics update - Pos: (3.71, -13.51, 0.00), velocity2D: (13.78, -3.06, 0.00), zPos: 5.869049, zVel: 4.661016
+[10:42:51.878] [LOG] [TennisBall] Visual update - SpritePos: (3.71, -12.92, 0.00), BallSprite active: True
+[10:42:52.003] [LOG] [TennisBall] Physics update - Pos: (5.48, -13.91, 0.00), velocity2D: (13.78, -3.06, 0.00), zPos: 6.299188, zVel: 2.090469
+[10:42:52.003] [LOG] [TennisBall] Visual update - SpritePos: (5.48, -13.28, 0.00), BallSprite active: True
+[10:42:52.143] [LOG] [TennisBall] Physics update - Pos: (7.40, -14.33, 0.00), velocity2D: (13.78, -3.06, 0.00), zPos: 6.392796, zVel: -0.6923327
+[10:42:52.143] [LOG] [TennisBall] Visual update - SpritePos: (7.40, -13.69, 0.00), BallSprite active: True
+[10:42:52.272] [LOG] [TennisBall] Physics update - Pos: (9.18, -14.73, 0.00), velocity2D: (13.78, -3.06, 0.00), zPos: 6.133681, zVel: -3.274079
+[10:42:52.272] [LOG] [TennisBall] Visual update - SpritePos: (9.18, -14.11, 0.00), BallSprite active: True
+[10:42:52.335] [LOG] [TennisBall] Ball went out of bounds at position: (10.05, -14.92, 0.00)
+[10:42:52.336] [LOG] [TennisBall] Ball out of bounds - Serving new ball...
+[10:42:52.336] [LOG] [TennisBall] Ball stopped
+[10:42:52.337] [LOG] [TennisBall] Waiting 1.5 seconds before serving new ball
+[10:42:52.487] [SYSTEM] Application lost focus
+
+[10:44:30.965] [SYSTEM] Application paused
+[10:46:48.888] [SYSTEM] Application resumed
+[10:46:48.900] [SYSTEM] Application gained focus
+[10:46:49.911] [SYSTEM] Application lost focus
+[10:46:50.025] [LOG] [PlayerController] OnTriggerExit2D - Exiting: GoodZone, Tag: Untagged
+[10:46:50.027] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[10:46:50.027] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[10:46:50.028] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[10:46:50.028] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[10:46:50.029] [LOG] [UIManager] HideLocationPrompt called
+[10:46:50.029] [LOG] [UIManager] UIManager instance: UIManager
+[10:46:50.029] [LOG] [UIManager] locationPrompt is null: False
+[10:46:50.029] [LOG] [UIManager] Calling locationPrompt.Hide()
+[10:46:50.030] [LOG] [LocationPrompt] Hide called
+[10:46:50.031] [LOG] [LocationPrompt] GameObject active before hide: False
+[10:46:50.031] [LOG] [LocationPrompt] LocationPrompt hidden
+
+=== Unity Console Log Ended ===
+Time: 7/25/2025 10:46:50 AM
+===================================
