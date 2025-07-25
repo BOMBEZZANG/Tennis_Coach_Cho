@@ -1,0 +1,332 @@
+=== Unity Console Log Started ===
+Time: 7/25/2025 4:32:52 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[16:32:52.122] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[16:32:52.124] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-25_16-32-52.txt
+[16:32:52.345] [SYSTEM] Application resumed
+[16:32:52.345] [SYSTEM] Application gained focus
+[16:32:52.721] [LOG] [TennisBall] Initialized - Position: (-16.65, -12.28, -0.21), Active: True
+[16:32:52.723] [LOG] [TennisBall] Settings - ServeSpeed: 8, Gravity: -20
+[16:32:52.723] [LOG] [TennisBall] Visual components - BallSprite: True, BallShadow: True
+[16:32:52.724] [LOG] [TennisBall] BallSprite active: True, position: (-16.65, -12.28, -0.21)
+[16:32:52.724] [LOG] [TennisBall] Main GameObject has NO SpriteRenderer
+[16:32:52.725] [LOG] [TennisBall] Main Camera position: (-2.47, -0.57, -10.00), orthographic size: 10
+[16:32:52.725] [LOG] [TennisBall] Player paddle position: (-21.65, -12.28, -0.21)
+[16:32:52.727] [LOG] [TennisBall] Student paddle position: (-11.65, -12.28, -0.21)
+[16:32:52.727] [LOG] [TennisPlayerPaddle] Initialized at position: (-21.65, -12.28, -0.21)
+[16:32:52.727] [LOG] [TennisPlayerPaddle] Movement bounds: ±4 (Y range: -16.28187 to -8.281866)
+[16:32:52.728] [LOG] [TennisDrillMiniGame] Perfect zone visual visibility: False
+[16:32:52.729] [LOG] [TennisDrillMiniGame] Good zone visual visibility: False
+[16:32:52.730] [LOG] [TennisDrillUI] Continue button listener added successfully
+[16:32:52.732] [LOG] [TennisDrillMiniGame] Perfect zone visual visibility: False
+[16:32:52.733] [LOG] [TennisDrillMiniGame] Good zone visual visibility: False
+[16:32:52.735] [LOG] [CameraController] Auto-found player: Player
+[16:32:55.343] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: GoodZone, Tag: 'Untagged'
+[16:32:55.343] [LOG] [PlayerController] GameObject path: TennisDrillMiniGame/Court/JudgmentZones/GoodZone
+[16:32:55.344] [LOG] [PlayerController] Collider bounds: Center: (-11.65, -12.28, -0.21), Extents: (2.00, 1.50, 0.00)
+[16:32:55.345] [LOG] [PlayerController] Is Trigger: True
+[16:32:55.346] [LOG] [PlayerController] Components on GoodZone: Transform, BoxCollider2D, SpriteRenderer
+[16:32:55.347] [LOG] [PlayerController] No LocationTrigger script found on GoodZone (this is normal for non-location objects)
+[16:32:55.402] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[16:32:55.402] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[16:32:55.405] [LOG] [PlayerController] Collider bounds: Center: (-10.40, -12.10, 0.00), Extents: (1.00, 1.00, 0.00)
+[16:32:55.405] [LOG] [PlayerController] Is Trigger: True
+[16:32:55.406] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[16:32:55.406] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[16:32:55.406] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[16:32:55.407] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[16:32:55.407] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[16:32:55.408] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[16:32:55.408] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[16:32:55.409] [LOG] [LocationTrigger] UIManager is null: False
+[16:32:55.409] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[16:32:55.409] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[16:32:55.409] [LOG] [UIManager] UIManager instance: UIManager
+[16:32:55.410] [LOG] [UIManager] locationPrompt is null: False
+[16:32:55.411] [LOG] [UIManager] Calling locationPrompt.Show()
+[16:32:55.411] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[16:32:55.413] [LOG] [LocationPrompt] GameObject active before: False
+[16:32:55.413] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[16:32:55.413] [LOG] [LocationPrompt] Set startLessonButton active: True
+[16:32:55.414] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:32:55.415] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:32:55.415] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:32:55.416] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:32:55.416] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:32:55.416] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:32:55.417] [LOG] [LocationPrompt] Time difference: -5 minutes
+[16:32:55.417] [LOG] [LocationPrompt] Setting as next valid appointment: John Smith
+[16:32:55.417] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:32:55.418] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:32:55.418] [LOG] [LocationPrompt] Time difference: -35 minutes
+[16:32:55.419] [LOG] [LocationPrompt] Next valid appointment found - Client: John Smith
+[16:32:55.419] [LOG] [LocationPrompt] Current time: 08:00 AM (480 min)
+[16:32:55.419] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:32:55.419] [LOG] [LocationPrompt] Time difference: -5 minutes (negative = early, positive = late)
+[16:32:55.419] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[16:32:55.420] [LOG] [LocationPrompt] Can start lesson: True
+[16:32:55.421] [LOG] [LocationPrompt] About to call SetActive(true)...
+[16:32:55.421] [LOG] [LocationPrompt] Awake() called - setting up buttons
+[16:32:55.422] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[16:32:55.422] [LOG] [LocationPrompt] GameObject active after: True
+[16:32:55.422] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[16:32:55.424] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[16:32:55.424] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[16:32:55.425] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[16:32:55.426] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[16:32:55.426] [LOG] [LocationPrompt] Start() called - hiding LocationPrompt
+[16:32:55.426] [LOG] [LocationPrompt] isActivatedByShow: True
+[16:32:55.427] [LOG] [LocationPrompt] Start() called during gameplay - NOT hiding (activated by Show() method)
+[16:32:55.430] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[16:32:55.431] [LOG] [LocationPrompt] activeSelf: True
+[16:32:55.432] [LOG] [LocationPrompt] activeInHierarchy: True
+[16:32:56.883] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:32:56.883] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:32:56.884] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:32:56.884] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:32:56.885] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:32:56.885] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:32:56.886] [LOG] [LocationPrompt] Time difference: -2 minutes
+[16:32:56.886] [LOG] [LocationPrompt] Setting as next valid appointment: John Smith
+[16:32:56.886] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:32:56.886] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:32:56.887] [LOG] [LocationPrompt] Time difference: -32 minutes
+[16:32:56.887] [LOG] [LocationPrompt] Next valid appointment found - Client: John Smith
+[16:32:56.887] [LOG] [LocationPrompt] Current time: 08:03 AM (483 min)
+[16:32:56.888] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:32:56.888] [LOG] [LocationPrompt] Time difference: -2 minutes (negative = early, positive = late)
+[16:32:56.889] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[16:32:58.882] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:32:58.884] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:32:58.884] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:32:58.884] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:32:58.884] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:32:58.885] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:32:58.885] [LOG] [LocationPrompt] Time difference: 1 minutes
+[16:32:58.886] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:32:58.886] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:32:58.887] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:32:58.887] [LOG] [LocationPrompt] Time difference: -29 minutes
+[16:32:58.888] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:32:58.888] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:32:58.888] [LOG] [LocationPrompt] Current time: 08:06 AM (486 min)
+[16:32:58.888] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:32:58.888] [LOG] [LocationPrompt] Time difference: -29 minutes (negative = early, positive = late)
+[16:32:58.889] [LOG] [LocationPrompt] ⏰ Too early - 19 minutes until lesson can start
+[16:32:59.403] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[16:32:59.403] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[16:32:59.403] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[16:32:59.405] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[16:32:59.405] [LOG] [UIManager] HideLocationPrompt called
+[16:32:59.406] [LOG] [UIManager] UIManager instance: UIManager
+[16:32:59.406] [LOG] [UIManager] locationPrompt is null: False
+[16:32:59.406] [LOG] [UIManager] Calling locationPrompt.Hide()
+[16:32:59.406] [LOG] [LocationPrompt] Hide called
+[16:32:59.407] [LOG] [LocationPrompt] GameObject active before hide: True
+[16:32:59.407] [LOG] [LocationPrompt] LocationPrompt hidden
+[16:32:59.463] [LOG] [PlayerController] OnTriggerExit2D - Exiting: GoodZone, Tag: Untagged
+[16:33:00.422] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: GoodZone, Tag: 'Untagged'
+[16:33:00.423] [LOG] [PlayerController] GameObject path: TennisDrillMiniGame/Court/JudgmentZones/GoodZone
+[16:33:00.423] [LOG] [PlayerController] Collider bounds: Center: (-11.65, -12.28, -0.21), Extents: (2.00, 1.50, 0.00)
+[16:33:00.424] [LOG] [PlayerController] Is Trigger: True
+[16:33:00.425] [LOG] [PlayerController] Components on GoodZone: Transform, BoxCollider2D, SpriteRenderer
+[16:33:00.425] [LOG] [PlayerController] No LocationTrigger script found on GoodZone (this is normal for non-location objects)
+[16:33:00.481] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[16:33:00.483] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[16:33:00.483] [LOG] [PlayerController] Collider bounds: Center: (-10.40, -12.10, 0.00), Extents: (1.00, 1.00, 0.00)
+[16:33:00.483] [LOG] [PlayerController] Is Trigger: True
+[16:33:00.483] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[16:33:00.483] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[16:33:00.484] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[16:33:00.484] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[16:33:00.484] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[16:33:00.486] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[16:33:00.486] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[16:33:00.486] [LOG] [LocationTrigger] UIManager is null: False
+[16:33:00.486] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[16:33:00.487] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[16:33:00.487] [LOG] [UIManager] UIManager instance: UIManager
+[16:33:00.487] [LOG] [UIManager] locationPrompt is null: False
+[16:33:00.488] [LOG] [UIManager] Calling locationPrompt.Show()
+[16:33:00.488] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[16:33:00.488] [LOG] [LocationPrompt] GameObject active before: False
+[16:33:00.489] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[16:33:00.489] [LOG] [LocationPrompt] Set startLessonButton active: True
+[16:33:00.489] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:00.490] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:00.490] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:00.490] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:00.491] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:00.491] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:00.491] [LOG] [LocationPrompt] Time difference: 3 minutes
+[16:33:00.491] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:00.491] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:00.492] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:00.492] [LOG] [LocationPrompt] Time difference: -27 minutes
+[16:33:00.492] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:00.493] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:00.494] [LOG] [LocationPrompt] Current time: 08:08 AM (488 min)
+[16:33:00.494] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:00.494] [LOG] [LocationPrompt] Time difference: -27 minutes (negative = early, positive = late)
+[16:33:00.495] [LOG] [LocationPrompt] ⏰ Too early - 17 minutes until lesson can start
+[16:33:00.495] [LOG] [LocationPrompt] Can start lesson: False
+[16:33:00.495] [LOG] [LocationPrompt] About to call SetActive(true)...
+[16:33:00.496] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[16:33:00.496] [LOG] [LocationPrompt] GameObject active after: True
+[16:33:00.496] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[16:33:00.497] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[16:33:00.497] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[16:33:00.497] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[16:33:00.498] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[16:33:00.501] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[16:33:00.501] [LOG] [LocationPrompt] activeSelf: True
+[16:33:00.501] [LOG] [LocationPrompt] activeInHierarchy: True
+[16:33:00.883] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:00.885] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:00.885] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:00.886] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:00.886] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:00.886] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:00.887] [LOG] [LocationPrompt] Time difference: 4 minutes
+[16:33:00.887] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:00.887] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:00.888] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:00.888] [LOG] [LocationPrompt] Time difference: -26 minutes
+[16:33:00.888] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:00.888] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:00.888] [LOG] [LocationPrompt] Current time: 08:09 AM (489 min)
+[16:33:00.889] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:00.889] [LOG] [LocationPrompt] Time difference: -26 minutes (negative = early, positive = late)
+[16:33:00.889] [LOG] [LocationPrompt] ⏰ Too early - 16 minutes until lesson can start
+[16:33:02.883] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:02.883] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:02.883] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:02.884] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:02.884] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:02.884] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:02.884] [LOG] [LocationPrompt] Time difference: 7 minutes
+[16:33:02.886] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:02.886] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:02.886] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:02.887] [LOG] [LocationPrompt] Time difference: -23 minutes
+[16:33:02.887] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:02.887] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:02.888] [LOG] [LocationPrompt] Current time: 08:12 AM (492 min)
+[16:33:02.888] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:02.889] [LOG] [LocationPrompt] Time difference: -23 minutes (negative = early, positive = late)
+[16:33:02.889] [LOG] [LocationPrompt] ⏰ Too early - 13 minutes until lesson can start
+[16:33:04.884] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:04.884] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:04.885] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:04.886] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:04.886] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:04.886] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:04.887] [LOG] [LocationPrompt] Time difference: 11 minutes
+[16:33:04.887] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:04.888] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:04.888] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:04.888] [LOG] [LocationPrompt] Time difference: -19 minutes
+[16:33:04.888] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:04.889] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:04.889] [LOG] [LocationPrompt] Current time: 08:16 AM (496 min)
+[16:33:04.889] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:04.889] [LOG] [LocationPrompt] Time difference: -19 minutes (negative = early, positive = late)
+[16:33:04.890] [LOG] [LocationPrompt] ⏰ Too early - 9 minutes until lesson can start
+[16:33:06.883] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:06.883] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:06.883] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:06.884] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:06.884] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:06.884] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:06.885] [LOG] [LocationPrompt] Time difference: 14 minutes
+[16:33:06.885] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:06.885] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:06.885] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:06.886] [LOG] [LocationPrompt] Time difference: -16 minutes
+[16:33:06.886] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:06.886] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:06.887] [LOG] [LocationPrompt] Current time: 08:19 AM (499 min)
+[16:33:06.887] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:06.887] [LOG] [LocationPrompt] Time difference: -16 minutes (negative = early, positive = late)
+[16:33:06.887] [LOG] [LocationPrompt] ⏰ Too early - 6 minutes until lesson can start
+[16:33:08.882] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:08.883] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:08.883] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:08.883] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:08.884] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:08.884] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:08.884] [LOG] [LocationPrompt] Time difference: 17 minutes
+[16:33:08.885] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:08.885] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:08.885] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:08.885] [LOG] [LocationPrompt] Time difference: -13 minutes
+[16:33:08.885] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:08.887] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:08.887] [LOG] [LocationPrompt] Current time: 08:22 AM (502 min)
+[16:33:08.887] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:08.888] [LOG] [LocationPrompt] Time difference: -13 minutes (negative = early, positive = late)
+[16:33:08.888] [LOG] [LocationPrompt] ⏰ Too early - 3 minutes until lesson can start
+[16:33:10.883] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:10.883] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:10.883] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:10.884] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:10.884] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:10.884] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:10.885] [LOG] [LocationPrompt] Time difference: 20 minutes
+[16:33:10.885] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:10.885] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:10.885] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:10.887] [LOG] [LocationPrompt] Time difference: -10 minutes
+[16:33:10.887] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:10.887] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:10.887] [LOG] [LocationPrompt] Current time: 08:25 AM (505 min)
+[16:33:10.887] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:10.888] [LOG] [LocationPrompt] Time difference: -10 minutes (negative = early, positive = late)
+[16:33:10.888] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[16:33:12.881] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:12.883] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:12.883] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:12.883] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:12.884] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:12.884] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:12.884] [LOG] [LocationPrompt] Time difference: 23 minutes
+[16:33:12.884] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:12.884] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:12.885] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:12.886] [LOG] [LocationPrompt] Time difference: -7 minutes
+[16:33:12.886] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:12.886] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:12.886] [LOG] [LocationPrompt] Current time: 08:28 AM (508 min)
+[16:33:12.886] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:12.887] [LOG] [LocationPrompt] Time difference: -7 minutes (negative = early, positive = late)
+[16:33:12.887] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[16:33:14.875] [SYSTEM] Application lost focus
+[16:33:14.882] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:33:14.883] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:33:14.883] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:33:14.883] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:33:14.884] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:33:14.885] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:33:14.885] [LOG] [LocationPrompt] Time difference: 27 minutes
+[16:33:14.885] [LOG] [LocationPrompt] Appointment has passed: John Smith
+[16:33:14.885] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:33:14.886] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:14.886] [LOG] [LocationPrompt] Time difference: -3 minutes
+[16:33:14.887] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:33:14.887] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:33:14.887] [LOG] [LocationPrompt] Current time: 08:32 AM (512 min)
+[16:33:14.888] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:33:14.888] [LOG] [LocationPrompt] Time difference: -3 minutes (negative = early, positive = late)
+[16:33:14.888] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[16:33:15.025] [LOG] [PlayerController] OnTriggerExit2D - Exiting: GoodZone, Tag: Untagged
+[16:33:15.025] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[16:33:15.025] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[16:33:15.027] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+
+=== Unity Console Log Ended ===
+Time: 7/25/2025 4:33:15 PM
+===================================

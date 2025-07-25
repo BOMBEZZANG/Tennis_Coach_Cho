@@ -58,6 +58,35 @@ namespace TennisCoachCho.UI
             Debug.Log("[LocationPrompt] Initial game start - hiding LocationPrompt");
             gameObject.SetActive(false);
         }
+        
+        private void Update()
+        {
+            // Only update when the prompt is visible and activated by Show() method
+            if (!gameObject.activeInHierarchy || !isActivatedByShow) return;
+            
+            // Check appointment status every 2 seconds to avoid excessive updates
+            if (Time.time % 2f < Time.deltaTime)
+            {
+                UpdateButtonStatus();
+            }
+        }
+        
+        private void UpdateButtonStatus()
+        {
+            if (startLessonButton == null || string.IsNullOrEmpty(currentLocationName)) return;
+            
+            var appointmentStatus = GetAppointmentStatus(currentLocationName);
+            
+            // Update button interactability and text
+            startLessonButton.interactable = appointmentStatus.canStart;
+            
+            var buttonText = startLessonButton.GetComponentInChildren<Text>();
+            if (buttonText != null && buttonText.text != appointmentStatus.buttonText)
+            {
+                buttonText.text = appointmentStatus.buttonText;
+                Debug.Log($"[LocationPrompt] Button text updated to: {appointmentStatus.buttonText}");
+            }
+        }
 
         public void Show(string locationName, bool canStart)
         {
