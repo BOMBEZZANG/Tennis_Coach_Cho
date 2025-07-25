@@ -130,7 +130,7 @@ namespace TennisCoachCho.UI
                 texts[0].text = appointment.clientName;
                 texts[1].text = appointment.GetTimeString();
                 texts[2].text = appointment.location;
-                texts[3].text = $"${appointment.cashReward} | {appointment.expReward} EXP";
+                texts[3].text = $"${appointment.cashReward} | {appointment.playerExpReward} Player XP | {appointment.specialistExpReward} {appointment.primaryField} XP";
             }
             
             if (button != null)

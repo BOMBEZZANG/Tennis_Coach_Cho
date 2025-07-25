@@ -77,9 +77,9 @@ namespace TennisCoachCho.MiniGames
         
         private void SetupGame()
         {
-            // Apply Forehand skill bonus to hit zone size
-            float forehandBonus = GameManager.Instance?.ProgressionManager?.GetForehandBonus() ?? 1f;
-            ApplyForehandBonus(forehandBonus);
+            // DOG COACH SYSTEM: Apply Handling skill bonus to hit zone size  
+            float handlingBonus = GameManager.Instance?.ProgressionManager?.GetHandlingBonus() ?? 1f;
+            ApplyHandlingBonus(handlingBonus);
             
             // Generate notes
             GenerateNotes();
@@ -93,7 +93,7 @@ namespace TennisCoachCho.MiniGames
                 feedbackText.text = "Get Ready!";
         }
         
-        private void ApplyForehandBonus(float bonus)
+        private void ApplyHandlingBonus(float bonus)
         {
             if (hitZone != null)
             {

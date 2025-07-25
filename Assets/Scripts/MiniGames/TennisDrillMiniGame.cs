@@ -73,6 +73,9 @@ namespace TennisCoachCho.MiniGames
         private int maxCombo = 0;
         private int totalScore = 0;
         
+        // Appointment tracking for rewards
+        private TennisCoachCho.Data.AppointmentData currentAppointment;
+        
         // Events
         public System.Action<DrillGameState> OnStateChanged;
         public System.Action<HitJudgment> OnHitJudged;
@@ -131,6 +134,25 @@ namespace TennisCoachCho.MiniGames
             playerPaddle.Initialize(this);
             studentPaddle.Initialize(this);
             
+            // Hide tennis objects at game start - they should only be visible during mini-game
+            if (playerPaddle != null)
+            {
+                playerPaddle.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Player paddle hidden at game start");
+            }
+            
+            if (studentPaddle != null)
+            {
+                studentPaddle.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Student paddle hidden at game start");
+            }
+            
+            if (ball != null)
+            {
+                ball.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Tennis ball hidden at game start");
+            }
+            
             // Initialize zone visuals
             InitializeZoneVisuals();
             
@@ -160,6 +182,13 @@ namespace TennisCoachCho.MiniGames
         {
             // Starting mini-game
             SetState(DrillGameState.PREPARING);
+        }
+        
+        public void StartMiniGame(TennisCoachCho.Data.AppointmentData appointment)
+        {
+            currentAppointment = appointment;
+            Debug.Log($"[TennisDrillMiniGame] Starting mini-game with appointment for {appointment.clientName}");
+            StartMiniGame();
         }
         
         private void UpdateGameState()
@@ -239,7 +268,27 @@ namespace TennisCoachCho.MiniGames
         private void HandleAwaitingStart()
         {
             // Disable mini-game controls
-            playerPaddle.SetControlsEnabled(false);
+            if (playerPaddle != null)
+                playerPaddle.SetControlsEnabled(false);
+            
+            // Hide tennis objects when not in mini-game
+            if (playerPaddle != null)
+            {
+                playerPaddle.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Player paddle hidden - awaiting start");
+            }
+            
+            if (studentPaddle != null)
+            {
+                studentPaddle.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Student paddle hidden - awaiting start");
+            }
+            
+            if (ball != null)
+            {
+                ball.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] Tennis ball hidden - awaiting start");
+            }
             
             // Hide zone visuals when not in game
             ShowZoneVisuals(false);
@@ -356,9 +405,49 @@ namespace TennisCoachCho.MiniGames
             SetState(DrillGameState.ENDED);
         }
         
+        private float CalculatePerformanceScore()
+        {
+            // Calculate performance based on score and combo
+            // Similar to rhythm game, return a value between 0.0 and 1.0
+            
+            // Base performance on total score (assume max reasonable score is 2000)
+            float scorePerformance = Mathf.Clamp01(totalScore / 2000f);
+            
+            // Bonus for maintaining combos (assume max reasonable combo is 20)
+            float comboPerformance = Mathf.Clamp01(maxCombo / 20f);
+            
+            // Combine score (70%) and combo (30%) for final performance
+            float finalPerformance = (scorePerformance * 0.7f) + (comboPerformance * 0.3f);
+            
+            Debug.Log($"[TennisDrillMiniGame] Performance calculation:");
+            Debug.Log($"  Total Score: {totalScore}, Score Performance: {scorePerformance:F2}");
+            Debug.Log($"  Max Combo: {maxCombo}, Combo Performance: {comboPerformance:F2}");
+            Debug.Log($"  Final Performance: {finalPerformance:F2}");
+            
+            return finalPerformance;
+        }
+        
         public void ExitMiniGame()
         {
             Debug.Log("[TennisDrillMiniGame] ExitMiniGame called - starting exit process...");
+            
+            // Complete the lesson and award rewards if we have an appointment
+            if (currentAppointment != null && GameManager.Instance?.AppointmentManager != null)
+            {
+                // Calculate performance score based on mini-game results
+                float performanceScore = CalculatePerformanceScore();
+                Debug.Log($"[TennisDrillMiniGame] Completing lesson with performance score: {performanceScore:F2}");
+                
+                // Complete the lesson through AppointmentManager
+                GameManager.Instance.AppointmentManager.CompleteLesson(currentAppointment, performanceScore);
+                
+                // Clear the appointment reference
+                currentAppointment = null;
+            }
+            else
+            {
+                Debug.LogWarning("[TennisDrillMiniGame] No appointment to complete or AppointmentManager missing");
+            }
             
             // Re-enable player movement and show player unit
             if (GameManager.Instance?.PlayerController != null)

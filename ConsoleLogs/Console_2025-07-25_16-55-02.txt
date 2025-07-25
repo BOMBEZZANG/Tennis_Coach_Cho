@@ -1,0 +1,812 @@
+=== Unity Console Log Started ===
+Time: 7/25/2025 4:55:02 PM
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Product Name: Tennis_Coach_Cho
+=====================================
+
+[16:55:02.446] [LOG] [UniversalConsoleLogger] Subscribed to log callback
+[16:55:02.447] [LOG] [UniversalConsoleLogger] ✅ INITIALIZATION COMPLETE! Log file: C:/Projects/Tennis_Coach_Cho/Assets\..\ConsoleLogs\Console_2025-07-25_16-55-02.txt
+[16:55:02.683] [SYSTEM] Application resumed
+[16:55:02.684] [SYSTEM] Application gained focus
+[16:55:03.325] [LOG] [TennisBall] Initialized - Position: (-16.65, -12.28, -0.21), Active: True
+[16:55:03.326] [LOG] [TennisBall] Settings - ServeSpeed: 8, Gravity: -20
+[16:55:03.327] [LOG] [TennisBall] Visual components - BallSprite: True, BallShadow: True
+[16:55:03.328] [LOG] [TennisBall] BallSprite active: True, position: (-16.65, -12.28, -0.21)
+[16:55:03.328] [LOG] [TennisBall] Main GameObject has NO SpriteRenderer
+[16:55:03.329] [LOG] [TennisBall] Main Camera position: (-2.47, -0.57, -10.00), orthographic size: 10
+[16:55:03.329] [LOG] [TennisBall] Player paddle position: (-21.65, -12.28, -0.21)
+[16:55:03.330] [LOG] [TennisBall] Student paddle position: (-11.65, -12.28, -0.21)
+[16:55:03.331] [LOG] [TennisPlayerPaddle] Initialized at position: (-21.65, -12.28, -0.21)
+[16:55:03.331] [LOG] [TennisPlayerPaddle] Movement bounds: ±4 (Y range: -16.28187 to -8.281866)
+[16:55:03.331] [LOG] [TennisDrillMiniGame] Player paddle hidden at game start
+[16:55:03.333] [LOG] [TennisDrillMiniGame] Student paddle hidden at game start
+[16:55:03.333] [LOG] [TennisDrillMiniGame] Tennis ball hidden at game start
+[16:55:03.334] [LOG] [TennisDrillMiniGame] Perfect zone visual visibility: False
+[16:55:03.335] [LOG] [TennisDrillMiniGame] Good zone visual visibility: False
+[16:55:03.335] [LOG] [TennisDrillUI] Continue button listener added successfully
+[16:55:03.337] [LOG] [TennisDrillMiniGame] Player paddle hidden - awaiting start
+[16:55:03.338] [LOG] [TennisDrillMiniGame] Student paddle hidden - awaiting start
+[16:55:03.338] [LOG] [TennisDrillMiniGame] Tennis ball hidden - awaiting start
+[16:55:03.339] [LOG] [TennisDrillMiniGame] Perfect zone visual visibility: False
+[16:55:03.339] [LOG] [TennisDrillMiniGame] Good zone visual visibility: False
+[16:55:03.340] [LOG] [CameraController] Auto-found player: Player
+[16:55:06.020] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: GoodZone, Tag: 'Untagged'
+[16:55:06.021] [LOG] [PlayerController] GameObject path: TennisDrillMiniGame/Court/JudgmentZones/GoodZone
+[16:55:06.022] [LOG] [PlayerController] Collider bounds: Center: (-11.65, -12.28, -0.21), Extents: (2.00, 1.50, 0.00)
+[16:55:06.023] [LOG] [PlayerController] Is Trigger: True
+[16:55:06.023] [LOG] [PlayerController] Components on GoodZone: Transform, BoxCollider2D, SpriteRenderer
+[16:55:06.024] [LOG] [PlayerController] No LocationTrigger script found on GoodZone (this is normal for non-location objects)
+[16:55:06.078] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[16:55:06.079] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[16:55:06.079] [LOG] [PlayerController] Collider bounds: Center: (-10.40, -12.10, 0.00), Extents: (1.00, 1.00, 0.00)
+[16:55:06.080] [LOG] [PlayerController] Is Trigger: True
+[16:55:06.080] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[16:55:06.081] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[16:55:06.081] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[16:55:06.081] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[16:55:06.082] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[16:55:06.082] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[16:55:06.082] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[16:55:06.083] [LOG] [LocationTrigger] UIManager is null: False
+[16:55:06.083] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[16:55:06.083] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[16:55:06.083] [LOG] [UIManager] UIManager instance: UIManager
+[16:55:06.085] [LOG] [UIManager] locationPrompt is null: False
+[16:55:06.085] [LOG] [UIManager] Calling locationPrompt.Show()
+[16:55:06.086] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[16:55:06.086] [LOG] [LocationPrompt] GameObject active before: False
+[16:55:06.087] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[16:55:06.087] [LOG] [LocationPrompt] Set startLessonButton active: True
+[16:55:06.089] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:55:06.089] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:55:06.089] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:55:06.089] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:55:06.090] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:55:06.090] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:55:06.090] [LOG] [LocationPrompt] Time difference: -5 minutes
+[16:55:06.091] [LOG] [LocationPrompt] Setting as next valid appointment: John Smith
+[16:55:06.091] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:55:06.091] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:55:06.091] [LOG] [LocationPrompt] Time difference: -35 minutes
+[16:55:06.093] [LOG] [LocationPrompt] Next valid appointment found - Client: John Smith
+[16:55:06.093] [LOG] [LocationPrompt] Current time: 08:00 AM (480 min)
+[16:55:06.094] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:55:06.094] [LOG] [LocationPrompt] Time difference: -5 minutes (negative = early, positive = late)
+[16:55:06.094] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[16:55:06.094] [LOG] [LocationPrompt] Can start lesson: True
+[16:55:06.095] [LOG] [LocationPrompt] About to call SetActive(true)...
+[16:55:06.096] [LOG] [LocationPrompt] Awake() called - setting up buttons
+[16:55:06.097] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[16:55:06.097] [LOG] [LocationPrompt] GameObject active after: True
+[16:55:06.098] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[16:55:06.098] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[16:55:06.098] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[16:55:06.099] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[16:55:06.101] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[16:55:06.101] [LOG] [LocationPrompt] Start() called - hiding LocationPrompt
+[16:55:06.101] [LOG] [LocationPrompt] isActivatedByShow: True
+[16:55:06.102] [LOG] [LocationPrompt] Start() called during gameplay - NOT hiding (activated by Show() method)
+[16:55:06.105] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[16:55:06.106] [LOG] [LocationPrompt] activeSelf: True
+[16:55:06.106] [LOG] [LocationPrompt] activeInHierarchy: True
+[16:55:07.006] [LOG] [LocationPrompt] StartLesson button clicked for location: Tennis Court A
+[16:55:07.007] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:55:07.007] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:55:07.007] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=False
+[16:55:07.009] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:55:07.009] [LOG] [LocationPrompt] Checking appointment - Client: John Smith
+[16:55:07.009] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:55:07.009] [LOG] [LocationPrompt] Time difference: -3 minutes
+[16:55:07.010] [LOG] [LocationPrompt] Setting as next valid appointment: John Smith
+[16:55:07.010] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:55:07.011] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:55:07.011] [LOG] [LocationPrompt] Time difference: -33 minutes
+[16:55:07.012] [LOG] [LocationPrompt] Next valid appointment found - Client: John Smith
+[16:55:07.012] [LOG] [LocationPrompt] Current time: 08:02 AM (482 min)
+[16:55:07.013] [LOG] [LocationPrompt] Appointment time: 08:05 (485 min)
+[16:55:07.013] [LOG] [LocationPrompt] Time difference: -3 minutes (negative = early, positive = late)
+[16:55:07.013] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[16:55:07.014] [LOG] [LocationPrompt] ✅ Lesson validated - proceeding to start lesson
+[16:55:07.014] [LOG] [LocationPrompt] Starting regular lesson...
+[16:55:07.015] [LOG] [LocationPrompt] Found matching LocationTrigger: Tennis Court A
+[16:55:07.016] [LOG] [LocationPrompt] Starting lesson via LocationTrigger...
+[16:55:07.018] [LOG] [AppointmentManager] Starting tennis drill mini-game for appointment at Tennis Court A
+[16:55:07.018] [LOG] [TennisDrillMiniGame] Starting mini-game with appointment for John Smith
+[16:55:07.018] [LOG] [PlayerController] OnTriggerExit2D - Exiting: GoodZone, Tag: Untagged
+[16:55:07.020] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[16:55:07.021] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[16:55:07.021] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[16:55:07.022] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[16:55:07.022] [LOG] [UIManager] HideLocationPrompt called
+[16:55:07.023] [LOG] [UIManager] UIManager instance: UIManager
+[16:55:07.023] [LOG] [UIManager] locationPrompt is null: False
+[16:55:07.024] [LOG] [UIManager] Calling locationPrompt.Hide()
+[16:55:07.025] [LOG] [LocationPrompt] Hide called
+[16:55:07.025] [LOG] [LocationPrompt] GameObject active before hide: True
+[16:55:07.026] [LOG] [LocationPrompt] LocationPrompt hidden
+[16:55:07.026] [LOG] [TennisDrillMiniGame] Player paddle shown for mini-game
+[16:55:07.027] [LOG] [TennisDrillMiniGame] Student paddle shown for mini-game
+[16:55:07.028] [LOG] [TennisDrillMiniGame] Tennis ball shown for mini-game
+[16:55:07.028] [LOG] [LocationPrompt] Hide called
+[16:55:07.028] [LOG] [LocationPrompt] GameObject active before hide: False
+[16:55:07.030] [LOG] [LocationPrompt] LocationPrompt hidden
+[16:55:11.512] [LOG] [TennisDrillMiniGame] HandleActive - Positioning judgment zones immediately
+[16:55:11.514] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.28, -0.21)
+[16:55:11.515] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.28, -0.21)
+[16:55:11.515] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:11.515] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -12.28, 0.00)
+[16:55:11.515] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 0
+[16:55:11.516] [LOG] [TennisDrillMiniGame] Recalculated target position with corrected Y offset: (-0.65, -11.28, 0.00)
+[16:55:11.516] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-6.07, -12.28, -0.21) to (-0.65, -11.28, 0.00)
+[16:55:11.517] [LOG] [TennisDrillMiniGame] Good zone moved from (-11.65, -12.28, -0.21) to (-0.65, -11.28, 0.00)
+[16:55:11.518] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:11.518] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:11.518] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:11.519] [LOG] [TennisDrillMiniGame] Perfect zone visual visibility: True
+[16:55:11.520] [LOG] [TennisDrillMiniGame] Good zone visual visibility: True
+[16:55:11.526] [LOG] [TennisDrillMiniGame] DelayedZonePositioning - Positioning zones again after 1 frame
+[16:55:11.526] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.28, -0.21)
+[16:55:11.526] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.28, -0.21)
+[16:55:11.527] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:11.527] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.28, 0.00)
+[16:55:11.527] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:11.527] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:11.527] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:11.529] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:11.529] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:11.529] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:11.738] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.28, -0.21)
+[16:55:11.738] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.28, -0.21)
+[16:55:11.739] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:11.739] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.28, 0.00)
+[16:55:11.739] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:11.740] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:11.740] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:11.741] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:11.741] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:11.741] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:11.999] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.28, -0.21)
+[16:55:11.999] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.28, -0.21)
+[16:55:12.001] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:12.001] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.28, 0.00)
+[16:55:12.001] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:12.001] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:12.001] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:12.003] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:12.003] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:12.003] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:12.024] [LOG] [TennisDrillMiniGame] DelayedZonePositioning - Final zone positioning after 0.5 seconds
+[16:55:12.024] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.28, -0.21)
+[16:55:12.026] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.28, -0.21)
+[16:55:12.026] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:12.026] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.28, 0.00)
+[16:55:12.026] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:12.027] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:12.027] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:12.028] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:12.028] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:12.028] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:12.220] [LOG] [TennisPlayerPaddle] E key pressed - Ball not moving, serving...
+[16:55:12.222] [LOG] [TennisBall] ServeFromPlayer called
+[16:55:12.222] [LOG] [TennisBall] Game manager assigned: True
+[16:55:12.223] [LOG] [TennisBall] Ball position before serve: (-16.65, -12.28, -0.21)
+[16:55:12.224] [LOG] [TennisBall] Student paddle found at: (0.35, -12.28, -0.21), targeting: (0.35, -12.78, 0.00)
+[16:55:12.224] [LOG] [TennisBall] Player serving from position: (-20.65, -12.28, 0.00)
+[16:55:12.224] [LOG] [TennisBall] Player serve started from position: (-20.65, -12.28, 0.00)
+[16:55:12.225] [LOG] [TennisBall] Player serving toward target area: (0.35, -12.78, 0.00)
+[16:55:12.225] [LOG] [TennisBall] Player serve velocity - 2D: (15.81, -0.26, 0.00), Z: 11.025, Speed: 15.81307
+[16:55:12.297] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.28, -0.21)
+[16:55:12.298] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.28, -0.21)
+[16:55:12.298] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:12.298] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.28, 0.00)
+[16:55:12.298] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:12.300] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:12.300] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.28, 0.00)
+[16:55:12.300] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:12.301] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.28, 0.00)
+[16:55:12.301] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:12.301] [LOG] [TennisBall] Physics update - Pos: (-19.29, -12.30, 0.00), velocity2D: (15.81, -0.26, 0.00), zPos: 2.381467, zVel: 9.309052
+[16:55:12.301] [LOG] [TennisBall] Visual update - SpritePos: (-19.29, -12.07, 0.00), BallSprite active: True
+[16:55:12.302] [LOG] [TennisBall] Near player paddle - Distance: 2.37, Ball zPos: 2.38, Player swinging: False
+[16:55:12.460] [LOG] [TennisBall] Physics update - Pos: (-16.71, -12.35, 0.00), velocity2D: (15.81, -0.26, 0.00), zPos: 3.630533, zVel: 6.038579
+[16:55:12.462] [LOG] [TennisBall] Visual update - SpritePos: (-16.71, -11.98, 0.00), BallSprite active: True
+[16:55:12.614] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.40, -0.21)
+[16:55:12.614] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.40, -0.21)
+[16:55:12.615] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:12.615] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.40, 0.00)
+[16:55:12.616] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:12.616] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.40, 0.00)
+[16:55:12.617] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.28, 0.00) to (-0.65, -11.40, 0.00)
+[16:55:12.617] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.40, 0.00)
+[16:55:12.617] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.40, 0.00)
+[16:55:12.617] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:12.618] [LOG] [TennisBall] Physics update - Pos: (-14.28, -12.39, 0.00), velocity2D: (15.81, -0.26, 0.00), zPos: 4.316835, zVel: 2.971397
+[16:55:12.618] [LOG] [TennisBall] Visual update - SpritePos: (-14.28, -11.95, 0.00), BallSprite active: True
+[16:55:12.780] [LOG] [TennisBall] Physics update - Pos: (-11.66, -12.43, 0.00), velocity2D: (15.81, -0.26, 0.00), zPos: 4.528829, zVel: -0.3412772
+[16:55:12.780] [LOG] [TennisBall] Visual update - SpritePos: (-11.66, -11.98, 0.00), BallSprite active: True
+[16:55:12.930] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.49, -0.21)
+[16:55:12.930] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.49, -0.21)
+[16:55:12.931] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:12.931] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.49, 0.00)
+[16:55:12.931] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:12.932] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.40, 0.00) to (-0.65, -11.49, 0.00)
+[16:55:12.932] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.40, 0.00) to (-0.65, -11.49, 0.00)
+[16:55:12.933] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.49, 0.00)
+[16:55:12.933] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.49, 0.00)
+[16:55:12.934] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:12.934] [LOG] [TennisBall] Physics update - Pos: (-9.29, -12.47, 0.00), velocity2D: (15.81, -0.26, 0.00), zPos: 4.247764, zVel: -3.343723
+[16:55:12.935] [LOG] [TennisBall] Visual update - SpritePos: (-9.29, -12.04, 0.00), BallSprite active: True
+[16:55:13.096] [LOG] [TennisBall] Physics update - Pos: (-6.65, -12.51, 0.00), velocity2D: (15.81, -0.26, 0.00), zPos: 3.40469, zVel: -6.679034
+[16:55:13.097] [LOG] [TennisBall] Visual update - SpritePos: (-6.65, -12.17, 0.00), BallSprite active: True
+[16:55:13.286] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.50, -0.21)
+[16:55:13.286] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.50, -0.21)
+[16:55:13.286] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:13.288] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.50, 0.00)
+[16:55:13.288] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:13.288] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.49, 0.00) to (-0.65, -11.50, 0.00)
+[16:55:13.289] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.49, 0.00) to (-0.65, -11.50, 0.00)
+[16:55:13.289] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.50, 0.00)
+[16:55:13.289] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.50, 0.00)
+[16:55:13.290] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:13.290] [LOG] [TennisBall] Physics update - Pos: (-3.66, -12.56, 0.00), velocity2D: (15.81, -0.26, 0.00), zPos: 1.773883, zVel: -10.4661
+[16:55:13.291] [LOG] [TennisBall] Visual update - SpritePos: (-3.66, -12.38, 0.00), BallSprite active: True
+[16:55:13.360] [LOG] [TennisBall] Near student paddle - Distance: 2.85, Ball zPos: 0.94, Ball moving right: True
+[16:55:13.360] [LOG] [TennisBall] Paddle pos: (0.35, -12.63, -0.21), Ball pos: (-2.49, -12.58, 0.00), DeltaX: -2.84
+[16:55:13.361] [LOG] [TennisBall] Student collision check - Distance: 2.85/1.20(False), Height: 0.94/8.00(True), Direction: 15.81>0(True), NotServe: (False), Cooldown: 0.00<=0(True), HitZone: -2.84 in [0.0,0.5](False)
+[16:55:13.386] [LOG] [TennisBall] Student collision check - Distance: 2.44/1.20(False), Height: 0.62/8.00(True), Direction: 15.81>0(True), NotServe: (False), Cooldown: 0.00<=0(True), HitZone: -2.43 in [0.0,0.5](False)
+[16:55:13.406] [LOG] [TennisBall] Student collision check - Distance: 2.11/1.20(False), Height: 0.36/8.00(True), Direction: 15.81>0(True), NotServe: (False), Cooldown: 0.00<=0(True), HitZone: -2.10 in [0.0,0.5](False)
+[16:55:13.434] [LOG] [TennisBall] Physics update - Pos: (-1.31, -12.60, 0.00), velocity2D: (15.81, -0.26, 0.00), zPos: -0.002917111, zVel: -13.43228
+[16:55:13.435] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-1.31, -12.60, 0.00)
+[16:55:13.435] [LOG] [TennisBall] Visual update - SpritePos: (-1.31, -12.60, 0.00), BallSprite active: True
+[16:55:13.436] [LOG] [TennisBall] Near student paddle - Distance: 1.68, Ball zPos: 0.00, Ball moving right: True
+[16:55:13.437] [LOG] [TennisBall] Paddle pos: (0.35, -12.55, -0.21), Ball pos: (-1.31, -12.60, 0.00), DeltaX: -1.67
+[16:55:13.437] [LOG] [TennisBall] Student collision check - Distance: 1.68/1.20(False), Height: 0.00/8.00(True), Direction: 15.49>0(True), NotServe: (False), Cooldown: 0.00<=0(True), HitZone: -1.67 in [0.0,0.5](False)
+[16:55:13.478] [LOG] [TennisBall] Student collision check - Distance: 1.01/1.20(True), Height: 0.53/8.00(True), Direction: 15.49>0(True), NotServe: (False), Cooldown: 0.00<=0(True), HitZone: -0.99 in [0.0,0.5](False)
+[16:55:13.504] [LOG] [TennisBall] Student collision check - Distance: 0.62/1.20(True), Height: 0.84/8.00(True), Direction: 15.49>0(True), NotServe: (False), Cooldown: 0.00<=0(True), HitZone: -0.58 in [0.0,0.5](False)
+[16:55:13.529] [LOG] [TennisBall] Near student paddle - Distance: 0.29, Ball zPos: 1.12, Ball moving right: True
+[16:55:13.530] [LOG] [TennisBall] Paddle pos: (0.35, -12.63, -0.21), Ball pos: (0.16, -12.62, 0.00), DeltaX: -0.19
+[16:55:13.530] [LOG] [TennisBall] Student collision check - Distance: 0.29/1.20(True), Height: 1.12/8.00(True), Direction: 15.49>0(True), NotServe: (True), Cooldown: 0.00<=0(True), HitZone: -0.19 in [0.0,0.5](False)
+[16:55:13.544] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 0.22, zPos: 1.26, DeltaX: 0.02
+[16:55:13.544] [LOG] [TennisBall] Paddle position: (0.35, -12.57, -0.21), Ball position: (0.37, -12.62, 0.00)
+[16:55:13.545] [LOG] [TennisBall] Student hitting back to player area: (-18.00, -14.09, 0.00)
+[16:55:13.545] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -14.09, 0.00)
+[16:55:13.546] [LOG] [TennisBall] Hit by student toward: (-18.00, -14.09, 0.00)
+[16:55:13.546] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-11.96, -0.95, 0.00), zVel: 12
+[16:55:13.560] [LOG] [TennisBall] Student collision check - Distance: 0.33/1.20(True), Height: 1.46/8.00(True), Direction: -11.96>0(False), NotServe: (True), Cooldown: 0.48<=0(False), HitZone: -0.18 in [0.0,0.5](False)
+[16:55:13.580] [LOG] [TennisBall] Student collision check - Distance: 0.55/1.20(True), Height: 1.69/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.46<=0(False), HitZone: -0.42 in [0.0,0.5](False)
+[16:55:13.605] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.37, -0.21)
+[16:55:13.605] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.37, -0.21)
+[16:55:13.605] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:13.605] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.37, 0.00)
+[16:55:13.606] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:13.606] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.50, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:13.607] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.50, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:13.607] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:13.608] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:13.608] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:13.608] [LOG] [TennisBall] Physics update - Pos: (-0.36, -12.68, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 1.958711, zVel: 10.77653
+[16:55:13.608] [LOG] [TennisBall] Visual update - SpritePos: (-0.36, -12.49, 0.00), BallSprite active: True
+[16:55:13.609] [LOG] [TennisBall] Near student paddle - Distance: 0.81, Ball zPos: 1.96, Ball moving right: False
+[16:55:13.609] [LOG] [TennisBall] Paddle pos: (0.35, -12.37, -0.21), Ball pos: (-0.36, -12.68, 0.00), DeltaX: -0.71
+[16:55:13.609] [LOG] [TennisBall] Student collision check - Distance: 0.81/1.20(True), Height: 1.96/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.44<=0(False), HitZone: -0.71 in [0.0,0.5](False)
+[16:55:13.635] [LOG] [TennisBall] Student collision check - Distance: 1.15/1.20(True), Height: 2.28/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.41<=0(False), HitZone: -1.08 in [0.0,0.5](False)
+[16:55:13.664] [LOG] [TennisBall] Student collision check - Distance: 1.48/1.20(False), Height: 2.56/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.38<=0(False), HitZone: -1.42 in [0.0,0.5](False)
+[16:55:13.685] [LOG] [TennisBall] Near student paddle - Distance: 1.73, Ball zPos: 2.75, Ball moving right: False
+[16:55:13.685] [LOG] [TennisBall] Paddle pos: (0.35, -12.37, -0.21), Ball pos: (-1.32, -12.76, 0.00), DeltaX: -1.67
+[16:55:13.686] [LOG] [TennisBall] Student collision check - Distance: 1.73/1.20(False), Height: 2.75/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.36<=0(False), HitZone: -1.67 in [0.0,0.5](False)
+[16:55:13.711] [LOG] [TennisBall] Student collision check - Distance: 2.03/1.20(False), Height: 2.99/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.33<=0(False), HitZone: -1.98 in [0.0,0.5](False)
+[16:55:13.734] [LOG] [TennisBall] Student collision check - Distance: 2.32/1.20(False), Height: 3.18/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.31<=0(False), HitZone: -2.27 in [0.0,0.5](False)
+[16:55:13.758] [LOG] [TennisBall] Physics update - Pos: (-2.20, -12.83, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 3.374511, zVel: 7.698981
+[16:55:13.758] [LOG] [TennisBall] Visual update - SpritePos: (-2.20, -12.49, 0.00), BallSprite active: True
+[16:55:13.759] [LOG] [TennisBall] Near student paddle - Distance: 2.60, Ball zPos: 3.37, Ball moving right: False
+[16:55:13.760] [LOG] [TennisBall] Paddle pos: (0.35, -12.37, -0.21), Ball pos: (-2.20, -12.83, 0.00), DeltaX: -2.55
+[16:55:13.760] [LOG] [TennisBall] Student collision check - Distance: 2.60/1.20(False), Height: 3.37/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.28<=0(False), HitZone: -2.55 in [0.0,0.5](False)
+[16:55:13.782] [LOG] [TennisBall] Student collision check - Distance: 2.89/1.20(False), Height: 3.55/8.00(True), Direction: -11.96>0(False), NotServe: (False), Cooldown: 0.26<=0(False), HitZone: -2.84 in [0.0,0.5](False)
+[16:55:13.898] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.37, -0.21)
+[16:55:13.899] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.37, -0.21)
+[16:55:13.899] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:13.900] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.37, 0.00)
+[16:55:13.901] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:13.901] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:13.901] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:13.901] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:13.902] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:13.902] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:13.902] [LOG] [TennisBall] Physics update - Pos: (-3.88, -12.96, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 4.255364, zVel: 4.886466
+[16:55:13.903] [LOG] [TennisBall] Visual update - SpritePos: (-3.88, -12.54, 0.00), BallSprite active: True
+[16:55:14.036] [LOG] [TennisBall] Physics update - Pos: (-5.53, -13.10, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 4.734228, zVel: 2.136254
+[16:55:14.037] [LOG] [TennisBall] Visual update - SpritePos: (-5.53, -12.62, 0.00), BallSprite active: True
+[16:55:14.179] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.37, -0.21)
+[16:55:14.180] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.37, -0.21)
+[16:55:14.180] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:14.181] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.37, 0.00)
+[16:55:14.181] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:14.181] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:14.182] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:14.182] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:14.182] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:14.184] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:14.184] [LOG] [TennisBall] Physics update - Pos: (-7.24, -13.23, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 4.830401, zVel: -0.7317122
+[16:55:14.184] [LOG] [TennisBall] Visual update - SpritePos: (-7.24, -12.75, 0.00), BallSprite active: True
+[16:55:14.321] [LOG] [TennisBall] Physics update - Pos: (-8.94, -13.37, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 4.519856, zVel: -3.575069
+[16:55:14.322] [LOG] [TennisBall] Visual update - SpritePos: (-8.94, -12.92, 0.00), BallSprite active: True
+[16:55:14.484] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.37, -0.21)
+[16:55:14.485] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.37, -0.21)
+[16:55:14.485] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:14.486] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.37, 0.00)
+[16:55:14.486] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:14.487] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:14.488] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:14.488] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:14.489] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:14.489] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:14.490] [LOG] [TennisBall] Physics update - Pos: (-10.88, -13.52, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 3.670605, zVel: -6.818543
+[16:55:14.490] [LOG] [TennisBall] Visual update - SpritePos: (-10.88, -13.15, 0.00), BallSprite active: True
+[16:55:14.676] [LOG] [TennisBall] Physics update - Pos: (-13.18, -13.71, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 1.978271, zVel: -10.66378
+[16:55:14.677] [LOG] [TennisBall] Visual update - SpritePos: (-13.18, -13.51, 0.00), BallSprite active: True
+[16:55:14.813] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.37, -0.21)
+[16:55:14.813] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.37, -0.21)
+[16:55:14.814] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:14.814] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.37, 0.00)
+[16:55:14.814] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:14.815] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:14.815] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:14.816] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:14.816] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:14.816] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:14.817] [LOG] [TennisBall] Physics update - Pos: (-14.82, -13.84, 0.00), velocity2D: (-11.96, -0.95, 0.00), zPos: 0.3332108, zVel: -13.39295
+[16:55:14.818] [LOG] [TennisBall] Visual update - SpritePos: (-14.82, -13.80, 0.00), BallSprite active: True
+[16:55:14.839] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-15.13, -13.86, 0.00)
+[16:55:14.957] [LOG] [TennisBall] Physics update - Pos: (-16.53, -13.97, 0.00), velocity2D: (-11.72, -0.93, 0.00), zPos: 1.435173, zVel: 10.82071
+[16:55:14.959] [LOG] [TennisBall] Visual update - SpritePos: (-16.53, -13.83, 0.00), BallSprite active: True
+[16:55:15.094] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.37, -0.21)
+[16:55:15.095] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.37, -0.21)
+[16:55:15.095] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:15.096] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.37, 0.00)
+[16:55:15.096] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:15.097] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:15.097] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:15.097] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:15.097] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:15.098] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:15.098] [LOG] [TennisBall] Physics update - Pos: (-18.12, -14.10, 0.00), velocity2D: (-11.72, -0.93, 0.00), zPos: 2.718878, zVel: 8.098639
+[16:55:15.099] [LOG] [TennisBall] Visual update - SpritePos: (-18.12, -13.83, 0.00), BallSprite active: True
+[16:55:15.165] [LOG] [TennisBall] Near player paddle - Distance: 2.83, Ball zPos: 3.24, Player swinging: False
+[16:55:15.232] [LOG] [TennisBall] Physics update - Pos: (-19.74, -14.23, 0.00), velocity2D: (-11.72, -0.93, 0.00), zPos: 3.640184, zVel: 5.345577
+[16:55:15.233] [LOG] [TennisBall] Visual update - SpritePos: (-19.74, -13.86, 0.00), BallSprite active: True
+[16:55:15.233] [LOG] [TennisBall] Near player paddle - Distance: 2.07, Ball zPos: 3.64, Player swinging: False
+[16:55:15.286] [LOG] [TennisPlayerPaddle] E key pressed - Ball moving, swinging...
+[16:55:15.287] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -15.00, -0.21)
+[16:55:15.288] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by player paddle! Distance: 1.49, zPos: 3.90
+[16:55:15.289] [LOG] [TennisBall] Player hitting toward student area: (1.35, -12.87, 0.00)
+[16:55:15.289] [LOG] [TennisBall] Hit by player with direction: (1.00, -0.10, 0.00)
+[16:55:15.289] [LOG] [TennisBall] Ball hit successfully - new velocity: (17.91, -1.79, 0.00), zVel: 6
+[16:55:15.290] [LOG] [TennisBall] Ball trajectory: X=17.91 (positive=toward student), Y=-1.79, from pos: (-20.37, -14.28, 0.00)
+[16:55:15.320] [LOG] [TennisBall] Near player paddle - Distance: 2.04, Ball zPos: 4.09, Player swinging: True
+[16:55:15.390] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.37, -0.21)
+[16:55:15.391] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.37, -0.21)
+[16:55:15.392] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:15.392] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.37, 0.00)
+[16:55:15.392] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:15.393] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:15.393] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.37, 0.00) to (-0.65, -11.37, 0.00)
+[16:55:15.394] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:15.394] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.37, 0.00)
+[16:55:15.395] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:15.395] [LOG] [TennisBall] Physics update - Pos: (-18.48, -14.47, 0.00), velocity2D: (17.91, -1.79, 0.00), zPos: 4.413667, zVel: 3.889831
+[16:55:15.395] [LOG] [TennisBall] Visual update - SpritePos: (-18.48, -14.03, 0.00), BallSprite active: True
+[16:55:15.540] [LOG] [TennisBall] Physics update - Pos: (-15.81, -14.73, 0.00), velocity2D: (17.91, -1.79, 0.00), zPos: 4.766335, zVel: 0.9179813
+[16:55:15.540] [LOG] [TennisBall] Visual update - SpritePos: (-15.81, -14.26, 0.00), BallSprite active: True
+[16:55:15.691] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -13.58, -0.21)
+[16:55:15.691] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -13.58, -0.21)
+[16:55:15.692] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:15.692] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -12.58, 0.00)
+[16:55:15.692] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:15.692] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.37, 0.00) to (-0.65, -12.58, 0.00)
+[16:55:15.694] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.37, 0.00) to (-0.65, -12.58, 0.00)
+[16:55:15.694] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -12.58, 0.00)
+[16:55:15.694] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -12.58, 0.00)
+[16:55:15.695] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:15.695] [LOG] [TennisBall] Physics update - Pos: (-13.10, -15.01, 0.00), velocity2D: (17.91, -1.79, 0.00), zPos: 4.671152, zVel: -2.113577
+[16:55:15.695] [LOG] [TennisBall] Visual update - SpritePos: (-13.10, -14.54, 0.00), BallSprite active: True
+[16:55:15.828] [LOG] [TennisBall] Physics update - Pos: (-10.64, -15.25, 0.00), velocity2D: (17.91, -1.79, 0.00), zPos: 4.18947, zVel: -4.855574
+[16:55:15.828] [LOG] [TennisBall] Visual update - SpritePos: (-10.64, -14.83, 0.00), BallSprite active: True
+[16:55:15.965] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -15.17, -0.21)
+[16:55:15.966] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -15.17, -0.21)
+[16:55:15.966] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:15.966] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -14.17, 0.00)
+[16:55:15.967] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:15.968] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -12.58, 0.00) to (-0.65, -14.17, 0.00)
+[16:55:15.968] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -12.58, 0.00) to (-0.65, -14.17, 0.00)
+[16:55:15.968] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -14.17, 0.00)
+[16:55:15.969] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -14.17, 0.00)
+[16:55:15.969] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:15.969] [LOG] [TennisBall] Physics update - Pos: (-8.19, -15.50, 0.00), velocity2D: (17.91, -1.79, 0.00), zPos: 3.332068, zVel: -7.597464
+[16:55:15.969] [LOG] [TennisBall] Visual update - SpritePos: (-8.19, -15.16, 0.00), BallSprite active: True
+[16:55:16.103] [LOG] [TennisBall] Physics update - Pos: (-5.72, -15.75, 0.00), velocity2D: (17.91, -1.79, 0.00), zPos: 2.092024, zVel: -10.35194
+[16:55:16.104] [LOG] [TennisBall] Visual update - SpritePos: (-5.72, -15.54, 0.00), BallSprite active: True
+[16:55:16.241] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -15.18, -0.21)
+[16:55:16.241] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -15.18, -0.21)
+[16:55:16.242] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:16.242] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -14.18, 0.00)
+[16:55:16.242] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:16.243] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -14.17, 0.00) to (-0.65, -14.18, 0.00)
+[16:55:16.243] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -14.17, 0.00) to (-0.65, -14.18, 0.00)
+[16:55:16.244] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -14.18, 0.00)
+[16:55:16.244] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -14.18, 0.00)
+[16:55:16.245] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:16.245] [LOG] [TennisBall] Physics update - Pos: (-3.26, -15.99, 0.00), velocity2D: (17.91, -1.79, 0.00), zPos: 0.4731003, zVel: -13.1059
+[16:55:16.246] [LOG] [TennisBall] Visual update - SpritePos: (-3.26, -15.94, 0.00), BallSprite active: True
+[16:55:16.277] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-2.60, -16.06, 0.00)
+[16:55:16.297] [LOG] [TennisBall] Student collision check - Distance: 2.77/1.20(False), Height: 0.26/8.00(True), Direction: 17.55>0(True), NotServe: (True), Cooldown: 0.00<=0(True), HitZone: -2.61 in [0.0,0.5](False)
+[16:55:16.320] [LOG] [TennisBall] Near student paddle - Distance: 2.40, Ball zPos: 0.55, Ball moving right: True
+[16:55:16.322] [LOG] [TennisBall] Paddle pos: (0.35, -15.18, -0.21), Ball pos: (-1.84, -16.13, 0.00), DeltaX: -2.19
+[16:55:16.322] [LOG] [TennisBall] Student collision check - Distance: 2.40/1.20(False), Height: 0.55/8.00(True), Direction: 17.55>0(True), NotServe: (True), Cooldown: 0.00<=0(True), HitZone: -2.19 in [0.0,0.5](False)
+[16:55:16.346] [LOG] [TennisBall] Student collision check - Distance: 2.01/1.20(False), Height: 0.86/8.00(True), Direction: 17.55>0(True), NotServe: (True), Cooldown: 0.00<=0(True), HitZone: -1.73 in [0.0,0.5](False)
+[16:55:16.371] [LOG] [TennisBall] Student collision check - Distance: 1.68/1.20(False), Height: 1.15/8.00(True), Direction: 17.55>0(True), NotServe: (True), Cooldown: 0.00<=0(True), HitZone: -1.30 in [0.0,0.5](False)
+[16:55:16.391] [LOG] [TennisBall] Physics update - Pos: (-0.61, -16.26, 0.00), velocity2D: (17.55, -1.76, 0.00), zPos: 1.363172, zVel: 10.86607
+[16:55:16.391] [LOG] [TennisBall] Visual update - SpritePos: (-0.61, -16.12, 0.00), BallSprite active: True
+[16:55:16.392] [LOG] [TennisBall] Near student paddle - Distance: 1.45, Ball zPos: 1.36, Ball moving right: True
+[16:55:16.393] [LOG] [TennisBall] Paddle pos: (0.35, -15.18, -0.21), Ball pos: (-0.61, -16.26, 0.00), DeltaX: -0.96
+[16:55:16.393] [LOG] [TennisBall] Student collision check - Distance: 1.45/1.20(False), Height: 1.36/8.00(True), Direction: 17.55>0(True), NotServe: (True), Cooldown: 0.00<=0(True), HitZone: -0.96 in [0.0,0.5](False)
+[16:55:16.418] [LOG] [TennisBall] Student collision check - Distance: 1.24/1.20(False), Height: 1.65/8.00(True), Direction: 17.55>0(True), NotServe: (True), Cooldown: 0.00<=0(True), HitZone: -0.48 in [0.0,0.5](False)
+[16:55:16.444] [LOG] [TennisBall] Student collision check - Distance: 1.19/1.20(True), Height: 1.90/8.00(True), Direction: 17.55>0(True), NotServe: (True), Cooldown: 0.00<=0(True), HitZone: -0.04 in [0.0,0.5](False)
+[16:55:16.446] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: 1.19, zPos: 1.93, DeltaX: 0.01
+[16:55:16.446] [LOG] [TennisBall] Paddle position: (0.35, -15.18, -0.21), Ball position: (0.36, -16.35, 0.00)
+[16:55:16.446] [LOG] [TennisBall] Student hitting back to player area: (-18.00, -17.51, 0.00)
+[16:55:16.448] [LOG] [TennisBall] Student hitting toward player area: (-18.00, -17.51, 0.00)
+[16:55:16.448] [LOG] [TennisBall] Hit by student toward: (-18.00, -17.51, 0.00)
+[16:55:16.448] [LOG] [TennisBall] Rally continues - ball hit back to player with velocity: (-11.98, -0.75, 0.00), zVel: 12
+[16:55:16.474] [LOG] [TennisBall] Near student paddle - Distance: 1.42, Ball zPos: 2.26, Ball moving right: False
+[16:55:16.475] [LOG] [TennisBall] Paddle pos: (0.35, -15.01, -0.21), Ball pos: (0.02, -16.38, 0.00), DeltaX: -0.33
+[16:55:16.476] [LOG] [TennisBall] Student collision check - Distance: 1.42/1.20(False), Height: 2.26/8.00(True), Direction: -11.98>0(False), NotServe: (True), Cooldown: 0.47<=0(False), HitZone: -0.33 in [0.0,0.5](False)
+[16:55:16.501] [LOG] [TennisBall] Student collision check - Distance: 1.69/1.20(False), Height: 2.55/8.00(True), Direction: -11.98>0(False), NotServe: (True), Cooldown: 0.45<=0(False), HitZone: -0.65 in [0.0,0.5](False)
+[16:55:16.523] [LOG] [TennisBall] Student collision check - Distance: 1.93/1.20(False), Height: 2.79/8.00(True), Direction: -11.98>0(False), NotServe: (True), Cooldown: 0.42<=0(False), HitZone: -0.92 in [0.0,0.5](False)
+[16:55:16.548] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -14.58, -0.21)
+[16:55:16.548] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -14.58, -0.21)
+[16:55:16.549] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:16.549] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -13.58, 0.00)
+[16:55:16.549] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:16.550] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -14.18, 0.00) to (-0.65, -13.58, 0.00)
+[16:55:16.550] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -14.18, 0.00) to (-0.65, -13.58, 0.00)
+[16:55:16.550] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -13.58, 0.00)
+[16:55:16.550] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -13.58, 0.00)
+[16:55:16.550] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:16.552] [LOG] [TennisBall] Physics update - Pos: (-0.86, -16.43, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 3.041727, zVel: 9.964746
+[16:55:16.552] [LOG] [TennisBall] Visual update - SpritePos: (-0.86, -16.13, 0.00), BallSprite active: True
+[16:55:16.553] [LOG] [TennisBall] Near student paddle - Distance: 2.23, Ball zPos: 3.04, Ball moving right: False
+[16:55:16.553] [LOG] [TennisBall] Paddle pos: (0.35, -14.57, -0.21), Ball pos: (-0.86, -16.43, 0.00), DeltaX: -1.21
+[16:55:16.553] [LOG] [TennisBall] Student collision check - Distance: 2.23/1.20(False), Height: 3.04/8.00(True), Direction: -11.98>0(False), NotServe: (True), Cooldown: 0.40<=0(False), HitZone: -1.21 in [0.0,0.5](False)
+[16:55:16.579] [LOG] [TennisBall] Student collision check - Distance: 2.61/1.20(False), Height: 3.34/8.00(True), Direction: -11.98>0(False), NotServe: (True), Cooldown: 0.37<=0(False), HitZone: -1.58 in [0.0,0.5](False)
+[16:55:16.603] [LOG] [TennisBall] Student collision check - Distance: 2.92/1.20(False), Height: 3.56/8.00(True), Direction: -11.98>0(False), NotServe: (True), Cooldown: 0.34<=0(False), HitZone: -1.87 in [0.0,0.5](False)
+[16:55:16.692] [LOG] [TennisBall] Physics update - Pos: (-2.60, -16.54, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 4.271909, zVel: 7.064351
+[16:55:16.694] [LOG] [TennisBall] Visual update - SpritePos: (-2.60, -16.11, 0.00), BallSprite active: True
+[16:55:16.826] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.92, -0.21)
+[16:55:16.826] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.92, -0.21)
+[16:55:16.826] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:16.826] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.92, 0.00)
+[16:55:16.827] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:16.827] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -13.58, 0.00) to (-0.65, -11.92, 0.00)
+[16:55:16.827] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -13.58, 0.00) to (-0.65, -11.92, 0.00)
+[16:55:16.828] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.92, 0.00)
+[16:55:16.828] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.92, 0.00)
+[16:55:16.829] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:16.829] [LOG] [TennisBall] Physics update - Pos: (-4.18, -16.64, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 5.028951, zVel: 4.414018
+[16:55:16.830] [LOG] [TennisBall] Visual update - SpritePos: (-4.18, -16.14, 0.00), BallSprite active: True
+[16:55:16.967] [LOG] [TennisBall] Physics update - Pos: (-5.89, -16.75, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 5.450139, zVel: 1.570333
+[16:55:16.968] [LOG] [TennisBall] Visual update - SpritePos: (-5.89, -16.20, 0.00), BallSprite active: True
+[16:55:17.104] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:17.106] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:17.106] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:17.106] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:17.106] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:17.107] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.92, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:17.107] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.92, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:17.107] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:17.107] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:17.109] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:17.109] [LOG] [TennisBall] Physics update - Pos: (-7.53, -16.85, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 5.473422, zVel: -1.176125
+[16:55:17.109] [LOG] [TennisBall] Visual update - SpritePos: (-7.53, -16.30, 0.00), BallSprite active: True
+[16:55:17.244] [LOG] [TennisBall] Physics update - Pos: (-9.21, -16.96, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 5.108855, zVel: -3.974592
+[16:55:17.245] [LOG] [TennisBall] Visual update - SpritePos: (-9.21, -16.45, 0.00), BallSprite active: True
+[16:55:17.386] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:17.387] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:17.388] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:17.388] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:17.389] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:17.389] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:17.389] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:17.390] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:17.390] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:17.390] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:17.390] [LOG] [TennisBall] Physics update - Pos: (-10.91, -17.06, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 4.337576, zVel: -6.817403
+[16:55:17.391] [LOG] [TennisBall] Visual update - SpritePos: (-10.91, -16.63, 0.00), BallSprite active: True
+[16:55:17.531] [LOG] [TennisBall] Physics update - Pos: (-12.64, -17.17, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 3.138332, zVel: -9.709468
+[16:55:17.532] [LOG] [TennisBall] Visual update - SpritePos: (-12.64, -16.86, 0.00), BallSprite active: True
+[16:55:17.666] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:17.668] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:17.669] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:17.669] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:17.669] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:17.670] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:17.670] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:17.671] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:17.671] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:17.671] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:17.671] [LOG] [TennisBall] Physics update - Pos: (-14.27, -17.28, 0.00), velocity2D: (-11.98, -0.75, 0.00), zPos: 1.632058, zVel: -12.4245
+[16:55:17.671] [LOG] [TennisBall] Visual update - SpritePos: (-14.27, -17.11, 0.00), BallSprite active: True
+[16:55:17.787] [LOG] [TennisBall] Ball bounced (count: 1) at position: (-15.70, -17.37, 0.00)
+[16:55:17.813] [LOG] [TennisBall] Physics update - Pos: (-16.02, -17.39, 0.00), velocity2D: (-11.74, -0.74, 0.00), zPos: 0.3666426, zVel: 13.54889
+[16:55:17.814] [LOG] [TennisBall] Visual update - SpritePos: (-16.02, -17.35, 0.00), BallSprite active: True
+[16:55:17.952] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:17.952] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:17.953] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:17.953] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:17.953] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:17.953] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:17.954] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:17.954] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:17.955] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:17.955] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:17.955] [LOG] [TennisBall] Physics update - Pos: (-17.64, -17.49, 0.00), velocity2D: (-11.74, -0.74, 0.00), zPos: 2.04239, zVel: 10.7885
+[16:55:17.956] [LOG] [TennisBall] Visual update - SpritePos: (-17.64, -17.28, 0.00), BallSprite active: True
+[16:55:18.093] [LOG] [TennisBall] Physics update - Pos: (-19.29, -17.59, 0.00), velocity2D: (-11.74, -0.74, 0.00), zPos: 3.361836, zVel: 7.965448
+[16:55:18.093] [LOG] [TennisBall] Visual update - SpritePos: (-19.29, -17.26, 0.00), BallSprite active: True
+[16:55:18.094] [LOG] [TennisBall] Near player paddle - Distance: 2.70, Ball zPos: 3.36, Player swinging: False
+[16:55:18.162] [LOG] [TennisBall] Near player paddle - Distance: 2.07, Ball zPos: 3.86, Player swinging: False
+[16:55:18.228] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:18.228] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:18.229] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:18.229] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:18.230] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:18.230] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:18.230] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:18.230] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:18.231] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:18.231] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:18.231] [LOG] [TennisBall] Physics update - Pos: (-20.88, -17.69, 0.00), velocity2D: (-11.74, -0.74, 0.00), zPos: 4.252126, zVel: 5.262314
+[16:55:18.232] [LOG] [TennisBall] Visual update - SpritePos: (-20.88, -17.27, 0.00), BallSprite active: True
+[16:55:18.232] [LOG] [TennisBall] Near player paddle - Distance: 1.62, Ball zPos: 4.25, Player swinging: False
+[16:55:18.239] [LOG] [TennisPlayerPaddle] E key pressed - Ball moving, swinging...
+[16:55:18.240] [LOG] [TennisPlayerPaddle] Starting swing - position: (-21.65, -16.28, -0.21)
+[16:55:18.261] [LOG] [TennisBall] MANUAL COLLISION DETECTION - Ball hit by player paddle! Distance: 1.50, zPos: 4.42
+[16:55:18.262] [LOG] [TennisBall] Player hitting toward student area: (1.35, -12.88, 0.00)
+[16:55:18.263] [LOG] [TennisBall] Hit by player with direction: (0.99, -0.10, 0.00)
+[16:55:18.263] [LOG] [TennisBall] Ball hit successfully - new velocity: (17.91, -1.83, 0.00), zVel: 6
+[16:55:18.264] [LOG] [TennisBall] Ball trajectory: X=17.91 (positive=toward student), Y=-1.83, from pos: (-21.28, -17.72, 0.00)
+[16:55:18.312] [LOG] [TennisBall] Near player paddle - Distance: 2.00, Ball zPos: 4.69, Player swinging: True
+[16:55:18.379] [LOG] [TennisBall] Physics update - Pos: (-19.18, -17.93, 0.00), velocity2D: (17.91, -1.83, 0.00), zPos: 4.980818, zVel: 3.6536
+[16:55:18.380] [LOG] [TennisBall] Visual update - SpritePos: (-19.18, -17.43, 0.00), BallSprite active: True
+[16:55:18.380] [LOG] [TennisBall] Near player paddle - Distance: 2.98, Ball zPos: 4.98, Player swinging: True
+[16:55:18.422] [LOG] [TennisBall] Ball went out of bounds at position: (-18.41, -18.01, 0.00)
+[16:55:18.423] [LOG] [TennisBall] Ball out of bounds - Waiting for player to serve next ball...
+[16:55:18.424] [LOG] [TennisBall] Ball stopped at position: (-18.41, -18.01, 0.00)
+[16:55:18.425] [LOG] [TennisBall] Checking side for position -18.40661 - Court center: -10.64798, Is player side: True
+[16:55:18.426] [LOG] [TennisBall] Has bounced: False, Is on player side: True
+[16:55:18.426] [LOG] [TennisBall] Checking side for position -18.40661 - Court center: -10.64798, Is player side: True
+[16:55:18.426] [LOG] [TennisBall] Ball did not qualify for judgment - hasBounced: False, IsOnPlayerSide: True
+[16:55:18.428] [LOG] [TennisBall] Ball missed/out of bounds - waiting for player to press 'E' to serve next ball
+[16:55:18.535] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:18.536] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:18.536] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:18.536] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:18.536] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:18.537] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:18.537] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:18.537] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:18.538] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:18.538] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:18.803] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:18.804] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:18.805] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:18.805] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:18.805] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:18.805] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:18.806] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:18.807] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:18.807] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:18.807] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:19.066] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:19.068] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:19.068] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:19.068] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:19.069] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:19.069] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:19.069] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:19.070] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:19.070] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:19.070] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:19.322] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:19.323] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:19.323] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:19.323] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:19.323] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:19.324] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:19.324] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:19.325] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:19.325] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:19.325] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:19.593] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:19.594] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:19.595] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:19.595] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:19.595] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:19.595] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:19.596] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:19.596] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:19.596] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:19.597] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:19.870] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:19.870] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:19.871] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:19.871] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:19.871] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:19.871] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:19.872] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:19.872] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:19.873] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:19.873] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:20.133] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:20.134] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:20.134] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:20.134] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:20.134] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:20.135] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:20.135] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:20.135] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:20.135] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:20.137] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:20.399] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:20.399] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:20.401] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:20.401] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:20.401] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:20.402] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:20.402] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:20.403] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:20.403] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:20.403] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:20.686] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:20.686] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:20.686] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:20.687] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:20.687] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:20.687] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:20.688] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:20.689] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:20.689] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:20.689] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:20.950] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:20.951] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:20.951] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:20.951] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:20.952] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:20.952] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:20.952] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:20.953] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:20.953] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:20.953] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:21.211] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -12.38, -0.21)
+[16:55:21.211] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -12.38, -0.21)
+[16:55:21.212] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:21.212] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -11.38, 0.00)
+[16:55:21.212] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:21.213] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:21.213] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -11.38, 0.00)
+[16:55:21.213] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:21.214] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -11.38, 0.00)
+[16:55:21.215] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:21.290] [LOG] [TennisPlayerPaddle] E key pressed - Ball not moving, serving...
+[16:55:21.292] [LOG] [TennisBall] ServeFromPlayer called
+[16:55:21.292] [LOG] [TennisBall] Game manager assigned: True
+[16:55:21.293] [LOG] [TennisBall] Ball position before serve: (-18.41, -18.01, 0.00)
+[16:55:21.293] [LOG] [TennisBall] Student paddle found at: (0.35, -12.38, -0.21), targeting: (0.35, -12.88, 0.00)
+[16:55:21.294] [LOG] [TennisBall] Player serving from position: (-20.65, -16.28, 0.00)
+[16:55:21.294] [LOG] [TennisBall] Player serve started from position: (-20.65, -16.28, 0.00)
+[16:55:21.294] [LOG] [TennisBall] Player serving toward target area: (0.35, -12.88, 0.00)
+[16:55:21.295] [LOG] [TennisBall] Player serve velocity - 2D: (16.64, 2.69, 0.00), Z: 9.453583, Speed: 16.86117
+[16:55:21.358] [LOG] [TennisBall] Physics update - Pos: (-19.49, -16.09, 0.00), velocity2D: (16.64, 2.69, 0.00), zPos: 2.04907, zVel: 8.057713
+[16:55:21.358] [LOG] [TennisBall] Visual update - SpritePos: (-19.49, -15.89, 0.00), BallSprite active: True
+[16:55:21.359] [LOG] [TennisBall] Near player paddle - Distance: 2.18, Ball zPos: 2.05, Player swinging: False
+[16:55:21.507] [LOG] [TennisDrillMiniGame] Student paddle GameObject position: (-11.65, -13.43, -0.21)
+[16:55:21.507] [LOG] [TennisDrillMiniGame] Student paddle Sprite position: (0.35, -13.43, -0.21)
+[16:55:21.507] [LOG] [TennisDrillMiniGame] Position difference: (12.00, 0.00, 0.00)
+[16:55:21.507] [LOG] [TennisDrillMiniGame] Calculated target position: (-0.65, -12.43, 0.00)
+[16:55:21.507] [LOG] [TennisDrillMiniGame] Offset settings - X: -1, Y: 1
+[16:55:21.509] [LOG] [TennisDrillMiniGame] Perfect zone moved from (-0.65, -11.38, 0.00) to (-0.65, -12.43, 0.00)
+[16:55:21.509] [LOG] [TennisDrillMiniGame] Good zone moved from (-0.65, -11.38, 0.00) to (-0.65, -12.43, 0.00)
+[16:55:21.509] [LOG] [TennisDrillMiniGame] Perfect zone visual positioned at: (-0.65, -12.43, 0.00)
+[16:55:21.510] [LOG] [TennisDrillMiniGame] Good zone visual positioned at: (-0.65, -12.43, 0.00)
+[16:55:21.510] [LOG] [TennisDrillMiniGame] Forcing immediate zone position update in play mode
+[16:55:21.510] [LOG] [TennisBall] Physics update - Pos: (-17.02, -15.69, 0.00), velocity2D: (16.64, 2.69, 0.00), zPos: 3.020069, zVel: 5.090071
+[16:55:21.510] [LOG] [TennisBall] Visual update - SpritePos: (-17.02, -15.39, 0.00), BallSprite active: True
+[16:55:21.514] [LOG] [TennisBall] Movement frozen - stopped all automatic serving
+[16:55:21.515] [LOG] [TennisDrillMiniGame] Perfect zone visual visibility: False
+[16:55:21.516] [LOG] [TennisDrillMiniGame] Good zone visual visibility: False
+[16:55:21.516] [LOG] [TennisDrillUI] ShowResults called - setting up results panel
+[16:55:21.517] [LOG] [TennisDrillUI] Continue button found - Interactable: True, Active: True
+[16:55:21.518] [LOG] [TennisDrillUI] Continue button listener re-added in ShowResults
+[16:55:25.993] [LOG] [TennisDrillUI] Continue button clicked!
+[16:55:25.994] [LOG] [TennisDrillUI] Calling ExitMiniGame on game manager...
+[16:55:25.994] [LOG] [TennisDrillMiniGame] ExitMiniGame called - starting exit process...
+[16:55:25.996] [LOG] [TennisDrillMiniGame] Performance calculation:
+[16:55:25.996] [LOG]   Total Score: 0, Score Performance: 0.00
+[16:55:25.996] [LOG]   Max Combo: 0, Combo Performance: 0.00
+[16:55:25.997] [LOG]   Final Performance: 0.00
+[16:55:25.998] [LOG] [TennisDrillMiniGame] Completing lesson with performance score: 0.00
+[16:55:25.999] [LOG] [AppointmentManager] Lesson completed:
+[16:55:25.999] [LOG]   Cash Earned: 100 (fixed from appointment)
+[16:55:25.999] [LOG]   EXP Earned: 50 (base: 50, friendliness bonus: 0)
+[16:55:26.002] [LOG] [TennisDrillMiniGame] Player paddle hidden
+[16:55:26.002] [LOG] [TennisDrillMiniGame] Student paddle hidden
+[16:55:26.002] [LOG] [TennisDrillMiniGame] Tennis ball hidden
+[16:55:26.003] [LOG] [TennisDrillMiniGame] Resetting game state to AWAITING_START
+[16:55:26.003] [LOG] [TennisDrillMiniGame] Player paddle hidden - awaiting start
+[16:55:26.004] [LOG] [TennisDrillMiniGame] Student paddle hidden - awaiting start
+[16:55:26.004] [LOG] [TennisDrillMiniGame] Tennis ball hidden - awaiting start
+[16:55:26.004] [LOG] [TennisDrillMiniGame] Perfect zone visual visibility: False
+[16:55:26.005] [LOG] [TennisDrillMiniGame] Good zone visual visibility: False
+[16:55:26.006] [LOG] [TennisDrillMiniGame] ExitMiniGame completed successfully!
+[16:55:26.009] [LOG] [PlayerController] OnTriggerEnter2D - Collided with: LocatioNtrigger, Tag: 'Location'
+[16:55:26.009] [LOG] [PlayerController] GameObject path: TennisCourt_Lesson_place/LocatioNtrigger
+[16:55:26.011] [LOG] [PlayerController] Collider bounds: Center: (-10.40, -12.10, 0.00), Extents: (1.00, 1.00, 0.00)
+[16:55:26.011] [LOG] [PlayerController] Is Trigger: True
+[16:55:26.011] [LOG] [PlayerController] Components on LocatioNtrigger: Transform, LocationTrigger, BoxCollider2D
+[16:55:26.011] [LOG] [PlayerController] ✅ Found Location tag on: LocatioNtrigger
+[16:55:26.012] [LOG] [PlayerController] ✅ LocationTrigger found on: LocatioNtrigger
+[16:55:26.012] [LOG] [PlayerController] LocationTrigger settings - Name: 'Tennis Court A', CanStart: True
+[16:55:26.012] [LOG] [PlayerController] Calling OnPlayerEnter()...
+[16:55:26.013] [LOG] [LocationTrigger] OnPlayerEnter called for location: Tennis Court A
+[16:55:26.013] [LOG] [LocationTrigger] GameManager.Instance is null: False
+[16:55:26.013] [LOG] [LocationTrigger] UIManager is null: False
+[16:55:26.014] [LOG] [LocationTrigger] Calling ShowLocationPrompt with location: Tennis Court A, canStart: True
+[16:55:26.014] [LOG] [UIManager] ShowLocationPrompt called with location: Tennis Court A, canStart: True
+[16:55:26.014] [LOG] [UIManager] UIManager instance: UIManager
+[16:55:26.015] [LOG] [UIManager] locationPrompt is null: False
+[16:55:26.015] [LOG] [UIManager] Calling locationPrompt.Show()
+[16:55:26.016] [LOG] [LocationPrompt] Show called with location: Tennis Court A, canStart: True
+[16:55:26.016] [LOG] [LocationPrompt] GameObject active before: False
+[16:55:26.016] [LOG] [LocationPrompt] Set location text to: You are at: Tennis Court A
+[16:55:26.017] [LOG] [LocationPrompt] Set startLessonButton active: True
+[16:55:26.017] [LOG] [LocationPrompt] Checking appointments for location: Tennis Court A
+[16:55:26.018] [LOG] [LocationPrompt] Total accepted appointments: 2
+[16:55:26.018] [LOG] [LocationPrompt] Appointment 0: Client=John Smith, Location='Tennis Court A', Time=08:05, Completed=True
+[16:55:26.018] [LOG] [LocationPrompt] Appointment 1: Client=Sarah Johnson, Location='Tennis Court A', Time=08:35, Completed=False
+[16:55:26.018] [LOG] [LocationPrompt] Checking appointment - Client: Sarah Johnson
+[16:55:26.018] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:55:26.018] [LOG] [LocationPrompt] Time difference: -3 minutes
+[16:55:26.020] [LOG] [LocationPrompt] Setting as next valid appointment: Sarah Johnson
+[16:55:26.020] [LOG] [LocationPrompt] Next valid appointment found - Client: Sarah Johnson
+[16:55:26.020] [LOG] [LocationPrompt] Current time: 08:32 AM (512 min)
+[16:55:26.021] [LOG] [LocationPrompt] Appointment time: 08:35 (515 min)
+[16:55:26.021] [LOG] [LocationPrompt] Time difference: -3 minutes (negative = early, positive = late)
+[16:55:26.021] [LOG] [LocationPrompt] ✅ Lesson can be started! Player is within 10-minute window
+[16:55:26.022] [LOG] [LocationPrompt] Can start lesson: True
+[16:55:26.022] [LOG] [LocationPrompt] About to call SetActive(true)...
+[16:55:26.022] [LOG] [LocationPrompt] Immediately after SetActive(true) - activeSelf: True
+[16:55:26.023] [LOG] [LocationPrompt] GameObject active after: True
+[16:55:26.023] [LOG] [LocationPrompt] GameObject activeSelf after: True
+[16:55:26.023] [LOG] [LocationPrompt] Components on LocationPrompt: RectTransform, CanvasRenderer, Image, LocationPrompt
+[16:55:26.023] [LOG] [LocationPrompt] Parent Level 0: LocationPrompt | Active: True | ActiveSelf: True
+[16:55:26.025] [LOG] [LocationPrompt] Parent Level 1: Canvas | Active: True | ActiveSelf: True
+[16:55:26.025] [LOG] [LocationPrompt] LocationPrompt should now be visible!
+[16:55:26.027] [LOG] [LocationPrompt] AFTER FRAME CHECK:
+[16:55:26.028] [LOG] [LocationPrompt] activeSelf: True
+[16:55:26.028] [LOG] [LocationPrompt] activeInHierarchy: True
+[16:55:27.519] [LOG] [PlayerController] OnTriggerExit2D - Exiting: LocatioNtrigger, Tag: Location
+[16:55:27.520] [LOG] [PlayerController] Calling OnPlayerExit() for: LocatioNtrigger
+[16:55:27.520] [LOG] [LocationTrigger] OnPlayerExit called for location: Tennis Court A
+[16:55:27.520] [LOG] [LocationTrigger] Calling HideLocationPrompt
+[16:55:27.520] [LOG] [UIManager] HideLocationPrompt called
+[16:55:27.520] [LOG] [UIManager] UIManager instance: UIManager
+[16:55:27.521] [LOG] [UIManager] locationPrompt is null: False
+[16:55:27.521] [LOG] [UIManager] Calling locationPrompt.Hide()
+[16:55:27.521] [LOG] [LocationPrompt] Hide called
+[16:55:27.522] [LOG] [LocationPrompt] GameObject active before hide: True
+[16:55:27.522] [LOG] [LocationPrompt] LocationPrompt hidden
+[16:55:29.209] [SYSTEM] Application lost focus
+
+=== Unity Console Log Ended ===
+Time: 7/25/2025 4:55:29 PM
+===================================

@@ -59,18 +59,31 @@ namespace TennisCoachCho.Core
             gameData.availableAppointments.Clear();
             
             string[] clientNames = { "Sarah", "Mike", "Emma", "David", "Lisa", "John", "Anna", "Mark" };
+            string[] dogNames = { "Buddy", "Max", "Luna", "Charlie", "Bella", "Rocky", "Daisy", "Cooper" };
             string[] locations = { "Tennis Court", "Tennis Court" }; // Only tennis court for now
+            TennisCoachCho.Data.SpecialistField[] fields = { 
+                TennisCoachCho.Data.SpecialistField.Handling, 
+                TennisCoachCho.Data.SpecialistField.Behaviorism, 
+                TennisCoachCho.Data.SpecialistField.Artisanry, 
+                TennisCoachCho.Data.SpecialistField.Management 
+            };
             
             for (int i = 0; i < maxDailyAppointments; i++)
             {
                 string client = clientNames[Random.Range(0, clientNames.Length)];
+                string dog = dogNames[Random.Range(0, dogNames.Length)];
                 int hour = Random.Range(9, 20); // 9 AM to 7 PM
                 int minute = Random.Range(0, 2) * 30; // 0 or 30 minutes
                 string location = locations[Random.Range(0, locations.Length)];
                 int cashReward = Random.Range(20, 50);
-                int expReward = Random.Range(15, 30);
+                int playerExpReward = Random.Range(15, 30);
+                TennisCoachCho.Data.SpecialistField primaryField = fields[Random.Range(0, fields.Length)];
+                int specialistExpReward = Random.Range(10, 25);
+                int staminaCost = Random.Range(10, 20);
                 
-                AppointmentData appointment = new AppointmentData(client, hour, minute, location, cashReward, expReward);
+                AppointmentData appointment = new AppointmentData(client, dog, hour, minute, location, 
+                                                                  cashReward, playerExpReward, primaryField, 
+                                                                  specialistExpReward, staminaCost);
                 gameData.availableAppointments.Add(appointment);
             }
         }
@@ -112,6 +125,21 @@ namespace TennisCoachCho.Core
             var currentAppointment = GetCurrentAppointmentAtLocation(locationName);
             if (currentAppointment != null)
             {
+                // DOG COACH SYSTEM: Check stamina before starting lesson
+                var progressionManager = GameManager.Instance?.ProgressionManager;
+                if (progressionManager != null)
+                {
+                    if (!progressionManager.CanAffordActivity(currentAppointment.staminaCost))
+                    {
+                        Debug.LogWarning($"[AppointmentManager] Not enough stamina for lesson! Need: {currentAppointment.staminaCost}, Have: {progressionManager.PlayerStats.currentStamina}");
+                        // TODO: Show UI message about insufficient stamina
+                        return false;
+                    }
+                    
+                    // Spend stamina before starting
+                    progressionManager.SpendStamina(currentAppointment.staminaCost);
+                }
+                
                 StartLesson(currentAppointment);
                 return true;
             }
@@ -141,36 +169,120 @@ namespace TennisCoachCho.Core
         {
             if (GameManager.Instance?.UIManager != null)
             {
+                Debug.Log($"[AppointmentManager] 🐕 Starting Dog Coach lesson:");
+                Debug.Log($"  Field: {appointment.primaryField}");
+                Debug.Log($"  Location: {appointment.location}");
+                Debug.Log($"  Client: {appointment.clientName} with {appointment.dogName}");
+                
+                // DOG COACH SYSTEM: Route to appropriate mini-game based on specialist field
+                switch (appointment.primaryField)
+                {
+                    case TennisCoachCho.Data.SpecialistField.Handling:
+                        // Handling activities use agility training mini-game
+                        StartHandlingActivity(appointment);
+                        break;
+                        
+                    case TennisCoachCho.Data.SpecialistField.Behaviorism:
+                        // Behaviorism activities use behavior correction mini-game
+                        StartBehaviorismActivity(appointment);
+                        break;
+                        
+                    case TennisCoachCho.Data.SpecialistField.Artisanry:
+                        // Artisanry activities use crafting mini-game
+                        StartArtisanryActivity(appointment);
+                        break;
+                        
+                    case TennisCoachCho.Data.SpecialistField.Management:
+                        // Management activities use event management mini-game
+                        StartManagementActivity(appointment);
+                        break;
+                        
+                    default:
+                        Debug.LogWarning($"[AppointmentManager] Unknown specialist field: {appointment.primaryField}, falling back to rhythm game");
+                        GameManager.Instance.UIManager.StartRhythmMiniGame(appointment);
+                        break;
+                }
+            }
+        }
+        
+        private void StartHandlingActivity(AppointmentData appointment)
+        {
+            // For now, use the existing tennis drill mini-game for Handling activities
+            // This represents agility training with dogs
+            var tennisDrillGame = UnityEngine.Object.FindObjectOfType<TennisCoachCho.MiniGames.TennisDrillMiniGame>();
+            if (tennisDrillGame != null)
+            {
+                Debug.Log($"[AppointmentManager] Starting Handling (Agility Training) mini-game");
+                tennisDrillGame.StartMiniGame(appointment);
+            }
+            else
+            {
+                Debug.LogWarning("[AppointmentManager] Agility training mini-game not found, using rhythm game");
                 GameManager.Instance.UIManager.StartRhythmMiniGame(appointment);
             }
+        }
+        
+        private void StartBehaviorismActivity(AppointmentData appointment)
+        {
+            // For now, use rhythm game for Behaviorism activities
+            // TODO: Create dedicated behavior correction mini-game
+            Debug.Log($"[AppointmentManager] Starting Behaviorism (Behavior Correction) activity");
+            GameManager.Instance.UIManager.StartRhythmMiniGame(appointment);
+        }
+        
+        private void StartArtisanryActivity(AppointmentData appointment)
+        {
+            // For now, use rhythm game for Artisanry activities  
+            // TODO: Create dedicated crafting mini-game
+            Debug.Log($"[AppointmentManager] Starting Artisanry (Crafting) activity");
+            GameManager.Instance.UIManager.StartRhythmMiniGame(appointment);
+        }
+        
+        private void StartManagementActivity(AppointmentData appointment)
+        {
+            // For now, use rhythm game for Management activities
+            // TODO: Create dedicated event management mini-game
+            Debug.Log($"[AppointmentManager] Starting Management (Event/Competition) activity");
+            GameManager.Instance.UIManager.StartRhythmMiniGame(appointment);
         }
         
         public void CompleteLesson(AppointmentData appointment, float performanceScore)
         {
             appointment.isCompleted = true;
             
-            // Calculate rewards based on performance
-            int cashEarned = Mathf.RoundToInt(appointment.cashReward * performanceScore);
-            int expEarned = Mathf.RoundToInt(appointment.expReward * performanceScore);
+            // DOG COACH SYSTEM: Fixed rewards (not performance-based)
+            int cashEarned = appointment.cashReward;
+            int playerExpEarned = appointment.playerExpReward;
+            int specialistExpEarned = appointment.specialistExpReward;
             
-            // Apply friendliness skill bonus to EXP
-            var friendlinessLevel = GetSkillLevel("Friendliness");
-            expEarned = Mathf.RoundToInt(expEarned * (1f + friendlinessLevel * 0.1f));
+            Debug.Log($"[AppointmentManager] 🐕 Dog Coach Lesson Completed:");
+            Debug.Log($"  Client: {appointment.clientName} with {appointment.dogName}");
+            Debug.Log($"  Location: {appointment.location}");
+            Debug.Log($"  Cash Earned: {cashEarned}");
+            Debug.Log($"  Player XP: {playerExpEarned}");
+            Debug.Log($"  {appointment.primaryField} XP: {specialistExpEarned}");
+            Debug.Log($"  Performance Score: {performanceScore:F2}");
             
-            // Award rewards
-            GameManager.Instance?.ProgressionManager?.AddCash(cashEarned);
-            GameManager.Instance?.ProgressionManager?.AddCoachingExp(expEarned);
+            // Award rewards through new Dog Coach system
+            var progressionManager = GameManager.Instance?.ProgressionManager;
+            if (progressionManager != null)
+            {
+                // Award cash (unchanged)
+                progressionManager.AddCash(cashEarned);
+                
+                // Award Player XP (global progression)
+                progressionManager.AddPlayerExp(playerExpEarned);
+                
+                // Award Specialist Field XP (specific pillar progression)
+                progressionManager.AddSpecialistExp(appointment.primaryField, specialistExpEarned);
+            }
             
-            // Show completion feedback
-            GameManager.Instance?.UIManager?.ShowLessonComplete(cashEarned, expEarned, performanceScore);
+            // Show completion feedback with new system
+            GameManager.Instance?.UIManager?.ShowLessonComplete(cashEarned, playerExpEarned, performanceScore);
         }
         
-        private int GetSkillLevel(string skillName)
-        {
-            var skillNode = gameData.coachingSkillTree.FirstOrDefault(node => 
-                node.nodeName.Equals(skillName, System.StringComparison.OrdinalIgnoreCase));
-            return skillNode?.level ?? 0;
-        }
+        // DOG COACH SYSTEM: Removed old GetSkillLevel method
+        // Skills are now managed through ProgressionManager.GetSpecialistLevel(SpecialistField)
         
         private void ClearCompletedAppointments()
         {
@@ -205,12 +317,16 @@ namespace TennisCoachCho.Core
             }
             
             var testAppointment = new AppointmentData(
-                "John Smith", 
+                "John Smith",
+                "Buddy", 
                 testHour,
                 testMinute,
                 "Tennis Court A",  // This must match the LocationTrigger's LocationName exactly
                 100,
-                50
+                50,
+                TennisCoachCho.Data.SpecialistField.Handling,
+                30,
+                15
             );
             testAppointment.isAccepted = true; // Mark as accepted
             
@@ -234,11 +350,15 @@ namespace TennisCoachCho.Core
             
             var testAppointment2 = new AppointmentData(
                 "Sarah Johnson",
+                "Luna",
                 testHour2,
                 testMinute2,
                 "Tennis Court A",
                 120,
-                60
+                60,
+                TennisCoachCho.Data.SpecialistField.Behaviorism,
+                35,
+                18
             );
             testAppointment2.isAccepted = true;
             

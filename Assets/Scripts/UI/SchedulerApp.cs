@@ -264,7 +264,7 @@ namespace TennisCoachCho.UI
                 // Show status and rewards
                 string status = appointment.isCompleted ? "Completed" : 
                                IsUpcoming(appointment) ? "Upcoming" : "Scheduled";
-                tmpTexts[3].text = $"${appointment.cashReward} | {appointment.expReward} EXP";
+                tmpTexts[3].text = $"${appointment.cashReward} | {appointment.playerExpReward} Player XP | {appointment.specialistExpReward} {appointment.primaryField} XP";
                 
                 // If there's a 5th text component, use it for status
                 if (tmpTexts.Length >= 5)

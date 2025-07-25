@@ -7,17 +7,16 @@ namespace TennisCoachCho.Core
     [System.Serializable]
     public class SaveData
     {
+        [Header("Dog Coach System Save Data")]
         public PlayerStats playerStats;
-        public SkillData coachingSkill;
-        public SkillTreeNode[] coachingSkillTree;
-        public PerkData[] availablePerks;
+        public SpecialistSkillData[] specialistSkills;
+        public PerkTreeNode[] allPerkTrees;
         public GameDateTime currentTime;
         public int currentDay;
         
         public SaveData()
         {
             playerStats = new PlayerStats();
-            coachingSkill = new SkillData("Coaching");
             currentTime = new GameDateTime(1, 8, 0);
             currentDay = 1;
         }
@@ -34,9 +33,8 @@ namespace TennisCoachCho.Core
                 SaveData saveData = new SaveData
                 {
                     playerStats = gameData.playerStats,
-                    coachingSkill = gameData.coachingSkill,
-                    coachingSkillTree = gameData.coachingSkillTree.ToArray(),
-                    availablePerks = gameData.availablePerks.ToArray()
+                    specialistSkills = gameData.specialistSkills.ToArray(),
+                    allPerkTrees = gameData.allPerkTrees.ToArray()
                 };
                 
                 // Add current time if available
@@ -71,22 +69,21 @@ namespace TennisCoachCho.Core
                 
                 if (saveData != null)
                 {
-                    // Load player data
+                    // DOG COACH SYSTEM: Load player data
                     gameData.playerStats = saveData.playerStats ?? new PlayerStats();
-                    gameData.coachingSkill = saveData.coachingSkill ?? new SkillData("Coaching");
                     
-                    // Load skill tree
-                    if (saveData.coachingSkillTree != null)
+                    // Load specialist skills
+                    if (saveData.specialistSkills != null)
                     {
-                        gameData.coachingSkillTree.Clear();
-                        gameData.coachingSkillTree.AddRange(saveData.coachingSkillTree);
+                        gameData.specialistSkills.Clear();
+                        gameData.specialistSkills.AddRange(saveData.specialistSkills);
                     }
                     
-                    // Load perks
-                    if (saveData.availablePerks != null)
+                    // Load perk trees
+                    if (saveData.allPerkTrees != null)
                     {
-                        gameData.availablePerks.Clear();
-                        gameData.availablePerks.AddRange(saveData.availablePerks);
+                        gameData.allPerkTrees.Clear();
+                        gameData.allPerkTrees.AddRange(saveData.allPerkTrees);
                     }
                     
                     // Load time

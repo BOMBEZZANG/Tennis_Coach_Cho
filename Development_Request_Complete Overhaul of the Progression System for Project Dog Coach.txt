@@ -1,0 +1,104 @@
+ Development Request: Complete Overhaul of the Progression System for Project "Dog Coach"
+
+**1. Introduction & Purpose**
+
+This document outlines the requirements for a complete redesign of the core progression and leveling system.
+
+As part of our project's strategic pivot from the initial "Tennis Coach" theme to the new **"Dog Agility Coach"** theme, the previous dual-level system needs to be replaced. The new structure is designed to offer greater player freedom, support more diverse playstyles, and align perfectly with the new, more narrative-rich theme.
+
+The goal is to refactor the existing prototype's level system into this new, more robust architecture.
+
+**2. Summary of Key Changes**
+
+  * **System Architecture:** The old 2-track system (Coaching Level / Player Level) is now deprecated. It will be replaced by a **1 Global + 4 Specialist** track system.
+  * **New Core Stat - Stamina:** A global 'Player Level' is being introduced, which is directly tied to a new core resource: **Stamina**. Stamina will be consumed by all major activities.
+  * **Four Specialist Fields:** The old 'Skill' categories are being replaced by four distinct, theme-specific fields of expertise: **Handling, Behaviorism, Artisanry, and Management.**
+  * **Perk System Redefined:** **Perk Points** are now the primary reward for global player level-ups. These points are a universal currency used to unlock powerful abilities within any of the four specialist skill trees.
+
+**3. Detailed System Architecture**
+
+**3.1. Global Player Progression: The 'Player Level & Stamina' Track**
+This track represents the player character's fundamental growth and physical capacity.
+
+  * **Experience (Player XP):** Player XP is gained from **all** major in-game activities (training, crafting, community events, etc.).
+  * **Level Up Reward:** When the Player Level increases, the player receives two rewards:
+    1.  **Stamina Increase:** The player's maximum Stamina is permanently increased.
+    2.  **Perk Point +1:** The player gains one Perk Point to spend.
+  * **Stamina:** This stat functions as the primary resource for performing actions. Most activities will consume a set amount of Stamina.
+
+**3.2. Specialist Progression: The 'Four Pillars of Expertise'**
+These are four independent skill tracks representing the coach's professional development. Each has its own XP and Level.
+
+  * **Pillar 1: Handling (훈련 기술)**
+
+      * **XP Source:** Actively training a dog (Agility mini-games, obedience drills).
+      * **Level-Up Rewards:** Passive bonuses related to training efficiency (e.g., slightly better mini-game performance), unlocks new training modules, and unlocks new Tiers of Perks to be purchased in the Handling skill tree.
+
+  * **Pillar 2: Behaviorism (행동 심리)**
+
+      * **XP Source:** Correcting a dog's problem behaviors, studying books, observing dogs.
+      * **Level-Up Rewards:** Passive bonuses for behavior correction, unlocks new diagnostic tools, and unlocks new Tiers of Perks in the Behaviorism skill tree.
+
+  * **Pillar 3: Artisanry (제작 기술)**
+
+      * **XP Source:** Crafting handmade treats, nutritional meals, and training gear.
+      * **Level-Up Rewards:** Passive bonuses to crafting speed/quality, unlocks new crafting recipes, and unlocks new Tiers of Perks in the Artisanry skill tree.
+
+  * **Pillar 4: Management & Reputation (경영/명성)**
+
+      * **XP Source:** Participating in community events, winning competitions, managing club finances (once acquired).
+      * **Level-Up Rewards:** Passive bonuses to income/reputation gain, unlocks new event opportunities, and unlocks new Tiers of Perks in the Management skill tree.
+
+**4. Visual Flowchart of the New System**
+
+To clarify the flow of progression, please refer to the following diagram:
+
+```
++--------------------------------------------------------------------------------------+
+|                                In-Game Activities                                    |
+|         (Agility Training, Behavior Correction, Crafting, Events, etc.)            |
++--------------------------------------------------------------------------------------+
+     |                                                                                 |
+     +--------------------(All Activities Grant Player XP)-----------------------------+
+     |                                                                                 |
+     |              +--------------------+             +-------------------+           |
+(Training grants)   | (Behavior Correction grants)   |  (Crafting grants)  | (Events grant)
+     V              V                    V             V                   V           V
++--------------+   +--------------+   +---------------+   +---------------+   +----------------+
+|  PLAYER XP   |   | HANDLING XP  |   | BEHAVIORISM XP  |   | ARTISANRY XP  |   | MANAGEMENT XP  |
++--------------+   +--------------+   +---------------+   +---------------+   +----------------+
+     |                  |                  |                   |                  |
+     V                  V                  V                   V                  V
++--------------+   +--------------+   +---------------+   +---------------+   +----------------+
+| PLAYER LEVEL |   | HANDLING LVL |   | BEHAVIORISM LVL |   | ARTISANRY LVL |   | MANAGEMENT LVL |
++--------------+   +--------------+   +---------------+   +---------------+   +----------------+
+     |
+     V (Upon Level Up!)
++--------------------------------------+
+| GAIN: 1 PERK POINT + MAX STAMINA UP  |
++--------------------------------------+
+     |
+     V (Player decides where to invest the Perk Point)
++--------------------------------------------------------------------------------------+
+|                          FOUR SPECIALIST PERK TREES                                  |
+|--------------------------------------------------------------------------------------|
+|      [HANDLING]      |    [BEHAVIORISM]   |     [ARTISANRY]     |    [MANAGEMENT]    |
+| - Unlock: Combo Boost| - Unlock: Mitigate | - Unlock: Epic Treat| - Unlock: Host Pet |
+| - Unlock: New Drill  |   Anxiety          |   Recipe            |   Fair             |
++--------------------------------------------------------------------------------------+
+
+```
+
+**5. Action Items for Development**
+
+1.  **Refactor** the existing level system from the prototype.
+2.  **Implement** the new global `Player Level` which tracks `Player XP` from all sources.
+3.  **Implement** the new `Stamina` player stat, which is consumed by actions and increased by Player Level-ups.
+4.  **Create** four new, independent XP and Level trackers for `Handling`, `Behaviorism`, `Artisanry`, and `Management`.
+5.  **Connect** specific in-game activities to grant XP to both the `Player Level` and the relevant `Specialist Level` as per the flowchart.
+6.  **Modify** the UI to display the Player Level, Stamina bar, and the four Specialist Levels.
+7.  **Ensure** that Player Level-ups grant 1 `Perk Point`. The UI for spending these points in the four trees should be designed.
+
+Please let me know if you have any questions or require further clarification on this new system architecture.
+
+\

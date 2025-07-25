@@ -193,37 +193,11 @@ namespace TennisCoachCho.UI
             
             Debug.Log($"[LocationPrompt] ✅ Lesson validated - proceeding to start lesson");
             
-            // Check if this is a tennis court location - start mini-game
-            if (currentLocationName.ToLower().Contains("tennis court"))
-            {
-                StartTennisDrillMiniGame();
-            }
-            else
-            {
-                // Regular lesson (existing system)
-                StartRegularLesson();
-            }
+            // All lessons now go through the regular lesson system
+            // The AppointmentManager will determine which mini-game to start based on location
+            StartRegularLesson();
             
             Hide();
-        }
-        
-        private void StartTennisDrillMiniGame()
-        {
-            Debug.Log("[LocationPrompt] Starting Tennis Drill Mini-Game...");
-            
-            // Find the tennis drill mini-game manager
-            var drillGame = FindObjectOfType<TennisCoachCho.MiniGames.TennisDrillMiniGame>();
-            if (drillGame != null)
-            {
-                drillGame.StartMiniGame();
-                Debug.Log("[LocationPrompt] Tennis Drill Mini-Game started successfully");
-            }
-            else
-            {
-                Debug.LogError("[LocationPrompt] ❌ No TennisDrillMiniGame found in scene!");
-                // Fallback to regular lesson
-                StartRegularLesson();
-            }
         }
         
         private void StartRegularLesson()

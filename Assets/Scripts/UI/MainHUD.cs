@@ -7,15 +7,14 @@ namespace TennisCoachCho.UI
 {
     public class MainHUD : MonoBehaviour
     {
-        [Header("UI Elements")]
+        [Header("Dog Coach UI Elements")]
         [SerializeField] private TextMeshProUGUI cashText;
         [SerializeField] private TextMeshProUGUI playerLevelText;
         [SerializeField] private Slider playerExpSlider;
-        [SerializeField] private TextMeshProUGUI coachingLevelText;
-        [SerializeField] private Slider coachingExpSlider;
+        [SerializeField] private TextMeshProUGUI staminaText;
+        [SerializeField] private Slider staminaSlider;
         [SerializeField] private TextMeshProUGUI timeText;
         [SerializeField] private TextMeshProUGUI dateText;
-        [SerializeField] private TextMeshProUGUI skillPointsText;
         [SerializeField] private TextMeshProUGUI perkPointsText;
         
         public void Initialize()
@@ -26,8 +25,7 @@ namespace TennisCoachCho.UI
                 var pm = GameManager.Instance.ProgressionManager;
                 pm.OnCashChanged += UpdateCash;
                 pm.OnPlayerLevelChanged += UpdatePlayerLevel;
-                pm.OnCoachingLevelChanged += UpdateCoachingLevel;
-                pm.OnSkillPointsChanged += UpdateSkillPoints;
+                pm.OnStaminaChanged += UpdateStamina;
                 pm.OnPerkPointsChanged += UpdatePerkPoints;
             }
             
@@ -48,8 +46,7 @@ namespace TennisCoachCho.UI
                 var pm = GameManager.Instance.ProgressionManager;
                 pm.OnCashChanged -= UpdateCash;
                 pm.OnPlayerLevelChanged -= UpdatePlayerLevel;
-                pm.OnCoachingLevelChanged -= UpdateCoachingLevel;
-                pm.OnSkillPointsChanged -= UpdateSkillPoints;
+                pm.OnStaminaChanged -= UpdateStamina;
                 pm.OnPerkPointsChanged -= UpdatePerkPoints;
             }
             
@@ -64,12 +61,10 @@ namespace TennisCoachCho.UI
             if (GameManager.Instance?.ProgressionManager != null)
             {
                 var stats = GameManager.Instance.ProgressionManager.PlayerStats;
-                var coachingSkill = GameManager.Instance.ProgressionManager.CoachingSkill;
                 
                 UpdateCash(stats.cash);
                 UpdatePlayerLevel(stats.playerLevel, stats.playerExp);
-                UpdateCoachingLevel(coachingSkill.level, coachingSkill.exp);
-                UpdateSkillPoints(stats.skillPoints);
+                UpdateStamina(stats.currentStamina, stats.maxStamina);
                 UpdatePerkPoints(stats.perkPoints);
             }
             
@@ -97,15 +92,14 @@ namespace TennisCoachCho.UI
             }
         }
         
-        private void UpdateCoachingLevel(int level, int exp)
+        private void UpdateStamina(int current, int max)
         {
-            if (coachingLevelText != null)
-                coachingLevelText.text = $"Coaching: {level}";
+            if (staminaText != null)
+                staminaText.text = $"Stamina: {current}/{max}";
                 
-            if (coachingExpSlider != null && GameManager.Instance?.ProgressionManager != null)
+            if (staminaSlider != null)
             {
-                var coachingSkill = GameManager.Instance.ProgressionManager.CoachingSkill;
-                coachingExpSlider.value = (float)exp / coachingSkill.expToNext;
+                staminaSlider.value = max > 0 ? (float)current / max : 0f;
             }
         }
         
@@ -116,12 +110,6 @@ namespace TennisCoachCho.UI
                 
             if (dateText != null)
                 dateText.text = gameTime.GetDateString();
-        }
-        
-        private void UpdateSkillPoints(int points)
-        {
-            if (skillPointsText != null)
-                skillPointsText.text = $"Skill Points: {points}";
         }
         
         private void UpdatePerkPoints(int points)

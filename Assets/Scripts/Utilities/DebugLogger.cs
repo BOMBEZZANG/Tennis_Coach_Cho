@@ -37,35 +37,39 @@ namespace TennisCoachCho.Utilities
             Debug.Log($"[SKILLS_PERKS] {message}");
         }
         
-        public static void LogSkillData(TennisCoachCho.Data.SkillTreeNode skill)
+        public static void LogSpecialistSkillData(TennisCoachCho.Data.SpecialistSkillData skill)
         {
             if (skill == null)
             {
-                Debug.Log("[SKILL_DATA] SkillTreeNode is NULL!");
+                Debug.Log("[SPECIALIST_SKILL] SpecialistSkillData is NULL!");
                 return;
             }
             
-            string message = $"Skill: {skill.nodeName}";
-            message += $" | Level: {skill.level}/{skill.maxLevel}";
-            message += $" | CanUpgrade: {skill.CanUpgrade()}";
-            message += $" | Description: {skill.description}";
+            string message = $"Specialist Field: {skill.GetFieldDisplayName()}";
+            message += $" | Level: {skill.level}";
+            message += $" | XP: {skill.exp}/{skill.expToNext}";
+            message += $" | Field: {skill.field}";
             
-            Debug.Log($"[SKILL_DATA] {message}");
+            Debug.Log($"[SPECIALIST_SKILL] {message}");
         }
         
-        public static void LogPerkData(TennisCoachCho.Data.PerkData perk)
+        public static void LogPerkTreeNode(TennisCoachCho.Data.PerkTreeNode perk)
         {
             if (perk == null)
             {
-                Debug.Log("[PERK_DATA] PerkData is NULL!");
+                Debug.Log("[PERK_TREE] PerkTreeNode is NULL!");
                 return;
             }
             
-            string message = $"Perk: {perk.perkName}";
+            string message = $"Perk: {perk.nodeName}";
             message += $" | Unlocked: {perk.isUnlocked}";
+            message += $" | Required Field: {perk.requiredField}";
+            message += $" | Required Level: {perk.requiredFieldLevel}";
+            message += $" | Cost: {perk.perkCost} perk points";
             message += $" | Description: {perk.description}";
+            message += $" | Effect: {perk.gameplayEffect}";
             
-            Debug.Log($"[PERK_DATA] {message}");
+            Debug.Log($"[PERK_TREE] {message}");
         }
         
         public static void LogGameObject(GameObject obj, string context = "")
@@ -116,19 +120,35 @@ namespace TennisCoachCho.Utilities
         {
             if (appointment == null)
             {
-                Debug.Log("[APPOINTMENT] AppointmentData is NULL!");
+                Debug.Log("[DOG_APPOINTMENT] AppointmentData is NULL!");
                 return;
             }
             
-            string message = $"Appointment: {appointment.clientName}";
+            string message = $"Dog Coach Appointment: {appointment.clientName} with {appointment.dogName}";
             message += $" | Time: {appointment.GetTimeString()}";
             message += $" | Location: {appointment.location}";
             message += $" | Accepted: {appointment.isAccepted}";
             message += $" | Completed: {appointment.isCompleted}";
             message += $" | Cash: ${appointment.cashReward}";
-            message += $" | EXP: {appointment.expReward}";
+            message += $" | Player XP: {appointment.playerExpReward}";
+            message += $" | Specialist Field: {appointment.primaryField}";
+            message += $" | Specialist XP: {appointment.specialistExpReward}";
+            message += $" | Stamina Cost: {appointment.staminaCost}";
             
-            Debug.Log($"[APPOINTMENT] {message}");
+            Debug.Log($"[DOG_APPOINTMENT] {message}");
+        }
+        
+        // DOG COACH SYSTEM: Backward compatibility for old method names
+        [System.Obsolete("Use LogSpecialistSkillData instead")]
+        public static void LogSkillData(object skill)
+        {
+            Debug.LogWarning("[DEPRECATED] LogSkillData is deprecated. Use LogSpecialistSkillData for specialist skills.");
+        }
+        
+        [System.Obsolete("Use LogPerkTreeNode instead")]
+        public static void LogPerkData(object perk)
+        {
+            Debug.LogWarning("[DEPRECATED] LogPerkData is deprecated. Use LogPerkTreeNode for perk trees.");
         }
         
         public static void LogSeparator(string title = "")

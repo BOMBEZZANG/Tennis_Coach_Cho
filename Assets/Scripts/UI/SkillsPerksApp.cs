@@ -23,10 +23,11 @@ namespace TennisCoachCho.UI
         [SerializeField] private GameObject skillsPanel;
         [SerializeField] private GameObject perksPanel;
         
-        [Header("Skills UI")]
+        [Header("Specialist Skills UI - Dog Coach System")]
         [SerializeField] private Transform skillsListParent;
         [SerializeField] private GameObject skillItemPrefab;
-        [SerializeField] private TextMeshProUGUI skillPointsText;
+        [SerializeField] private TextMeshProUGUI playerLevelText;
+        [SerializeField] private TextMeshProUGUI staminaText;
         
         [Header("Perks UI")]
         [SerializeField] private Transform perksListParent;
@@ -114,8 +115,11 @@ namespace TennisCoachCho.UI
             {
                 var stats = GameManager.Instance.ProgressionManager.PlayerStats;
                 
-                if (skillPointsText != null)
-                    skillPointsText.text = $"Skill Points: {stats.skillPoints}";
+                // DOG COACH SYSTEM: Display player level and stamina instead of skill points
+                if (playerLevelText != null)
+                    playerLevelText.text = $"Player Level: {stats.playerLevel} (XP: {stats.playerExp}/{stats.playerExpToNext})";
+                if (staminaText != null)
+                    staminaText.text = $"Stamina: {stats.currentStamina}/{stats.maxStamina}";
                 if (perkPointsText != null)
                     perkPointsText.text = $"Perk Points: {stats.perkPoints}";
             }
@@ -155,7 +159,7 @@ namespace TennisCoachCho.UI
         
         private void PopulateSkillsList()
         {
-            DebugLogger.LogSkillsPerks("PopulateSkillsList called");
+            DebugLogger.LogSkillsPerks("PopulateSkillsList called - DOG COACH SYSTEM");
             
             if (GameManager.Instance?.ProgressionManager == null) 
             {
@@ -165,29 +169,28 @@ namespace TennisCoachCho.UI
             
             var progressionManager = GameManager.Instance.ProgressionManager;
             var gameData = progressionManager.GameDataRef;
-            var skillTree = gameData?.coachingSkillTree;
+            var specialistSkills = gameData?.specialistSkills;
             
             DebugLogger.LogSkillsPerks($"GameData found: {gameData != null}");
-            DebugLogger.LogSkillsPerks($"SkillTree count: {skillTree?.Count ?? 0}");
+            DebugLogger.LogSkillsPerks($"Specialist Skills count: {specialistSkills?.Count ?? 0}");
             
-            if (skillTree != null && skillTree.Count > 0)
+            if (specialistSkills != null && specialistSkills.Count > 0)
             {
-                foreach (var skill in skillTree)
+                foreach (var skill in specialistSkills)
                 {
-                    DebugLogger.LogSkillsPerks($"Creating skill item: {skill.nodeName}");
-                    DebugLogger.LogSkillData(skill);
-                    CreateSkillItem(skill);
+                    DebugLogger.LogSkillsPerks($"Creating specialist skill item: {skill.GetFieldDisplayName()}");
+                    CreateSpecialistSkillItem(skill);
                 }
             }
             else
             {
-                DebugLogger.LogSkillsPerks("WARNING: No skills found in skill tree!");
+                DebugLogger.LogSkillsPerks("WARNING: No specialist skills found!");
             }
         }
         
         private void PopulatePerksList()
         {
-            DebugLogger.LogSkillsPerks("PopulatePerksList called");
+            DebugLogger.LogSkillsPerks("PopulatePerksList called - DOG COACH SYSTEM");
             
             if (GameManager.Instance?.ProgressionManager == null) 
             {
@@ -198,14 +201,13 @@ namespace TennisCoachCho.UI
             var progressionManager = GameManager.Instance.ProgressionManager;
             var gameData = progressionManager.GameDataRef;
             DebugLogger.LogSkillsPerks($"GameData found: {gameData != null}");
-            DebugLogger.LogSkillsPerks($"AvailablePerks count: {gameData?.availablePerks?.Count ?? 0}");
+            DebugLogger.LogSkillsPerks($"AllPerkTrees count: {gameData?.allPerkTrees?.Count ?? 0}");
             
-            if (gameData?.availablePerks != null && gameData.availablePerks.Count > 0)
+            if (gameData?.allPerkTrees != null && gameData.allPerkTrees.Count > 0)
             {
-                foreach (var perk in gameData.availablePerks)
+                foreach (var perk in gameData.allPerkTrees)
                 {
-                    DebugLogger.LogSkillsPerks($"Creating perk item: {perk.perkName}");
-                    DebugLogger.LogPerkData(perk);
+                    DebugLogger.LogSkillsPerks($"Creating perk item: {perk.nodeName}");
                     CreatePerkItem(perk);
                 }
             }
@@ -215,40 +217,30 @@ namespace TennisCoachCho.UI
             }
         }
         
-        private void CreateSkillItem(SkillTreeNode skill)
+        private void CreateSpecialistSkillItem(SpecialistSkillData skill)
         {
-            DebugLogger.LogSkillsPerks($"CreateSkillItem called for: {skill?.nodeName}");
+            DebugLogger.LogSkillsPerks($"CreateSpecialistSkillItem called for: {skill?.GetFieldDisplayName()}");
             DebugLogger.LogSkillsPerks($"skillItemPrefab is null: {skillItemPrefab == null}");
             DebugLogger.LogSkillsPerks($"skillsListParent is null: {skillsListParent == null}");
             
             if (skillItemPrefab == null || skillsListParent == null) 
             {
-                DebugLogger.LogSkillsPerks("ERROR: Cannot create skill item - prefab or parent is null!");
+                DebugLogger.LogSkillsPerks("ERROR: Cannot create specialist skill item - prefab or parent is null!");
                 return;
             }
             
             GameObject item = Instantiate(skillItemPrefab, skillsListParent);
             skillItems.Add(item);
             
-            DebugLogger.LogSkillsPerks($"Skill item instantiated: {item.name}");
-            DebugLogger.LogGameObject(item, "SkillItem created");
+            DebugLogger.LogSkillsPerks($"Specialist skill item instantiated: {item.name}");
             
-            var itemComponent = item.GetComponent<SkillItem>();
-            if (itemComponent != null)
-            {
-                DebugLogger.LogSkillsPerks($"Using SkillItem component for {skill.nodeName}");
-                itemComponent.Setup(skill, OnSkillUpgrade);
-            }
-            else
-            {
-                DebugLogger.LogSkillsPerks($"Using basic setup for {skill.nodeName}");
-                SetupBasicSkillItem(item, skill);
-            }
+            // DOG COACH SYSTEM: Setup specialist skill display (no upgrades, just info)
+            SetupBasicSpecialistSkillItem(item, skill);
         }
         
-        private void CreatePerkItem(PerkData perk)
+        private void CreatePerkItem(PerkTreeNode perk)
         {
-            DebugLogger.LogSkillsPerks($"CreatePerkItem called for: {perk?.perkName}");
+            DebugLogger.LogSkillsPerks($"CreatePerkItem called for: {perk?.nodeName}");
             DebugLogger.LogSkillsPerks($"perkItemPrefab is null: {perkItemPrefab == null}");
             DebugLogger.LogSkillsPerks($"perksListParent is null: {perksListParent == null}");
             
@@ -267,53 +259,63 @@ namespace TennisCoachCho.UI
             var itemComponent = item.GetComponent<PerkItem>();
             if (itemComponent != null)
             {
-                DebugLogger.LogSkillsPerks($"Using PerkItem component for {perk.perkName}");
+                DebugLogger.LogSkillsPerks($"Using PerkItem component for {perk.nodeName}");
                 itemComponent.Setup(perk, OnPerkUnlock);
             }
             else
             {
-                DebugLogger.LogSkillsPerks($"Using basic setup for {perk.perkName}");
+                DebugLogger.LogSkillsPerks($"Using basic setup for {perk.nodeName}");
                 SetupBasicPerkItem(item, perk);
             }
         }
         
-        private void SetupBasicSkillItem(GameObject item, SkillTreeNode skill)
+        private void SetupBasicSpecialistSkillItem(GameObject item, SpecialistSkillData skill)
         {
             var texts = item.GetComponentsInChildren<Text>();
             var button = item.GetComponentInChildren<Button>();
             
             if (texts.Length >= 3)
             {
-                texts[0].text = skill.nodeName;
-                texts[1].text = skill.description;
-                texts[2].text = $"Level: {skill.level}/{skill.maxLevel}";
+                texts[0].text = skill.GetFieldDisplayName();
+                texts[1].text = $"Specialist field progression - gain XP from {skill.GetFieldName()} activities";
+                texts[2].text = $"Level: {skill.level} (XP: {skill.exp}/{skill.expToNext})";
             }
             
+            // DOG COACH SYSTEM: Specialist skills are not directly upgradeable by player
+            // They level up automatically through activities
             if (button != null)
             {
-                button.interactable = skill.CanUpgrade() && HasSkillPoints();
-                button.onClick.AddListener(() => OnSkillUpgrade(skill));
-                
+                button.interactable = false;
                 var buttonText = button.GetComponentInChildren<Text>();
                 if (buttonText != null)
-                    buttonText.text = skill.CanUpgrade() ? "Upgrade" : "Max";
+                    buttonText.text = "Auto Level";
             }
         }
         
-        private void SetupBasicPerkItem(GameObject item, PerkData perk)
+        private void SetupBasicPerkItem(GameObject item, PerkTreeNode perk)
         {
             var texts = item.GetComponentsInChildren<Text>();
             var button = item.GetComponentInChildren<Button>();
             
-            if (texts.Length >= 2)
+            if (texts.Length >= 3)
             {
-                texts[0].text = perk.perkName;
+                texts[0].text = perk.nodeName;
                 texts[1].text = perk.description;
+                texts[2].text = $"Cost: {perk.perkCost} perk points | Requires: {perk.requiredField} Lv{perk.requiredFieldLevel}";
             }
             
             if (button != null)
             {
-                button.interactable = !perk.isUnlocked && HasPerkPoints();
+                // Check if player can unlock this perk
+                var progressionManager = GameManager.Instance?.ProgressionManager;
+                bool canUnlock = false;
+                if (progressionManager != null)
+                {
+                    var fieldLevel = progressionManager.GetSpecialistLevel(perk.requiredField);
+                    canUnlock = perk.CanUnlock(fieldLevel, progressionManager.PlayerStats.perkPoints);
+                }
+                
+                button.interactable = canUnlock;
                 button.onClick.AddListener(() => OnPerkUnlock(perk));
                 
                 var buttonText = button.GetComponentInChildren<Text>();
@@ -330,33 +332,18 @@ namespace TennisCoachCho.UI
             }
         }
         
-        private bool HasSkillPoints()
-        {
-            return GameManager.Instance?.ProgressionManager?.PlayerStats.skillPoints > 0;
-        }
-        
         private bool HasPerkPoints()
         {
             return GameManager.Instance?.ProgressionManager?.PlayerStats.perkPoints > 0;
         }
         
-        private void OnSkillUpgrade(SkillTreeNode skill)
-        {
-            if (GameManager.Instance?.ProgressionManager != null)
-            {
-                bool success = GameManager.Instance.ProgressionManager.UpgradeSkill(skill.nodeName);
-                if (success)
-                {
-                    RefreshData();
-                }
-            }
-        }
+        // DOG COACH SYSTEM: Removed OnSkillUpgrade - specialist skills auto-level through activities
         
-        private void OnPerkUnlock(PerkData perk)
+        private void OnPerkUnlock(PerkTreeNode perk)
         {
             if (GameManager.Instance?.ProgressionManager != null)
             {
-                bool success = GameManager.Instance.ProgressionManager.UnlockPerk(perk.perkName);
+                bool success = GameManager.Instance.ProgressionManager.UnlockPerk(perk.nodeName);
                 if (success)
                 {
                     RefreshData();
@@ -469,48 +456,27 @@ namespace TennisCoachCho.UI
         [SerializeField] private Text levelText;
         [SerializeField] private Button upgradeButton;
         
-        private SkillTreeNode skillData;
-        private System.Action<SkillTreeNode> onUpgradeCallback;
+        private SpecialistSkillData skillData;
         
-        public void Setup(SkillTreeNode skill, System.Action<SkillTreeNode> onUpgrade)
+        public void Setup(SpecialistSkillData skill)
         {
             skillData = skill;
-            onUpgradeCallback = onUpgrade;
             
             if (skillNameText != null)
-                skillNameText.text = skill.nodeName;
+                skillNameText.text = skill.GetFieldDisplayName();
             if (descriptionText != null)
-                descriptionText.text = skill.description;
+                descriptionText.text = $"Specialist field progression - gain XP from {skill.GetFieldName()} activities";
             if (levelText != null)
-                levelText.text = $"Level: {skill.level}/{skill.maxLevel}";
+                levelText.text = $"Level: {skill.level} (XP: {skill.exp}/{skill.expToNext})";
                 
+            // DOG COACH SYSTEM: Specialist skills auto-level, no manual upgrades
             if (upgradeButton != null)
             {
-                upgradeButton.onClick.AddListener(UpgradeSkill);
-                UpdateButtonState();
+                upgradeButton.interactable = false;
+                var buttonText = upgradeButton.GetComponentInChildren<Text>();
+                if (buttonText != null)
+                    buttonText.text = "Auto Level";
             }
-        }
-        
-        private void UpdateButtonState()
-        {
-            if (upgradeButton == null) return;
-            
-            bool canUpgrade = skillData.CanUpgrade() && HasSkillPoints();
-            upgradeButton.interactable = canUpgrade;
-            
-            var buttonText = upgradeButton.GetComponentInChildren<Text>();
-            if (buttonText != null)
-                buttonText.text = skillData.CanUpgrade() ? "Upgrade" : "Max";
-        }
-        
-        private bool HasSkillPoints()
-        {
-            return GameManager.Instance?.ProgressionManager?.PlayerStats.skillPoints > 0;
-        }
-        
-        private void UpgradeSkill()
-        {
-            onUpgradeCallback?.Invoke(skillData);
         }
     }
     
@@ -522,16 +488,16 @@ namespace TennisCoachCho.UI
         [SerializeField] private Button unlockButton;
         [SerializeField] private Image backgroundImage;
         
-        private PerkData perkData;
-        private System.Action<PerkData> onUnlockCallback;
+        private PerkTreeNode perkData;
+        private System.Action<PerkTreeNode> onUnlockCallback;
         
-        public void Setup(PerkData perk, System.Action<PerkData> onUnlock)
+        public void Setup(PerkTreeNode perk, System.Action<PerkTreeNode> onUnlock)
         {
             perkData = perk;
             onUnlockCallback = onUnlock;
             
             if (perkNameText != null)
-                perkNameText.text = perk.perkName;
+                perkNameText.text = perk.nodeName;
             if (descriptionText != null)
                 descriptionText.text = perk.description;
                 
@@ -548,7 +514,15 @@ namespace TennisCoachCho.UI
         {
             if (unlockButton == null) return;
             
-            bool canUnlock = !perkData.isUnlocked && HasPerkPoints();
+            // DOG COACH SYSTEM: Check requirements
+            var progressionManager = GameManager.Instance?.ProgressionManager;
+            bool canUnlock = false;
+            if (progressionManager != null)
+            {
+                var fieldLevel = progressionManager.GetSpecialistLevel(perkData.requiredField);
+                canUnlock = perkData.CanUnlock(fieldLevel, progressionManager.PlayerStats.perkPoints);
+            }
+            
             unlockButton.interactable = canUnlock;
             
             var buttonText = unlockButton.GetComponentInChildren<Text>();

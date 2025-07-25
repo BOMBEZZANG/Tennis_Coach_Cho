@@ -59,7 +59,7 @@ namespace TennisCoachCho.UI
                 Debug.LogError("locationText is null!");
                 
             if (rewardText != null)
-                rewardText.text = $"${appointmentData.cashReward} | {appointmentData.expReward} EXP";
+                rewardText.text = $"${appointmentData.cashReward} | {appointmentData.playerExpReward} Player XP | {appointmentData.specialistExpReward} {appointmentData.primaryField} XP";
             else
                 Debug.LogError("rewardText is null!");
         }
