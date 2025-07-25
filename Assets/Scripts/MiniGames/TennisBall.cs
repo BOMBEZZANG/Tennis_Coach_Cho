@@ -41,8 +41,8 @@ namespace TennisCoachCho.MiniGames
         public float studentHitSpeed = 15f;
         [Range(0.5f, 1.5f)]
         public float studentHitPowerMultiplier = 0.8f;
-        [Range(8f, 18f)]
-        public float studentHitZVelocity = 12f;
+        [Range(3f, 10f)]
+        public float studentHitZVelocity = 4f;
         
         [Header("Targeting Settings")]
         [Header("Player Hit Targeting")]
@@ -56,7 +56,7 @@ namespace TennisCoachCho.MiniGames
         public float playerHitDirectionYMax = -0.1f; // Min downward angle
         
         [Header("Student Hit Targeting")]
-        public float studentTargetX = -18f; // Target X position toward player area
+        public float studentTargetX = -18f; // Target X position back toward player area (student returns ball to player)
         [Range(-3.0f, 3.0f)]
         public float studentTargetYVariation = 2f; // Random.Range(-2f, 2f)
         
@@ -116,7 +116,7 @@ namespace TennisCoachCho.MiniGames
             
             studentHitSpeed = 15f;
             studentHitPowerMultiplier = 0.8f;
-            studentHitZVelocity = 12f;
+            studentHitZVelocity = 4f;
             
             playerTargetOffsetX = 1f;
             playerTargetOffsetY = -0.5f;
@@ -388,23 +388,39 @@ namespace TennisCoachCho.MiniGames
             // Check for miss condition (second bounce on player side)
             if (bounceCount >= 2 && IsOnPlayerSide())
             {
-                Debug.Log("[TennisBall] Second bounce on player side - MISS! Serving new ball...");
+                Debug.Log("[TennisBall] Second bounce on player side - MISS! Waiting for player to serve next ball...");
                 gameManager?.OnBallMissed();
-                StopBall(); // This will automatically serve a new ball
+                StopBall(); // Ball stops, player must press 'E' to serve next ball
             }
         }
         
         private void OnBallOutOfBounds()
         {
-            Debug.Log("[TennisBall] Ball out of bounds - Serving new ball...");
+            Debug.Log("[TennisBall] Ball out of bounds - Waiting for player to serve next ball...");
             gameManager?.OnBallMissed();
-            StopBall(); // This will automatically serve a new ball
+            StopBall(); // Ball stops, player must press 'E' to serve next ball
         }
         
         private bool IsOnPlayerSide()
         {
-            // Assuming player is on the left side (negative X)
-            return transform.position.x < 0f;
+            // Calculate court center based on actual paddle positions
+            var playerPaddle = FindObjectOfType<TennisPlayerPaddle>();
+            var studentPaddle = FindObjectOfType<TennisAIPaddle>();
+            
+            float courtCenter = -16f; // Default fallback
+            
+            if (playerPaddle != null && studentPaddle != null)
+            {
+                // Use midpoint between player and student paddle positions
+                float playerX = playerPaddle.GetSpritePosition().x;
+                float studentX = studentPaddle.GetSpritePosition().x;
+                courtCenter = (playerX + studentX) / 2f;
+            }
+            
+            bool isPlayerSide = transform.position.x < courtCenter;
+            
+            Debug.Log($"[TennisBall] Checking side for position {transform.position.x} - Court center: {courtCenter}, Is player side: {isPlayerSide}");
+            return isPlayerSide;
         }
         
         public void ServeFromStudent()
@@ -451,6 +467,61 @@ namespace TennisCoachCho.MiniGames
             Debug.Log($"[TennisBall] Serve started from position: {transform.position}");
             Debug.Log($"[TennisBall] Serving toward target area: {targetArea}");
             Debug.Log($"[TennisBall] Serve velocity - 2D: {velocity2D}, Z: {zVelocity}, Speed: {enhancedServeSpeed}");
+        }
+        
+        public void ServeFromPlayer()
+        {
+            Debug.Log("[TennisBall] ServeFromPlayer called");
+            Debug.Log($"[TennisBall] Game manager assigned: {gameManager != null}");
+            Debug.Log($"[TennisBall] Ball position before serve: {transform.position}");
+            
+            ResetBall();
+            
+            // Find student paddle to target its area
+            var studentPaddle = FindObjectOfType<TennisAIPaddle>();
+            Vector3 targetArea = new Vector3(2f, -12f, 0f); // Default target toward student side
+            
+            if (studentPaddle != null)
+            {
+                Vector3 paddlePos = studentPaddle.GetSpritePosition();
+                // Target area in front of student paddle where judgment zones are
+                targetArea = new Vector3(paddlePos.x + settings.playerTargetOffsetX - 1f, 
+                                        paddlePos.y + settings.playerTargetOffsetY, 0f);
+                Debug.Log($"[TennisBall] Student paddle found at: {paddlePos}, targeting: {targetArea}");
+            }
+            
+            // Position ball at player's side for serve (left side of court)
+            var playerPaddle = FindObjectOfType<TennisPlayerPaddle>();
+            Vector3 servePosition = new Vector3(-20f, -12f, 0f); // Default player side
+            
+            if (playerPaddle != null)
+            {
+                Vector3 playerPos = playerPaddle.GetSpritePosition();
+                // Serve from slightly in front of player paddle
+                servePosition = new Vector3(playerPos.x + 1f, playerPos.y, 0f);
+                Debug.Log($"[TennisBall] Player serving from position: {servePosition}");
+            }
+            
+            transform.position = servePosition;
+            
+            // Calculate trajectory toward target area (judgment zone area)
+            Vector3 targetWithVariation = targetArea + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.3f, 0.3f), 0f);
+            Vector3 direction = (targetWithVariation - servePosition).normalized;
+            
+            // Use serve speed settings
+            float speedVariation = Random.Range(settings.serveSpeedVariationMin, settings.serveSpeedVariationMax);
+            float enhancedServeSpeed = settings.serveSpeed * speedVariation * settings.servePowerMultiplier;
+            velocity2D = new Vector3(direction.x, direction.y, 0f) * enhancedServeSpeed;
+            
+            // Serve height
+            zVelocity = Random.Range(settings.serveHeightMin, settings.serveHeightMax);
+            zPosition = Random.Range(1f, 1f + settings.serveHeightVariation);
+            
+            isMoving = true;
+            
+            Debug.Log($"[TennisBall] Player serve started from position: {transform.position}");
+            Debug.Log($"[TennisBall] Player serving toward target area: {targetArea}");
+            Debug.Log($"[TennisBall] Player serve velocity - 2D: {velocity2D}, Z: {zVelocity}, Speed: {enhancedServeSpeed}");
         }
         
         public void HitByPlayer(Vector3 hitDirection, float hitPower = 1f)
@@ -512,21 +583,24 @@ namespace TennisCoachCho.MiniGames
             velocity2D = Vector3.zero;
             zVelocity = 0f;
             
-            Debug.Log("[TennisBall] Ball stopped");
+            Debug.Log($"[TennisBall] Ball stopped at position: {transform.position}");
+            Debug.Log($"[TennisBall] Has bounced: {hasBounced}, Is on player side: {IsOnPlayerSide()}");
             
             // Check if this was a successful hit that needs judgment
             if (hasBounced && !IsOnPlayerSide())
             {
                 // Ball landed on student's side - judge the hit
+                Debug.Log($"[TennisBall] Ball qualified for judgment - calling OnBallHit with position: {transform.position}");
                 gameManager?.OnBallHit(transform.position);
                 
-                // After successful hit, serve new ball after short delay
-                StartCoroutine(ServeNewBallAfterDelay(1.5f));
+                // Player must press 'E' to serve the next ball
+                Debug.Log($"[TennisBall] Rally finished - waiting for player to press 'E' to serve next ball");
             }
             else
             {
-                // Ball was missed or went out of bounds - serve new ball
-                StartCoroutine(ServeNewBallAfterDelay(1f));
+                Debug.Log($"[TennisBall] Ball did not qualify for judgment - hasBounced: {hasBounced}, IsOnPlayerSide: {IsOnPlayerSide()}");
+                // Player must press 'E' to serve the next ball  
+                Debug.Log($"[TennisBall] Ball missed/out of bounds - waiting for player to press 'E' to serve next ball");
             }
         }
         
@@ -535,16 +609,15 @@ namespace TennisCoachCho.MiniGames
             Debug.Log($"[TennisBall] Waiting {delay} seconds before serving new ball");
             yield return new WaitForSeconds(delay);
             
-            // Only serve new ball if game is still active and ball is not already moving
-            if (gameManager != null && gameManager.CurrentState == DrillGameState.ACTIVE && !isMoving)
-            {
-                Debug.Log("[TennisBall] Serving new ball automatically");
-                ServeFromStudent();
-            }
-            else if (isMoving)
-            {
-                Debug.Log("[TennisBall] Ball already moving, skipping automatic serve");
-            }
+            // NOTE: Automatic serving disabled - player must press 'E' to serve
+            Debug.Log("[TennisBall] ServeNewBallAfterDelay completed - player must press 'E' to serve next ball");
+            
+            // OLD AUTOMATIC SERVE CODE (DISABLED):
+            // if (gameManager != null && gameManager.CurrentState == DrillGameState.ACTIVE && !isMoving)
+            // {
+            //     Debug.Log("[TennisBall] Serving new ball automatically");
+            //     ServeFromStudent();
+            // }
         }
         
         public void FreezeMovement()
@@ -605,11 +678,12 @@ namespace TennisCoachCho.MiniGames
                         Vector3 targetArea;
                         if (aiPaddle != null)
                         {
-                            // Target student paddle sprite position for accurate hitting
+                            // Target judgment zone area (mid-front of student paddle) for coach training
                             Vector3 studentSpritePos = aiPaddle.GetSpritePosition();
-                            targetArea = new Vector3(studentSpritePos.x + settings.playerTargetOffsetX, 
+                            // Target area in front of student paddle where judgment zones are positioned
+                            targetArea = new Vector3(studentSpritePos.x + settings.playerTargetOffsetX - 1f, // Slightly in front of paddle 
                                                     studentSpritePos.y + settings.playerTargetOffsetY, 0f);
-                            Debug.Log($"[TennisBall] Student paddle found at: {studentSpritePos}, targeting: {targetArea}");
+                            Debug.Log($"[TennisBall] Player (coach) targeting judgment zone area: {targetArea}");
                         }
                         else
                         {
@@ -793,8 +867,9 @@ namespace TennisCoachCho.MiniGames
                     Debug.Log($"[TennisBall] MANUAL COLLISION DETECTION - Ball hit by student paddle! Distance: {distance:F2}, zPos: {zPosition:F2}, DeltaX: {deltaX:F2}");
                     Debug.Log($"[TennisBall] Paddle position: {paddlePos}, Ball position: {ballPos}");
                     
-                    // Calculate hit direction toward player area using settings
+                    // Student simply hits ball back toward player area (for rally practice)
                     Vector3 targetArea = new Vector3(settings.studentTargetX, ballPos.y + Random.Range(-settings.studentTargetYVariation, settings.studentTargetYVariation), 0f);
+                    Debug.Log($"[TennisBall] Student hitting back to player area: {targetArea}");
                     
                     Debug.Log($"[TennisBall] Student hitting toward player area: {targetArea}");
                     HitByStudent(targetArea);

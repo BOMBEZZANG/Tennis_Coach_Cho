@@ -74,6 +74,11 @@ namespace TennisCoachCho.MiniGames
             if (ui.continueButton != null)
             {
                 ui.continueButton.onClick.AddListener(OnContinueButtonClicked);
+                Debug.Log("[TennisDrillUI] Continue button listener added successfully");
+            }
+            else
+            {
+                Debug.LogError("[TennisDrillUI] Continue button is null - cannot add listener!");
             }
             
             if (gameManager != null)
@@ -303,7 +308,7 @@ namespace TennisCoachCho.MiniGames
         
         public void ShowResults(int finalScore, int maxCombo)
         {
-            // Showing results
+            Debug.Log("[TennisDrillUI] ShowResults called - setting up results panel");
             
             SetPanelActive(ui.resultsPanel, true);
             
@@ -317,6 +322,24 @@ namespace TennisCoachCho.MiniGames
             {
                 string grade = CalculateGrade(finalScore, maxCombo);
                 ui.gradeText.text = $"Grade: {grade}";
+            }
+            
+            // Debug continue button state
+            if (ui.continueButton != null)
+            {
+                Debug.Log($"[TennisDrillUI] Continue button found - Interactable: {ui.continueButton.interactable}, Active: {ui.continueButton.gameObject.activeInHierarchy}");
+                
+                // Ensure button is interactable
+                ui.continueButton.interactable = true;
+                
+                // Double-check the listener is still attached
+                ui.continueButton.onClick.RemoveAllListeners();
+                ui.continueButton.onClick.AddListener(OnContinueButtonClicked);
+                Debug.Log("[TennisDrillUI] Continue button listener re-added in ShowResults");
+            }
+            else
+            {
+                Debug.LogError("[TennisDrillUI] Continue button is null in ShowResults!");
             }
         }
         
@@ -360,8 +383,16 @@ namespace TennisCoachCho.MiniGames
         
         private void OnContinueButtonClicked()
         {
-            // Continue button clicked
-            gameManager?.ExitMiniGame();
+            Debug.Log("[TennisDrillUI] Continue button clicked!");
+            
+            if (gameManager == null)
+            {
+                Debug.LogError("[TennisDrillUI] Game manager is null - cannot exit mini-game!");
+                return;
+            }
+            
+            Debug.Log("[TennisDrillUI] Calling ExitMiniGame on game manager...");
+            gameManager.ExitMiniGame();
         }
         
         // Helper methods

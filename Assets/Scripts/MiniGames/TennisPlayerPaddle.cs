@@ -102,13 +102,24 @@ namespace TennisCoachCho.MiniGames
             else if (Input.GetKey(KeyCode.S))
                 verticalInput = -1f;
             
-            // E swing input
+            // E key input - Serve if no ball moving, otherwise swing
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log($"[TennisPlayerPaddle] E key pressed - CanSwing: {CanSwing()}");
-                if (CanSwing())
+                // Check if ball is currently moving
+                var ball = FindObjectOfType<TennisBall>();
+                if (ball != null && !ball.IsMoving)
                 {
+                    Debug.Log($"[TennisPlayerPaddle] E key pressed - Ball not moving, serving...");
+                    ball.ServeFromPlayer();
+                }
+                else if (CanSwing())
+                {
+                    Debug.Log($"[TennisPlayerPaddle] E key pressed - Ball moving, swinging...");
                     StartSwing();
+                }
+                else
+                {
+                    Debug.Log($"[TennisPlayerPaddle] E key pressed - Cannot swing (cooldown or already swinging)");
                 }
             }
         }

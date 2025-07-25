@@ -35,6 +35,17 @@ namespace TennisCoachCho.MiniGames
         [Header("Judgment Zones")]
         public Transform perfectZone;
         public Transform goodZone;
+        [Range(-3.0f, 3.0f)]
+        public float judgmentZoneOffsetX = -1.5f; // Distance in front of student paddle (negative = in front)
+        [Range(-8.0f, 2.0f)]
+        public float judgmentZoneOffsetY = 0f; // Vertical offset from student paddle (0 = same level as paddle)
+        
+        [Header("Zone Visualization")]
+        public SpriteRenderer perfectZoneVisual;
+        public SpriteRenderer goodZoneVisual;
+        public bool showZonesDuringGame = true;
+        [Range(0.1f, 1.0f)]
+        public float zoneVisualAlpha = 0.3f; // Transparency of zone visuals
         
         [Header("Camera")]
         public Camera gameCamera;
@@ -86,6 +97,13 @@ namespace TennisCoachCho.MiniGames
         private void Update()
         {
             UpdateGameState();
+            
+            // DEBUG: Allow manual exit with Escape key for testing
+            if (Input.GetKeyDown(KeyCode.Escape) && currentState == DrillGameState.ENDED)
+            {
+                Debug.Log("[TennisDrillMiniGame] DEBUG: Escape key pressed - manually exiting mini-game");
+                ExitMiniGame();
+            }
         }
         
         private void ValidateComponents()
@@ -113,6 +131,9 @@ namespace TennisCoachCho.MiniGames
             playerPaddle.Initialize(this);
             studentPaddle.Initialize(this);
             
+            // Initialize zone visuals
+            InitializeZoneVisuals();
+            
             // Set camera to normal view
             if (settings.gameCamera != null)
                 settings.gameCamera.orthographicSize = settings.normalSize;
@@ -121,6 +142,18 @@ namespace TennisCoachCho.MiniGames
             settings.drillUI?.Initialize(this);
             
             SetState(DrillGameState.AWAITING_START);
+        }
+        
+        private void InitializeZoneVisuals()
+        {
+            // Validate zone visual components
+            if (settings.perfectZoneVisual == null)
+                Debug.LogWarning("[TennisDrillMiniGame] Perfect zone visual not assigned!");
+            if (settings.goodZoneVisual == null)
+                Debug.LogWarning("[TennisDrillMiniGame] Good zone visual not assigned!");
+            
+            // Initially hide zone visuals
+            ShowZoneVisuals(false);
         }
         
         public void StartMiniGame()
@@ -156,6 +189,12 @@ namespace TennisCoachCho.MiniGames
             // Update timer
             gameTimer -= Time.deltaTime;
             settings.drillUI?.UpdateTimer(gameTimer);
+            
+            // Periodically update zone positions to ensure they follow the sprite (every 2 seconds)
+            if (Time.frameCount % 120 == 0) // Every 2 seconds at 60 FPS
+            {
+                PositionJudgmentZones();
+            }
             
             // Check if time is up
             if (gameTimer <= 0f)
@@ -202,6 +241,9 @@ namespace TennisCoachCho.MiniGames
             // Disable mini-game controls
             playerPaddle.SetControlsEnabled(false);
             
+            // Hide zone visuals when not in game
+            ShowZoneVisuals(false);
+            
             // UI remains hidden during this state - LocationPrompt handles user interaction
         }
         
@@ -209,9 +251,21 @@ namespace TennisCoachCho.MiniGames
         {
             // Preparing game
             
-            // Disable player free movement (handled by GameManager)
+            // Disable player free movement and hide player unit (handled by GameManager)
             if (GameManager.Instance?.PlayerController != null)
+            {
                 GameManager.Instance.PlayerController.SetMovementEnabled(false);
+                // Hide the player unit GameObject during mini-game
+                GameManager.Instance.PlayerController.gameObject.SetActive(false);
+            }
+            
+            // Hide LocationPrompt UI during mini-game
+            var locationPrompt = FindObjectOfType<LocationPrompt>();
+            if (locationPrompt != null)
+            {
+                locationPrompt.gameObject.SetActive(false);
+                Debug.Log("[TennisDrillMiniGame] LocationPrompt UI hidden during mini-game");
+            }
             
             // Move paddles to starting positions smoothly
             yield return StartCoroutine(MovePaddlesToStartPositions());
@@ -234,14 +288,32 @@ namespace TennisCoachCho.MiniGames
             // Enable mini-game controls
             playerPaddle.SetControlsEnabled(true);
             
-            // Serve the first ball
-            if (ball != null)
-            {
-                ball.ServeFromStudent();
-            }
+            // Position judgment zones relative to student paddle sprite - FORCE IMMEDIATE UPDATE
+            Debug.Log("[TennisDrillMiniGame] HandleActive - Positioning judgment zones immediately");
+            PositionJudgmentZones();
+            
+            // Wait a frame then position again to ensure it takes effect
+            StartCoroutine(DelayedZonePositioning());
+            
+            // Show zone visuals during active gameplay
+            ShowZoneVisuals(settings.showZonesDuringGame);
+            
+            // Player will serve the first ball by pressing 'E' key
+            // No automatic serve - player controls when to start the rally
             
             // Show game UI
             settings.drillUI?.ShowGameHUD();
+        }
+        
+        private System.Collections.IEnumerator DelayedZonePositioning()
+        {
+            yield return null; // Wait one frame
+            Debug.Log("[TennisDrillMiniGame] DelayedZonePositioning - Positioning zones again after 1 frame");
+            PositionJudgmentZones();
+            
+            yield return new WaitForSeconds(0.5f); // Wait half a second
+            Debug.Log("[TennisDrillMiniGame] DelayedZonePositioning - Final zone positioning after 0.5 seconds");
+            PositionJudgmentZones();
         }
         
         private void HandleEnded()
@@ -252,6 +324,9 @@ namespace TennisCoachCho.MiniGames
             ball.FreezeMovement();
             playerPaddle.SetControlsEnabled(false);
             studentPaddle.SetControlsEnabled(false);
+            
+            // Hide zone visuals when game ends
+            ShowZoneVisuals(false);
             
             // Show results
             settings.drillUI?.ShowResults(totalScore, maxCombo);
@@ -264,11 +339,23 @@ namespace TennisCoachCho.MiniGames
         
         public void ExitMiniGame()
         {
-            // Exiting mini-game
+            Debug.Log("[TennisDrillMiniGame] ExitMiniGame called - starting exit process...");
             
-            // Re-enable player movement
+            // Re-enable player movement and show player unit
             if (GameManager.Instance?.PlayerController != null)
+            {
                 GameManager.Instance.PlayerController.SetMovementEnabled(true);
+                // Show the player unit GameObject again
+                GameManager.Instance.PlayerController.gameObject.SetActive(true);
+            }
+            
+            // Show LocationPrompt UI again
+            var locationPrompt = FindObjectOfType<LocationPrompt>();
+            if (locationPrompt != null)
+            {
+                locationPrompt.gameObject.SetActive(true);
+                Debug.Log("[TennisDrillMiniGame] LocationPrompt UI restored after mini-game");
+            }
             
             // Zoom camera back out
             StartCoroutine(ZoomCameraOut());
@@ -277,15 +364,166 @@ namespace TennisCoachCho.MiniGames
             settings.drillUI?.Hide();
             
             // Reset game state
+            Debug.Log("[TennisDrillMiniGame] Resetting game state to AWAITING_START");
             SetState(DrillGameState.AWAITING_START);
+            
+            Debug.Log("[TennisDrillMiniGame] ExitMiniGame completed successfully!");
+        }
+        
+        // Public method to manually force zone repositioning (for debugging)
+        [ContextMenu("Force Reposition Judgment Zones")]
+        public void ForceRepositionJudgmentZones()
+        {
+            Debug.Log("[TennisDrillMiniGame] Manually forcing judgment zone repositioning...");
+            PositionJudgmentZones();
+        }
+        
+        private void PositionJudgmentZones()
+        {
+            if (studentPaddle == null) 
+            {
+                Debug.LogError("[TennisDrillMiniGame] Student paddle is null - cannot position judgment zones!");
+                return;
+            }
+            
+            // Get both positions for comparison
+            Vector3 studentGameObjectPos = studentPaddle.transform.position;
+            Vector3 studentSpritePos = studentPaddle.GetSpritePosition();
+            
+            Debug.Log($"[TennisDrillMiniGame] Student paddle GameObject position: {studentGameObjectPos}");
+            Debug.Log($"[TennisDrillMiniGame] Student paddle Sprite position: {studentSpritePos}");
+            Debug.Log($"[TennisDrillMiniGame] Position difference: {studentSpritePos - studentGameObjectPos}");
+            
+            // Use sprite position as the reference for zone positioning
+            Vector3 targetPos = new Vector3(
+                studentSpritePos.x + settings.judgmentZoneOffsetX, 
+                studentSpritePos.y + settings.judgmentZoneOffsetY, 
+                0f
+            );
+            
+            // Ensure zones are positioned in a reasonable area for ball landings
+            // Based on court boundaries and typical ball physics
+            targetPos.y = Mathf.Clamp(targetPos.y, -20f, -10f); // Keep in reasonable court area
+            targetPos.x = Mathf.Clamp(targetPos.x, -5f, 5f);    // Keep in student's side
+            
+            Debug.Log($"[TennisDrillMiniGame] Calculated target position: {targetPos}");
+            Debug.Log($"[TennisDrillMiniGame] Offset settings - X: {settings.judgmentZoneOffsetX}, Y: {settings.judgmentZoneOffsetY}");
+            
+            // Check if settings are null or values are wrong
+            if (settings == null)
+            {
+                Debug.LogError("[TennisDrillMiniGame] Settings is null!");
+                return;
+            }
+            
+            // Force Y offset to 1 if it's 0 (might be Unity serialization issue)
+            if (Mathf.Approximately(settings.judgmentZoneOffsetY, 0f))
+            {
+                Debug.LogWarning("[TennisDrillMiniGame] Y offset is 0, forcing to 1f");
+                settings.judgmentZoneOffsetY = 1f;
+                
+                // Recalculate with corrected offset
+                targetPos = new Vector3(
+                    studentSpritePos.x + settings.judgmentZoneOffsetX, 
+                    studentSpritePos.y + settings.judgmentZoneOffsetY, 
+                    0f
+                );
+                Debug.Log($"[TennisDrillMiniGame] Recalculated target position with corrected Y offset: {targetPos}");
+            }
+            
+            // Position judgment zones
+            if (settings.perfectZone != null)
+            {
+                Vector3 oldPerfectPos = settings.perfectZone.position;
+                settings.perfectZone.position = targetPos;
+                Debug.Log($"[TennisDrillMiniGame] Perfect zone moved from {oldPerfectPos} to {targetPos}");
+            }
+            else
+            {
+                Debug.LogError("[TennisDrillMiniGame] Perfect zone Transform is null!");
+            }
+            
+            if (settings.goodZone != null)
+            {
+                Vector3 oldGoodPos = settings.goodZone.position;
+                settings.goodZone.position = targetPos;
+                Debug.Log($"[TennisDrillMiniGame] Good zone moved from {oldGoodPos} to {targetPos}");
+            }
+            else
+            {
+                Debug.LogError("[TennisDrillMiniGame] Good zone Transform is null!");
+            }
+            
+            // Position and configure visual indicators
+            SetupZoneVisuals(targetPos);
+            
+            // Force update the zone positioning immediately
+            if (Application.isPlaying)
+            {
+                Debug.Log("[TennisDrillMiniGame] Forcing immediate zone position update in play mode");
+            }
+        }
+        
+        private void SetupZoneVisuals(Vector3 zonePosition)
+        {
+            // Setup perfect zone visual
+            if (settings.perfectZoneVisual != null)
+            {
+                settings.perfectZoneVisual.transform.position = zonePosition;
+                ConfigureZoneVisual(settings.perfectZoneVisual, Color.yellow, settings.showZonesDuringGame);
+                Debug.Log($"[TennisDrillMiniGame] Perfect zone visual positioned at: {zonePosition}");
+            }
+            
+            // Setup good zone visual  
+            if (settings.goodZoneVisual != null)
+            {
+                settings.goodZoneVisual.transform.position = zonePosition;
+                ConfigureZoneVisual(settings.goodZoneVisual, Color.green, settings.showZonesDuringGame);
+                Debug.Log($"[TennisDrillMiniGame] Good zone visual positioned at: {zonePosition}");
+            }
+        }
+        
+        private void ConfigureZoneVisual(SpriteRenderer visual, Color baseColor, bool visible)
+        {
+            if (visual == null) return;
+            
+            // Set color with transparency
+            Color visualColor = baseColor;
+            visualColor.a = visible ? settings.zoneVisualAlpha : 0f;
+            visual.color = visualColor;
+            
+            // Ensure visual is active
+            visual.gameObject.SetActive(true);
+            
+            // Set sorting order to render above ground but below ball
+            visual.sortingOrder = 1;
+        }
+        
+        private void ShowZoneVisuals(bool visible)
+        {
+            // Show/hide perfect zone visual
+            if (settings.perfectZoneVisual != null)
+            {
+                ConfigureZoneVisual(settings.perfectZoneVisual, Color.yellow, visible);
+                Debug.Log($"[TennisDrillMiniGame] Perfect zone visual visibility: {visible}");
+            }
+            
+            // Show/hide good zone visual
+            if (settings.goodZoneVisual != null)
+            {
+                ConfigureZoneVisual(settings.goodZoneVisual, Color.green, visible);
+                Debug.Log($"[TennisDrillMiniGame] Good zone visual visibility: {visible}");
+            }
         }
         
         public void OnBallHit(Vector3 ballPosition)
         {
-            // Ball hit
+            Debug.Log($"[TennisDrillMiniGame] OnBallHit called with ball position: {ballPosition}");
             
             // Determine hit judgment based on where ball lands
             HitJudgment judgment = EvaluateHit(ballPosition);
+            Debug.Log($"[TennisDrillMiniGame] Hit judgment result: {judgment}");
+            
             ProcessHitJudgment(judgment);
         }
         
@@ -297,34 +535,67 @@ namespace TennisCoachCho.MiniGames
         
         private HitJudgment EvaluateHit(Vector3 ballPosition)
         {
+            Debug.Log($"[TennisDrillMiniGame] Evaluating hit at ball position: {ballPosition}");
+            
             // Check if ball landed in judgment zones
             if (IsInZone(ballPosition, settings.perfectZone))
             {
+                Debug.Log($"[TennisDrillMiniGame] Ball landed in PERFECT zone! Zone position: {settings.perfectZone?.position}");
                 return HitJudgment.PERFECT;
             }
             else if (IsInZone(ballPosition, settings.goodZone))
             {
+                Debug.Log($"[TennisDrillMiniGame] Ball landed in GOOD zone! Zone position: {settings.goodZone?.position}");
                 return HitJudgment.GOOD;
             }
             else
             {
+                Debug.Log($"[TennisDrillMiniGame] Ball landed outside judgment zones - BAD hit");
+                if (settings.perfectZone != null)
+                    Debug.Log($"[TennisDrillMiniGame] Perfect zone position: {settings.perfectZone.position}");
+                if (settings.goodZone != null)
+                    Debug.Log($"[TennisDrillMiniGame] Good zone position: {settings.goodZone.position}");
                 return HitJudgment.BAD;
             }
         }
         
         private bool IsInZone(Vector3 position, Transform zone)
         {
-            if (zone == null) return false;
+            if (zone == null) 
+            {
+                Debug.Log($"[TennisDrillMiniGame] Zone is null");
+                return false;
+            }
             
-            var bounds = zone.GetComponent<Collider2D>()?.bounds;
-            if (bounds == null) return false;
+            var collider = zone.GetComponent<Collider2D>();
+            if (collider == null)
+            {
+                Debug.Log($"[TennisDrillMiniGame] Zone {zone.name} has no Collider2D");
+                return false;
+            }
             
-            return bounds.Value.Contains(position);
+            var bounds = collider.bounds;
+            bool contains = bounds.Contains(position);
+            
+            // Calculate distance from zone center for debugging
+            float distanceFromCenter = Vector3.Distance(position, bounds.center);
+            
+            Debug.Log($"[TennisDrillMiniGame] Zone {zone.name}:");
+            Debug.Log($"  - Position: {zone.position}");
+            Debug.Log($"  - Bounds Center: {bounds.center}, Size: {bounds.size}");
+            Debug.Log($"  - Ball position: {position}");
+            Debug.Log($"  - Distance from center: {distanceFromCenter:F2}");
+            Debug.Log($"  - Contains ball: {contains}");
+            
+            return contains;
         }
         
         private void ProcessHitJudgment(HitJudgment judgment)
         {
             OnHitJudged?.Invoke(judgment);
+            
+            // Provide visual feedback on the zones
+            StartCoroutine(FlashZoneOnHit(judgment));
             
             switch (judgment)
             {
@@ -360,6 +631,51 @@ namespace TennisCoachCho.MiniGames
             settings.drillUI?.UpdateScore(totalScore);
             
             // Hit processed
+        }
+        
+        private IEnumerator FlashZoneOnHit(HitJudgment judgment)
+        {
+            SpriteRenderer targetZone = null;
+            Color flashColor = Color.white;
+            
+            // Determine which zone to flash based on judgment
+            switch (judgment)
+            {
+                case HitJudgment.PERFECT:
+                    targetZone = settings.perfectZoneVisual;
+                    flashColor = Color.yellow;
+                    break;
+                case HitJudgment.GOOD:
+                    targetZone = settings.goodZoneVisual;
+                    flashColor = Color.green;
+                    break;
+                default:
+                    // No zone flash for BAD or MISS
+                    yield break;
+            }
+            
+            if (targetZone == null) yield break;
+            
+            // Store original color
+            Color originalColor = targetZone.color;
+            
+            // Flash brighter for visual feedback
+            Color brightColor = flashColor;
+            brightColor.a = 0.8f; // More opaque when flashing
+            
+            // Flash effect: bright -> normal -> bright -> normal
+            float flashDuration = 0.15f;
+            
+            targetZone.color = brightColor;
+            yield return new WaitForSeconds(flashDuration);
+            
+            targetZone.color = originalColor;
+            yield return new WaitForSeconds(flashDuration);
+            
+            targetZone.color = brightColor;
+            yield return new WaitForSeconds(flashDuration);
+            
+            targetZone.color = originalColor;
         }
         
         // Coroutine helpers
